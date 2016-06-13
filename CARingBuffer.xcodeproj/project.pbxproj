@@ -1,0 +1,327 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80093B8B1D0D9E5B00B23004 /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80093B8A1D0D9E5B00B23004 /* CARingBuffer.swift */; };
+		80C9CFB31D0CC6AF00960F60 /* CASwiftRingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C9CFB21D0CC6AF00960F60 /* CASwiftRingBufferTests.swift */; };
+		80C9CFC51D0CC95900960F60 /* CARingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80C9CFC31D0CC94200960F60 /* CARingBuffer.cpp */; };
+		80C9CFCA1D0CCB2300960F60 /* CACppRingBufferTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 80C9CFC91D0CCB2300960F60 /* CACppRingBufferTests.mm */; };
+		80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		80093B8A1D0D9E5B00B23004 /* CARingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARingBuffer.swift; sourceTree = "<group>"; };
+		80C9CFAD1D0CC6AF00960F60 /* CARingBufferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARingBufferTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80C9CFB21D0CC6AF00960F60 /* CASwiftRingBufferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CASwiftRingBufferTests.swift; sourceTree = "<group>"; };
+		80C9CFB41D0CC6AF00960F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80C9CFC31D0CC94200960F60 /* CARingBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CARingBuffer.cpp; sourceTree = "<group>"; };
+		80C9CFC41D0CC94200960F60 /* CARingBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARingBuffer.h; sourceTree = "<group>"; };
+		80C9CFC61D0CCA5F00960F60 /* CABitOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CABitOperations.h; sourceTree = "<group>"; };
+		80C9CFC71D0CCA9000960F60 /* CAAutoDisposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAutoDisposer.h; sourceTree = "<group>"; };
+		80C9CFC81D0CCAB200960F60 /* CAAtomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAtomic.h; sourceTree = "<group>"; };
+		80C9CFC91D0CCB2300960F60 /* CACppRingBufferTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CACppRingBufferTests.mm; sourceTree = "<group>"; };
+		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80C9CFAA1D0CC6AF00960F60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80093B891D0D9E5B00B23004 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				80093B8A1D0D9E5B00B23004 /* CARingBuffer.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		80C9CF991D0CC6AF00960F60 = {
+			isa = PBXGroup;
+			children = (
+				80093B891D0D9E5B00B23004 /* Classes */,
+				80C9CFB11D0CC6AF00960F60 /* Tests */,
+				80C9CFC01D0CC94200960F60 /* Vendor */,
+				80C9CFCD1D0D713900960F60 /* Frameworks */,
+				80C9CFA41D0CC6AF00960F60 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80C9CFA41D0CC6AF00960F60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80C9CFAD1D0CC6AF00960F60 /* CARingBufferTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80C9CFB11D0CC6AF00960F60 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				80C9CFB41D0CC6AF00960F60 /* Info.plist */,
+				80C9CFB21D0CC6AF00960F60 /* CASwiftRingBufferTests.swift */,
+				80C9CFC91D0CCB2300960F60 /* CACppRingBufferTests.mm */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		80C9CFC01D0CC94200960F60 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				80C9CFC11D0CC94200960F60 /* CoreAudio */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		80C9CFC11D0CC94200960F60 /* CoreAudio */ = {
+			isa = PBXGroup;
+			children = (
+				80C9CFC21D0CC94200960F60 /* PublicUtility */,
+			);
+			path = CoreAudio;
+			sourceTree = "<group>";
+		};
+		80C9CFC21D0CC94200960F60 /* PublicUtility */ = {
+			isa = PBXGroup;
+			children = (
+				80C9CFC81D0CCAB200960F60 /* CAAtomic.h */,
+				80C9CFC71D0CCA9000960F60 /* CAAutoDisposer.h */,
+				80C9CFC61D0CCA5F00960F60 /* CABitOperations.h */,
+				80C9CFC31D0CC94200960F60 /* CARingBuffer.cpp */,
+				80C9CFC41D0CC94200960F60 /* CARingBuffer.h */,
+			);
+			path = PublicUtility;
+			sourceTree = "<group>";
+		};
+		80C9CFCD1D0D713900960F60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80C9CFAC1D0CC6AF00960F60 /* CARingBufferTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80C9CFBA1D0CC6AF00960F60 /* Build configuration list for PBXNativeTarget "CARingBufferTests" */;
+			buildPhases = (
+				80C9CFA91D0CC6AF00960F60 /* Sources */,
+				80C9CFAA1D0CC6AF00960F60 /* Frameworks */,
+				80C9CFAB1D0CC6AF00960F60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CARingBufferTests;
+			productName = CARingBufferTests;
+			productReference = 80C9CFAD1D0CC6AF00960F60 /* CARingBufferTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80C9CF9A1D0CC6AF00960F60 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = WaveLabs;
+				TargetAttributes = {
+					80C9CFAC1D0CC6AF00960F60 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 80C9CF9D1D0CC6AF00960F60 /* Build configuration list for PBXProject "CARingBuffer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 80C9CF991D0CC6AF00960F60;
+			productRefGroup = 80C9CFA41D0CC6AF00960F60 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80C9CFAC1D0CC6AF00960F60 /* CARingBufferTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80C9CFAB1D0CC6AF00960F60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80C9CFA91D0CC6AF00960F60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80C9CFC51D0CC95900960F60 /* CARingBuffer.cpp in Sources */,
+				80093B8B1D0D9E5B00B23004 /* CARingBuffer.swift in Sources */,
+				80C9CFB31D0CC6AF00960F60 /* CASwiftRingBufferTests.swift in Sources */,
+				80C9CFCA1D0CCB2300960F60 /* CACppRingBufferTests.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		80C9CFB51D0CC6AF00960F60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		80C9CFB61D0CC6AF00960F60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		80C9CFBB1D0CC6AF00960F60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARingBufferTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		80C9CFBC1D0CC6AF00960F60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARingBufferTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80C9CF9D1D0CC6AF00960F60 /* Build configuration list for PBXProject "CARingBuffer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80C9CFB51D0CC6AF00960F60 /* Debug */,
+				80C9CFB61D0CC6AF00960F60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80C9CFBA1D0CC6AF00960F60 /* Build configuration list for PBXNativeTarget "CARingBufferTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80C9CFBB1D0CC6AF00960F60 /* Debug */,
+				80C9CFBC1D0CC6AF00960F60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80C9CF9A1D0CC6AF00960F60 /* Project object */;
+}
