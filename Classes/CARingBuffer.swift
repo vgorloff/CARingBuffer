@@ -134,7 +134,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 			return .TooMuch
 		}
 
-		let endWrite = startWrite + Int64(framesToWrite)
+		let endWrite = startWrite + SampleTime(framesToWrite)
 		if startWrite < EndTime() {
 			// going backwards, throw everything out
 			SetTimeBounds(startTime: startWrite, endTime: startWrite)
@@ -352,12 +352,16 @@ public final class CARingBuffer<T: FloatingPointType> {
 	// MARK: - Time Bounds Queue
 
 	func SetTimeBounds(startTime startTime: SampleTime, endTime: SampleTime) {
-		let nextPtr = mTimeBoundsQueueCurrentIndex + 1
-		let index = nextPtr & kGeneralRingTimeBoundsQueueMask
-		mTimeBoundsQueue[index].mStartTime = startTime
-		mTimeBoundsQueue[index].mEndTime = endTime
-		mTimeBoundsQueue[index].mUpdateCounter = nextPtr
-		OSAtomicCompareAndSwapLongBarrier(mTimeBoundsQueueCurrentIndex, mTimeBoundsQueueCurrentIndex + 1, &mTimeBoundsQueueCurrentIndex)
+		// Always increasing.
+		let nextAbsoluteIndex = mTimeBoundsQueueCurrentIndex + 1
+		// Always in range [0, kGeneralRingTimeBoundsQueueSize - 1]
+		let timeBoundsQueeueIndex = nextAbsoluteIndex & kGeneralRingTimeBoundsQueueMask
+		mTimeBoundsQueue[timeBoundsQueeueIndex].mStartTime = startTime
+		mTimeBoundsQueue[timeBoundsQueeueIndex].mEndTime = endTime
+		mTimeBoundsQueue[timeBoundsQueeueIndex].mUpdateCounter = nextAbsoluteIndex
+		let status = OSAtomicCompareAndSwapLongBarrier(mTimeBoundsQueueCurrentIndex, nextAbsoluteIndex,
+		                                               &mTimeBoundsQueueCurrentIndex)
+		assert(status)
 	}
 
 	func GetTimeBounds(inout startTime startTime: SampleTime, inout endTime: SampleTime) -> CARingBufferError {
@@ -380,12 +384,14 @@ public final class CARingBuffer<T: FloatingPointType> {
 
 	// MARK: - Time Bounds Queue: Private
 
-	// Should only be called from Store.
+	/// **Note!** Should only be called from Store.
+	/// - returns: Start time from the Time bounds queue at current index.
 	private func StartTime() -> SampleTime {
 		return mTimeBoundsQueue[mTimeBoundsQueueCurrentIndex & kGeneralRingTimeBoundsQueueMask].mStartTime
 	}
 
-	// Should only be called from Store.
+	/// **Note!** Should only be called from Store.
+	/// - returns: End time from the Time bounds queue at current index.
 	private func EndTime() -> SampleTime {
 		return mTimeBoundsQueue[mTimeBoundsQueueCurrentIndex & kGeneralRingTimeBoundsQueueMask].mEndTime
 	}

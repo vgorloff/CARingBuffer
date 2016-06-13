@@ -9,12 +9,12 @@
 import XCTest
 import AVFoundation
 
-private func generateSampleChannelData(buffer: AVAudioPCMBuffer, numberOfFrames: Int, biasValue: UInt32 = 1) {
+private func generateSampleChannelData(buffer: AVAudioPCMBuffer, numberOfFrames: UInt32, biasValue: UInt32 = 1) {
 	let ablPointer = UnsafeMutableAudioBufferListPointer(buffer.mutableAudioBufferList)
 	for bufferIndex in 0 ..< ablPointer.count {
 		for frameIndex in 0 ..< numberOfFrames {
 			let floatValue: Float = Float(biasValue) + 0.1 * Float(bufferIndex) + 0.01 * Float(frameIndex)
-			ablPointer[bufferIndex].mFloatData[frameIndex] = floatValue
+			ablPointer[bufferIndex].mFloatData[Int(frameIndex)] = floatValue
 		}
 	}
 	buffer.frameLength = UInt32(numberOfFrames)
@@ -74,7 +74,7 @@ class CASwiftRingBufferTests: XCTestCase {
 
 	override func setUp() {
 		super.setUp()
-		let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 441, channels: 2)
+		let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)
 		writeBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: 16)
 		secondaryWriteBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: 16)
 		readBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: 16)
@@ -244,11 +244,29 @@ class CASwiftRingBufferTests: XCTestCase {
 		XCTAssertTrue(status == .NoError)
 	}
 
+}
+
+class CASwiftRingBufferPerformanceTests: XCTestCase {
+
 	func testPerformanceExample() {
-		// This is an example of a performance test case.
+		let numberOfChannels: UInt32 = 2
+		let IOCapacity: UInt32 = 512
+		let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: numberOfChannels)
+		let writeBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: IOCapacity)
+		let readBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: IOCapacity)
+		let ringBuffer = CARingBuffer<Float>(numberOfChannels: numberOfChannels, capacityFrames: 4096)
+		generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
 		self.measureBlock {
-			// Put the code you want to measure the time of here.
+			var status: CARingBufferError
+			for iteration in 0 ..< UInt32(1000_000) {
+				status = ringBuffer.Store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
+					startWrite:  SampleTime(IOCapacity * iteration))
+				XCTAssertTrue(status == .NoError)
+
+				status = ringBuffer.Fetch(readBuffer.mutableAudioBufferList, nFrames: IOCapacity,
+					startRead: SampleTime(IOCapacity * iteration))
+				XCTAssertTrue(status == .NoError)
+			}
 		}
 	}
-
 }

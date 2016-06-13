@@ -248,10 +248,31 @@ BOOL checkBuffersContentsIsZero(AVAudioPCMBuffer *buffer, UInt32 bufferOffset, U
 	XCTAssertTrue(status == kCARingBufferError_OK);
 }
 
+@end
+
+@interface CACppRingBufferPerformanceTests : XCTestCase
+@end
+
+@implementation CACppRingBufferPerformanceTests
+
 - (void)testPerformanceExample {
-	// This is an example of a performance test case.
+	UInt32 numberOfChannels = 2;
+	UInt32 IOCapacity = 512;
+	AVAudioFormat *audioFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100 channels:numberOfChannels];
+	AVAudioPCMBuffer *writeBuffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:audioFormat frameCapacity:IOCapacity];
+	AVAudioPCMBuffer *readBuffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:audioFormat frameCapacity:IOCapacity];
+	CARingBuffer *ringBuffer = new CARingBuffer();
+	ringBuffer->Allocate(numberOfChannels, sizeof(float), 4096);
+	generateSampleChannelData(writeBuffer, IOCapacity);
 	[self measureBlock:^{
-		// Put the code you want to measure the time of here.
+		CARingBufferError status;
+		for (UInt32 iteration = 0; iteration < 1000000; ++iteration) {
+			status = ringBuffer->Store(writeBuffer.audioBufferList, IOCapacity, IOCapacity * iteration);
+			XCTAssertTrue(status == kCARingBufferError_OK);
+
+			status = ringBuffer->Fetch(readBuffer.mutableAudioBufferList, IOCapacity, IOCapacity * iteration);
+			XCTAssertTrue(status == kCARingBufferError_OK);
+		}
 	}];
 }
 
