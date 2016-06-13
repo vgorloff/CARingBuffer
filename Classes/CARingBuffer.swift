@@ -8,7 +8,17 @@
 
 import CoreAudio
 
-public extension AudioBuffer {
+// Next power of two greater or equal to x
+func NextPowerOfTwo(x: UInt32) -> UInt32 {
+	// TODO: Optimization required. See: http://stackoverflow.com/questions/466204/rounding-up-to-nearest-power-of-2
+	var power: UInt32 = 1
+	while power < x {
+		power *= 2
+	}
+	return power
+}
+
+extension AudioBuffer {
 	var mFloatData: UnsafeMutablePointer<Float> {
 		return UnsafeMutablePointer<Float>(mData)
 	}
@@ -23,27 +33,17 @@ public extension AudioBuffer {
 	}
 }
 
-public extension UnsafeMutableAudioBufferListPointer {
-	public var audioBuffers: [AudioBuffer] {
+extension UnsafeMutableAudioBufferListPointer {
+	var audioBuffers: [AudioBuffer] {
 		var result = [AudioBuffer]()
 		for audioBufferIndex in 0..<count {
 			result.append(self[audioBufferIndex])
 		}
 		return result
 	}
-	public init(_ p: UnsafePointer<AudioBufferList>) {
+	init(_ p: UnsafePointer<AudioBufferList>) {
 		self.init(UnsafeMutablePointer<AudioBufferList>(p))
 	}
-}
-
-// Next power of two greater or equal to x
-private func NextPowerOfTwo(x: UInt32) -> UInt32 {
-	// TODO: Optimization required. See: http://stackoverflow.com/questions/466204/rounding-up-to-nearest-power-of-2
-	var power: UInt32 = 1
-	while power < x {
-		power *= 2
-	}
-	return power
 }
 
 private let kGeneralRingTimeBoundsQueueSize: Int = 32
@@ -55,8 +55,6 @@ private struct CARingBufferTimeBounds {
 	var mUpdateCounter: Int = 0
 }
 
-// Public
-
 public typealias SampleTime = Int64
 
 public enum CARingBufferErrorCode: Int32 {
@@ -67,13 +65,15 @@ public enum CARingBufferErrorCode: Int32 {
 	case CPUOverload = 4
 }
 
+// MARK: -
+// MARK: → CARingBuffer
+// MARK: -
+
 public final class CARingBuffer<T: FloatingPointType> {
 
 	private var mTimeBoundsQueue = [CARingBufferTimeBounds](count: kGeneralRingTimeBoundsQueueSize, repeatedValue: CARingBufferTimeBounds())
 	private var mTimeBoundsQueuePtr: Int = 0
-
-	// MARK: - Private / Internal (for testability)
-
+	
 	private let mNumberChannels: UInt32
 	/// per channel capacity, must be a power of 2.
 	internal let mCapacityFrames: UInt32
@@ -89,7 +89,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 		return Array(mBufferPointer)
 	}
 
-	// MARK: -
+	// MARK: - Init / Deinit
 
 	/// **Note** CapacityFrames will be rounded up to a power of 2
 	/// - parameter capacityFrames: Capacity per every channel.
@@ -368,16 +368,19 @@ public final class CARingBuffer<T: FloatingPointType> {
 		return .CPUOverload
 	}
 
+	// MARK: - Time Bounds Queue: Private
+
 	// Should only be called from Store.
-	func StartTime() -> SampleTime {
+	private func StartTime() -> SampleTime {
 		return mTimeBoundsQueue[mTimeBoundsQueuePtr & kGeneralRingTimeBoundsQueueMask].mStartTime
 	}
+
 	// Should only be called from Store.
-	func EndTime() -> SampleTime {
+	private func EndTime() -> SampleTime {
 		return mTimeBoundsQueue[mTimeBoundsQueuePtr & kGeneralRingTimeBoundsQueueMask].mEndTime
 	}
 
-	func ClipTimeBounds(inout startRead startRead: SampleTime, inout endRead: SampleTime) -> CARingBufferErrorCode {
+	private func ClipTimeBounds(inout startRead startRead: SampleTime, inout endRead: SampleTime) -> CARingBufferErrorCode {
 		var startTime: SampleTime = 0
 		var endTime: SampleTime = 0
 
