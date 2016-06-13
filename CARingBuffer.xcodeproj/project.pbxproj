@@ -123,6 +123,7 @@
 				80C9CFA91D0CC6AF00960F60 /* Sources */,
 				80C9CFAA1D0CC6AF00960F60 /* Frameworks */,
 				80C9CFAB1D0CC6AF00960F60 /* Resources */,
+				805015261D0F613C00AE0412 /* Run Script: SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -174,6 +175,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		805015261D0F613C00AE0412 /* Run Script: SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc # Or set /bin/bash -l as shell in Xcode\nhash swiftlint 2>/dev/null || { echo \"swiftlint does not exist. Solution: brew install swiftlint\"; exit 0; }\nswiftlint lint --path \"$SRCROOT\" 2>/dev/null || true\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		80C9CFA91D0CC6AF00960F60 /* Sources */ = {

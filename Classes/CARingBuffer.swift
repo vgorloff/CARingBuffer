@@ -9,10 +9,10 @@
 import CoreAudio
 
 // Next power of two greater or equal to x
-func NextPowerOfTwo(x: UInt32) -> UInt32 {
-	// TODO: Optimization required. See: http://stackoverflow.com/questions/466204/rounding-up-to-nearest-power-of-2
+func NextPowerOfTwo(value: UInt32) -> UInt32 {
+	// TODO: Performance optimization required. See: http://stackoverflow.com/questions/466204/rounding-up-to-nearest-power-of-2
 	var power: UInt32 = 1
-	while power < x {
+	while power < value {
 		power *= 2
 	}
 	return power
@@ -41,10 +41,12 @@ extension UnsafeMutableAudioBufferListPointer {
 		}
 		return result
 	}
-	init(_ p: UnsafePointer<AudioBufferList>) {
-		self.init(UnsafeMutablePointer<AudioBufferList>(p))
+	init(_ pointer: UnsafePointer<AudioBufferList>) {
+		self.init(UnsafeMutablePointer<AudioBufferList>(pointer))
 	}
 }
+
+public typealias SampleTime = Int64
 
 private let kGeneralRingTimeBoundsQueueSize: Int = 32
 private let kGeneralRingTimeBoundsQueueMask: Int = kGeneralRingTimeBoundsQueueSize - 1
@@ -55,10 +57,8 @@ private struct CARingBufferTimeBounds {
 	var mUpdateCounter: Int = 0
 }
 
-public typealias SampleTime = Int64
-
-public enum CARingBufferErrorCode: Int32 {
-	case OK = 0
+public enum CARingBufferError: Int32 {
+	case NoError = 0
 	/// Fetch start time is earlier than buffer start time and fetch end time is later than buffer end time
 	case TooMuch = 3
 	/// The reader is unable to get enough CPU cycles to capture a consistent snapshot of the time bounds
@@ -71,33 +71,39 @@ public enum CARingBufferErrorCode: Int32 {
 
 public final class CARingBuffer<T: FloatingPointType> {
 
-	private var mTimeBoundsQueue = [CARingBufferTimeBounds](count: kGeneralRingTimeBoundsQueueSize, repeatedValue: CARingBufferTimeBounds())
-	private var mTimeBoundsQueuePtr: Int = 0
-	
+	private var mTimeBoundsQueue = [CARingBufferTimeBounds](count: kGeneralRingTimeBoundsQueueSize,
+	                                                        repeatedValue: CARingBufferTimeBounds())
+	private var mTimeBoundsQueueCurrentIndex: Int = 0
+
 	private let mNumberChannels: UInt32
-	/// per channel capacity, must be a power of 2.
-	internal let mCapacityFrames: UInt32
+	/// Per channel capacity, must be a power of 2.
+	private let mCapacityFrames: UInt32
+	/// Used to for index calculation.
 	private let mCapacityFramesMask: UInt32
 	private let mCapacityBytes: UInt32
 	private let mBytesPerFrame: UInt32
-	internal let mBuffersLength: UInt32 // Number of allocated elements in buffer
+	/// Number of allocated elements in buffer for all channels.
+	private let mBuffersLength: UInt32
 	private let mBuffer: UnsafeMutablePointer<T>
-	internal var mBufferPointer: UnsafeMutableBufferPointer<T> {
+	/// Buffer pointer just for debug purpose.
+	private var mBufferPointer: UnsafeMutableBufferPointer<T> {
 		return UnsafeMutableBufferPointer(start: mBuffer, count: Int(mBuffersLength))
 	}
-	internal var mBufferArray: Array<T> {
+	/// Buffer array just for debug purpose.
+	private var mBufferArray: Array<T> {
 		return Array(mBufferPointer)
 	}
 
 	// MARK: - Init / Deinit
 
 	/// **Note** CapacityFrames will be rounded up to a power of 2
+	/// - parameter numberOfChannels: Number of channels (non-interleaved).
 	/// - parameter capacityFrames: Capacity per every channel.
-	public init(nChannels: UInt32, capacityFrames: UInt32) {
-		mNumberChannels = nChannels
+	public init(numberOfChannels: UInt32, capacityFrames: UInt32) {
+		mNumberChannels = numberOfChannels
 		mCapacityFrames = NextPowerOfTwo(capacityFrames)
 		mCapacityFramesMask = mCapacityFrames - 1
-		mBuffersLength = mCapacityFrames * nChannels
+		mBuffersLength = mCapacityFrames * numberOfChannels
 		mBuffer = UnsafeMutablePointer<T>.alloc(Int(mBuffersLength))
 		mBytesPerFrame = UInt32(sizeof(T.self))
 		mCapacityBytes = mBytesPerFrame * mCapacityFrames
@@ -115,9 +121,13 @@ public final class CARingBuffer<T: FloatingPointType> {
 	/// the buffer before storing the new data.
 	/// If startWrite is less than the previous frame number, the behavior is undefined.
 	/// Return false for failure (buffer not large enough).
-	public func Store(abl: UnsafePointer<AudioBufferList>, framesToWrite: UInt32, startWrite: SampleTime) -> CARingBufferErrorCode {
+	/// - parameter abl: Source AudioBufferList.
+	/// - parameter framesToWrite: Frames to write.
+	/// - parameter startWrite: Absolute time.
+	/// - returns: Operation status code.
+	public func Store(abl: UnsafePointer<AudioBufferList>, framesToWrite: UInt32, startWrite: SampleTime) -> CARingBufferError {
 		if framesToWrite == 0 {
-			return .OK
+			return .NoError
 		}
 
 		if framesToWrite > mCapacityFrames {
@@ -148,8 +158,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 			offset1 = FrameOffset(startWrite)
 			if offset0 < offset1 {
 				ZeroRange(mBuffer, nchannels: nchannels, offset: offset0, nbytes: offset1 - offset0)
-			}
-			else {
+			} else {
 				ZeroRange(mBuffer, nchannels: nchannels, offset: offset0, nbytes: SampleTime(mCapacityBytes) - offset0)
 				ZeroRange(mBuffer, nchannels: nchannels, offset: 0, nbytes: offset1)
 			}
@@ -170,12 +179,13 @@ public final class CARingBuffer<T: FloatingPointType> {
 		// now update the end time
 		SetTimeBounds(startTime: StartTime(), endTime: endWrite)
 
-		return .OK
+		return .NoError
 	}
 
-	public func Fetch(abl: UnsafeMutablePointer<AudioBufferList>, nFrames: UInt32, startRead aStartRead: SampleTime) -> CARingBufferErrorCode {
+	public func Fetch(abl: UnsafeMutablePointer<AudioBufferList>, nFrames: UInt32,
+	                  startRead aStartRead: SampleTime) -> CARingBufferError {
 		if nFrames == 0 {
-			return .OK
+			return .NoError
 		}
 
 		var startRead = max(0, aStartRead)
@@ -186,13 +196,13 @@ public final class CARingBuffer<T: FloatingPointType> {
 		let endRead0 = endRead
 
 		let err = ClipTimeBounds(startRead: &startRead, endRead: &endRead)
-		if err != .OK {
+		if err != .NoError {
 			return err
 		}
 
 		if startRead == endRead {
 			ZeroABL(abl, destOffset: 0, nbytes: Int64(nFrames * mBytesPerFrame))
-			return .OK
+			return .NoError
 		}
 
 
@@ -200,12 +210,12 @@ public final class CARingBuffer<T: FloatingPointType> {
 
 		let destStartByteOffset = max(0, (startRead - startRead0) * Int64(mBytesPerFrame))
 
-		if (destStartByteOffset > 0) {
+		if destStartByteOffset > 0 {
 			ZeroABL(abl, destOffset: 0, nbytes: min(Int64(nFrames * mBytesPerFrame), destStartByteOffset))
 		}
 
 		let destEndSize = max(0, endRead0 - endRead)
-		if (destEndSize > 0) {
+		if destEndSize > 0 {
 			ZeroABL(abl, destOffset: destStartByteOffset + byteSize, nbytes: destEndSize * Int64(mBytesPerFrame))
 		}
 
@@ -213,7 +223,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 		let offset1 = FrameOffset(endRead)
 		var nbytes: SampleTime = 0
 
-		if (offset0 < offset1) {
+		if offset0 < offset1 {
 			nbytes = offset1 - offset0
 			FetchABL(abl, destOffset: destStartByteOffset, buffers: mBuffer, srcOffset: offset0, nbytes: nbytes)
 		} else {
@@ -229,7 +239,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 			dest.mDataByteSize = UInt32(nbytes) // FIXME: This should be in sync with AVAudioPCMBuffer (Vlad Gorlov, 2016-06-12).
 		}
 
-		return .OK
+		return .NoError
 	}
 
 	// MARK: - Private
@@ -342,18 +352,18 @@ public final class CARingBuffer<T: FloatingPointType> {
 	// MARK: - Time Bounds Queue
 
 	func SetTimeBounds(startTime startTime: SampleTime, endTime: SampleTime) {
-		let nextPtr = mTimeBoundsQueuePtr + 1
+		let nextPtr = mTimeBoundsQueueCurrentIndex + 1
 		let index = nextPtr & kGeneralRingTimeBoundsQueueMask
 		mTimeBoundsQueue[index].mStartTime = startTime
 		mTimeBoundsQueue[index].mEndTime = endTime
 		mTimeBoundsQueue[index].mUpdateCounter = nextPtr
-		OSAtomicCompareAndSwapLongBarrier(mTimeBoundsQueuePtr, mTimeBoundsQueuePtr + 1, &mTimeBoundsQueuePtr)
+		OSAtomicCompareAndSwapLongBarrier(mTimeBoundsQueueCurrentIndex, mTimeBoundsQueueCurrentIndex + 1, &mTimeBoundsQueueCurrentIndex)
 	}
 
-	func GetTimeBounds(inout startTime startTime: SampleTime, inout endTime: SampleTime) -> CARingBufferErrorCode {
+	func GetTimeBounds(inout startTime startTime: SampleTime, inout endTime: SampleTime) -> CARingBufferError {
 		// Fail after a few tries.
 		for _ in 0 ..< 8 {
-			let curPtr = mTimeBoundsQueuePtr
+			let curPtr = mTimeBoundsQueueCurrentIndex
 			let index = curPtr & kGeneralRingTimeBoundsQueueMask
 			let bounds = mTimeBoundsQueue[index]
 
@@ -362,7 +372,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 			let newPtr = bounds.mUpdateCounter
 
 			if newPtr == curPtr {
-				return .OK
+				return .NoError
 			}
 		}
 		return .CPUOverload
@@ -372,33 +382,33 @@ public final class CARingBuffer<T: FloatingPointType> {
 
 	// Should only be called from Store.
 	private func StartTime() -> SampleTime {
-		return mTimeBoundsQueue[mTimeBoundsQueuePtr & kGeneralRingTimeBoundsQueueMask].mStartTime
+		return mTimeBoundsQueue[mTimeBoundsQueueCurrentIndex & kGeneralRingTimeBoundsQueueMask].mStartTime
 	}
 
 	// Should only be called from Store.
 	private func EndTime() -> SampleTime {
-		return mTimeBoundsQueue[mTimeBoundsQueuePtr & kGeneralRingTimeBoundsQueueMask].mEndTime
+		return mTimeBoundsQueue[mTimeBoundsQueueCurrentIndex & kGeneralRingTimeBoundsQueueMask].mEndTime
 	}
 
-	private func ClipTimeBounds(inout startRead startRead: SampleTime, inout endRead: SampleTime) -> CARingBufferErrorCode {
+	private func ClipTimeBounds(inout startRead startRead: SampleTime, inout endRead: SampleTime) -> CARingBufferError {
 		var startTime: SampleTime = 0
 		var endTime: SampleTime = 0
 
 		let err = GetTimeBounds(startTime: &startTime, endTime: &endTime)
-		if err != .OK {
+		if err != .NoError {
 			return err
 		}
 
 		if startRead > endTime || endRead < startTime {
 			endRead = startRead
-			return .OK
+			return .NoError
 		}
 
 		startRead = max(startRead, startTime)
 		endRead = min(endRead, endTime)
 		endRead = max(endRead, startRead)
-		
-		return .OK	// success
+
+		return .NoError	// success
 	}
-	
+
 }
