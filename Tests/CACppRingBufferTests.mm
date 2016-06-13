@@ -266,12 +266,16 @@ BOOL checkBuffersContentsIsZero(AVAudioPCMBuffer *buffer, UInt32 bufferOffset, U
 	generateSampleChannelData(writeBuffer, IOCapacity);
 	[self measureBlock:^{
 		CARingBufferError status;
-		for (UInt32 iteration = 0; iteration < 1000000; ++iteration) {
+		for (UInt32 iteration = 0; iteration < 2000000; ++iteration) {
 			status = ringBuffer->Store(writeBuffer.audioBufferList, IOCapacity, IOCapacity * iteration);
-			XCTAssertTrue(status == kCARingBufferError_OK);
+			if (status != kCARingBufferError_OK) {
+				abort();
+			}
 
 			status = ringBuffer->Fetch(readBuffer.mutableAudioBufferList, IOCapacity, IOCapacity * iteration);
-			XCTAssertTrue(status == kCARingBufferError_OK);
+			if (status != kCARingBufferError_OK) {
+				abort();
+			}
 		}
 	}];
 }

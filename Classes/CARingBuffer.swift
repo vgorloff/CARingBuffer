@@ -9,41 +9,13 @@
 import CoreAudio
 
 // Next power of two greater or equal to x
-func NextPowerOfTwo(value: UInt32) -> UInt32 {
+private func NextPowerOfTwo(value: UInt32) -> UInt32 {
 	// TODO: Performance optimization required. See: http://stackoverflow.com/questions/466204/rounding-up-to-nearest-power-of-2
 	var power: UInt32 = 1
 	while power < value {
 		power *= 2
 	}
 	return power
-}
-
-extension AudioBuffer {
-	var mFloatData: UnsafeMutablePointer<Float> {
-		return UnsafeMutablePointer<Float>(mData)
-	}
-	var mFloatBuffer: UnsafeMutableBufferPointer<Float> {
-		return UnsafeMutableBufferPointer<Float>(start: mFloatData, count: Int(mDataByteSize) / sizeof(Float))
-	}
-	var mFloatArray: [Float] {
-		return Array<Float>(mFloatBuffer)
-	}
-	func fillWithZeros() {
-		memset(mData, 0, Int(mDataByteSize))
-	}
-}
-
-extension UnsafeMutableAudioBufferListPointer {
-	var audioBuffers: [AudioBuffer] {
-		var result = [AudioBuffer]()
-		for audioBufferIndex in 0..<count {
-			result.append(self[audioBufferIndex])
-		}
-		return result
-	}
-	init(_ pointer: UnsafePointer<AudioBufferList>) {
-		self.init(UnsafeMutablePointer<AudioBufferList>(pointer))
-	}
 }
 
 public typealias SampleTime = Int64
@@ -71,7 +43,7 @@ public enum CARingBufferError: Int32 {
 
 public final class CARingBuffer<T: FloatingPointType> {
 
-	private var mTimeBoundsQueue = [CARingBufferTimeBounds](count: kGeneralRingTimeBoundsQueueSize,
+	private var mTimeBoundsQueue = ContiguousArray<CARingBufferTimeBounds>(count: kGeneralRingTimeBoundsQueueSize,
 	                                                        repeatedValue: CARingBufferTimeBounds())
 	private var mTimeBoundsQueueCurrentIndex: Int = 0
 
@@ -324,7 +296,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 		let elementsToWrite = Int(nbytes) / sizeof(T.self) // FIXME: Check for overflows. See CPP code. (Vlad Gorlov, 2016-06-12).
 		let elementsOfSrcOffset = Int(srcOffset) / sizeof(T.self)
 		let elementsOfDstOffset = Int(destOffset) / sizeof(T.self)
-		let ablPointer = UnsafeMutableAudioBufferListPointer(abl)
+		let ablPointer = UnsafeMutableAudioBufferListPointer(UnsafeMutablePointer<AudioBufferList>(abl))
 		assert(mNumberChannels == UInt32(ablPointer.count))
 		for channel in 0..<ablPointer.count {
 			let src = ablPointer[channel]
