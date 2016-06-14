@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "80C9CFAC1D0CC6AF00960F60"
-               BuildableName = "CARingBufferTests.xctest"
-               BlueprintName = "CARingBufferTests"
+               BuildableName = "CARBTestsCpp.xctest"
+               BlueprintName = "CARBTestsCpp"
                ReferencedContainer = "container:CARingBuffer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -24,8 +24,8 @@
    </BuildAction>
    <TestAction
       buildConfiguration = "Release"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "80C9CFAC1D0CC6AF00960F60"
-               BuildableName = "CARingBufferTests.xctest"
-               BlueprintName = "CARingBufferTests"
+               BuildableName = "CARBTestsCpp.xctest"
+               BlueprintName = "CARBTestsCpp"
                ReferencedContainer = "container:CARingBuffer.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,7 +44,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80C9CFAC1D0CC6AF00960F60"
-            BuildableName = "CARingBufferTests.xctest"
-            BlueprintName = "CARingBufferTests"
+            BuildableName = "CARBTestsCpp.xctest"
+            BlueprintName = "CARBTestsCpp"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,14 +75,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80C9CFAC1D0CC6AF00960F60"
-            BuildableName = "CARingBufferTests.xctest"
-            BlueprintName = "CARingBufferTests"
+            BuildableName = "CARBTestsCpp.xctest"
+            BlueprintName = "CARBTestsCpp"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"

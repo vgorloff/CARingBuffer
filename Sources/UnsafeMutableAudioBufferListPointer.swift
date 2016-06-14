@@ -1,6 +1,6 @@
 //
 //  UnsafeMutableAudioBufferListPointer.swift
-//  CARingBuffer
+//  WaveLabs
 //
 //  Created by Vlad Gorlov on 14.06.16.
 //  Copyright © 2016 WaveLabs. All rights reserved.

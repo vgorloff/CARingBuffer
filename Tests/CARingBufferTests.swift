@@ -1,6 +1,6 @@
 //
-//  CASwiftRingBufferTests.swift
-//  CARingBufferTests
+//  CARingBufferTests.swift
+//  WaveLabs
 //
 //  Created by Vlad Gorlov on 12.06.16.
 //  Copyright © 2016 WaveLabs. All rights reserved.

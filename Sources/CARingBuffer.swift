@@ -1,6 +1,6 @@
 //
-//  CARingBuffer_.swift
-//  WLMedia
+//  CARingBuffer.swift
+//  WaveLabs
 //
 //  Created by Vlad Gorlov on 31.05.16.
 //  Copyright © 2016 WaveLabs. All rights reserved.
@@ -110,11 +110,11 @@ public final class CARingBuffer<T: FloatingPointType> {
 		if startWrite < EndTime() {
 			// going backwards, throw everything out
 			SetTimeBounds(startTime: startWrite, endTime: startWrite)
-		} else if endWrite - StartTime() <= Int64(mCapacityFrames) {
+		} else if endWrite - StartTime() <= SampleTime(mCapacityFrames) {
 			// the buffer has not yet wrapped and will not need to
 		} else {
 			// advance the start time past the region we are about to overwrite
-			let newStart = endWrite - Int64(mCapacityFrames)	// one buffer of time behind where we're writing
+			let newStart = endWrite - SampleTime(mCapacityFrames)	// one buffer of time behind where we're writing
 			let newEnd = max(newStart, EndTime())
 			SetTimeBounds(startTime: newStart, endTime: newEnd)
 		}
