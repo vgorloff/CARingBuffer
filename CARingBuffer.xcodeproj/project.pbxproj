@@ -9,16 +9,22 @@
 /* Begin PBXBuildFile section */
 		8050152E1D0F722200AE0412 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050152D1D0F722200AE0412 /* main.swift */; };
 		805015351D0F769000AE0412 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015331D0F769000AE0412 /* AudioBuffer.swift */; };
-		805015381D0F76B500AE0412 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015361D0F76B500AE0412 /* Functions.swift */; };
+		805015381D0F76B500AE0412 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015361D0F76B500AE0412 /* CARBTestsUtility.swift */; };
 		8050153B1D0F771300AE0412 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015391D0F771300AE0412 /* UnsafeMutableAudioBufferListPointer.swift */; };
 		805015541D109F7C00AE0412 /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015531D109F7C00AE0412 /* CARingBuffer.swift */; };
 		805015551D109F7C00AE0412 /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015531D109F7C00AE0412 /* CARingBuffer.swift */; };
-		8050155A1D10A00900AE0412 /* CARingBufferTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 805015561D109FBB00AE0412 /* CARingBufferTests.mm */; };
+		8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 805015561D109FBB00AE0412 /* CARBTests.mm */; };
 		805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 805015601D10A06300AE0412 /* CARingBuffer.cpp */; };
-		805015681D10A43F00AE0412 /* CARingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015571D109FBB00AE0412 /* CARingBufferTests.swift */; };
-		805015691D10A44700AE0412 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015361D0F76B500AE0412 /* Functions.swift */; };
+		805015681D10A43F00AE0412 /* CARBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015571D109FBB00AE0412 /* CARBTests.swift */; };
+		805015691D10A44700AE0412 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015361D0F76B500AE0412 /* CARBTestsUtility.swift */; };
 		8050156A1D10A45400AE0412 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015331D0F769000AE0412 /* AudioBuffer.swift */; };
 		8050156B1D10A45B00AE0412 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015391D0F771300AE0412 /* UnsafeMutableAudioBufferListPointer.swift */; };
+		8066E0DD1D10A53C00D32B44 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
+		8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */; };
+		8066E0E41D10A78600D32B44 /* CARBPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */; };
+		8066E0E51D10A7F700D32B44 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015361D0F76B500AE0412 /* CARBTestsUtility.swift */; };
+		8066E0E61D10A80900D32B44 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015331D0F769000AE0412 /* AudioBuffer.swift */; };
+		8066E0E71D10A80900D32B44 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015391D0F771300AE0412 /* UnsafeMutableAudioBufferListPointer.swift */; };
 		80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,24 +41,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8050152B1D0F722200AE0412 /* CARingBufferMeasure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = CARingBufferMeasure; path = CARBMeasureSwift; sourceTree = BUILT_PRODUCTS_DIR; };
+		8050152B1D0F722200AE0412 /* CARBMeasure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CARBMeasure; sourceTree = BUILT_PRODUCTS_DIR; };
 		8050152D1D0F722200AE0412 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		805015331D0F769000AE0412 /* AudioBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioBuffer.swift; sourceTree = "<group>"; };
-		805015361D0F76B500AE0412 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		805015361D0F76B500AE0412 /* CARBTestsUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARBTestsUtility.swift; sourceTree = "<group>"; };
 		805015391D0F771300AE0412 /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
 		805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsSwift.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		805015421D1089EA00AE0412 /* CARBTestsSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBTestsSwift.swift; sourceTree = "<group>"; };
-		805015441D1089EA00AE0412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8050154E1D108A3700AE0412 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		805015531D109F7C00AE0412 /* CARingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARingBuffer.swift; sourceTree = "<group>"; };
-		805015561D109FBB00AE0412 /* CARingBufferTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CARingBufferTests.mm; sourceTree = "<group>"; };
-		805015571D109FBB00AE0412 /* CARingBufferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARingBufferTests.swift; sourceTree = "<group>"; };
-		8050155D1D10A06300AE0412 /* CAAtomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAtomic.h; sourceTree = "<group>"; };
-		8050155E1D10A06300AE0412 /* CAAutoDisposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAutoDisposer.h; sourceTree = "<group>"; };
-		8050155F1D10A06300AE0412 /* CABitOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CABitOperations.h; sourceTree = "<group>"; };
-		805015601D10A06300AE0412 /* CARingBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CARingBuffer.cpp; sourceTree = "<group>"; };
-		805015611D10A06300AE0412 /* CARingBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARingBuffer.h; sourceTree = "<group>"; };
-		805015621D10A06300AE0412 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		805015561D109FBB00AE0412 /* CARBTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBTests.mm; sourceTree = "<group>"; };
+		805015571D109FBB00AE0412 /* CARBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBTests.swift; sourceTree = "<group>"; };
+		8050155D1D10A06300AE0412 /* CAAtomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CAAtomic.h; path = CoreAudio/PublicUtility/CAAtomic.h; sourceTree = "<group>"; };
+		8050155E1D10A06300AE0412 /* CAAutoDisposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CAAutoDisposer.h; path = CoreAudio/PublicUtility/CAAutoDisposer.h; sourceTree = "<group>"; };
+		8050155F1D10A06300AE0412 /* CABitOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CABitOperations.h; path = CoreAudio/PublicUtility/CABitOperations.h; sourceTree = "<group>"; };
+		805015601D10A06300AE0412 /* CARingBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CARingBuffer.cpp; path = CoreAudio/PublicUtility/CARingBuffer.cpp; sourceTree = "<group>"; };
+		805015611D10A06300AE0412 /* CARingBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CARingBuffer.h; path = CoreAudio/PublicUtility/CARingBuffer.h; sourceTree = "<group>"; };
+		805015621D10A06300AE0412 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = CoreAudio/PublicUtility/Readme.md; sourceTree = "<group>"; };
+		8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
+		8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
 		80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsCpp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C9CFB41D0CC6AF00960F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8066E0DD1D10A53C00D32B44 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,30 +93,29 @@
 		8050152C1D0F722200AE0412 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				805015331D0F769000AE0412 /* AudioBuffer.swift */,
 				805015531D109F7C00AE0412 /* CARingBuffer.swift */,
-				805015361D0F76B500AE0412 /* Functions.swift */,
-				8050152D1D0F722200AE0412 /* main.swift */,
-				805015391D0F771300AE0412 /* UnsafeMutableAudioBufferListPointer.swift */,
+				8066E0E01D10A5E300D32B44 /* Extensions */,
+				8066E0DE1D10A58500D32B44 /* Other */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		805015411D1089EA00AE0412 /* CARBTestsSwift */ = {
+		8066E0DE1D10A58500D32B44 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				805015421D1089EA00AE0412 /* CARBTestsSwift.swift */,
-				805015441D1089EA00AE0412 /* Info.plist */,
+				805015361D0F76B500AE0412 /* CARBTestsUtility.swift */,
+				8050152D1D0F722200AE0412 /* main.swift */,
 			);
-			path = CARBTestsSwift;
+			path = Other;
 			sourceTree = "<group>";
 		};
-		8050154D1D108A3700AE0412 /* CARBMeasureCpp */ = {
+		8066E0E01D10A5E300D32B44 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8050154E1D108A3700AE0412 /* main.m */,
+				805015331D0F769000AE0412 /* AudioBuffer.swift */,
+				805015391D0F771300AE0412 /* UnsafeMutableAudioBufferListPointer.swift */,
 			);
-			path = CARBMeasureCpp;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		80C9CF991D0CC6AF00960F60 = {
@@ -119,8 +124,6 @@
 				8050152C1D0F722200AE0412 /* Sources */,
 				80C9CFB11D0CC6AF00960F60 /* Tests */,
 				80C9CFC01D0CC94200960F60 /* Vendor */,
-				805015411D1089EA00AE0412 /* CARBTestsSwift */,
-				8050154D1D108A3700AE0412 /* CARBMeasureCpp */,
 				80C9CFCD1D0D713900960F60 /* Frameworks */,
 				80C9CFA41D0CC6AF00960F60 /* Products */,
 			);
@@ -130,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */,
-				8050152B1D0F722200AE0412 /* CARingBufferMeasure */,
+				8050152B1D0F722200AE0412 /* CARBMeasure */,
 				805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */,
 			);
 			name = Products;
@@ -139,22 +142,16 @@
 		80C9CFB11D0CC6AF00960F60 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				805015561D109FBB00AE0412 /* CARingBufferTests.mm */,
-				805015571D109FBB00AE0412 /* CARingBufferTests.swift */,
+				8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */,
+				8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */,
+				805015561D109FBB00AE0412 /* CARBTests.mm */,
+				805015571D109FBB00AE0412 /* CARBTests.swift */,
 				80C9CFB41D0CC6AF00960F60 /* Info.plist */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
 		80C9CFC01D0CC94200960F60 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				80C9CFC11D0CC94200960F60 /* CoreAudio/PublicUtility */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		80C9CFC11D0CC94200960F60 /* CoreAudio/PublicUtility */ = {
 			isa = PBXGroup;
 			children = (
 				8050155D1D10A06300AE0412 /* CAAtomic.h */,
@@ -164,7 +161,7 @@
 				805015611D10A06300AE0412 /* CARingBuffer.h */,
 				805015621D10A06300AE0412 /* Readme.md */,
 			);
-			path = CoreAudio/PublicUtility;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		80C9CFCD1D0D713900960F60 /* Frameworks */ = {
@@ -192,7 +189,7 @@
 			);
 			name = CARBMeasure;
 			productName = CARingBufferMeasure;
-			productReference = 8050152B1D0F722200AE0412 /* CARingBufferMeasure */;
+			productReference = 8050152B1D0F722200AE0412 /* CARBMeasure */;
 			productType = "com.apple.product-type.tool";
 		};
 		8050153F1D1089EA00AE0412 /* CARBTestsSwift */ = {
@@ -313,7 +310,7 @@
 				805015351D0F769000AE0412 /* AudioBuffer.swift in Sources */,
 				805015551D109F7C00AE0412 /* CARingBuffer.swift in Sources */,
 				8050153B1D0F771300AE0412 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
-				805015381D0F76B500AE0412 /* Functions.swift in Sources */,
+				805015381D0F76B500AE0412 /* CARBTestsUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,11 +318,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8066E0E41D10A78600D32B44 /* CARBPerformanceTests.swift in Sources */,
 				8050156A1D10A45400AE0412 /* AudioBuffer.swift in Sources */,
 				805015541D109F7C00AE0412 /* CARingBuffer.swift in Sources */,
-				805015681D10A43F00AE0412 /* CARingBufferTests.swift in Sources */,
+				805015681D10A43F00AE0412 /* CARBTests.swift in Sources */,
 				8050156B1D10A45B00AE0412 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
-				805015691D10A44700AE0412 /* Functions.swift in Sources */,
+				805015691D10A44700AE0412 /* CARBTestsUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,8 +331,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8050155A1D10A00900AE0412 /* CARingBufferTests.mm in Sources */,
+				8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */,
 				805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */,
+				8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */,
+				8066E0E51D10A7F700D32B44 /* CARBTestsUtility.swift in Sources */,
+				8066E0E61D10A80900D32B44 /* AudioBuffer.swift in Sources */,
+				8066E0E71D10A80900D32B44 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -369,7 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -17,7 +17,7 @@ let writeBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: IOCapa
 let readBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: IOCapacity)
 let ringBuffer = CARingBuffer<Float>(numberOfChannels: numberOfChannels, capacityFrames: 4096)
 
-generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
+CARBTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
 var status: CARingBufferError
 for iteration in 0 ..< UInt32(50_000_000) {
 	status = ringBuffer.Store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
