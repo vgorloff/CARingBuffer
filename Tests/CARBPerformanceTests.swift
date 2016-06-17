@@ -12,18 +12,21 @@ import AVFoundation
 class CARBSwiftPerformanceTests: XCTestCase {
 
 	func testPerformanceExample() {
-		let numberOfChannels: UInt32 = 2
-		let IOCapacity: UInt32 = 512
-		let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: numberOfChannels)
+		let numberOfChannels = CARBPerformanceTestParameters.NumberOfChannels.rawValue
+		let IOCapacity = CARBPerformanceTestParameters.IOCapacity.rawValue
+		let audioFormat = AVAudioFormat(standardFormatWithSampleRate: Double(CARBPerformanceTestParameters.SampleRate.rawValue),
+		                                channels: numberOfChannels)
 		let writeBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: IOCapacity)
 		let readBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: IOCapacity)
-		let ringBuffer = CARingBuffer<Float>(numberOfChannels: numberOfChannels, capacityFrames: 4096)
+		let ringBuffer = CARingBuffer<Float>(numberOfChannels: numberOfChannels,
+		                                     capacityFrames: CARBPerformanceTestParameters.BufferCapacityFrames.rawValue)
 		CARBTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
+		let numberOfIterations = CARBPerformanceTestParameters.NumberOfIterations.rawValue
 		self.measureBlock {
 			var status: CARingBufferError
-			for iteration in 0 ..< UInt32(2_000_000) {
+			for iteration in 0 ..< numberOfIterations {
 				status = ringBuffer.Store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
-					startWrite:  SampleTime(IOCapacity * iteration))
+					startWrite: SampleTime(IOCapacity * iteration))
 				if status != .NoError {
 					fatalError()
 				}

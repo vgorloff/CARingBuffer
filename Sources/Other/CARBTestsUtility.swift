@@ -8,6 +8,14 @@
 
 import AVFoundation
 
+@objc public enum CARBPerformanceTestParameters: UInt32 {
+	case NumberOfIterations = 2_000_000
+	case SampleRate = 44100
+	case NumberOfChannels = 2
+	case BufferCapacityFrames = 4096
+	case IOCapacity = 512
+}
+
 @objc public final class CARBTestsUtility: NSObject {
 
 	public static func generateSampleChannelData(buffer: AVAudioPCMBuffer, numberOfFrames: UInt32, biasValue: UInt32 = 1) {

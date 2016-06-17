@@ -17,17 +17,19 @@
 @implementation CARBCppPerformanceTests
 
 - (void)testPerformanceExample {
-	UInt32 numberOfChannels = 2;
-	UInt32 IOCapacity = 512;
-	AVAudioFormat *audioFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100 channels:numberOfChannels];
+	UInt32 numberOfChannels = CARBPerformanceTestParametersNumberOfChannels;
+	UInt32 IOCapacity = CARBPerformanceTestParametersIOCapacity;
+	AVAudioFormat *audioFormat = [[AVAudioFormat alloc]
+											initStandardFormatWithSampleRate:CARBPerformanceTestParametersSampleRate
+											channels:numberOfChannels];
 	AVAudioPCMBuffer *writeBuffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:audioFormat frameCapacity:IOCapacity];
 	AVAudioPCMBuffer *readBuffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:audioFormat frameCapacity:IOCapacity];
 	CARingBuffer *ringBuffer = new CARingBuffer();
-	ringBuffer->Allocate(numberOfChannels, sizeof(float), 4096);
+	ringBuffer->Allocate(numberOfChannels, sizeof(float), CARBPerformanceTestParametersBufferCapacityFrames);
 	[CARBTestsUtility generateSampleChannelData:writeBuffer numberOfFrames:IOCapacity biasValue:1];
 	[self measureBlock:^{
 		CARingBufferError status;
-		for (UInt32 iteration = 0; iteration < 2000000; ++iteration) {
+		for (UInt32 iteration = 0; iteration < CARBPerformanceTestParametersNumberOfIterations; ++iteration) {
 			status = ringBuffer->Store(writeBuffer.audioBufferList, IOCapacity, IOCapacity * iteration);
 			if (status != kCARingBufferError_OK) {
 				abort();
