@@ -6,7 +6,9 @@
 .DS_Store
 
 ## Child Git
-/Vendor/*/
+/Vendor/*
+!/Vendor/*.md
+!/Vendor/*.command
 
 ## Build generated
 /Build
