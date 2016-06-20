@@ -203,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8050152F1D0F722200AE0412 /* Build configuration list for PBXNativeTarget "CARBMeasure" */;
 			buildPhases = (
+				80C2052E1D18A3FC00A932E4 /* Run Script: Check Folders */,
 				805015271D0F722200AE0412 /* Sources */,
 				805015281D0F722200AE0412 /* Frameworks */,
 				805015291D0F722200AE0412 /* CopyFiles */,
@@ -220,6 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 805015451D1089EA00AE0412 /* Build configuration list for PBXNativeTarget "CARBTestsSwift" */;
 			buildPhases = (
+				80C2052F1D18A55C00A932E4 /* Run Script: Check Folders */,
 				805015641D10A2FE00AE0412 /* Run Script: SwiftLint */,
 				8050153C1D1089EA00AE0412 /* Sources */,
 				8050153D1D1089EA00AE0412 /* Frameworks */,
@@ -238,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80C9CFBA1D0CC6AF00960F60 /* Build configuration list for PBXNativeTarget "CARBTestsCpp" */;
 			buildPhases = (
+				80C205301D18A57A00A932E4 /* Run Script: Check Folders */,
 				80C9CFA91D0CC6AF00960F60 /* Sources */,
 				80C9CFAA1D0CC6AF00960F60 /* Frameworks */,
 				80C9CFAB1D0CC6AF00960F60 /* Resources */,
@@ -322,6 +325,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc # Or set /bin/bash -l as shell in Xcode\n hash swiftlint 2>/dev/null || { echo \"swiftlint does not exist. Solution: brew install swiftlint\"; exit 0; }\n swiftlint lint --path \"$SRCROOT\" 2>/dev/null || true\n";
+		};
+		80C2052E1D18A3FC00A932E4 /* Run Script: Check Folders */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: Check Folders";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"$SRCROOT/Scripts/CheckRequiredFolders.sh\"";
+		};
+		80C2052F1D18A55C00A932E4 /* Run Script: Check Folders */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: Check Folders";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"$SRCROOT/Scripts/CheckRequiredFolders.sh\"";
+		};
+		80C205301D18A57A00A932E4 /* Run Script: Check Folders */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: Check Folders";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"$SRCROOT/Scripts/CheckRequiredFolders.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

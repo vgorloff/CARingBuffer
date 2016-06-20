@@ -1,8 +1,8 @@
 #!/bin/bash
 # Proper header for a Bash script.
 
-AWLScriptDirPath=$(cd "$(dirname "$0")/../"; pwd)
-cd "$AWLScriptDirPath"
+AWLSrcDirPath=$(cd "$(dirname "$0")/../"; pwd)
+cd "$AWLSrcDirPath"
 
 # Setting up Subtree
 git subtree add --prefix Vendor/WLMediaOpen https://github.com/vgorloff/WLMediaOpen.git master --squash
