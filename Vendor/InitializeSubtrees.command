@@ -8,4 +8,4 @@ cd "$AWLScriptDirPath"
 git subtree add --prefix Vendor/WLMediaOpen https://github.com/vgorloff/WLMediaOpen.git master --squash
 
 # Updating Subtree
-git subtree pull --prefix Vendor/WLMediaOpen https://github.com/vgorloff/WLMediaOpen.git master --squash
+# git subtree pull --prefix Vendor/WLMediaOpen https://github.com/vgorloff/WLMediaOpen.git master --squash
