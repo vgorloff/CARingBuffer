@@ -340,7 +340,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sh \"$SRCROOT/Scripts/CheckRequiredFolders.sh\"";
+			shellScript = "sh \"$SRCROOT/Vendor/InitializeGitSubtreesIfNeeded.command\"";
 		};
 		80C2052F1D18A55C00A932E4 /* Run Script: Check Folders */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -368,7 +368,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sh \"$SRCROOT/Scripts/CheckRequiredFolders.sh\"";
+			shellScript = "sh \"$SRCROOT/Vendor/CheckCoreAudioFolder.command\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
