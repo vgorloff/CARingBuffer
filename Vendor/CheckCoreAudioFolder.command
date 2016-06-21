@@ -6,13 +6,8 @@ cd "$AWLSrcDirPath"
 
 function AWLCheckFolderAndReportWarning {
 	if [ ! -d "$1" ]; then
-		echo "warning: $1 does NOT exists. Please read file Vendor/Readme.md"
+		echo "warning: $1 does NOT exists. Please read file Readme.md"
 	fi
 }
 
-AWLCheckFolderAndReportWarning "Vendor/WLMediaOpen"
 AWLCheckFolderAndReportWarning "Vendor/CoreAudio/PublicUtility"
-
-if [ ! -d "Vendor/WLMediaOpen" ]; then
-	sh "Vendor/InitializeSubtrees.command"
-fi
