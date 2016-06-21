@@ -354,7 +354,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sh \"$SRCROOT/Scripts/CheckRequiredFolders.sh\"";
+			shellScript = "sh \"$SRCROOT/Vendor/CheckCoreAudioFolder.command\"\nsh \"$SRCROOT/Vendor/InitializeGitSubtreesIfNeeded.command\"";
 		};
 		80C205301D18A57A00A932E4 /* Run Script: Check Folders */ = {
 			isa = PBXShellScriptBuildPhase;
