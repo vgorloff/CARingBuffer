@@ -7,7 +7,7 @@
 
 ## Child Git
 /Vendor/*
-!/Vendor/*.md
+!/Vendor/*.txt
 !/Vendor/*.command
 
 ## Build generated
