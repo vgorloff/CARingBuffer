@@ -29,6 +29,23 @@
 		80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		80B940271D1B475F0013FE1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80C9CF9A1D0CC6AF00960F60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80B940231D1B442D0013FE1C;
+			remoteInfo = CleanCode;
+		};
+		80B940291D1B47880013FE1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80C9CF9A1D0CC6AF00960F60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80B940231D1B442D0013FE1C;
+			remoteInfo = CleanCode;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		805015291D0F722200AE0412 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -199,6 +216,23 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		80B940231D1B442D0013FE1C /* CleanCode */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "\"$SRCROOT/Sources\" \"$SRCROOT/Tests\"";
+			buildConfigurationList = 80B940241D1B442D0013FE1C /* Build configuration list for PBXLegacyTarget "CleanCode" */;
+			buildPhases = (
+			);
+			buildToolPath = $SRCROOT/Vendor/WLConfigOpen/Scripts/BuildPhase_SwiftLint.sh;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = CleanCode;
+			passBuildSettingsInEnvironment = 1;
+			productName = CleanCode;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		8050152A1D0F722200AE0412 /* CARBMeasure */ = {
 			isa = PBXNativeTarget;
@@ -211,6 +245,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				80B940281D1B475F0013FE1C /* PBXTargetDependency */,
 			);
 			name = CARBMeasure;
 			productName = CARingBufferMeasure;
@@ -221,7 +256,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 805015451D1089EA00AE0412 /* Build configuration list for PBXNativeTarget "CARBTestsSwift" */;
 			buildPhases = (
-				805015641D10A2FE00AE0412 /* Run Script: SwiftLint */,
 				8050153C1D1089EA00AE0412 /* Sources */,
 				8050153D1D1089EA00AE0412 /* Frameworks */,
 				8050153E1D1089EA00AE0412 /* Resources */,
@@ -229,6 +263,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				80B9402A1D1B47880013FE1C /* PBXTargetDependency */,
 			);
 			name = CARBTestsSwift;
 			productName = CARBTestsSwift;
@@ -269,6 +304,9 @@
 					8050153F1D1089EA00AE0412 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					80B940231D1B442D0013FE1C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					80C9CFAC1D0CC6AF00960F60 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -289,6 +327,7 @@
 				80C9CFAC1D0CC6AF00960F60 /* CARBTestsCpp */,
 				8050153F1D1089EA00AE0412 /* CARBTestsSwift */,
 				8050152A1D0F722200AE0412 /* CARBMeasure */,
+				80B940231D1B442D0013FE1C /* CleanCode */,
 			);
 		};
 /* End PBXProject section */
@@ -312,20 +351,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		805015641D10A2FE00AE0412 /* Run Script: SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script: SwiftLint";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc # Or set /bin/bash -l as shell in Xcode\n hash swiftlint 2>/dev/null || { echo \"swiftlint does not exist. Solution: brew install swiftlint\"; exit 0; }\n swiftlint lint --path \"$SRCROOT\" 2>/dev/null || true\n";
-		};
 		80C205301D18A57A00A932E4 /* Run Script: Check CoreAudio Folder */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,6 +408,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		80B940281D1B475F0013FE1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80B940231D1B442D0013FE1C /* CleanCode */;
+			targetProxy = 80B940271D1B475F0013FE1C /* PBXContainerItemProxy */;
+		};
+		80B9402A1D1B47880013FE1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80B940231D1B442D0013FE1C /* CleanCode */;
+			targetProxy = 80B940291D1B47880013FE1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		805015301D0F722200AE0412 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -415,6 +453,18 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		80B940251D1B442D0013FE1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		80B940261D1B442D0013FE1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 			};
 			name = Release;
 		};
@@ -536,6 +586,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		80B940241D1B442D0013FE1C /* Build configuration list for PBXLegacyTarget "CleanCode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B940251D1B442D0013FE1C /* Debug */,
+				80B940261D1B442D0013FE1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		80C9CF9D1D0CC6AF00960F60 /* Build configuration list for PBXProject "CARingBuffer" */ = {
 			isa = XCConfigurationList;
