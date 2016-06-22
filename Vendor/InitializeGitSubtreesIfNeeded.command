@@ -12,3 +12,4 @@ function AWLCheckFolderAndReportWarning {
 }
 
 AWLCheckFolderAndReportWarning "WLMediaOpen"
+AWLCheckFolderAndReportWarning "WLConfigOpen"
