@@ -5,11 +5,6 @@
 ## OS X
 .DS_Store
 
-## Child Git
-/Vendor/*
-!/Vendor/*.txt
-!/Vendor/*.command
-
 ## Build generated
 /Build
 /DerivedData
