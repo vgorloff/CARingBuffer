@@ -33,9 +33,9 @@ platform :mac do
   
   desc "Cleans project."
   lane :clean do
-    xcclean
-    pwd = ENV['PWD']
-    sh "rm -r \"#{pwd}/build\""
+    xcodebuild(scheme: "CARBTestsSwift", build_settings: buildSettingsNoCodesign, xcargs: "clean")
+    xcodebuild(scheme: "CARBTestsCpp", build_settings: buildSettingsNoCodesign, xcargs: "clean")
+    xcodebuild(scheme: "CARBMeasure", build_settings: buildSettingsNoCodesign, xcargs: "clean")
   end
   
 end
