@@ -13,9 +13,3 @@ In order to compare performance between Swift and C++ versions manual download o
 
 **Q**: Where are the `Vendor/CoreAudio/PublicUtility` files?  
 **A**: Please open `Xcode`, open `Documentation and API Reference` and search for `Core Audio Utility Classes`. Download them and unpack.
-
-There is also dependency on another git repository. Xcode build phase will fetch git subtree automatically. But if it fails, then see Q/A below.
-
-**Q**: Where are the `Vendor/WL****Open` files?  
-**A**: Please go to folder `Vendor` and look on `*.command` files.
-
