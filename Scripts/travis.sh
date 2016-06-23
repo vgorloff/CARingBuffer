@@ -6,7 +6,7 @@ cd "$AWLSrcDirPath"
 
 # Support for Gems installed with --user-install. [ Frequently Asked Questions - RubyGems Guides ]( http://guides.rubygems.org/faqs/ )
 if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
+    export PATH="$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
 fi
 
 fastlane clean
