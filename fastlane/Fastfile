@@ -34,7 +34,8 @@ platform :mac do
   desc "Cleans project."
   lane :clean do
     xcclean
-    sh "rm -r #{ENV['PWD']}/build"
+    pwd = ENV['PWD']
+    sh "rm -r \"#{pwd}/build\" \"#{pwd}/fastlane/test_output\""
   end
   
 end
