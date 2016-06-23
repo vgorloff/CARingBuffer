@@ -35,7 +35,7 @@ platform :mac do
   lane :clean do
     xcclean
     pwd = ENV['PWD']
-    sh "rm -r \"#{pwd}/build\" \"#{pwd}/fastlane/test_output\""
+    sh "rm -r \"#{pwd}/build\""
   end
   
 end
