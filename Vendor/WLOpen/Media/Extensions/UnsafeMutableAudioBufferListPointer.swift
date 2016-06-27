@@ -16,7 +16,7 @@ extension UnsafeMutableAudioBufferListPointer {
 		}
 		return result
 	}
-	init(_ pointer: UnsafePointer<AudioBufferList>) {
+	init(unsafePointer pointer: UnsafePointer<AudioBufferList>) {
 		self.init(UnsafeMutablePointer<AudioBufferList>(pointer))
 	}
 }

@@ -9,15 +9,3 @@
 public protocol Int64Representable {
 	var int64Value: Int64 { get }
 }
-
-extension UInt64: Int64Representable {
-	public var int64Value: Int64 {
-		return Int64(self)
-	}
-}
-
-extension Double: Int64Representable {
-	public var int64Value: Int64 {
-		return Int64(self)
-	}
-}

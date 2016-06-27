@@ -9,9 +9,3 @@
 public protocol DoubleRepresentable {
 	var doubleValue: Double { get }
 }
-
-extension UInt64: DoubleRepresentable {
-	public var doubleValue: Double {
-		return Double(self)
-	}
-}
