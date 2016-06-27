@@ -45,8 +45,8 @@ import AVFoundation
 	                            readBuffer: AVAudioPCMBuffer, readBufferOffset: UInt32, numberOfFrames: UInt32) -> Bool {
 		assert(writeBuffer.frameLength >= writeBufferOffset + numberOfFrames)
 		assert(readBuffer.frameLength >= readBufferOffset + numberOfFrames)
-		let writeABLPointer = UnsafeMutableAudioBufferListPointer(writeBuffer.audioBufferList)
-		let readABLPointer = UnsafeMutableAudioBufferListPointer(readBuffer.audioBufferList)
+		let writeABLPointer = UnsafeMutableAudioBufferListPointer(unsafePointer: writeBuffer.audioBufferList)
+		let readABLPointer = UnsafeMutableAudioBufferListPointer(unsafePointer: readBuffer.audioBufferList)
 		assert(writeABLPointer.count == readABLPointer.count)
 
 		for numberOfBuffer in 0..<writeABLPointer.count {
@@ -63,7 +63,7 @@ import AVFoundation
 
 	public static func checkBuffersContentsIsZero(buffer: AVAudioPCMBuffer, bufferOffset: UInt32, numberOfFrames: UInt32) -> Bool {
 		assert(buffer.frameLength >= bufferOffset + numberOfFrames)
-		let ablPointer = UnsafeMutableAudioBufferListPointer(buffer.audioBufferList)
+		let ablPointer = UnsafeMutableAudioBufferListPointer(unsafePointer: buffer.audioBufferList)
 		for numberOfBuffer in 0..<ablPointer.count {
 			for numberOfFrame in 0..<numberOfFrames {
 				let sampleValue = ablPointer[numberOfBuffer].mFloatData[Int(numberOfFrame + bufferOffset)]

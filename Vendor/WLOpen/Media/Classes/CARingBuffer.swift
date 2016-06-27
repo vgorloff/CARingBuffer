@@ -264,7 +264,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 	private func FetchABL(abl: UnsafeMutablePointer<AudioBufferList>, destOffset: SampleTime,
 	                      buffers: UnsafeMutablePointer<T>, srcOffset: SampleTime, nbytes: SampleTime) {
 
-		let elementsToWrite = Int(nbytes) / sizeof(T.self) // FIXME: Check for overflows. See CPP code. (Vlad Gorlov, 2016-06-12).
+//		let elementsToWrite = Int(nbytes) / sizeof(T.self) // FIXME: Check for overflows. See CPP code. (Vlad Gorlov, 2016-06-12).
 		let elementsOfSrcOffset = Int(srcOffset) / sizeof(T.self)
 		let elementsOfDstOffset = Int(destOffset) / sizeof(T.self)
 //		let ablPointer = UnsafeMutableAudioBufferListPointer(abl)
@@ -305,7 +305,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 	private func StoreABL(buffers: UnsafeMutablePointer<T>, destOffset: SampleTime, abl: UnsafePointer<AudioBufferList>,
 	                      srcOffset: SampleTime, nbytes: SampleTime) {
 
-		let elementsToWrite = Int(nbytes) / sizeof(T.self) // FIXME: Check for overflows. See CPP code. (Vlad Gorlov, 2016-06-12).
+//		let elementsToWrite = Int(nbytes) / sizeof(T.self) // FIXME: Check for overflows. See CPP code. (Vlad Gorlov, 2016-06-12).
 		let elementsOfSrcOffset = Int(srcOffset) / sizeof(T.self)
 		let elementsOfDstOffset = Int(destOffset) / sizeof(T.self)
 //		let ablPointer = UnsafeMutableAudioBufferListPointer(UnsafeMutablePointer<AudioBufferList>(abl))

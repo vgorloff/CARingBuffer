@@ -23,16 +23,19 @@ platform :mac do
   desc "Builds project."
   lane :build do
     xcodebuild(scheme: "CARBMeasure", build_settings: buildSettingsNoCodesign)
+    xcodebuild(scheme: "CAPlayThrough", build_settings: buildSettingsNoCodesign)
   end
   
   desc "Builds when under CI (i.e. Travis)."
   lane :ci do
     xcodebuild(scheme: "CARBMeasure", build_settings: buildSettingsNoCodesign)
+    xcodebuild(scheme: "CAPlayThrough", build_settings: buildSettingsNoCodesign)
     scan(scheme: "CARBTestsSwift", output_directory: "fastlane/test_output/swift")
   end
   
   desc "Cleans project."
   lane :clean do
+    xcodebuild(scheme: "CAPlayThrough", build_settings: buildSettingsNoCodesign, xcargs: "clean")
     xcodebuild(scheme: "CARBTestsSwift", build_settings: buildSettingsNoCodesign, xcargs: "clean")
     xcodebuild(scheme: "CARBTestsCpp", build_settings: buildSettingsNoCodesign, xcargs: "clean")
     xcodebuild(scheme: "CARBMeasure", build_settings: buildSettingsNoCodesign, xcargs: "clean")

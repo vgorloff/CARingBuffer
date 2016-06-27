@@ -37,3 +37,4 @@ xcbaselines
 ## Fastlane
 /fastlane/report.xml
 /fastlane/test_output
+/fastlane/README.md
