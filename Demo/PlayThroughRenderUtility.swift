@@ -9,16 +9,18 @@
 import AVFoundation
 
 private let PlayThroughRenderUtilityInputRenderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp, inBusNumber, inNumberFrames, ioData in
+	let sampleTime = inTimeStamp.memory.mSampleTime
 	let renderUtility = unsafeBitCast(inRefCon, PlayThroughRenderUtility.self)
 	if renderUtility.firstInputTime == nil {
-		renderUtility.firstInputTime = inTimeStamp.memory.mSampleTime
+		renderUtility.firstInputTime = sampleTime
 	}
 	let buffer = renderUtility.inputBuffer
+	buffer.frameLength = inNumberFrames // Not required, but reccomeneded to keep in sync.
 	var status = AudioUnitRender(renderUtility.inputUnit, ioActionFlags, inTimeStamp, inBusNumber, inNumberFrames,
 	                         buffer.mutableAudioBufferList)
 	if status == noErr {
 		let ringBuffer = renderUtility.ringBuffer
-		status = ringBuffer.Store(buffer.audioBufferList, framesToWrite: inNumberFrames, startWrite: inTimeStamp.memory.mSampleTime.int64Value).rawValue
+		status = ringBuffer.Store(buffer.audioBufferList, framesToWrite: inNumberFrames, startWrite: sampleTime.int64Value).rawValue
 	}
 	return status
 }
@@ -52,8 +54,10 @@ private let PlayThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
 	if status != noErr {
 		return status
 	}
+
+	let sampleTime = inTimeStamp.memory.mSampleTime
 	if renderUtility.firstOutputTime == nil {
-		renderUtility.firstOutputTime = inTimeStamp.memory.mSampleTime
+		renderUtility.firstOutputTime = sampleTime
 		let delta = (renderUtility.firstInputTime ?? 0) - (renderUtility.firstOutputTime ?? 0)
 		let offset = try? PlayThroughRenderUtility.computeThruOffset(inputDevice: renderUtility.inputDevice,
 			outputDevice: renderUtility.outputDevice)
@@ -70,14 +74,14 @@ private let PlayThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
 
 	 //copy the data from the buffers
 	let ringBuffer = renderUtility.ringBuffer
-	let startFetch = inTimeStamp.memory.mSampleTime - renderUtility.inToOutSampleOffset
+	let startFetch = sampleTime - renderUtility.inToOutSampleOffset
 	let err = ringBuffer.Fetch(ioData, nFrames: inNumberFrames, startRead: startFetch.int64Value)
 	if err != .NoError {
 		audioBuffers.forEach { audioBuffer in audioBuffer.fillWithZeros() }
 		var bufferStartTime: SampleTime = 0
 		var bufferEndTime: SampleTime = 0
 		ringBuffer.GetTimeBounds(startTime: &bufferStartTime, endTime: &bufferEndTime)
-		renderUtility.inToOutSampleOffset = inTimeStamp.memory.mSampleTime - bufferStartTime.doubleValue;
+		renderUtility.inToOutSampleOffset = sampleTime - bufferStartTime.doubleValue;
 	}
 
 	return noErr
@@ -285,6 +289,7 @@ public final class PlayThroughRenderUtility {
 		let format = AVAudioFormat(streamDescription: &asbd)
 		inputBuffer = AVAudioPCMBuffer(PCMFormat: format, frameCapacity: bufferSizeFrames)
 
+		assert(asbd.mBytesPerFrame.intValue == sizeof(Float))
 		ringBuffer = CARingBuffer<Float>(numberOfChannels: asbd.mChannelsPerFrame, capacityFrames: bufferSizeFrames * 20)
 	}
 

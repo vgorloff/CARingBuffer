@@ -6,20 +6,12 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		80FE0B3C1D2021FD00919C2F /* All */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 80FE0B3D1D2021FD00919C2F /* Build configuration list for PBXAggregateTarget "All" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = All;
-			productName = All;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
+		80079E6E1D21C50100E93DB3 /* CGFloatRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CFD1D21AE9A00B2FE2A /* CGFloatRepresentable.swift */; };
+		80079E721D21D9B100E93DB3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80079E711D21D9AA00E93DB3 /* main.swift */; };
+		80079E731D21D9BA00E93DB3 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */; };
+		80079E741D21D9BB00E93DB3 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */; };
+		80079E751D21D9BC00E93DB3 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */; };
 		8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 805015561D109FBB00AE0412 /* CARBTests.mm */; };
 		805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 805015601D10A06300AE0412 /* CARingBuffer.cpp */; };
 		805015681D10A43F00AE0412 /* CARBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015571D109FBB00AE0412 /* CARBTests.swift */; };
@@ -36,7 +28,6 @@
 		80B12CF71D21ADD400B2FE2A /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B321D20214400919C2F /* AudioBuffer.swift */; };
 		80B12CF91D21AE3600B2FE2A /* FloatRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CF81D21AE3600B2FE2A /* FloatRepresentable.swift */; };
 		80B12CFC1D21AE8B00B2FE2A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CFB1D21AE8B00B2FE2A /* Double.swift */; };
-		80B12CFE1D21AE9A00B2FE2A /* CGFloatRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CFD1D21AE9A00B2FE2A /* CGFloatRepresentable.swift */; };
 		80B12D021D21B00600B2FE2A /* AudioUnitUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */; };
 		80B12D071D21B08300B2FE2A /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D031D21B07D00B2FE2A /* Int.swift */; };
 		80B12D081D21B08800B2FE2A /* Int32Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D041D21B07D00B2FE2A /* Int32Representable.swift */; };
@@ -55,10 +46,6 @@
 		80B12D221D21BB7D00B2FE2A /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D211D21BB7D00B2FE2A /* Int64.swift */; };
 		80B12D241D21BBA400B2FE2A /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D231D21BBA400B2FE2A /* Float.swift */; };
 		80B12D261D21BBCC00B2FE2A /* UInt64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D251D21BBCC00B2FE2A /* UInt64.swift */; };
-		80C205121D189DA500A932E4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C205111D189D9C00A932E4 /* main.swift */; };
-		80C205131D189DAC00A932E4 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C205101D189D9C00A932E4 /* CARBTestsUtility.swift */; };
-		80C205141D189DAC00A932E4 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C205101D189D9C00A932E4 /* CARBTestsUtility.swift */; };
-		80C205151D189DAE00A932E4 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C205101D189D9C00A932E4 /* CARBTestsUtility.swift */; };
 		80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
 		80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 		80FE0B341D20214400919C2F /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B321D20214400919C2F /* AudioBuffer.swift */; };
@@ -83,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBTestsUtility.swift; sourceTree = "<group>"; };
+		80079E711D21D9AA00E93DB3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8050152B1D0F722200AE0412 /* CARBMeasure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CARBMeasure; sourceTree = BUILT_PRODUCTS_DIR; };
 		805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsSwift.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		805015561D109FBB00AE0412 /* CARBTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBTests.mm; sourceTree = "<group>"; };
@@ -121,9 +110,7 @@
 		80B12D1F1D21B87500B2FE2A /* Int64Representable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Int64Representable.swift; path = Core/Protocols/Int64Representable.swift; sourceTree = "<group>"; };
 		80B12D211D21BB7D00B2FE2A /* Int64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Int64.swift; path = Core/Extensions/Int64.swift; sourceTree = "<group>"; };
 		80B12D231D21BBA400B2FE2A /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Float.swift; path = Core/Extensions/Float.swift; sourceTree = "<group>"; };
-		80B12D251D21BBCC00B2FE2A /* UInt64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt64.swift; sourceTree = "<group>"; };
-		80C205101D189D9C00A932E4 /* CARBTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBTestsUtility.swift; sourceTree = "<group>"; };
-		80C205111D189D9C00A932E4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		80B12D251D21BBCC00B2FE2A /* UInt64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt64.swift; path = Core/Extensions/UInt64.swift; sourceTree = "<group>"; };
 		80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsCpp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C9CFB41D0CC6AF00960F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -169,13 +156,13 @@
 		8050152C1D0F722200AE0412 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				80C205101D189D9C00A932E4 /* CARBTestsUtility.swift */,
-				80C205111D189D9C00A932E4 /* main.swift */,
+				80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */,
+				80079E711D21D9AA00E93DB3 /* main.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		80B12CE61D21AD2E00B2FE2A /* CAPlayThrough */ = {
+		80B12CE61D21AD2E00B2FE2A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */,
@@ -185,7 +172,7 @@
 				80B12CED1D21AD2E00B2FE2A /* Main.storyboard */,
 				80B12CF01D21AD2E00B2FE2A /* Info.plist */,
 			);
-			path = CAPlayThrough;
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		80B12CFA1D21AE4000B2FE2A /* Core */ = {
@@ -214,13 +201,13 @@
 		80B12CFF1D21AF6B00B2FE2A /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				80FE0B321D20214400919C2F /* AudioBuffer.swift */,
 				80B12D1C1D21B2A400B2FE2A /* AudioComponentDescription.swift */,
 				80B12D091D21B14C00B2FE2A /* AudioDevice.swift */,
 				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
 				80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */,
-				80FE0B321D20214400919C2F /* AudioBuffer.swift */,
-				80FE0B331D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift */,
 				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
+				80FE0B331D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -257,10 +244,10 @@
 		80C9CF991D0CC6AF00960F60 = {
 			isa = PBXGroup;
 			children = (
+				80B12CE61D21AD2E00B2FE2A /* Demo */,
 				8050152C1D0F722200AE0412 /* Sources */,
 				80C9CFB11D0CC6AF00960F60 /* Tests */,
 				80C9CFC01D0CC94200960F60 /* Vendor */,
-				80B12CE61D21AD2E00B2FE2A /* CAPlayThrough */,
 				80C9CFCD1D0D713900960F60 /* Frameworks */,
 				80C9CFA41D0CC6AF00960F60 /* Products */,
 			);
@@ -403,9 +390,6 @@
 					80C9CFAC1D0CC6AF00960F60 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					80FE0B3C1D2021FD00919C2F = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 				};
 			};
 			buildConfigurationList = 80C9CF9D1D0CC6AF00960F60 /* Build configuration list for PBXProject "CARingBuffer" */;
@@ -424,7 +408,6 @@
 				8050153F1D1089EA00AE0412 /* CARBTestsSwift */,
 				80C9CFAC1D0CC6AF00960F60 /* CARBTestsCpp */,
 				8050152A1D0F722200AE0412 /* CARBMeasure */,
-				80FE0B3C1D2021FD00919C2F /* All */,
 				80B12CE41D21AD2E00B2FE2A /* CAPlayThrough */,
 			);
 		};
@@ -507,9 +490,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C205151D189DAE00A932E4 /* CARBTestsUtility.swift in Sources */,
+				80079E731D21D9BA00E93DB3 /* CARBTestsUtility.swift in Sources */,
 				80FE0B371D20219900919C2F /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
-				80C205121D189DA500A932E4 /* main.swift in Sources */,
+				80079E721D21D9B100E93DB3 /* main.swift in Sources */,
 				80FE0B381D2021A900919C2F /* CARingBuffer.swift in Sources */,
 				80FE0B361D20219600919C2F /* AudioBuffer.swift in Sources */,
 			);
@@ -520,8 +503,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8066E0E41D10A78600D32B44 /* CARBPerformanceTests.swift in Sources */,
+				80079E751D21D9BC00E93DB3 /* CARBTestsUtility.swift in Sources */,
 				80FE0B351D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
-				80C205141D189DAC00A932E4 /* CARBTestsUtility.swift in Sources */,
 				805015681D10A43F00AE0412 /* CARBTests.swift in Sources */,
 				80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */,
 				80FE0B341D20214400919C2F /* AudioBuffer.swift in Sources */,
@@ -536,7 +519,6 @@
 				80B12D0D1D21B17B00B2FE2A /* UInt32.swift in Sources */,
 				80B12CEA1D21AD2E00B2FE2A /* ViewController.swift in Sources */,
 				80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */,
-				80B12CFE1D21AE9A00B2FE2A /* CGFloatRepresentable.swift in Sources */,
 				80B12D151D21B22000B2FE2A /* DoubleRepresentable.swift in Sources */,
 				80B12D0B1D21B15000B2FE2A /* AudioDevice.swift in Sources */,
 				80B12D021D21B00600B2FE2A /* AudioUnitUtility.swift in Sources */,
@@ -556,6 +538,7 @@
 				80B12D081D21B08800B2FE2A /* Int32Representable.swift in Sources */,
 				80B12CE81D21AD2E00B2FE2A /* AppDelegate.swift in Sources */,
 				80B12D071D21B08300B2FE2A /* Int.swift in Sources */,
+				80079E6E1D21C50100E93DB3 /* CGFloatRepresentable.swift in Sources */,
 				80B12CF71D21ADD400B2FE2A /* AudioBuffer.swift in Sources */,
 				80B12CFC1D21AE8B00B2FE2A /* Double.swift in Sources */,
 			);
@@ -566,7 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */,
-				80C205131D189DAC00A932E4 /* CARBTestsUtility.swift in Sources */,
+				80079E741D21D9BB00E93DB3 /* CARBTestsUtility.swift in Sources */,
 				805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */,
 				8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */,
 				80FE0B3A1D2021C600919C2F /* AudioBuffer.swift in Sources */,
@@ -629,7 +612,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = CAPlayThrough/Info.plist;
+				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -644,7 +627,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = CAPlayThrough/Info.plist;
+				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -751,18 +734,6 @@
 			};
 			name = Release;
 		};
-		80FE0B3E1D2021FD00919C2F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		80FE0B3F1D2021FD00919C2F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -807,15 +778,6 @@
 			buildConfigurations = (
 				80C9CFBB1D0CC6AF00960F60 /* Debug */,
 				80C9CFBC1D0CC6AF00960F60 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		80FE0B3D1D2021FD00919C2F /* Build configuration list for PBXAggregateTarget "All" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				80FE0B3E1D2021FD00919C2F /* Debug */,
-				80FE0B3F1D2021FD00919C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
