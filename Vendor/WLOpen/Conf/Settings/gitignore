@@ -5,6 +5,9 @@
 ## OS X
 .DS_Store
 
+## IDE
+.idea
+
 ## Build generated
 /Build
 /DerivedData

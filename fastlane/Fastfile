@@ -4,41 +4,26 @@
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
 fastlane_version "1.95.0"
-default_platform :mac
 
-platform :mac do
-  
-  buildSettingsNoCodesign = {
-    "CODE_SIGN_IDENTITY" => "",
-    "CODE_SIGNING_REQUIRED" => "NO",
-    "CODE_SIGN_ENTITLEMENTS" => ""
-  }
-  
-  desc "Runs all the tests (C++ and Swift)."
-  lane :test do
-    scan(scheme: "CARBTestsCpp", output_directory: "fastlane/test_output/cpp")
-    scan(scheme: "CARBTestsSwift", output_directory: "fastlane/test_output/swift")
-  end
+import '../Vendor/WLOpen/Conf/Settings/fastlane.rb'
 
-  desc "Builds project."
-  lane :build do
-    xcodebuild(scheme: "CARBMeasure", build_settings: buildSettingsNoCodesign)
-    xcodebuild(scheme: "CAPlayThrough", build_settings: buildSettingsNoCodesign)
-  end
-  
-  desc "Builds when under CI (i.e. Travis)."
-  lane :ci do
-    xcodebuild(scheme: "CARBMeasure", build_settings: buildSettingsNoCodesign)
-    xcodebuild(scheme: "CAPlayThrough", build_settings: buildSettingsNoCodesign)
-    scan(scheme: "CARBTestsSwift", output_directory: "fastlane/test_output/swift")
-  end
-  
-  desc "Cleans project."
-  lane :clean do
-    xcodebuild(scheme: "CAPlayThrough", build_settings: buildSettingsNoCodesign, xcargs: "clean")
-    xcodebuild(scheme: "CARBTestsSwift", build_settings: buildSettingsNoCodesign, xcargs: "clean")
-    xcodebuild(scheme: "CARBTestsCpp", build_settings: buildSettingsNoCodesign, xcargs: "clean")
-    xcodebuild(scheme: "CARBMeasure", build_settings: buildSettingsNoCodesign, xcargs: "clean")
-  end
-  
+desc "Runs all the tests (C++ and Swift)."
+lane :test do
+  XcodeTest("Logic Tests: Swift", "Logic Tests: C++")
+end
+
+desc "Builds project."
+lane :build do
+  XcodeBuild("CARBMeasure", "CAPlayThrough")
+end
+
+desc "Builds when under CI (i.e. Travis)."
+lane :ci do
+  XcodeBuild("CARBMeasure", "CAPlayThrough")
+  XcodeTest("Logic Tests: Swift")
+end
+
+desc "Cleans project."
+lane :clean do
+  XcodeClean("CAPlayThrough", "CARBMeasure", "Logic Tests: Swift", "Logic Tests: C++")
 end
