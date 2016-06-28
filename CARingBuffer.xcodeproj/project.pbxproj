@@ -165,12 +165,12 @@
 		80B12CE61D21AD2E00B2FE2A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */,
+				80B12CF01D21AD2E00B2FE2A /* Info.plist */,
 				80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */,
+				80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */,
 				80B12CE91D21AD2E00B2FE2A /* ViewController.swift */,
 				80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */,
 				80B12CED1D21AD2E00B2FE2A /* Main.storyboard */,
-				80B12CF01D21AD2E00B2FE2A /* Info.plist */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -268,10 +268,10 @@
 			isa = PBXGroup;
 			children = (
 				8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */,
-				8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */,
 				805015561D109FBB00AE0412 /* CARBTests.mm */,
-				805015571D109FBB00AE0412 /* CARBTests.swift */,
 				80C9CFB41D0CC6AF00960F60 /* Info.plist */,
+				8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */,
+				805015571D109FBB00AE0412 /* CARBTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
