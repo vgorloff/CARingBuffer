@@ -16,7 +16,7 @@ private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { in
 		renderUtility.firstInputTime = sampleTime
 	}
 	let buffer = renderUtility.inputBuffer
-	buffer.frameLength = inNumberFrames // Not required, but reccomeneded to keep in sync.
+	buffer.frameLength = inNumberFrames // Not required, but recommended to keep in sync.
 	var status = AudioUnitRender(renderUtility.inputUnit, ioActionFlags, inTimeStamp, inBusNumber, inNumberFrames,
 	                         buffer.mutableAudioBufferList)
 	if status == noErr {
@@ -246,7 +246,7 @@ public final class PlayThroughRenderUtility {
 
 		try setupBuffers()
 
-		// the varispeed unit should only be conected after the input and output formats have been set
+		// the varispeed unit should only be connected after the input and output formats have been set
 		try with(AUGraphConnectNodeInput(auGraph, varispeedNode, 0, outputNode, 0))
 		try with(AUGraphInitialize(auGraph))
 		inToOutSampleOffset = try PlayThroughRenderUtility.computeThruOffset(inputDevice: inputDevice,

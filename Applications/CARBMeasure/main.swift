@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-print("Note: This app intended to use with Instruments.app to measute execution time.")
+print("Note: This app intended to use with Instruments.app to measure execution time.")
 print("Starting iterations...")
 
 let numberOfChannels: UInt32 = 2

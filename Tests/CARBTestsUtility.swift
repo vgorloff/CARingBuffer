@@ -8,8 +8,10 @@
 
 import AVFoundation
 
-@objc public enum CARBPerformanceTestParameters: UInt32 {
-	case NumberOfIterations = 2_000_000
+@objc public enum CARBTestParameters: UInt32 {
+	case NumberOfIterationsShort = 2_000_000
+   case NumberOfIterationsMedium = 20_000_000
+   case NumberOfIterationsLong = 200_000_000
 	case SampleRate = 44100
 	case NumberOfChannels = 2
 	case BufferCapacityFrames = 4096

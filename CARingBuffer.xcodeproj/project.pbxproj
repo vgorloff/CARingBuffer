@@ -33,7 +33,6 @@
 		80FA424F1D246D4100937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
 		80FA42501D246D4200937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
 		80FA42511D246D4300937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
-		80FA42531D247AAD00937DD8 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42521D247AAD00937DD8 /* Readme.md */; };
 		80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 		80FE0B381D2021A900919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBTestsUtility.swift; sourceTree = "<group>"; };
+		80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARBTestsUtility.swift; sourceTree = "<group>"; };
 		80079E711D21D9AA00E93DB3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8050152B1D0F722200AE0412 /* CARBMeasure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CARBMeasure; sourceTree = BUILT_PRODUCTS_DIR; };
 		805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsSwift.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,11 +59,11 @@
 		8050155D1D10A06300AE0412 /* CAAtomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAtomic.h; sourceTree = "<group>"; };
 		8050155E1D10A06300AE0412 /* CAAutoDisposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAutoDisposer.h; sourceTree = "<group>"; };
 		8050155F1D10A06300AE0412 /* CABitOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CABitOperations.h; sourceTree = "<group>"; };
-		805015601D10A06300AE0412 /* CARingBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CARingBuffer.cpp; sourceTree = "<group>"; };
-		805015611D10A06300AE0412 /* CARingBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARingBuffer.h; sourceTree = "<group>"; };
+		805015601D10A06300AE0412 /* CARingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CARingBuffer.cpp; sourceTree = "<group>"; };
+		805015611D10A06300AE0412 /* CARingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARingBuffer.h; sourceTree = "<group>"; };
 		8050DAE51D19D785007216D2 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
-		8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
-		8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
+		8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
+		8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
 		80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B12CE91D21AD2E00B2FE2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +199,7 @@
 				80C9CFA41D0CC6AF00960F60 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		80C9CFA41D0CC6AF00960F60 /* Products */ = {
 			isa = PBXGroup;
@@ -461,7 +461,6 @@
 			files = (
 				8066E0E41D10A78600D32B44 /* CARBPerformanceTests.swift in Sources */,
 				80079E751D21D9BC00E93DB3 /* CARBTestsUtility.swift in Sources */,
-				80FA42531D247AAD00937DD8 /* Readme.md in Sources */,
 				805015681D10A43F00AE0412 /* CARBTests.swift in Sources */,
 				80FA42511D246D4300937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */,
