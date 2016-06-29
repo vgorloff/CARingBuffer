@@ -33,6 +33,7 @@
 		80FA424F1D246D4100937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
 		80FA42501D246D4200937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
 		80FA42511D246D4300937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
+		80FA42531D247AAD00937DD8 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42521D247AAD00937DD8 /* Readme.md */; };
 		80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 		80FE0B381D2021A900919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
 		80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVFoundationExtensions.swift; sourceTree = "<group>"; };
+		80FA42521D247AAD00937DD8 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		80FE0B301D20213200919C2F /* CARingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARingBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 		80C9CF991D0CC6AF00960F60 = {
 			isa = PBXGroup;
 			children = (
+				80FA42521D247AAD00937DD8 /* Readme.md */,
 				80FA42491D246B8500937DD8 /* Applications */,
 				80C9CFB11D0CC6AF00960F60 /* Tests */,
 				80C2051D1D189EE700A932E4 /* Sources */,
@@ -458,6 +461,7 @@
 			files = (
 				8066E0E41D10A78600D32B44 /* CARBPerformanceTests.swift in Sources */,
 				80079E751D21D9BC00E93DB3 /* CARBTestsUtility.swift in Sources */,
+				80FA42531D247AAD00937DD8 /* Readme.md in Sources */,
 				805015681D10A43F00AE0412 /* CARBTests.swift in Sources */,
 				80FA42511D246D4300937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */,
