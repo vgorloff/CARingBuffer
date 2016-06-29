@@ -3,16 +3,24 @@
 import Foundation
 import WL
 
-if Process.arguments.count != 3 {
-	fatalError("Invalid number of arguments.")
+if Process.arguments.count < 3 {
+   print("Usage: ProjectName1;ProjectName2 Path1 Path2 ...")
+   exit(0)
 }
 
-let fileToAnalyze = Process.arguments[1]
-let projectNames = Process.arguments[2].componentsSeparatedByString(";").map {
-	$0.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+let projectNames = Process.arguments[1].componentsSeparatedByString(";").map {
+   $0.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
 }
+let filesToAnalyze = Process.arguments[2..<Process.arguments.count]
+
+do {
 let checker = FileHeaderChecker(projectNames: projectNames)
-let results = try! checker.performAnalysis(fileToAnalyze)
-for result in results {
-	print("\(result.filePath):1: warning: \(result.issueReason)")
+   for fileToAnalyze in filesToAnalyze {
+      let results = try checker.performAnalysis(fileToAnalyze)
+      for result in results {
+         print("\(result.filePath):1: warning: \(result.issueReason)")
+      }
+   }
+} catch {
+   print("Error: \(error)")
 }

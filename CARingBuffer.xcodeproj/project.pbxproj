@@ -29,10 +29,10 @@
 		80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 		80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
 		80FA42431D245F3600937DD8 /* NumericTypesConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */; };
-		80FA42451D24605200937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */; };
-		80FA42461D24605200937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */; };
-		80FA42471D24605300937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */; };
-		80FA42481D24605400937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */; };
+		80FA424E1D246D4100937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
+		80FA424F1D246D4100937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
+		80FA42501D246D4200937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
+		80FA42511D246D4300937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */; };
 		80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 		80FE0B381D2021A900919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 /* End PBXBuildFile section */
@@ -71,15 +71,15 @@
 		80B12CEE1D21AD2E00B2FE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B12CF01D21AD2E00B2FE2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayThroughRenderUtility.swift; sourceTree = "<group>"; };
-		80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioUnitUtility.swift; path = Media/Classes/AudioUnitUtility.swift; sourceTree = "<group>"; };
-		80B12D091D21B14C00B2FE2A /* AudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioDevice.swift; path = Media/Classes/AudioDevice.swift; sourceTree = "<group>"; };
-		80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioObjectUtility.swift; path = Media/Classes/AudioObjectUtility.swift; sourceTree = "<group>"; };
+		80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitUtility.swift; sourceTree = "<group>"; };
+		80B12D091D21B14C00B2FE2A /* AudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
+		80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
 		80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsCpp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C9CFB41D0CC6AF00960F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NumericTypesConversions.swift; path = Core/NumericTypesConversions.swift; sourceTree = "<group>"; };
-		80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AVFoundationExtensions.swift; path = Media/Extensions/AVFoundationExtensions.swift; sourceTree = "<group>"; };
-		80FE0B301D20213200919C2F /* CARingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CARingBuffer.swift; path = Media/Classes/CARingBuffer.swift; sourceTree = "<group>"; };
+		80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
+		80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVFoundationExtensions.swift; sourceTree = "<group>"; };
+		80FE0B301D20213200919C2F /* CARingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARingBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,16 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8050152C1D0F722200AE0412 /* Sources */ = {
+		8050152C1D0F722200AE0412 /* CARBMeasure */ = {
 			isa = PBXGroup;
 			children = (
-				80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */,
 				80079E711D21D9AA00E93DB3 /* main.swift */,
 			);
-			path = Sources;
+			path = CARBMeasure;
 			sourceTree = "<group>";
 		};
-		80B12CE61D21AD2E00B2FE2A /* Demo */ = {
+		80B12CE61D21AD2E00B2FE2A /* CAPlayThrough */ = {
 			isa = PBXGroup;
 			children = (
 				80B12CF01D21AD2E00B2FE2A /* Info.plist */,
@@ -135,7 +134,7 @@
 				80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */,
 				80B12CED1D21AD2E00B2FE2A /* Main.storyboard */,
 			);
-			path = Demo;
+			path = CAPlayThrough;
 			sourceTree = "<group>";
 		};
 		80B12CFA1D21AE4000B2FE2A /* Core */ = {
@@ -143,19 +142,19 @@
 			children = (
 				80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */,
 			);
-			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		80B12CFF1D21AF6B00B2FE2A /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				80FA424B1D246CF300937DD8 /* Extensions */,
 				80B12D091D21B14C00B2FE2A /* AudioDevice.swift */,
 				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
 				80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */,
 				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
-				80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */,
 			);
-			name = Media;
+			path = Media;
 			sourceTree = "<group>";
 		};
 		80C205161D189E5F00A932E4 /* CoreAudio */ = {
@@ -178,21 +177,21 @@
 			path = PublicUtility;
 			sourceTree = "<group>";
 		};
-		80C2051D1D189EE700A932E4 /* WLOpen */ = {
+		80C2051D1D189EE700A932E4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				80B12CFA1D21AE4000B2FE2A /* Core */,
 				80B12CFF1D21AF6B00B2FE2A /* Media */,
 			);
-			path = WLOpen;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		80C9CF991D0CC6AF00960F60 = {
 			isa = PBXGroup;
 			children = (
-				80B12CE61D21AD2E00B2FE2A /* Demo */,
-				8050152C1D0F722200AE0412 /* Sources */,
+				80FA42491D246B8500937DD8 /* Applications */,
 				80C9CFB11D0CC6AF00960F60 /* Tests */,
+				80C2051D1D189EE700A932E4 /* Sources */,
 				80C9CFC01D0CC94200960F60 /* Vendor */,
 				80C9CFCD1D0D713900960F60 /* Frameworks */,
 				80C9CFA41D0CC6AF00960F60 /* Products */,
@@ -213,9 +212,9 @@
 		80C9CFB11D0CC6AF00960F60 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				80FA424A1D246C0200937DD8 /* Supporting files */,
 				8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */,
 				805015561D109FBB00AE0412 /* CARBTests.mm */,
-				80C9CFB41D0CC6AF00960F60 /* Info.plist */,
 				8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */,
 				805015571D109FBB00AE0412 /* CARBTests.swift */,
 			);
@@ -226,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				8050DAE51D19D785007216D2 /* Readme.txt */,
-				80C2051D1D189EE700A932E4 /* WLOpen */,
 				80C205161D189E5F00A932E4 /* CoreAudio */,
 			);
 			path = Vendor;
@@ -240,6 +238,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		80FA42491D246B8500937DD8 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				8050152C1D0F722200AE0412 /* CARBMeasure */,
+				80B12CE61D21AD2E00B2FE2A /* CAPlayThrough */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		80FA424A1D246C0200937DD8 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */,
+				80C9CFB41D0CC6AF00960F60 /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		80FA424B1D246CF300937DD8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,7 +271,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8050152F1D0F722200AE0412 /* Build configuration list for PBXNativeTarget "CARBMeasure" */;
 			buildPhases = (
-				80B940371D1B4FD70013FE1C /* Run Script: Pre-Build */,
 				805015271D0F722200AE0412 /* Sources */,
 				805015281D0F722200AE0412 /* Frameworks */,
 				805015291D0F722200AE0412 /* CopyFiles */,
@@ -387,20 +410,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		80B940371D1B4FD70013FE1C /* Run Script: Pre-Build */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script: Pre-Build";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/Vendor/WLOpen/Conf/Scripts/BuildPhase_SwiftLint.sh\" \"$SRCROOT/Sources\"\n\"$SRCROOT/Vendor/WLOpen/Conf/Scripts/BuildPhase_CheckHeaders.sh\" \"$SRCROOT/Sources\" \"WaveLabs\"";
-		};
 		80B940381D1B50040013FE1C /* Run Script: Pre-Build */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,7 +422,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/Vendor/WLOpen/Conf/Scripts/BuildPhase_SwiftLint.sh\" \"$SRCROOT/Tests\"\n\"$SRCROOT/Vendor/WLOpen/Conf/Scripts/BuildPhase_CheckHeaders.sh\" \"$SRCROOT/Sources\" \"WaveLabs\"";
+			shellScript = "\"$SRCROOT/Vendor/AWLShared/Scripts/BuildPhase_SwiftLint.sh\" \"$SRCROOT\"\n\"$SRCROOT/Vendor/AWLShared/Scripts/BuildPhase_CheckHeaders.sh\" \"WaveLabs\" \"$SRCROOT/Tests\" \"$SRCROOT/Sources\" \"$SRCROOT/Applications\"";
 		};
 		80C205301D18A57A00A932E4 /* Run Script: Check CoreAudio Folder */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -437,8 +446,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				80079E731D21D9BA00E93DB3 /* CARBTestsUtility.swift in Sources */,
+				80FA424F1D246D4100937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80079E721D21D9B100E93DB3 /* main.swift in Sources */,
-				80FA42461D24605200937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80FE0B381D2021A900919C2F /* CARingBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,9 +457,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8066E0E41D10A78600D32B44 /* CARBPerformanceTests.swift in Sources */,
-				80FA42481D24605400937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80079E751D21D9BC00E93DB3 /* CARBTestsUtility.swift in Sources */,
 				805015681D10A43F00AE0412 /* CARBTests.swift in Sources */,
+				80FA42511D246D4300937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80FA424E1D246D4100937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80B12CEA1D21AD2E00B2FE2A /* ViewController.swift in Sources */,
 				80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */,
 				80B12D0B1D21B15000B2FE2A /* AudioDevice.swift in Sources */,
@@ -466,7 +476,6 @@
 				80B12D1B1D21B27500B2FE2A /* AudioObjectUtility.swift in Sources */,
 				80B12CF51D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift in Sources */,
 				80B12CE81D21AD2E00B2FE2A /* AppDelegate.swift in Sources */,
-				80FA42451D24605200937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80FA42431D245F3600937DD8 /* NumericTypesConversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,9 +485,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */,
-				80FA42471D24605300937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80079E741D21D9BB00E93DB3 /* CARBTestsUtility.swift in Sources */,
 				805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */,
+				80FA42501D246D4200937DD8 /* AVFoundationExtensions.swift in Sources */,
 				8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,7 +547,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = Applications/CAPlayThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -553,7 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = Applications/CAPlayThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
