@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80079E6E1D21C50100E93DB3 /* CGFloatRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CFD1D21AE9A00B2FE2A /* CGFloatRepresentable.swift */; };
 		80079E721D21D9B100E93DB3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80079E711D21D9AA00E93DB3 /* main.swift */; };
 		80079E731D21D9BA00E93DB3 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */; };
 		80079E741D21D9BB00E93DB3 /* CARBTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80079E701D21D9AA00E93DB3 /* CARBTestsUtility.swift */; };
@@ -24,37 +23,18 @@
 		80B12CEC1D21AD2E00B2FE2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */; };
 		80B12CEF1D21AD2E00B2FE2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B12CED1D21AD2E00B2FE2A /* Main.storyboard */; };
 		80B12CF51D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */; };
-		80B12CF61D21ADC600B2FE2A /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B331D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift */; };
-		80B12CF71D21ADD400B2FE2A /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B321D20214400919C2F /* AudioBuffer.swift */; };
-		80B12CF91D21AE3600B2FE2A /* FloatRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CF81D21AE3600B2FE2A /* FloatRepresentable.swift */; };
-		80B12CFC1D21AE8B00B2FE2A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CFB1D21AE8B00B2FE2A /* Double.swift */; };
 		80B12D021D21B00600B2FE2A /* AudioUnitUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */; };
-		80B12D071D21B08300B2FE2A /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D031D21B07D00B2FE2A /* Int.swift */; };
-		80B12D081D21B08800B2FE2A /* Int32Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D041D21B07D00B2FE2A /* Int32Representable.swift */; };
 		80B12D0B1D21B15000B2FE2A /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D091D21B14C00B2FE2A /* AudioDevice.swift */; };
-		80B12D0D1D21B17B00B2FE2A /* UInt32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D0C1D21B17B00B2FE2A /* UInt32.swift */; };
-		80B12D0F1D21B18D00B2FE2A /* Int32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D0E1D21B18D00B2FE2A /* Int32.swift */; };
-		80B12D111D21B1F300B2FE2A /* UInt32Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D101D21B1F300B2FE2A /* UInt32Representable.swift */; };
-		80B12D131D21B20C00B2FE2A /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D121D21B20C00B2FE2A /* UInt.swift */; };
-		80B12D151D21B22000B2FE2A /* DoubleRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D141D21B22000B2FE2A /* DoubleRepresentable.swift */; };
-		80B12D171D21B24700B2FE2A /* IntRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D161D21B24700B2FE2A /* IntRepresentable.swift */; };
-		80B12D191D21B24F00B2FE2A /* UIntRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D181D21B24F00B2FE2A /* UIntRepresentable.swift */; };
 		80B12D1B1D21B27500B2FE2A /* AudioObjectUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */; };
-		80B12D1D1D21B2A400B2FE2A /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D1C1D21B2A400B2FE2A /* AudioComponentDescription.swift */; };
 		80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
-		80B12D201D21B87500B2FE2A /* Int64Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D1F1D21B87500B2FE2A /* Int64Representable.swift */; };
-		80B12D221D21BB7D00B2FE2A /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D211D21BB7D00B2FE2A /* Int64.swift */; };
-		80B12D241D21BBA400B2FE2A /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D231D21BBA400B2FE2A /* Float.swift */; };
-		80B12D261D21BBCC00B2FE2A /* UInt64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D251D21BBCC00B2FE2A /* UInt64.swift */; };
 		80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
+		80FA42431D245F3600937DD8 /* NumericTypesConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */; };
+		80FA42451D24605200937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */; };
+		80FA42461D24605200937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */; };
+		80FA42471D24605300937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */; };
+		80FA42481D24605400937DD8 /* AVFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */; };
 		80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
-		80FE0B341D20214400919C2F /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B321D20214400919C2F /* AudioBuffer.swift */; };
-		80FE0B351D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B331D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift */; };
-		80FE0B361D20219600919C2F /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B321D20214400919C2F /* AudioBuffer.swift */; };
-		80FE0B371D20219900919C2F /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B331D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift */; };
 		80FE0B381D2021A900919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
-		80FE0B3A1D2021C600919C2F /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B321D20214400919C2F /* AudioBuffer.swift */; };
-		80FE0B3B1D2021D300919C2F /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B331D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,32 +71,15 @@
 		80B12CEE1D21AD2E00B2FE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B12CF01D21AD2E00B2FE2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayThroughRenderUtility.swift; sourceTree = "<group>"; };
-		80B12CF81D21AE3600B2FE2A /* FloatRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatRepresentable.swift; path = Core/Protocols/FloatRepresentable.swift; sourceTree = "<group>"; };
-		80B12CFB1D21AE8B00B2FE2A /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Double.swift; path = Core/Extensions/Double.swift; sourceTree = "<group>"; };
-		80B12CFD1D21AE9A00B2FE2A /* CGFloatRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatRepresentable.swift; path = Core/Protocols/CGFloatRepresentable.swift; sourceTree = "<group>"; };
 		80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioUnitUtility.swift; path = Media/Classes/AudioUnitUtility.swift; sourceTree = "<group>"; };
-		80B12D031D21B07D00B2FE2A /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Int.swift; path = Core/Extensions/Int.swift; sourceTree = "<group>"; };
-		80B12D041D21B07D00B2FE2A /* Int32Representable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Int32Representable.swift; path = Core/Protocols/Int32Representable.swift; sourceTree = "<group>"; };
 		80B12D091D21B14C00B2FE2A /* AudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioDevice.swift; path = Media/Classes/AudioDevice.swift; sourceTree = "<group>"; };
-		80B12D0C1D21B17B00B2FE2A /* UInt32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt32.swift; path = Core/Extensions/UInt32.swift; sourceTree = "<group>"; };
-		80B12D0E1D21B18D00B2FE2A /* Int32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Int32.swift; path = Core/Extensions/Int32.swift; sourceTree = "<group>"; };
-		80B12D101D21B1F300B2FE2A /* UInt32Representable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt32Representable.swift; path = Core/Protocols/UInt32Representable.swift; sourceTree = "<group>"; };
-		80B12D121D21B20C00B2FE2A /* UInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt.swift; path = Core/Extensions/UInt.swift; sourceTree = "<group>"; };
-		80B12D141D21B22000B2FE2A /* DoubleRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleRepresentable.swift; path = Core/Protocols/DoubleRepresentable.swift; sourceTree = "<group>"; };
-		80B12D161D21B24700B2FE2A /* IntRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntRepresentable.swift; path = Core/Protocols/IntRepresentable.swift; sourceTree = "<group>"; };
-		80B12D181D21B24F00B2FE2A /* UIntRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIntRepresentable.swift; path = Core/Protocols/UIntRepresentable.swift; sourceTree = "<group>"; };
 		80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioObjectUtility.swift; path = Media/Classes/AudioObjectUtility.swift; sourceTree = "<group>"; };
-		80B12D1C1D21B2A400B2FE2A /* AudioComponentDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioComponentDescription.swift; path = Media/Extensions/AudioComponentDescription.swift; sourceTree = "<group>"; };
-		80B12D1F1D21B87500B2FE2A /* Int64Representable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Int64Representable.swift; path = Core/Protocols/Int64Representable.swift; sourceTree = "<group>"; };
-		80B12D211D21BB7D00B2FE2A /* Int64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Int64.swift; path = Core/Extensions/Int64.swift; sourceTree = "<group>"; };
-		80B12D231D21BBA400B2FE2A /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Float.swift; path = Core/Extensions/Float.swift; sourceTree = "<group>"; };
-		80B12D251D21BBCC00B2FE2A /* UInt64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt64.swift; path = Core/Extensions/UInt64.swift; sourceTree = "<group>"; };
 		80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsCpp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C9CFB41D0CC6AF00960F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NumericTypesConversions.swift; path = Core/NumericTypesConversions.swift; sourceTree = "<group>"; };
+		80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AVFoundationExtensions.swift; path = Media/Extensions/AVFoundationExtensions.swift; sourceTree = "<group>"; };
 		80FE0B301D20213200919C2F /* CARingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CARingBuffer.swift; path = Media/Classes/CARingBuffer.swift; sourceTree = "<group>"; };
-		80FE0B321D20214400919C2F /* AudioBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioBuffer.swift; path = Media/Extensions/AudioBuffer.swift; sourceTree = "<group>"; };
-		80FE0B331D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnsafeMutableAudioBufferListPointer.swift; path = Media/Extensions/UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,22 +141,7 @@
 		80B12CFA1D21AE4000B2FE2A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				80B12CFD1D21AE9A00B2FE2A /* CGFloatRepresentable.swift */,
-				80B12CFB1D21AE8B00B2FE2A /* Double.swift */,
-				80B12D141D21B22000B2FE2A /* DoubleRepresentable.swift */,
-				80B12D231D21BBA400B2FE2A /* Float.swift */,
-				80B12CF81D21AE3600B2FE2A /* FloatRepresentable.swift */,
-				80B12D031D21B07D00B2FE2A /* Int.swift */,
-				80B12D0E1D21B18D00B2FE2A /* Int32.swift */,
-				80B12D041D21B07D00B2FE2A /* Int32Representable.swift */,
-				80B12D211D21BB7D00B2FE2A /* Int64.swift */,
-				80B12D1F1D21B87500B2FE2A /* Int64Representable.swift */,
-				80B12D161D21B24700B2FE2A /* IntRepresentable.swift */,
-				80B12D121D21B20C00B2FE2A /* UInt.swift */,
-				80B12D0C1D21B17B00B2FE2A /* UInt32.swift */,
-				80B12D101D21B1F300B2FE2A /* UInt32Representable.swift */,
-				80B12D251D21BBCC00B2FE2A /* UInt64.swift */,
-				80B12D181D21B24F00B2FE2A /* UIntRepresentable.swift */,
+				80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -201,13 +149,11 @@
 		80B12CFF1D21AF6B00B2FE2A /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				80FE0B321D20214400919C2F /* AudioBuffer.swift */,
-				80B12D1C1D21B2A400B2FE2A /* AudioComponentDescription.swift */,
 				80B12D091D21B14C00B2FE2A /* AudioDevice.swift */,
 				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
 				80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */,
 				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
-				80FE0B331D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift */,
+				80FA42441D24604500937DD8 /* AVFoundationExtensions.swift */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -491,10 +437,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				80079E731D21D9BA00E93DB3 /* CARBTestsUtility.swift in Sources */,
-				80FE0B371D20219900919C2F /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
 				80079E721D21D9B100E93DB3 /* main.swift in Sources */,
+				80FA42461D24605200937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80FE0B381D2021A900919C2F /* CARingBuffer.swift in Sources */,
-				80FE0B361D20219600919C2F /* AudioBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,11 +448,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8066E0E41D10A78600D32B44 /* CARBPerformanceTests.swift in Sources */,
+				80FA42481D24605400937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80079E751D21D9BC00E93DB3 /* CARBTestsUtility.swift in Sources */,
-				80FE0B351D20214400919C2F /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
 				805015681D10A43F00AE0412 /* CARBTests.swift in Sources */,
 				80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */,
-				80FE0B341D20214400919C2F /* AudioBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,32 +459,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80B12D171D21B24700B2FE2A /* IntRepresentable.swift in Sources */,
-				80B12D0D1D21B17B00B2FE2A /* UInt32.swift in Sources */,
 				80B12CEA1D21AD2E00B2FE2A /* ViewController.swift in Sources */,
 				80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */,
-				80B12D151D21B22000B2FE2A /* DoubleRepresentable.swift in Sources */,
 				80B12D0B1D21B15000B2FE2A /* AudioDevice.swift in Sources */,
 				80B12D021D21B00600B2FE2A /* AudioUnitUtility.swift in Sources */,
-				80B12D131D21B20C00B2FE2A /* UInt.swift in Sources */,
 				80B12D1B1D21B27500B2FE2A /* AudioObjectUtility.swift in Sources */,
-				80B12CF61D21ADC600B2FE2A /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
-				80B12D221D21BB7D00B2FE2A /* Int64.swift in Sources */,
-				80B12D191D21B24F00B2FE2A /* UIntRepresentable.swift in Sources */,
-				80B12D0F1D21B18D00B2FE2A /* Int32.swift in Sources */,
 				80B12CF51D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift in Sources */,
-				80B12D261D21BBCC00B2FE2A /* UInt64.swift in Sources */,
-				80B12D111D21B1F300B2FE2A /* UInt32Representable.swift in Sources */,
-				80B12D241D21BBA400B2FE2A /* Float.swift in Sources */,
-				80B12CF91D21AE3600B2FE2A /* FloatRepresentable.swift in Sources */,
-				80B12D1D1D21B2A400B2FE2A /* AudioComponentDescription.swift in Sources */,
-				80B12D201D21B87500B2FE2A /* Int64Representable.swift in Sources */,
-				80B12D081D21B08800B2FE2A /* Int32Representable.swift in Sources */,
 				80B12CE81D21AD2E00B2FE2A /* AppDelegate.swift in Sources */,
-				80B12D071D21B08300B2FE2A /* Int.swift in Sources */,
-				80079E6E1D21C50100E93DB3 /* CGFloatRepresentable.swift in Sources */,
-				80B12CF71D21ADD400B2FE2A /* AudioBuffer.swift in Sources */,
-				80B12CFC1D21AE8B00B2FE2A /* Double.swift in Sources */,
+				80FA42451D24605200937DD8 /* AVFoundationExtensions.swift in Sources */,
+				80FA42431D245F3600937DD8 /* NumericTypesConversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,11 +476,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */,
+				80FA42471D24605300937DD8 /* AVFoundationExtensions.swift in Sources */,
 				80079E741D21D9BB00E93DB3 /* CARBTestsUtility.swift in Sources */,
 				805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */,
 				8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */,
-				80FE0B3A1D2021C600919C2F /* AudioBuffer.swift in Sources */,
-				80FE0B3B1D2021D300919C2F /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
