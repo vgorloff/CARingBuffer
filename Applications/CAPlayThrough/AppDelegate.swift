@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CAPlayThrough
+//  WaveLabs
 //
 //  Created by Vlad Gorlov on 27.06.16.
 //  Copyright © 2016 WaveLabs. All rights reserved.
@@ -35,4 +35,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
 }
-

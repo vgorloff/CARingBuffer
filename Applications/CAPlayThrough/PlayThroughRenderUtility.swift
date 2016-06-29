@@ -1,6 +1,6 @@
 //
 //  PlayThroughRenderUtility.swift
-//  AUGraph
+//  WaveLabs
 //
 //  Created by Vlad Gorlov on 23.03.16.
 //  Copyright © 2016 Vlad Gorloff. All rights reserved.
@@ -8,7 +8,8 @@
 
 import AVFoundation
 
-private let PlayThroughRenderUtilityInputRenderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp, inBusNumber, inNumberFrames, ioData in
+private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp,
+	inBusNumber, inNumberFrames, ioData in
 	let sampleTime = inTimeStamp.memory.mSampleTime
 	let renderUtility = unsafeBitCast(inRefCon, PlayThroughRenderUtility.self)
 	if renderUtility.firstInputTime == nil {
@@ -25,7 +26,8 @@ private let PlayThroughRenderUtilityInputRenderCallback: AURenderCallback = { in
 	return status
 }
 
-private let PlayThroughRenderUtilityOutputRenderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp, inBusNumber, inNumberFrames, ioData in
+private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp,
+	inBusNumber, inNumberFrames, ioData in
 	let renderUtility = unsafeBitCast(inRefCon, PlayThroughRenderUtility.self)
 	let audioBuffers = UnsafeMutableAudioBufferListPointer(ioData).audioBuffers
 	if renderUtility.firstInputTime == nil {
@@ -81,7 +83,7 @@ private let PlayThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
 		var bufferStartTime: SampleTime = 0
 		var bufferEndTime: SampleTime = 0
 		ringBuffer.GetTimeBounds(startTime: &bufferStartTime, endTime: &bufferEndTime)
-		renderUtility.inToOutSampleOffset = sampleTime - bufferStartTime.doubleValue;
+		renderUtility.inToOutSampleOffset = sampleTime - bufferStartTime.doubleValue
 	}
 
 	return noErr
@@ -195,7 +197,8 @@ public final class PlayThroughRenderUtility {
 
 		// Set up input callback
 		let context = UnsafeMutablePointer<Void>(unsafeAddressOf(self))
-		var renderCallbackStruct = AURenderCallbackStruct(inputProc: PlayThroughRenderUtilityInputRenderCallback, inputProcRefCon: context)
+		var renderCallbackStruct = AURenderCallbackStruct(inputProc: playThroughRenderUtilityInputRenderCallback,
+		                                                  inputProcRefCon: context)
 		try with(AudioUnitSetProperty(audioUnit, kAudioOutputUnitProperty_SetInputCallback,
 			kAudioUnitScope_Global, 0, &renderCallbackStruct, sizeof(AURenderCallbackStruct).uint32Value))
 
@@ -236,7 +239,8 @@ public final class PlayThroughRenderUtility {
 		                             scope: kAudioUnitScope_Global, element: 0, data: &startAtZero)
 		// Set up output callback
 		let context = UnsafeMutablePointer<Void>(unsafeAddressOf(self))
-		var renderCallbackStruct = AURenderCallbackStruct(inputProc: PlayThroughRenderUtilityOutputRenderCallback, inputProcRefCon: context)
+		var renderCallbackStruct = AURenderCallbackStruct(inputProc: playThroughRenderUtilityOutputRenderCallback,
+		                                                  inputProcRefCon: context)
 		try AudioUnitUtility.setProperty(varispeedUnit, propertyID: kAudioUnitProperty_SetRenderCallback,
 			scope: kAudioUnitScope_Input, element: 0, data: &renderCallbackStruct)
 
@@ -245,7 +249,8 @@ public final class PlayThroughRenderUtility {
 		// the varispeed unit should only be conected after the input and output formats have been set
 		try with(AUGraphConnectNodeInput(auGraph, varispeedNode, 0, outputNode, 0))
 		try with(AUGraphInitialize(auGraph))
-		inToOutSampleOffset = try PlayThroughRenderUtility.computeThruOffset(inputDevice: inputDevice, outputDevice: outputDevice).doubleValue
+		inToOutSampleOffset = try PlayThroughRenderUtility.computeThruOffset(inputDevice: inputDevice,
+		                                                                     outputDevice: outputDevice).doubleValue
 	}
 
 	private func setupBuffers() throws {

@@ -8,7 +8,8 @@
 
 import AVFoundation
 
-print("Starting")
+print("Note: This app intended to use with Instruments.app to measute execution time.")
+print("Starting iterations...")
 
 let numberOfChannels: UInt32 = 2
 let IOCapacity: UInt32 = 512
@@ -28,4 +29,4 @@ for iteration in 0 ..< UInt32(50_000_000) {
 	                          startRead: SampleTime(IOCapacity * iteration))
 	assert(status == .NoError)
 }
-print("Done")
+print("Done!")
