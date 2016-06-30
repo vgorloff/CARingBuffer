@@ -178,13 +178,13 @@
 			path = PublicUtility;
 			sourceTree = "<group>";
 		};
-		80C2051D1D189EE700A932E4 /* Sources */ = {
+		80C2051D1D189EE700A932E4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				80B12CFA1D21AE4000B2FE2A /* Core */,
 				80B12CFF1D21AF6B00B2FE2A /* Media */,
 			);
-			path = Sources;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		80C9CF991D0CC6AF00960F60 = {
@@ -193,7 +193,7 @@
 				80FA42521D247AAD00937DD8 /* Readme.md */,
 				80FA42491D246B8500937DD8 /* Applications */,
 				80C9CFB11D0CC6AF00960F60 /* Tests */,
-				80C2051D1D189EE700A932E4 /* Sources */,
+				80C2051D1D189EE700A932E4 /* Shared */,
 				80C9CFC01D0CC94200960F60 /* Vendor */,
 				80C9CFCD1D0D713900960F60 /* Frameworks */,
 				80C9CFA41D0CC6AF00960F60 /* Products */,
