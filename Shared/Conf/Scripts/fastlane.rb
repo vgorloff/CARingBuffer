@@ -5,15 +5,25 @@ class BuildSettings
     "CODE_SIGNING_REQUIRED" => "NO",
     "CODE_SIGN_ENTITLEMENTS" => ""
   }
+  @@Codesign = {
+    "CODE_SIGN_IDENTITY" => "Developer ID Application",
+    "CODE_SIGNING_REQUIRED" => "YES"
+  }
   def self.NoCodesign
     @@NoCodesign
+  end
+  def self.Codesign
+    @@Codesign
   end
 end
 
 def XcodeClean(*schemes)
   schemes.each { |schema|
-    xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign, xcargs: "clean")
+    xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign, xcargs: "-configuration Debug clean")
+    xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign, xcargs: "-configuration Release clean")
   }
+  awl_buildDir = "#{ENV['PWD']}/build"
+  sh "if [ -d \"#{awl_buildDir}\" ]; then rm -rfv \"#{awl_buildDir}\"; fi"
 end
 
 def XcodeTest(*schemes)
@@ -26,6 +36,34 @@ def XcodeBuild(*schemes)
   schemes.each { |schema|
     xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign)
   }
+end
+
+def XcodeBuildCodesign(*schemes)
+  schemes.each { |schema|
+    xcodebuild(scheme: schema, build_settings: BuildSettings.Codesign, xcargs: "-configuration Release")
+  }
+end
+
+def XcodeBuildRelease(*schemes)
+  schemes.each { |schema|
+    xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign, xcargs: "-configuration Release")
+  }
+end
+
+def GetPropertyCodesignFolderPath(project)
+  awl_AppPath = (sh "xcodebuild -project #{project} -showBuildSettings -configuration Release | grep CODESIGNING_FOLDER_PATH | grep -oEi \"\/.*\"").strip
+  return awl_AppPath
+end
+
+def ValidateApp(path)
+  sh "xcrun spctl -a -t exec -vv \"#{path}\"; xcrun codesign --verify \"#{path}\""
+end
+
+def Bump(relativePath)
+  awl_buildNumber = increment_build_number(xcodeproj: relativePath)
+  awl_versionFromTag = last_git_tag
+  increment_version_number(version_number: awl_versionFromTag, xcodeproj: relativePath)
+  git_commit(path: "./", message: "Version Bump #{awl_versionFromTag}x#{awl_buildNumber}")
 end
 
 # class XcodeBuild
