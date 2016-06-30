@@ -425,7 +425,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/Vendor/AWLShared/Scripts/BuildPhase_SwiftLint.sh\" \"$SRCROOT\"\n\"$SRCROOT/Vendor/AWLShared/Scripts/BuildPhase_CheckHeaders.sh\" \"WaveLabs\" \"$SRCROOT/Tests\" \"$SRCROOT/Sources\" \"$SRCROOT/Applications\"";
+			shellScript = "\"$SRCROOT/Shared/Conf/Scripts/BuildPhase_SwiftLint.sh\" \"$SRCROOT\"\n\"$SRCROOT/Shared/Conf/Scripts/BuildPhase_CheckHeaders.sh\" \"WaveLabs\" \"$SRCROOT/Tests\" \"$SRCROOT/Sources\" \"$SRCROOT/Applications\"";
 		};
 		80C205301D18A57A00A932E4 /* Run Script: Check CoreAudio Folder */ = {
 			isa = PBXShellScriptBuildPhase;
