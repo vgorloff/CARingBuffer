@@ -7,7 +7,7 @@
             <IgnoreTimeShift/>
         </Comparison>
         <SyncConfig>
-            <Variant>TwoWay</Variant>
+            <Variant>Update</Variant>
             <CustomDirections>
                 <LeftOnly>right</LeftOnly>
                 <RightOnly>left</RightOnly>
@@ -39,8 +39,8 @@
         </GlobalFilter>
         <FolderPairs>
             <Pair>
-                <Right>%GV_VCS_HOME%/GitHub/WLOpen</Right>
                 <Left>%GV_VCS_HOME%/GitHub/CARingBuffer/Shared</Left>
+                <Right>%GV_VCS_HOME%/GitHub/WLOpen</Right>
             </Pair>
         </FolderPairs>
         <OnCompletion/>
