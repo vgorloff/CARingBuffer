@@ -5,7 +5,7 @@
 # Update this, if you use features of a newer version
 fastlane_version "1.95.0"
 
-import '../Vendor/AWLShared/Scripts/fastlane.rb'
+import '../Shared/Conf/Scripts/fastlane.rb'
 
 desc "Runs all the tests (C++ and Swift)."
 lane :test do

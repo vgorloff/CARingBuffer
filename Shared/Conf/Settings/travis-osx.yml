@@ -5,4 +5,4 @@
 language: objective-c
 osx_image: xcode7.3
 before_install: gem update fastlane --no-ri --no-rdoc --no-document
-script: Vendor/AWLShared/Scripts/travis.sh
+script: Shared/Conf/Scripts/travis.sh
