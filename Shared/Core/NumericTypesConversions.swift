@@ -30,6 +30,10 @@ public protocol UInt32Representable {
 	var uint32Value: UInt32 { get }
 }
 
+public protocol UInt64Representable {
+	var uint64Value: UInt64 { get }
+}
+
 public protocol FloatRepresentable {
 	var floatValue: Float { get }
 }
@@ -139,6 +143,12 @@ extension Double: FloatRepresentable {
 extension Double: Int64Representable {
 	public var int64Value: Int64 {
 		return Int64(self)
+	}
+}
+
+extension Double: UInt64Representable {
+	public var uint64Value: UInt64 {
+		return UInt64(self)
 	}
 }
 
