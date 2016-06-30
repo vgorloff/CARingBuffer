@@ -39,8 +39,8 @@
         </GlobalFilter>
         <FolderPairs>
             <Pair>
-                <Left>%GV_VCS_HOME%/GitHub/WLOpen</Left>
-                <Right>%GV_VCS_HOME%/GitHub/CARingBuffer/Sources</Right>
+                <Right>%GV_VCS_HOME%/GitHub/WLOpen</Right>
+                <Left>%GV_VCS_HOME%/GitHub/CARingBuffer/Shared</Left>
             </Pair>
         </FolderPairs>
         <OnCompletion/>
