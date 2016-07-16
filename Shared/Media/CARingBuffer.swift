@@ -11,7 +11,7 @@ import CoreAudio
 //region MARK: - Supporting Definitions
 
 // Next power of two greater or equal to x
-private func NextPowerOfTwo(value: UInt32) -> UInt32 {
+private func NextPowerOfTwo(_ value: UInt32) -> UInt32 {
 	// TODO: Performance optimization required. See: http://stackoverflow.com/questions/466204/rounding-up-to-nearest-power-of-2
 	var power: UInt32 = 1
 	while power < value {
@@ -41,10 +41,10 @@ public enum CARingBufferError: Int32 {
 
 //endregion
 
-public final class CARingBuffer<T: FloatingPointType> {
+public final class CARingBuffer<T: FloatingPoint> {
 
-	private var mTimeBoundsQueue = ContiguousArray<CARingBufferTimeBounds>(count: Int(kGeneralRingTimeBoundsQueueSize),
-	                                                        repeatedValue: CARingBufferTimeBounds())
+	private var mTimeBoundsQueue = ContiguousArray<CARingBufferTimeBounds>(repeating: CARingBufferTimeBounds(),
+	                                                                       count: Int(kGeneralRingTimeBoundsQueueSize))
 	private var mTimeBoundsQueueCurrentIndex: Int32 = 0
 
 	private let mNumberChannels: UInt32
@@ -76,13 +76,13 @@ public final class CARingBuffer<T: FloatingPointType> {
 		mCapacityFrames = NextPowerOfTwo(capacityFrames)
 		mCapacityFramesMask = mCapacityFrames - 1
 		mBuffersLength = mCapacityFrames * numberOfChannels
-		mBuffer = UnsafeMutablePointer<T>.alloc(Int(mBuffersLength))
+      mBuffer = UnsafeMutablePointer<T>(allocatingCapacity: Int(mBuffersLength))
 		mBytesPerFrame = UInt32(sizeof(T.self))
 		mCapacityBytes = mBytesPerFrame * mCapacityFrames
 	}
 
 	deinit {
-		mBuffer.dealloc(Int(mBuffersLength))
+		mBuffer.deallocateCapacity(Int(mBuffersLength))
 	}
 
 	// MARK: - Public
@@ -97,7 +97,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 	/// - parameter framesToWrite: Frames to write.
 	/// - parameter startWrite: Absolute time.
 	/// - returns: Operation status code.
-	public func Store(abl: UnsafePointer<AudioBufferList>, framesToWrite: UInt32, startWrite: SampleTime) -> CARingBufferError {
+	public func Store(_ abl: UnsafePointer<AudioBufferList>, framesToWrite: UInt32, startWrite: SampleTime) -> CARingBufferError {
 		if framesToWrite == 0 {
 			return .NoError
 		}
@@ -153,7 +153,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 		return .NoError
 	}
 
-	public func Fetch(abl: UnsafeMutablePointer<AudioBufferList>, nFrames: UInt32,
+	public func Fetch(_ abl: UnsafeMutablePointer<AudioBufferList>, nFrames: UInt32,
 	                  startRead aStartRead: SampleTime) -> CARingBufferError {
 		if nFrames == 0 {
 			return .NoError
@@ -215,73 +215,82 @@ public final class CARingBuffer<T: FloatingPointType> {
 
 	// MARK: - Private
 
-	private func ZeroABL(abl: UnsafeMutablePointer<AudioBufferList>, destOffset: SampleTime, nbytes: SampleTime) {
+	private func ZeroABL(_ abl: UnsafeMutablePointer<AudioBufferList>, destOffset: SampleTime, nbytes: SampleTime) {
 		let advanceDistance = Int(destOffset) / sizeof(T.self)
-		let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start: &abl.memory.mBuffers, count:Int(abl.memory.mNumberBuffers))
-		let numberBuffers = abl.memory.mNumberBuffers
+		let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start: &abl.pointee.mBuffers, count:Int(abl.pointee.mNumberBuffers))
+		let numberBuffers = abl.pointee.mNumberBuffers
 		for channel in 0..<numberBuffers {
 			let channelBuffer = buffersPointer[Int(channel)]
 			assert(channelBuffer.mNumberChannels == 1) // Supporting non interleaved channels at the moment
 			if destOffset > Int64(channelBuffer.mDataByteSize) {
 				continue
 			}
-			let channelData = UnsafeMutablePointer<T>(channelBuffer.mData)
-			let positionWrite = channelData.advancedBy(advanceDistance)
+         guard let channelBufferData = channelBuffer.mData else {
+				continue
+         }
+			let channelData = UnsafeMutablePointer<T>(channelBufferData)
+         let positionWrite = channelData.advanced(by: advanceDistance)
 			let numberOfBytes = min(Int(nbytes), Int(channelBuffer.mDataByteSize) - Int(destOffset))
 			memset(positionWrite, 0, numberOfBytes)
 		}
 	}
 
-	private func FrameOffset(frameNumber: SampleTime) -> SampleTime {
+	private func FrameOffset(_ frameNumber: SampleTime) -> SampleTime {
 		return (frameNumber & SampleTime(mCapacityFramesMask)) * SampleTime(mBytesPerFrame)
 	}
 
-	private func ZeroRange(buffers: UnsafeMutablePointer<T>, numberOfChannels: UInt32, offset: SampleTime, nbytes: SampleTime) {
+	private func ZeroRange(_ buffers: UnsafeMutablePointer<T>, numberOfChannels: UInt32, offset: SampleTime, nbytes: SampleTime) {
 		let advanceDistance = Int(offset) / sizeof(T.self)
 		assert(mNumberChannels == numberOfChannels)
 		for channel in 0 ..< numberOfChannels {
 			// FIXME: Check for overflows (Vlad Gorlov, 2016-06-12).
-			let positionWrite = buffers.advancedBy(advanceDistance + Int(channel * mCapacityFrames))
+         let positionWrite = buffers.advanced(by: advanceDistance + Int(channel * mCapacityFrames))
 			memset(positionWrite, 0, Int(nbytes))
 		}
 	}
 
-	private func FetchABL(abl: UnsafeMutablePointer<AudioBufferList>, destOffset: SampleTime,
+	private func FetchABL(_ abl: UnsafeMutablePointer<AudioBufferList>, destOffset: SampleTime,
 	                      buffers: UnsafeMutablePointer<T>, srcOffset: SampleTime, nbytes: SampleTime) {
 
 		let advanceOfSource = Int(srcOffset) / sizeof(T.self)
 		let advanceOfDestination = Int(destOffset) / sizeof(T.self)
-		let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start: &abl.memory.mBuffers, count: Int(abl.memory.mNumberBuffers))
-		let numberOfChannels = abl.memory.mNumberBuffers
+		let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start: &abl.pointee.mBuffers, count: Int(abl.pointee.mNumberBuffers))
+		let numberOfChannels = abl.pointee.mNumberBuffers
 		for channel in 0 ..< numberOfChannels {
 			let channelBuffer = buffersPointer[Int(channel)]
 			if destOffset > Int64(channelBuffer.mDataByteSize) {
 				continue
 			}
-			let channelData = UnsafeMutablePointer<T>(channelBuffer.mData)
-			let positionRead = buffers.advancedBy(advanceOfSource + Int(channel * mCapacityFrames))
-			let positionWrite = channelData.advancedBy(advanceOfDestination)
+         guard let channelBufferData = channelBuffer.mData else {
+            continue
+         }
+			let channelData = UnsafeMutablePointer<T>(channelBufferData)
+         let positionRead = buffers.advanced(by: advanceOfSource + Int(channel * mCapacityFrames))
+			let positionWrite = channelData.advanced(by: advanceOfDestination)
 			let numberOfBytes = min(Int(nbytes), Int(channelBuffer.mDataByteSize) - Int(destOffset))
 			memcpy(positionWrite, positionRead, numberOfBytes)
 		}
 	}
 
-	private func StoreABL(buffers: UnsafeMutablePointer<T>, destOffset: SampleTime, abl: UnsafePointer<AudioBufferList>,
+	private func StoreABL(_ buffers: UnsafeMutablePointer<T>, destOffset: SampleTime, abl: UnsafePointer<AudioBufferList>,
 	                      srcOffset: SampleTime, nbytes: SampleTime) {
 
 		let advanceOfSource = Int(srcOffset) / sizeof(T.self)
 		let advanceOfDestination = Int(destOffset) / sizeof(T.self)
-		let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start: &(UnsafeMutablePointer<AudioBufferList>(abl)).memory.mBuffers,
-		                                                      count:Int(abl.memory.mNumberBuffers))
-		let numberOfChannels = abl.memory.mNumberBuffers
+		let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start: &(UnsafeMutablePointer<AudioBufferList>(abl)).pointee.mBuffers,
+		                                                      count:Int(abl.pointee.mNumberBuffers))
+		let numberOfChannels = abl.pointee.mNumberBuffers
 		for channel in 0 ..< numberOfChannels {
 			let channelBuffer = buffersPointer[Int(channel)]
 			if srcOffset > Int64(channelBuffer.mDataByteSize) {
 				continue
 			}
-			let channelData = UnsafeMutablePointer<T>(channelBuffer.mData)
-			let positionRead = channelData.advancedBy(advanceOfSource)
-			let positionWrite = buffers.advancedBy(advanceOfDestination + Int(channel * mCapacityFrames))
+         guard let channelBufferData = channelBuffer.mData else {
+            continue
+         }
+			let channelData = UnsafeMutablePointer<T>(channelBufferData)
+			let positionRead = channelData.advanced(by: advanceOfSource)
+			let positionWrite = buffers.advanced(by: advanceOfDestination + Int(channel * mCapacityFrames))
 			let numberOfBytes = min(Int(nbytes), Int(channelBuffer.mDataByteSize) - Int(srcOffset))
 			memcpy(positionWrite, positionRead, numberOfBytes)
 		}
@@ -289,7 +298,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 
 	//region MARK: - Time Bounds Queue
 
-	func SetTimeBounds(startTime startTime: SampleTime, endTime: SampleTime) {
+	func SetTimeBounds(startTime: SampleTime, endTime: SampleTime) {
 		let nextAbsoluteIndex = mTimeBoundsQueueCurrentIndex + 1 // Always increasing
 		// Index always in range [0, kGeneralRingTimeBoundsQueueSize - 1]
 		let elementIndex = Int(nextAbsoluteIndex & kGeneralRingTimeBoundsQueueMask)
@@ -301,7 +310,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 		assert(status)
 	}
 
-	func GetTimeBounds(inout startTime startTime: SampleTime, inout endTime: SampleTime) -> CARingBufferError {
+	func GetTimeBounds(startTime: inout SampleTime, endTime: inout SampleTime) -> CARingBufferError {
 		// Fail after a few tries.
 		for _ in 0 ..< 8 {
 			let curPtr = mTimeBoundsQueueCurrentIndex
@@ -335,7 +344,7 @@ public final class CARingBuffer<T: FloatingPointType> {
 		return mTimeBoundsQueue[Int(mTimeBoundsQueueCurrentIndex & kGeneralRingTimeBoundsQueueMask)].mEndTime
 	}
 
-	private func ClipTimeBounds(inout startRead startRead: SampleTime, inout endRead: SampleTime) -> CARingBufferError {
+	private func ClipTimeBounds(startRead: inout SampleTime, endRead: inout SampleTime) -> CARingBufferError {
 		var startTime: SampleTime = 0
 		var endTime: SampleTime = 0
 

@@ -11,17 +11,17 @@ import AVFoundation
 
 class CARBSwiftPerformanceTests: XCTestCase {
 
-   func performMeasure(numberOfIterations: UInt32) {
-      let numberOfChannels = CARBTestParameters.NumberOfChannels.rawValue
-      let IOCapacity = CARBTestParameters.IOCapacity.rawValue
-      let audioFormat = AVAudioFormat(standardFormatWithSampleRate: Double(CARBTestParameters.SampleRate.rawValue),
+   func performMeasure(_ numberOfIterations: UInt32) {
+      let numberOfChannels = CARBTestParameters.numberOfChannels.rawValue
+      let IOCapacity = CARBTestParameters.ioCapacity.rawValue
+      let audioFormat = AVAudioFormat(standardFormatWithSampleRate: Double(CARBTestParameters.sampleRate.rawValue),
                                       channels: numberOfChannels)
-      let writeBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: IOCapacity)
-      let readBuffer = AVAudioPCMBuffer(PCMFormat: audioFormat, frameCapacity: IOCapacity)
+      let writeBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)
+      let readBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)
       let ringBuffer = CARingBuffer<Float>(numberOfChannels: numberOfChannels,
-                                           capacityFrames: CARBTestParameters.BufferCapacityFrames.rawValue)
+                                           capacityFrames: CARBTestParameters.bufferCapacityFrames.rawValue)
       CARBTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
-      self.measureBlock {
+      self.measure {
          var status: CARingBufferError
          for iteration in 0 ..< numberOfIterations {
             status = ringBuffer.Store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
@@ -40,14 +40,14 @@ class CARBSwiftPerformanceTests: XCTestCase {
    }
 
 	func testPerformanceShort() {
-		performMeasure(CARBTestParameters.NumberOfIterationsShort.rawValue)
+		performMeasure(CARBTestParameters.numberOfIterationsShort.rawValue)
 	}
 
    func testPerformanceMedium() {
-      performMeasure(CARBTestParameters.NumberOfIterationsMedium.rawValue)
+      performMeasure(CARBTestParameters.numberOfIterationsMedium.rawValue)
    }
 
    func testPerformanceLong() {
-      performMeasure(CARBTestParameters.NumberOfIterationsLong.rawValue)
+      performMeasure(CARBTestParameters.numberOfIterationsLong.rawValue)
    }
 }

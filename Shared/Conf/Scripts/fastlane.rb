@@ -7,7 +7,8 @@ class BuildSettings
   }
   @@Codesign = {
     "CODE_SIGN_IDENTITY" => "Developer ID Application",
-    "CODE_SIGNING_REQUIRED" => "YES"
+    "CODE_SIGNING_REQUIRED" => "YES",
+    "PROVISIONING_PROFILE_SPECIFIER" => "E27KE6VTF6/"
   }
   def self.NoCodesign
     @@NoCodesign
@@ -26,9 +27,22 @@ def XcodeClean(*schemes)
   sh "if [ -d \"#{awl_buildDir}\" ]; then rm -rfv \"#{awl_buildDir}\"; fi"
 end
 
+def XcodeCleanProject(schema, project)
+  xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign, xcargs: "-project #{project} -configuration Debug clean")
+  xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign, xcargs: "-project #{project} -configuration Release clean")
+  awl_buildDir = "#{ENV['PWD']}/build"
+  sh "if [ -d \"#{awl_buildDir}\" ]; then rm -rfv \"#{awl_buildDir}\"; fi"
+end
+
 def XcodeTest(*schemes)
   schemes.each { |schema|
     scan(scheme: schema, output_directory: "fastlane/test_output/#{schema}")
+  }
+end
+
+def XcodeMacOSTest(*schemes)
+  schemes.each { |schema|
+    scan(scheme: schema, output_directory: "fastlane/test_output/#{schema}", destination: "platform=macOS")
   }
 end
 
@@ -36,6 +50,18 @@ def XcodeBuild(*schemes)
   schemes.each { |schema|
     xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign)
   }
+end
+
+def XcodeBuildProject(schema, project)
+  xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign, xcargs: "-project #{project}")
+end
+
+def XcodeBuildProjectRelease(schema, project)
+  xcodebuild(scheme: schema, build_settings: BuildSettings.NoCodesign, xcargs: "-project #{project} -configuration Release")
+end
+
+def XcodeBuildProjectCodesign(schema, project)
+  xcodebuild(scheme: schema, build_settings: BuildSettings.Codesign, xcargs: "-project #{project} -configuration Release")
 end
 
 def XcodeBuildCodesign(*schemes)

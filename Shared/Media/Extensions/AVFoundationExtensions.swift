@@ -9,11 +9,11 @@
 import AVFoundation
 
 extension AudioBuffer {
-	var mFloatData: UnsafeMutablePointer<Float> {
+	var mFloatData: UnsafeMutablePointer<Float>? {
 		return UnsafeMutablePointer<Float>(mData)
 	}
 	var mFloatBuffer: UnsafeMutableBufferPointer<Float> {
-		return UnsafeMutableBufferPointer<Float>(start: mFloatData, count: Int(mDataByteSize) / sizeof(Float))
+		return UnsafeMutableBufferPointer<Float>(start: mFloatData, count: Int(mDataByteSize) / sizeof(Float.self))
 	}
 	var mFloatArray: [Float] {
 		return Array<Float>(mFloatBuffer)

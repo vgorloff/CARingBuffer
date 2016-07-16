@@ -10,7 +10,7 @@ import AudioUnit
 
 public struct AudioUnitUtility {
 
-	public enum Error: ErrorType {
+	public enum Error: ErrorProtocol {
 		case OSStatusError(OSStatus)
 		case UnexpectedDataSize(expected: UInt32, observed: UInt32)
 	}
@@ -37,7 +37,7 @@ public struct AudioUnitUtility {
 
 	public static func getProperty<T>(unit: AudioUnit, propertyID: AudioUnitPropertyID, scope: AudioUnitScope,
 	                               element: AudioUnitElement) throws -> T {
-		let propertyInfo = try getPropertyInfo(unit, propertyID: propertyID, scope: scope, element: element)
+		let propertyInfo = try getPropertyInfo(unit: unit, propertyID: propertyID, scope: scope, element: element)
 		let expectedDataSize = sizeof(T.self).uint32Value
 		if expectedDataSize != propertyInfo.dataSize {
 			throw Error.UnexpectedDataSize(expected: expectedDataSize, observed: propertyInfo.dataSize)
@@ -45,9 +45,9 @@ public struct AudioUnitUtility {
 		var resultValue: T
 		do {
 			defer {
-				data.dealloc(1)
+				data.deallocateCapacity(1)
 			}
-			let data = UnsafeMutablePointer<T>.alloc(1)
+         let data = UnsafeMutablePointer<T>(allocatingCapacity: 1)
 			var dataSize = expectedDataSize
 			let status = AudioUnitGetProperty(unit, propertyID, scope, element, data, &dataSize)
 			if status != noErr {
@@ -56,7 +56,7 @@ public struct AudioUnitUtility {
 			if dataSize != expectedDataSize {
 				throw Error.UnexpectedDataSize(expected: expectedDataSize, observed: dataSize)
 			}
-			resultValue = data.memory
+			resultValue = data.pointee
 		}
 
 		return resultValue
