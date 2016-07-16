@@ -18,7 +18,7 @@
 
 - (void)performMeasure:(UInt32)numberOfIterations {
 	UInt32 numberOfChannels = CARBTestParametersNumberOfChannels;
-	UInt32 IOCapacity = CARBTestParametersIOCapacity;
+	UInt32 IOCapacity = CARBTestParametersIoCapacity;
 	AVAudioFormat *audioFormat = [[AVAudioFormat alloc]
 											initStandardFormatWithSampleRate:CARBTestParametersSampleRate
 											channels:numberOfChannels];

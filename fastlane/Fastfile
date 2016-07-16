@@ -7,9 +7,12 @@ fastlane_version "1.95.0"
 
 import '../Shared/Conf/Scripts/fastlane.rb'
 
+AWLProjectName = "CARingBuffer.xcodeproj"
+AWLProjectRelativeFilePath = "#{AWLProjectName}"
+
 desc "Runs all the tests (C++ and Swift)."
 lane :test do
-  XcodeTest("Logic Tests: Swift", "Logic Tests: C++")
+  XcodeMacOSTest("Logic Tests: Swift", "Logic Tests: C++")
 end
 
 desc "Builds project."
@@ -20,7 +23,14 @@ end
 desc "Builds when under CI (i.e. Travis)."
 lane :ci do
   XcodeBuildRelease("CARBMeasure", "CAPlayThrough")
-  XcodeTest("Logic Tests: Swift")
+  XcodeMacOSTest("Logic Tests: Swift")
+end
+
+desc "Increment version number."
+desc "Usually should be runned after finishing release in Git Flow."
+lane :bump do
+  ensure_git_status_clean
+  Bump(AWLProjectRelativeFilePath)
 end
 
 desc "Cleans project."
