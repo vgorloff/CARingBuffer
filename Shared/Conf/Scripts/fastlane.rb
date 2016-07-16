@@ -88,6 +88,12 @@ end
 def Bump(relativePath)
   awl_buildNumber = increment_build_number(xcodeproj: relativePath)
   awl_versionFromTag = last_git_tag
+  values = git_branch.split("/")
+  values.each do |value|
+      if ( value =~ /\d+\.\d+\.\d+/ )
+        awl_versionFromTag = value
+      end
+  end
   increment_version_number(version_number: awl_versionFromTag, xcodeproj: relativePath)
   git_commit(path: "./", message: "Version Bump #{awl_versionFromTag}x#{awl_buildNumber}")
 end
