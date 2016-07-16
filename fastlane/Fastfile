@@ -29,6 +29,8 @@ end
 desc "Increment version number."
 desc "Usually should be runned after finishing release in Git Flow."
 lane :bump do
+  awl_branchName = git_branch
+  puts awl_branchName
   ensure_git_status_clean
   Bump(AWLProjectRelativeFilePath)
 end
