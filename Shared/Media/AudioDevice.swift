@@ -18,7 +18,7 @@ public final class AudioDevice {
 		}
 	}
 
-	public enum Error: ErrorProtocol {
+	public enum Errors: Error {
 		case UnexpectedDeviceID(AudioDeviceID)
 		case AudioHardwareError(OSStatus)
 		case UnableToGetProperty(AudioObjectPropertySelector)
@@ -82,7 +82,7 @@ public final class AudioDevice {
 		var value = Array<CChar>(repeating: 0, count: propertyDataSize.intValue)
       try getPropertyData(inObjectID: deviceID, inAddress: &propertyAddress, ioDataSize: &propertyDataSize, outData: &value)
 		guard let deviceName = String(utf8String: &value) else {
-			throw Error.UnableToGetProperty(kAudioDevicePropertyDeviceName)
+			throw Errors.UnableToGetProperty(kAudioDevicePropertyDeviceName)
 		}
 		return deviceName
 	}
@@ -131,7 +131,7 @@ public final class AudioDevice {
 	                                    outData: UnsafeMutablePointer<T>) throws {
 		var propertyDataSize = try getPropertyDataSize(inObjectID: inObjectID, inAddress: inAddress)
 		guard propertyDataSize == sizeof(T.self).uint32Value else {
-			throw Error.UnexpectedPropertyDataSize(expected: sizeof(T.self).uint32Value, observed: propertyDataSize)
+			throw Errors.UnexpectedPropertyDataSize(expected: sizeof(T.self).uint32Value, observed: propertyDataSize)
 		}
 		let status = AudioObjectGetPropertyData(inObjectID, inAddress, inQualifierDataSize, inQualifierData, &propertyDataSize, outData)
 		try verifyStatusCode(statusCode: status)
@@ -146,13 +146,13 @@ public final class AudioDevice {
 
 	private static func verifyDeviceID(deviceID: AudioDeviceID) throws {
 		if deviceID == kAudioDeviceUnknown {
-			throw Error.UnexpectedDeviceID(deviceID)
+			throw Errors.UnexpectedDeviceID(deviceID)
 		}
 	}
 
 	private static func verifyStatusCode(statusCode: OSStatus) throws {
 		if statusCode != kAudioHardwareNoError {
-			throw Error.AudioHardwareError(statusCode)
+			throw Errors.AudioHardwareError(statusCode)
 		}
 	}
 }

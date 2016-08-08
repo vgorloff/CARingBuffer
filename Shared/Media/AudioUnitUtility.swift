@@ -10,7 +10,7 @@ import AudioUnit
 
 public struct AudioUnitUtility {
 
-	public enum Error: ErrorProtocol {
+	public enum Errors: Error {
 		case OSStatusError(OSStatus)
 		case UnexpectedDataSize(expected: UInt32, observed: UInt32)
 	}
@@ -20,7 +20,7 @@ public struct AudioUnitUtility {
 		let dataSize = sizeof(T.self).uint32Value
 		let status = AudioUnitSetProperty(unit, propertyID, scope, element, data, dataSize)
 		if status != noErr {
-			throw Error.OSStatusError(status)
+			throw Errors.OSStatusError(status)
 		}
 	}
 
@@ -30,7 +30,7 @@ public struct AudioUnitUtility {
 		var isWritable = DarwinBoolean(false)
 		let status = AudioUnitGetPropertyInfo(unit, propertyID, scope, element, &dataSize, &isWritable)
 		if status != noErr {
-			throw Error.OSStatusError(status)
+			throw Errors.OSStatusError(status)
 		}
 		return (dataSize, isWritable.boolValue)
 	}
@@ -40,21 +40,21 @@ public struct AudioUnitUtility {
 		let propertyInfo = try getPropertyInfo(unit: unit, propertyID: propertyID, scope: scope, element: element)
 		let expectedDataSize = sizeof(T.self).uint32Value
 		if expectedDataSize != propertyInfo.dataSize {
-			throw Error.UnexpectedDataSize(expected: expectedDataSize, observed: propertyInfo.dataSize)
+			throw Errors.UnexpectedDataSize(expected: expectedDataSize, observed: propertyInfo.dataSize)
 		}
 		var resultValue: T
 		do {
 			defer {
-				data.deallocateCapacity(1)
+            data.deallocate(capacity: 1)
 			}
-         let data = UnsafeMutablePointer<T>(allocatingCapacity: 1)
+         let data = UnsafeMutablePointer<T>.allocate(capacity: 1)
 			var dataSize = expectedDataSize
 			let status = AudioUnitGetProperty(unit, propertyID, scope, element, data, &dataSize)
 			if status != noErr {
-				throw Error.OSStatusError(status)
+				throw Errors.OSStatusError(status)
 			}
 			if dataSize != expectedDataSize {
-				throw Error.UnexpectedDataSize(expected: expectedDataSize, observed: dataSize)
+				throw Errors.UnexpectedDataSize(expected: expectedDataSize, observed: dataSize)
 			}
 			resultValue = data.pointee
 		}
