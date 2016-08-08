@@ -10,7 +10,7 @@ import CoreAudio
 
 public struct AudioObjectUtility {
 
-	public enum Error: ErrorProtocol {
+	public enum Errors: Error {
 		case OSStatusError(OSStatus)
 		case UnexpectedDataSize(expected: UInt32, observed: UInt32)
 	}
@@ -22,7 +22,7 @@ public struct AudioObjectUtility {
 		var addressValue = address
 		let status = AudioObjectGetPropertyDataSize(objectID, &addressValue, qualifierDataSize, qualifierData, &propertyDataSize)
 		if status != kAudioHardwareNoError {
-			throw Error.OSStatusError(status)
+			throw Errors.OSStatusError(status)
 		}
 		return propertyDataSize
 	}
@@ -34,22 +34,22 @@ public struct AudioObjectUtility {
 		                                           qualifierData: qualifierData)
 		let expectedDataSize = sizeof(T.self).uint32Value
 		if propertyDataSize != expectedDataSize {
-			throw Error.UnexpectedDataSize(expected: expectedDataSize, observed: propertyDataSize)
+			throw Errors.UnexpectedDataSize(expected: expectedDataSize, observed: propertyDataSize)
 		}
 		var resultValue: T
 		do {
 			defer {
-				data.deallocateCapacity(1)
+            data.deallocate(capacity: 1)
 			}
 			var dataSize = expectedDataSize
 			var addressValue = address
-         let data = UnsafeMutablePointer<T>(allocatingCapacity: 1)
+         let data = UnsafeMutablePointer<T>.allocate(capacity: 1)
 			let status = AudioObjectGetPropertyData(objectID, &addressValue, qualifierDataSize, qualifierData, &dataSize, data)
 			if status != kAudioHardwareNoError {
-				throw Error.OSStatusError(status)
+				throw Errors.OSStatusError(status)
 			}
 			if dataSize != expectedDataSize {
-				throw Error.UnexpectedDataSize(expected: expectedDataSize, observed: dataSize)
+				throw Errors.UnexpectedDataSize(expected: expectedDataSize, observed: dataSize)
 			}
 			resultValue = data.pointee
 		}

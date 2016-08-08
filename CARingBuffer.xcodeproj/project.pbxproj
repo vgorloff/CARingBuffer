@@ -149,7 +149,7 @@
 		80B12CFF1D21AF6B00B2FE2A /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				80FA424B1D246CF300937DD8 /* Extensions */,
+				80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */,
 				80B12D091D21B14C00B2FE2A /* AudioDevice.swift */,
 				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
 				80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */,
@@ -257,14 +257,6 @@
 				80C9CFB41D0CC6AF00960F60 /* Info.plist */,
 			);
 			name = "Supporting files";
-			sourceTree = "<group>";
-		};
-		80FA424B1D246CF300937DD8 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				80FA424C1D246CF300937DD8 /* AVFoundationExtensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
