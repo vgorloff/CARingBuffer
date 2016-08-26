@@ -109,17 +109,17 @@ public final class PlayThroughRenderUtility {
    public let inputDevice: AudioDeviceID
    public let outputDevice: AudioDeviceID
 
-   private var inputUnit: AudioUnit!
+   fileprivate var inputUnit: AudioUnit!
    private var varispeedNode: AUNode = 0
    private var outputNode: AUNode = 0
-   private var varispeedUnit: AudioUnit!
+   fileprivate var varispeedUnit: AudioUnit!
    private var outputUnit: AudioUnit!
    private var auGraph: AUGraph!
-   private var inputBuffer: AVAudioPCMBuffer!
-   private var ringBuffer: CARingBuffer<Float>!
-   private var inToOutSampleOffset: Double = 0
-   private var firstInputTime: Double?
-   private var firstOutputTime: Double?
+   fileprivate var inputBuffer: AVAudioPCMBuffer!
+   fileprivate var ringBuffer: CARingBuffer<Float>!
+   fileprivate var inToOutSampleOffset: Double = 0
+   fileprivate var firstInputTime: Double?
+   fileprivate var firstOutputTime: Double?
 
    public init(inputDevice anInput: AudioDeviceID, outputDevice anOutput: AudioDeviceID) throws {
       inputDevice = anInput
@@ -188,31 +188,32 @@ public final class PlayThroughRenderUtility {
       var audioUnitRefeence: AudioUnit? = nil
       try with(AudioComponentInstanceNew(componentInstance, &audioUnitRefeence))
       guard let audioUnit = audioUnitRefeence else {
-         throw Errors.UnableToInitialize(String(AudioUnit.self))
+         throw Errors.UnableToInitialize(String(describing: AudioUnit.self))
       }
       try with(AudioUnitInitialize(audioUnit))
 
       // You must enable the Audio Unit (AUHAL) for input and disable output BEFORE setting the AUHAL's current device.
       var enableIO: UInt32 = 1
       try with(AudioUnitSetProperty(audioUnit, kAudioOutputUnitProperty_EnableIO,
-                                    kAudioUnitScope_Input, 1, &enableIO, sizeof(UInt32.self).uint32Value)) // "1" means input element
+                                    kAudioUnitScope_Input, 1, &enableIO, MemoryLayout<UInt32>.size.uint32Value)) // "1" means input element
 
       // Disable Output on the AUHAL
       enableIO = 0
       try with(AudioUnitSetProperty(audioUnit, kAudioOutputUnitProperty_EnableIO,
-                                    kAudioUnitScope_Output, 0, &enableIO, sizeof(UInt32.self).uint32Value)) // "0" means output element
+                                    kAudioUnitScope_Output, 0, &enableIO, MemoryLayout<UInt32>.size.uint32Value)) // "0" means output element
 
       // Set the Current Device to the AUHAL. This should be done only after IO has been enabled on the AUHAL.
       var inDevice = inputDevice
       try with(AudioUnitSetProperty(audioUnit, kAudioOutputUnitProperty_CurrentDevice,
-                                    kAudioUnitScope_Global, 0, &inDevice, sizeof(AudioDeviceID.self).uint32Value))
+                                    kAudioUnitScope_Global, 0, &inDevice, MemoryLayout<AudioDeviceID>.size.uint32Value))
 
       // Set up input callback
-      let context = UnsafeMutablePointer<Void>(unsafeAddress(of: self))
+
+      let context = Unmanaged.passUnretained(self).toOpaque()
       var renderCallbackStruct = AURenderCallbackStruct(inputProc: playThroughRenderUtilityInputRenderCallback,
                                                         inputProcRefCon: context)
       try with(AudioUnitSetProperty(audioUnit, kAudioOutputUnitProperty_SetInputCallback,
-                                    kAudioUnitScope_Global, 0, &renderCallbackStruct, sizeof(AURenderCallbackStruct.self).uint32Value))
+                                    kAudioUnitScope_Global, 0, &renderCallbackStruct, MemoryLayout<AURenderCallbackStruct>.size.uint32Value))
 
       // Don't setup buffers until you know what the input and output device audio streams look like.
       try with(AudioUnitInitialize(audioUnit)) // TODO: Why this needed?
@@ -228,7 +229,7 @@ public final class PlayThroughRenderUtility {
       try with(NewAUGraph(&graphReference))
 
       guard let graph = graphReference else {
-         throw Errors.UnableToInitialize(String(AUGraph.self))
+         throw Errors.UnableToInitialize(String(describing: AUGraph.self))
       }
 
       try with(AUGraphOpen(graph)) // Open the Graph, AudioUnits are opened but not initialized
@@ -259,7 +260,7 @@ public final class PlayThroughRenderUtility {
       try AudioUnitUtility.setProperty(unit: outputUnit, propertyID: kAudioOutputUnitProperty_StartTimestampsAtZero,
                                        scope: kAudioUnitScope_Global, element: 0, data: &startAtZero)
       // Set up output callback
-      let context = UnsafeMutablePointer<Void>(unsafeAddress(of: self))
+      let context = Unmanaged.passUnretained(self).toOpaque()
       var renderCallbackStruct = AURenderCallbackStruct(inputProc: playThroughRenderUtilityOutputRenderCallback,
                                                         inputProcRefCon: context)
       try AudioUnitUtility.setProperty(unit: varispeedUnit, propertyID: kAudioUnitProperty_SetRenderCallback,
@@ -315,11 +316,11 @@ public final class PlayThroughRenderUtility {
       let format = AVAudioFormat(streamDescription: &asbd)
       inputBuffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: bufferSizeFrames)
 
-      assert(asbd.mBytesPerFrame.intValue == sizeof(Float.self))
+      assert(asbd.mBytesPerFrame.intValue == MemoryLayout<Float>.size)
       ringBuffer = CARingBuffer<Float>(numberOfChannels: asbd.mChannelsPerFrame, capacityFrames: bufferSizeFrames * 20)
    }
    
-   private static func computeThruOffset(inputDevice anInputDevice: AudioDeviceID, outputDevice: AudioDeviceID) throws -> UInt32 {
+   fileprivate static func computeThruOffset(inputDevice anInputDevice: AudioDeviceID, outputDevice: AudioDeviceID) throws -> UInt32 {
       let inputOffset = try AudioDevice.safetyOffset(deviceID: anInputDevice, scope: .Input)
       let outputOffset = try AudioDevice.safetyOffset(deviceID: outputDevice, scope: .Output)
       let inputBuffer = try AudioDevice.bufferFrameSize(deviceID: anInputDevice, scope: .Input)

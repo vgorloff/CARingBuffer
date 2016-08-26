@@ -17,7 +17,7 @@ public struct AudioObjectUtility {
 
 	public static func getPropertyDataSize(objectID: AudioObjectID, address: AudioObjectPropertyAddress,
 	                                        qualifierDataSize: UInt32 = 0,
-	                                        qualifierData: UnsafePointer<Void>? = nil) throws -> UInt32 {
+	                                        qualifierData: UnsafeRawPointer? = nil) throws -> UInt32 {
 		var propertyDataSize = UInt32(0)
 		var addressValue = address
 		let status = AudioObjectGetPropertyDataSize(objectID, &addressValue, qualifierDataSize, qualifierData, &propertyDataSize)
@@ -29,10 +29,10 @@ public struct AudioObjectUtility {
 
 	public static func getPropertyData<T>(objectID: AudioObjectID, address: AudioObjectPropertyAddress,
 	                                   qualifierDataSize: UInt32 = 0,
-	                                   qualifierData: UnsafePointer<Void>? = nil) throws -> T {
+	                                   qualifierData: UnsafeRawPointer? = nil) throws -> T {
 		let propertyDataSize = try getPropertyDataSize(objectID: objectID, address: address, qualifierDataSize: qualifierDataSize,
 		                                           qualifierData: qualifierData)
-		let expectedDataSize = sizeof(T.self).uint32Value
+		let expectedDataSize = MemoryLayout<T>.size.uint32Value
 		if propertyDataSize != expectedDataSize {
 			throw Errors.UnexpectedDataSize(expected: expectedDataSize, observed: propertyDataSize)
 		}
