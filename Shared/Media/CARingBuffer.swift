@@ -77,7 +77,7 @@ public final class CARingBuffer<T: FloatingPoint> {
       mCapacityFramesMask = mCapacityFrames - 1
       mBuffersLength = mCapacityFrames * numberOfChannels
       mBuffer = UnsafeMutablePointer<T>.allocate(capacity: Int(mBuffersLength))
-      mBytesPerFrame = UInt32(sizeof(T.self))
+      mBytesPerFrame = UInt32(MemoryLayout<T>.size)
       mCapacityBytes = mBytesPerFrame * mCapacityFrames
    }
 
@@ -216,7 +216,7 @@ public final class CARingBuffer<T: FloatingPoint> {
    // MARK: - Private
 
    private func ZeroABL(_ abl: UnsafeMutablePointer<AudioBufferList>, destOffset: SampleTime, nbytes: SampleTime) {
-      let advanceDistance = Int(destOffset) / sizeof(T.self)
+      let advanceDistance = Int(destOffset) / MemoryLayout<T>.size
       let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start: &abl.pointee.mBuffers, count:Int(abl.pointee.mNumberBuffers))
       let numberBuffers = abl.pointee.mNumberBuffers
       for channel in 0..<numberBuffers {
@@ -228,7 +228,7 @@ public final class CARingBuffer<T: FloatingPoint> {
          guard let channelBufferData = channelBuffer.mData else {
             continue
          }
-         let channelData = UnsafeMutablePointer<T>(channelBufferData)
+         let channelData = channelBufferData.assumingMemoryBound(to: T.self)
          let positionWrite = channelData.advanced(by: advanceDistance)
          let numberOfBytes = min(Int(nbytes), Int(channelBuffer.mDataByteSize) - Int(destOffset))
          memset(positionWrite, 0, numberOfBytes)
@@ -240,7 +240,7 @@ public final class CARingBuffer<T: FloatingPoint> {
    }
 
    private func ZeroRange(_ buffers: UnsafeMutablePointer<T>, numberOfChannels: UInt32, offset: SampleTime, nbytes: SampleTime) {
-      let advanceDistance = Int(offset) / sizeof(T.self)
+      let advanceDistance = Int(offset) / MemoryLayout<T>.size
       assert(mNumberChannels == numberOfChannels)
       for channel in 0 ..< numberOfChannels {
          // FIXME: Check for overflows (Vlad Gorlov, 2016-06-12).
@@ -252,8 +252,8 @@ public final class CARingBuffer<T: FloatingPoint> {
    private func FetchABL(_ abl: UnsafeMutablePointer<AudioBufferList>, destOffset: SampleTime,
                          buffers: UnsafeMutablePointer<T>, srcOffset: SampleTime, nbytes: SampleTime) {
 
-      let advanceOfSource = Int(srcOffset) / sizeof(T.self)
-      let advanceOfDestination = Int(destOffset) / sizeof(T.self)
+      let advanceOfSource = Int(srcOffset) / MemoryLayout<T>.size
+      let advanceOfDestination = Int(destOffset) / MemoryLayout<T>.size
       let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start: &abl.pointee.mBuffers, count: Int(abl.pointee.mNumberBuffers))
       let numberOfChannels = abl.pointee.mNumberBuffers
       for channel in 0 ..< numberOfChannels {
@@ -264,7 +264,7 @@ public final class CARingBuffer<T: FloatingPoint> {
          guard let channelBufferData = channelBuffer.mData else {
             continue
          }
-         let channelData = UnsafeMutablePointer<T>(channelBufferData)
+         let channelData = channelBufferData.assumingMemoryBound(to: T.self)
          let positionRead = buffers.advanced(by: advanceOfSource + Int(channel * mCapacityFrames))
          let positionWrite = channelData.advanced(by: advanceOfDestination)
          let numberOfBytes = min(Int(nbytes), Int(channelBuffer.mDataByteSize) - Int(destOffset))
@@ -275,10 +275,10 @@ public final class CARingBuffer<T: FloatingPoint> {
    private func StoreABL(_ buffers: UnsafeMutablePointer<T>, destOffset: SampleTime, abl: UnsafePointer<AudioBufferList>,
                          srcOffset: SampleTime, nbytes: SampleTime) {
 
-      let advanceOfSource = Int(srcOffset) / sizeof(T.self)
-      let advanceOfDestination = Int(destOffset) / sizeof(T.self)
-      let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start: &(UnsafeMutablePointer<AudioBufferList>(abl)).pointee.mBuffers,
-                                                            count:Int(abl.pointee.mNumberBuffers))
+      let advanceOfSource = Int(srcOffset) / MemoryLayout<T>.size
+      let advanceOfDestination = Int(destOffset) / MemoryLayout<T>.size
+      let buffersPointer = UnsafeBufferPointer<AudioBuffer>(start:
+         &(UnsafeMutablePointer<AudioBufferList>(mutating: abl)).pointee.mBuffers, count:Int(abl.pointee.mNumberBuffers))
       let numberOfChannels = abl.pointee.mNumberBuffers
       for channel in 0 ..< numberOfChannels {
          let channelBuffer = buffersPointer[Int(channel)]
@@ -288,7 +288,7 @@ public final class CARingBuffer<T: FloatingPoint> {
          guard let channelBufferData = channelBuffer.mData else {
             continue
          }
-         let channelData = UnsafeMutablePointer<T>(channelBufferData)
+         let channelData = channelBufferData.assumingMemoryBound(to: T.self)
          let positionRead = channelData.advanced(by: advanceOfSource)
          let positionWrite = buffers.advanced(by: advanceOfDestination + Int(channel * mCapacityFrames))
          let numberOfBytes = min(Int(nbytes), Int(channelBuffer.mDataByteSize) - Int(srcOffset))

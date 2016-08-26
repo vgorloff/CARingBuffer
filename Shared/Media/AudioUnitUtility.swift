@@ -17,7 +17,7 @@ public struct AudioUnitUtility {
 
 	public static func setProperty<T>(unit: AudioUnit, propertyID: AudioUnitPropertyID, scope: AudioUnitScope,
 	                               element: AudioUnitElement, data: UnsafePointer<T>) throws {
-		let dataSize = sizeof(T.self).uint32Value
+		let dataSize = MemoryLayout<T>.size.uint32Value
 		let status = AudioUnitSetProperty(unit, propertyID, scope, element, data, dataSize)
 		if status != noErr {
 			throw Errors.OSStatusError(status)
@@ -38,7 +38,7 @@ public struct AudioUnitUtility {
 	public static func getProperty<T>(unit: AudioUnit, propertyID: AudioUnitPropertyID, scope: AudioUnitScope,
 	                               element: AudioUnitElement) throws -> T {
 		let propertyInfo = try getPropertyInfo(unit: unit, propertyID: propertyID, scope: scope, element: element)
-		let expectedDataSize = sizeof(T.self).uint32Value
+		let expectedDataSize = MemoryLayout<T>.size.uint32Value
 		if expectedDataSize != propertyInfo.dataSize {
 			throw Errors.UnexpectedDataSize(expected: expectedDataSize, observed: propertyInfo.dataSize)
 		}

@@ -13,7 +13,7 @@ public final class AudioDevice {
 	public enum Scope: Int {
 		case Input = 1
 		case Output = 0
-		private var audioObjectPropertyScope: AudioObjectPropertyScope {
+		fileprivate var audioObjectPropertyScope: AudioObjectPropertyScope {
 			return (self == .Input) ? kAudioObjectPropertyScopeInput : kAudioObjectPropertyScopeOutput
 		}
 	}
@@ -101,7 +101,7 @@ public final class AudioDevice {
 		                                                 mScope: kAudioObjectPropertyScopeGlobal,
 		                                                 mElement: kAudioObjectPropertyElementMaster)
 		var propertyDataSize = try getPropertyDataSize(inObjectID: kAudioObjectSystemObject.uint32Value, inAddress: &propertyAddress)
-		let numberOfDevices = propertyDataSize / sizeof(AudioDeviceID.self).uint32Value
+		let numberOfDevices = propertyDataSize / MemoryLayout<AudioDeviceID>.size.uint32Value
 		var value = Array<AudioDeviceID>(repeating: 0, count: numberOfDevices.intValue)
       try getPropertyData(inObjectID: kAudioObjectSystemObject.uint32Value, inAddress: &propertyAddress,
 		                    ioDataSize: &propertyDataSize, outData: &value)
@@ -110,7 +110,8 @@ public final class AudioDevice {
 
 	public static func audioDevicesForScope(scope: Scope) throws -> [AudioDeviceID] {
 		let deviceIDs = try audioDevices().filter { deviceID in
-			return (try? numberOfChannels(deviceID: deviceID, scope: scope) ?? 0) > 0
+         let numOfChannels = try? numberOfChannels(deviceID: deviceID, scope: scope)
+			return (numOfChannels ?? 0) > 0
 		}
 		return deviceIDs
 	}
@@ -119,7 +120,7 @@ public final class AudioDevice {
 
 	private static func getPropertyDataSize(inObjectID: AudioObjectID, inAddress: UnsafePointer<AudioObjectPropertyAddress>,
 	                                        inQualifierDataSize: UInt32 = 0,
-	                                        inQualifierData: UnsafePointer<Void>? = nil) throws -> UInt32 {
+	                                        inQualifierData: UnsafeRawPointer? = nil) throws -> UInt32 {
 		var propertyDataSize = UInt32(0)
 		let status = AudioObjectGetPropertyDataSize(inObjectID, inAddress, inQualifierDataSize, inQualifierData, &propertyDataSize)
 		try verifyStatusCode(statusCode: status)
@@ -127,18 +128,18 @@ public final class AudioDevice {
 	}
 
 	private static func getPropertyData<T>(inObjectID: AudioObjectID, inAddress: UnsafePointer<AudioObjectPropertyAddress>,
-	                                    inQualifierDataSize: UInt32 = 0, inQualifierData: UnsafePointer<Void>? = nil,
+	                                    inQualifierDataSize: UInt32 = 0, inQualifierData: UnsafeRawPointer? = nil,
 	                                    outData: UnsafeMutablePointer<T>) throws {
 		var propertyDataSize = try getPropertyDataSize(inObjectID: inObjectID, inAddress: inAddress)
-		guard propertyDataSize == sizeof(T.self).uint32Value else {
-			throw Errors.UnexpectedPropertyDataSize(expected: sizeof(T.self).uint32Value, observed: propertyDataSize)
+		guard propertyDataSize == MemoryLayout<T>.size.uint32Value else {
+			throw Errors.UnexpectedPropertyDataSize(expected: MemoryLayout<T>.size.uint32Value, observed: propertyDataSize)
 		}
 		let status = AudioObjectGetPropertyData(inObjectID, inAddress, inQualifierDataSize, inQualifierData, &propertyDataSize, outData)
 		try verifyStatusCode(statusCode: status)
 	}
 
 	private static func getPropertyData<T>(inObjectID: AudioObjectID, inAddress: UnsafePointer<AudioObjectPropertyAddress>,
-	                                    inQualifierDataSize: UInt32 = 0, inQualifierData: UnsafePointer<Void>? = nil,
+	                                    inQualifierDataSize: UInt32 = 0, inQualifierData: UnsafeRawPointer? = nil,
 	                                    ioDataSize: UnsafeMutablePointer<UInt32>, outData: UnsafeMutablePointer<T>) throws {
 		let status = AudioObjectGetPropertyData(inObjectID, inAddress, inQualifierDataSize, inQualifierData, ioDataSize, outData)
 		try verifyStatusCode(statusCode: status)
