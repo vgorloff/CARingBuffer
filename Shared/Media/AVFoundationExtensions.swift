@@ -10,10 +10,10 @@ import AVFoundation
 
 extension AudioBuffer {
 	var mFloatData: UnsafeMutablePointer<Float>? {
-		return UnsafeMutablePointer<Float>(mData)
+		return mData?.assumingMemoryBound(to: Float.self)
 	}
 	var mFloatBuffer: UnsafeMutableBufferPointer<Float> {
-		return UnsafeMutableBufferPointer<Float>(start: mFloatData, count: Int(mDataByteSize) / sizeof(Float.self))
+		return UnsafeMutableBufferPointer<Float>(start: mFloatData, count: Int(mDataByteSize) / MemoryLayout<Float>.size)
 	}
 	var mFloatArray: [Float] {
 		return Array<Float>(mFloatBuffer)
@@ -40,6 +40,6 @@ extension UnsafeMutableAudioBufferListPointer {
 		return result
 	}
 	init(unsafePointer pointer: UnsafePointer<AudioBufferList>) {
-		self.init(UnsafeMutablePointer<AudioBufferList>(pointer))
+      self.init(UnsafeMutablePointer<AudioBufferList>(mutating: pointer))
 	}
 }
