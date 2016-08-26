@@ -11,27 +11,27 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-	private var renderUtility: PlayThroughRenderUtility?
+   private var renderUtility: PlayThroughRenderUtility?
 
-	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		do {
-			let inputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .Input)
-			let outputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .Output)
-			renderUtility = try PlayThroughRenderUtility(inputDevice: inputDeviceID, outputDevice: outputDeviceID)
-			try renderUtility?.start()
-		} catch {
-			print(error)
-		}
-	}
+   func applicationDidFinishLaunching(_ aNotification: Notification) {
+      do {
+         let inputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .Input)
+         let outputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .Output)
+         renderUtility = try PlayThroughRenderUtility(inputDevice: inputDeviceID, outputDevice: outputDeviceID)
+         try renderUtility?.start()
+      } catch {
+         print(error)
+      }
+   }
 
-	func applicationWillTerminate(_ aNotification: Notification) {
-		renderUtility = nil
-	}
+   func applicationWillTerminate(_ aNotification: Notification) {
+      renderUtility = nil
+   }
 
-	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-		renderUtility = nil
-		return true
-	}
-
-
+   func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+      renderUtility = nil
+      return true
+   }
+   
+   
 }
