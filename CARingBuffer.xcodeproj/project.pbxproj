@@ -15,6 +15,7 @@
 		805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 805015601D10A06300AE0412 /* CARingBuffer.cpp */; };
 		805015681D10A43F00AE0412 /* CARBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805015571D109FBB00AE0412 /* CARBTests.swift */; };
 		8050DAE61D19D785007216D2 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8050DAE51D19D785007216D2 /* Readme.txt */; };
+		8061F1D31D7F7774006927F0 /* CARBTests.CustomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061F1D21D7F7774006927F0 /* CARBTests.CustomType.swift */; };
 		8066E0DD1D10A53C00D32B44 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
 		8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */; };
 		8066E0E41D10A78600D32B44 /* CARBPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */; };
@@ -62,6 +63,7 @@
 		805015601D10A06300AE0412 /* CARingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CARingBuffer.cpp; sourceTree = "<group>"; };
 		805015611D10A06300AE0412 /* CARingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARingBuffer.h; sourceTree = "<group>"; };
 		8050DAE51D19D785007216D2 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		8061F1D21D7F7774006927F0 /* CARBTests.CustomType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARBTests.CustomType.swift; sourceTree = "<group>"; };
 		8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
 		8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
 		80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +222,7 @@
 				805015561D109FBB00AE0412 /* CARBTests.mm */,
 				8066E0E21D10A77900D32B44 /* CARBPerformanceTests.swift */,
 				805015571D109FBB00AE0412 /* CARBTests.swift */,
+				8061F1D21D7F7774006927F0 /* CARBTests.CustomType.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8066E0E41D10A78600D32B44 /* CARBPerformanceTests.swift in Sources */,
+				8061F1D31D7F7774006927F0 /* CARBTests.CustomType.swift in Sources */,
 				80079E751D21D9BC00E93DB3 /* CARBTestsUtility.swift in Sources */,
 				805015681D10A43F00AE0412 /* CARBTests.swift in Sources */,
 				80FA42511D246D4300937DD8 /* AVFoundationExtensions.swift in Sources */,
