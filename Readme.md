@@ -25,7 +25,7 @@ struct CustomSampleType {
 }
 
 let ringBuffer = CARingBuffer<CustomSampleType>(numberOfChannels: 4, capacityFrames: 8)
-// See folder named "Test" for details how ablPointerIn and ablPointerOut was defined...
+// See folder named "Test" for details how ablPointerIn and ablPointerOut were defined...
 ringBuffer.store(ablPointerIn.unsafePointer, framesToWrite: 6, startWrite: 0)
 ringBuffer.fetch(ablPointerOut.unsafeMutablePointer, framesToRead: 6, startRead: 0)
 ```
