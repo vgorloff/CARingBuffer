@@ -21,11 +21,11 @@ let ringBuffer = CARingBuffer<Float>(numberOfChannels: numberOfChannels, capacit
 CARBTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
 var status: CARingBufferError
 for iteration in 0 ..< UInt32(50_000_000) {
-	status = ringBuffer.Store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
+	status = ringBuffer.store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
 	                          startWrite:  SampleTime(IOCapacity * iteration))
 	assert(status == .NoError)
 
-	status = ringBuffer.Fetch(readBuffer.mutableAudioBufferList, nFrames: IOCapacity,
+	status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: IOCapacity,
 	                          startRead: SampleTime(IOCapacity * iteration))
 	assert(status == .NoError)
 }
