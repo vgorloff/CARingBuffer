@@ -23,7 +23,7 @@ private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { in
                                 buffer.mutableAudioBufferList)
    if status == noErr {
       if let ringBuffer = renderUtility.ringBuffer {
-         status = ringBuffer.Store(buffer.audioBufferList, framesToWrite: inNumberFrames, startWrite: sampleTime.int64Value).rawValue
+         status = ringBuffer.store(buffer.audioBufferList, framesToWrite: inNumberFrames, startWrite: sampleTime.int64Value).rawValue
       }
    }
    return status
@@ -85,12 +85,12 @@ private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
       return noErr
    }
    let startFetch = sampleTime - renderUtility.inToOutSampleOffset
-   let err = ringBuffer.Fetch(ioDataInstance, nFrames: inNumberFrames, startRead: startFetch.int64Value)
+   let err = ringBuffer.fetch(ioDataInstance, framesToRead: inNumberFrames, startRead: startFetch.int64Value)
    if err != .NoError {
       audioBuffers?.forEach { audioBuffer in audioBuffer.fillWithZeros() }
       var bufferStartTime: SampleTime = 0
       var bufferEndTime: SampleTime = 0
-      _ = ringBuffer.GetTimeBounds(startTime: &bufferStartTime, endTime: &bufferEndTime)
+      _ = ringBuffer.getTimeBounds(startTime: &bufferStartTime, endTime: &bufferEndTime)
       renderUtility.inToOutSampleOffset = sampleTime - bufferStartTime.doubleValue
    }
 
