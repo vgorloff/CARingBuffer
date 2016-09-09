@@ -32,6 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       renderUtility = nil
       return true
    }
-   
-   
+
+
 }

@@ -1,6 +1,6 @@
 //
 //  CARBTests.CustomType.swift
-//  CARingBuffer
+//  WaveLabs
 //
 //  Created by Vlad Gorlov on 07.09.16.
 //  Copyright © 2016 WaveLabs. All rights reserved.
@@ -207,5 +207,5 @@ extension CARBSwiftTests {
       XCTAssertTrue(isSampleDataEqual(lhs: channelData3In, rhs: channelData3Out))
       XCTAssertTrue(isSampleDataEqual(lhs: channelData4In, rhs: channelData4Out))
    }
-   
+
 }

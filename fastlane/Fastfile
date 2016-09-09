@@ -17,7 +17,7 @@ lane :ci do
 end
 
 desc "Manual: Increment version number."
-desc "Usually runned when repository is on standard Git-Flow release branch."
+desc "Usually used when repository is on standard Git-Flow release branch."
 lane :bump do
   ensure_git_status_clean
   Bump(AWLProjectRelativeFilePath)
@@ -31,11 +31,13 @@ end
 desc "Manual: Builds project."
 lane :build do
   XcodeBuild("CARBMeasure", "CAPlayThrough")
+  ValidateSources()
 end
 
 desc "Manual: Runs all the tests (C++ and Swift)."
 lane :test do
   XcodeMacOSTest("Logic Tests: Swift", "Logic Tests: C++")
+  ValidateSources()
 end
 
 desc "Service: Update Fastlane and other Tools."

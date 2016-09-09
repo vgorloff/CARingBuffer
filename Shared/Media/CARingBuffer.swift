@@ -228,7 +228,8 @@ public final class CARingBuffer<T> {
 //      for channel in 0..<ablPointer.count {
 //         var dest = ablPointer[channel]
 //         if dest.mData != nil {
-//            dest.mDataByteSize = UInt32(nbytes) // FIXME: This should be in sync with AVAudioPCMBuffer (Vlad Gorlov, 2016-06-12).
+          // FIXME: This should be in sync with AVAudioPCMBuffer (Vlad Gorlov, 2016-06-12).
+//            dest.mDataByteSize = UInt32(nbytes)
 //         }
 //      }
 
@@ -443,19 +444,19 @@ public final class CARingBuffer<T> {
       if err != .NoError {
          return err
       }
-      
+
       if startRead > endTime || endRead < startTime {
          endRead = startRead
          return .NoError
       }
-      
+
       startRead = max(startRead, startTime)
       endRead = min(endRead, endTime)
       endRead = max(endRead, startRead)
-      
+
       return .NoError
    }
-   
+
    //endregion
-   
+
 }
