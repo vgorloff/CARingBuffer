@@ -3,7 +3,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "1.95.0"
+fastlane_version "1.102.0"
 
 import '../Shared/Conf/Scripts/fastlane.rb'
 
@@ -36,4 +36,9 @@ end
 desc "Manual: Runs all the tests (C++ and Swift)."
 lane :test do
   XcodeMacOSTest("Logic Tests: Swift", "Logic Tests: C++")
+end
+
+desc "Service: Update Fastlane and other Tools."
+lane :update do
+  SelfUpdate()
 end

@@ -100,6 +100,10 @@ def Bump(*relativePaths)
   }
 end
 
+def SelfUpdate
+   sh "gem update --user-install fastlane --no-ri --no-rdoc --no-document && fastlane --version"
+end
+
 # class XcodeBuild
 #   def self.Clean(*schemes)
 #     puts self.inspect
