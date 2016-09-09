@@ -1,6 +1,6 @@
 //
-//  BufferList.swift
-//  WLTests
+//  MediaBufferList.swift
+//  WaveLabs
 //
 //  Created by Vlad Gorlov on 08.09.16.
 //  Copyright © 2016 WaveLabs. All rights reserved.
@@ -48,4 +48,3 @@ public struct MediaBufferList<T> {
       }
    }
 }
-

@@ -23,7 +23,8 @@ private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { in
                                 buffer.mutableAudioBufferList)
    if status == noErr {
       if let ringBuffer = renderUtility.ringBuffer {
-         status = ringBuffer.store(buffer.audioBufferList, framesToWrite: inNumberFrames, startWrite: sampleTime.int64Value).rawValue
+         status = ringBuffer.store(buffer.audioBufferList, framesToWrite: inNumberFrames,
+                                   startWrite: sampleTime.int64Value).rawValue
       }
    }
    return status
@@ -195,12 +196,14 @@ public final class PlayThroughRenderUtility {
       // You must enable the Audio Unit (AUHAL) for input and disable output BEFORE setting the AUHAL's current device.
       var enableIO: UInt32 = 1
       try with(AudioUnitSetProperty(audioUnit, kAudioOutputUnitProperty_EnableIO,
-                                    kAudioUnitScope_Input, 1, &enableIO, MemoryLayout<UInt32>.size.uint32Value)) // "1" means input element
+                                    kAudioUnitScope_Input, 1, &enableIO,
+                                    MemoryLayout<UInt32>.size.uint32Value)) // "1" means input element
 
       // Disable Output on the AUHAL
       enableIO = 0
       try with(AudioUnitSetProperty(audioUnit, kAudioOutputUnitProperty_EnableIO,
-                                    kAudioUnitScope_Output, 0, &enableIO, MemoryLayout<UInt32>.size.uint32Value)) // "0" means output element
+                                    kAudioUnitScope_Output, 0, &enableIO,
+                                    MemoryLayout<UInt32>.size.uint32Value)) // "0" means output element
 
       // Set the Current Device to the AUHAL. This should be done only after IO has been enabled on the AUHAL.
       var inDevice = inputDevice
@@ -213,7 +216,8 @@ public final class PlayThroughRenderUtility {
       var renderCallbackStruct = AURenderCallbackStruct(inputProc: playThroughRenderUtilityInputRenderCallback,
                                                         inputProcRefCon: context)
       try with(AudioUnitSetProperty(audioUnit, kAudioOutputUnitProperty_SetInputCallback,
-                                    kAudioUnitScope_Global, 0, &renderCallbackStruct, MemoryLayout<AURenderCallbackStruct>.size.uint32Value))
+                                    kAudioUnitScope_Global, 0, &renderCallbackStruct,
+                                    MemoryLayout<AURenderCallbackStruct>.size.uint32Value))
 
       // Don't setup buffers until you know what the input and output device audio streams look like.
       try with(AudioUnitInitialize(audioUnit)) // TODO: Why this needed?
@@ -319,29 +323,30 @@ public final class PlayThroughRenderUtility {
       assert(asbd.mBytesPerFrame.intValue == MemoryLayout<Float>.size)
       ringBuffer = CARingBuffer<Float>(numberOfChannels: asbd.mChannelsPerFrame, capacityFrames: bufferSizeFrames * 20)
    }
-   
-   fileprivate static func computeThruOffset(inputDevice anInputDevice: AudioDeviceID, outputDevice: AudioDeviceID) throws -> UInt32 {
+
+   fileprivate static func computeThruOffset(inputDevice anInputDevice: AudioDeviceID,
+                                             outputDevice: AudioDeviceID) throws -> UInt32 {
       let inputOffset = try AudioDevice.safetyOffset(deviceID: anInputDevice, scope: .Input)
       let outputOffset = try AudioDevice.safetyOffset(deviceID: outputDevice, scope: .Output)
       let inputBuffer = try AudioDevice.bufferFrameSize(deviceID: anInputDevice, scope: .Input)
       let outputBuffer = try AudioDevice.bufferFrameSize(deviceID: outputDevice, scope: .Output)
       return inputOffset + outputOffset + inputBuffer + outputBuffer
    }
-   
+
    private static func with(_ closure: @autoclosure (Void) -> OSStatus) throws {
       try verifyStatusCode(closure())
    }
-   
+
    private func with(_ closure: @autoclosure (Void) -> OSStatus) throws {
       try PlayThroughRenderUtility.verifyStatusCode(closure())
    }
-   
+
    private static func verifyStatusCode(_ status: OSStatus) throws {
       if status != noErr {
          throw Errors.OSStatusError(status)
       }
    }
-   
+
    private static func verifyDeviceID(_ deviceID: AudioDeviceID) throws {
       if deviceID == kAudioDeviceUnknown {
          throw Errors.UnexpectedDeviceID(deviceID)

@@ -274,6 +274,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8050152F1D0F722200AE0412 /* Build configuration list for PBXNativeTarget "CARBMeasure" */;
 			buildPhases = (
+				8046F3F11D83701E007F25E4 /* Run Script: Pre-Build */,
 				805015271D0F722200AE0412 /* Sources */,
 				805015281D0F722200AE0412 /* Frameworks */,
 				805015291D0F722200AE0412 /* CopyFiles */,
@@ -309,6 +310,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80B12CF31D21AD2E00B2FE2A /* Build configuration list for PBXNativeTarget "CAPlayThrough" */;
 			buildPhases = (
+				8046F3F01D8369A0007F25E4 /* Run Script: Pre-Build */,
 				80B12CE11D21AD2E00B2FE2A /* Sources */,
 				80B12CE21D21AD2E00B2FE2A /* Frameworks */,
 				80B12CE31D21AD2E00B2FE2A /* Resources */,
@@ -414,6 +416,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8046F3F01D8369A0007F25E4 /* Run Script: Pre-Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: Pre-Build";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh Scripts/BuildPhase-Validate.sh";
+		};
+		8046F3F11D83701E007F25E4 /* Run Script: Pre-Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: Pre-Build";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh Scripts/BuildPhase-Validate.sh";
+		};
 		80B940381D1B50040013FE1C /* Run Script: Pre-Build */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,7 +456,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "exit 0\n\"$SRCROOT/Shared/Conf/Scripts/BuildPhase_SwiftLint.sh\" \"$SRCROOT\"\n\"$SRCROOT/Shared/Conf/Scripts/BuildPhase_CheckHeaders.sh\" \"WaveLabs\" \"$SRCROOT/Tests\" \"$SRCROOT/Sources\" \"$SRCROOT/Applications\"";
+			shellScript = "sh Scripts/BuildPhase-Validate.sh";
 		};
 		80C205301D18A57A00A932E4 /* Run Script: Check CoreAudio Folder */ = {
 			isa = PBXShellScriptBuildPhase;
