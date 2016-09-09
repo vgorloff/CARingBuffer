@@ -98,6 +98,20 @@ public final class CARingBuffer<T> {
    /// - parameter startWrite: Absolute time.
    /// - returns: Operation status code.
    public func store(_ abl: UnsafePointer<AudioBufferList>, framesToWrite: UInt32, startWrite: SampleTime) -> CARingBufferError {
+      return store(framesToWrite: framesToWrite, startWrite: startWrite) { [unowned self] srcOffset, destOffset, numberOfBytes in
+         self.storeABL(self.mBuffer, destOffset: destOffset, abl: abl, srcOffset: srcOffset, nbytes: numberOfBytes)
+      }
+   }
+
+   public func store(_ mediaBuffers: MediaBufferList<T>, framesToWrite: UInt32, startWrite: SampleTime) -> CARingBufferError {
+      return store(framesToWrite: framesToWrite, startWrite: startWrite) { [unowned self] srcOffset, destOffset, numberOfBytes in
+         self.store(from: mediaBuffers, srcOffset: srcOffset,
+                    into: self.mBuffer, destOffset: destOffset, numberOfBytes: numberOfBytes)
+      }
+   }
+
+   private func store(framesToWrite: UInt32, startWrite: SampleTime, storeProcedure:
+      (_ srcOffset: SampleTime, _ destOffset: SampleTime, _ numberOfBytes: SampleTime) -> Void) -> CARingBufferError {
       if framesToWrite == 0 {
          return .NoError
       }
@@ -140,11 +154,11 @@ public final class CARingBuffer<T> {
 
       offset1 = frameOffset(endWrite)
       if offset0 < offset1 {
-         storeABL(mBuffer, destOffset: offset0, abl: abl, srcOffset: 0, nbytes: offset1 - offset0)
+         storeProcedure(0, offset0, offset1 - offset0)
       } else {
          nbytes = SampleTime(mCapacityBytes) - offset0
-         storeABL(mBuffer, destOffset: offset0, abl: abl, srcOffset: 0, nbytes: nbytes)
-         storeABL(mBuffer, destOffset: 0, abl: abl, srcOffset: nbytes, nbytes: offset1)
+         storeProcedure(0, offset0, nbytes)
+         storeProcedure(nbytes, 0, offset1)
       }
 
       // now update the end time
@@ -153,15 +167,17 @@ public final class CARingBuffer<T> {
       return .NoError
    }
 
-   public func fetch(_ abl: UnsafeMutablePointer<AudioBufferList>, framesToRead nFrames: UInt32,
-                     startRead aStartRead: SampleTime) -> CARingBufferError {
-      if nFrames == 0 {
+   private func fetch(framesToRead: UInt32, startRead: SampleTime,
+                     zeroProcedure: (_ destOffset: SampleTime, _ numberOfBytes: SampleTime) -> Void,
+                     fetchProcedure: (_ srcOffset: SampleTime, _ destOffset: SampleTime, _ numberOfBytes: SampleTime) -> Void)
+      -> CARingBufferError {
+      if framesToRead == 0 {
          return .NoError
       }
 
-      var startRead = max(0, aStartRead)
+      var startRead = max(0, startRead)
 
-      var endRead = startRead + Int64(nFrames)
+      var endRead = startRead + Int64(framesToRead)
 
       let startRead0 = startRead
       let endRead0 = endRead
@@ -172,7 +188,7 @@ public final class CARingBuffer<T> {
       }
 
       if startRead == endRead {
-         zeroABL(abl, destOffset: 0, nbytes: Int64(nFrames * mBytesPerFrame))
+         zeroProcedure(0, Int64(framesToRead * mBytesPerFrame))
          return .NoError
       }
 
@@ -182,12 +198,12 @@ public final class CARingBuffer<T> {
       let destStartByteOffset = max(0, (startRead - startRead0) * Int64(mBytesPerFrame))
 
       if destStartByteOffset > 0 {
-         zeroABL(abl, destOffset: 0, nbytes: min(Int64(nFrames * mBytesPerFrame), destStartByteOffset))
+         zeroProcedure(0, min(Int64(framesToRead * mBytesPerFrame), destStartByteOffset))
       }
 
       let destEndSize = max(0, endRead0 - endRead)
       if destEndSize > 0 {
-         zeroABL(abl, destOffset: destStartByteOffset + byteSize, nbytes: destEndSize * Int64(mBytesPerFrame))
+         zeroProcedure(destStartByteOffset + byteSize, destEndSize * Int64(mBytesPerFrame))
       }
 
       let offset0 = frameOffset(startRead)
@@ -196,23 +212,44 @@ public final class CARingBuffer<T> {
 
       if offset0 < offset1 {
          nbytes = offset1 - offset0
-         fetchABL(abl, destOffset: destStartByteOffset, buffers: mBuffer, srcOffset: offset0, nbytes: nbytes)
+         //         fetchABL(abl, destOffset: destStartByteOffset, buffers: mBuffer, srcOffset: offset0, nbytes: nbytes)
+         fetchProcedure(offset0, destStartByteOffset, nbytes)
       } else {
          nbytes = Int64(mCapacityBytes) - offset0
-         fetchABL(abl, destOffset: destStartByteOffset, buffers: mBuffer, srcOffset: offset0, nbytes: nbytes)
-         fetchABL(abl, destOffset: destStartByteOffset + nbytes, buffers: mBuffer, srcOffset: 0, nbytes: offset1)
+         //         fetchABL(abl, destOffset: destStartByteOffset, buffers: mBuffer, srcOffset: offset0, nbytes: nbytes)
+         fetchProcedure(offset0, destStartByteOffset, nbytes)
+         //         fetchABL(abl, destOffset: destStartByteOffset + nbytes, buffers: mBuffer, srcOffset: 0, nbytes: offset1)
+         fetchProcedure(0, destStartByteOffset + nbytes, offset1)
          nbytes += offset1
       }
 
-      let ablPointer = UnsafeMutableAudioBufferListPointer(abl)
-      for channel in 0..<ablPointer.count {
-         var dest = ablPointer[channel]
-         if dest.mData != nil {
-            dest.mDataByteSize = UInt32(nbytes) // FIXME: This should be in sync with AVAudioPCMBuffer (Vlad Gorlov, 2016-06-12).
-         }
-      }
+        // FIXME: Do we really need to update mDataByteSize?.
+//      let ablPointer = UnsafeMutableAudioBufferListPointer(abl)
+//      for channel in 0..<ablPointer.count {
+//         var dest = ablPointer[channel]
+//         if dest.mData != nil {
+//            dest.mDataByteSize = UInt32(nbytes) // FIXME: This should be in sync with AVAudioPCMBuffer (Vlad Gorlov, 2016-06-12).
+//         }
+//      }
 
       return .NoError
+   }
+
+   public func fetch(_ abl: UnsafeMutablePointer<AudioBufferList>, framesToRead: UInt32,
+                     startRead: SampleTime) -> CARingBufferError {
+      return fetch(framesToRead: framesToRead, startRead: startRead, zeroProcedure: { destOffset, numberOfBytes in
+         zeroABL(abl, destOffset: destOffset, nbytes: numberOfBytes)
+      }) { srcOffset, destOffset, numberOfBytes in
+         fetchABL(abl, destOffset: destOffset, buffers: mBuffer, srcOffset: srcOffset, nbytes: numberOfBytes)
+      }
+   }
+
+   public func fetch(_ mediaBuffers: MediaBufferList<T>, framesToRead: UInt32, startRead: SampleTime) -> CARingBufferError {
+      return fetch(framesToRead: framesToRead, startRead: startRead, zeroProcedure: { destOffset, numberOfBytes in
+         zero(mediaBuffers, destOffset: destOffset, nbytes: numberOfBytes)
+      }) { srcOffset, destOffset, numberOfBytes in
+         fetch(into: mediaBuffers, destOffset: destOffset, from: mBuffer, srcOffset: srcOffset, numberOfBytes: numberOfBytes)
+      }
    }
 
    // MARK: - Private
@@ -237,6 +274,22 @@ public final class CARingBuffer<T> {
       }
    }
 
+   private func zero(_ mediaBufferList: MediaBufferList<T>, destOffset: SampleTime, nbytes: SampleTime) {
+      let advanceDistance = Int(destOffset) / Int(mBytesPerFrame)
+      let numberOfChannels = mediaBufferList.numberBuffers
+      for channel in 0..<numberOfChannels {
+         let channelBuffer = mediaBufferList[channel]
+         if destOffset > Int64(channelBuffer.dataByteSize) {
+            continue
+         }
+         let channelData = channelBuffer.data
+         let positionWrite = channelData.advanced(by: advanceDistance)
+         let numberOfBytes = min(Int(nbytes), Int(channelBuffer.dataByteSize) - Int(destOffset))
+         let writeDestination = UnsafeMutableRawPointer(mutating: positionWrite)
+         memset(writeDestination, 0, numberOfBytes)
+      }
+   }
+
    private func frameOffset(_ frameNumber: SampleTime) -> SampleTime {
       return (frameNumber & SampleTime(mCapacityFramesMask)) * SampleTime(mBytesPerFrame)
    }
@@ -248,6 +301,24 @@ public final class CARingBuffer<T> {
          // FIXME: Should we check for overflows? (Vlad Gorlov, 2016-06-12).
          let positionWrite = buffers.advanced(by: advanceDistance + Int(channel * mCapacityFrames))
          memset(positionWrite, 0, Int(nbytes))
+      }
+   }
+
+   private func fetch(into mediaBuffer: MediaBufferList<T>, destOffset: SampleTime,
+                      from buffers: UnsafeMutablePointer<T>, srcOffset: SampleTime, numberOfBytes: SampleTime) {
+      let advanceOfSource = Int(srcOffset) / Int(mBytesPerFrame)
+      let advanceOfDestination = Int(destOffset) / Int(mBytesPerFrame)
+      let numberOfChannels = mediaBuffer.numberBuffers
+      for channel in 0 ..< numberOfChannels {
+         let channelBuffer = mediaBuffer[channel]
+         if destOffset > Int64(channelBuffer.dataByteSize) {
+            continue
+         }
+         let positionRead = buffers.advanced(by: advanceOfSource + Int(channel * UInt(mCapacityFrames)))
+         let positionWrite = channelBuffer.data.advanced(by: advanceOfDestination)
+         let numberOfBytes = min(Int(numberOfBytes), Int(channelBuffer.dataByteSize) - Int(destOffset))
+         let writeDestination = UnsafeMutableRawPointer(mutating: positionWrite)
+         memcpy(writeDestination, positionRead, numberOfBytes)
       }
    }
 
@@ -271,6 +342,23 @@ public final class CARingBuffer<T> {
          let positionRead = buffers.advanced(by: advanceOfSource + channel * Int(mCapacityFrames))
          let positionWrite = channelData.advanced(by: advanceOfDestination)
          let numberOfBytes = min(Int(nbytes), Int(channelBuffer.mDataByteSize) - Int(destOffset))
+         memcpy(positionWrite, positionRead, numberOfBytes)
+      }
+   }
+
+   private func store(from mediaBuffer: MediaBufferList<T>, srcOffset: SampleTime,
+                      into buffers: UnsafeMutablePointer<T>, destOffset: SampleTime, numberOfBytes: SampleTime) {
+      let advanceOfSource = Int(srcOffset) / Int(mBytesPerFrame)
+      let advanceOfDestination = Int(destOffset) / Int(mBytesPerFrame)
+      let numberOfChannels = mediaBuffer.numberBuffers
+      for channel in 0 ..< numberOfChannels {
+         let channelBuffer = mediaBuffer[channel]
+         if srcOffset > Int64(channelBuffer.dataByteSize) {
+            continue
+         }
+         let positionRead = channelBuffer.data.advanced(by: advanceOfSource)
+         let positionWrite = buffers.advanced(by: advanceOfDestination + Int(channel * UInt(mCapacityFrames)))
+         let numberOfBytes = min(Int(numberOfBytes), Int(channelBuffer.dataByteSize) - Int(srcOffset))
          memcpy(positionWrite, positionRead, numberOfBytes)
       }
    }
@@ -301,7 +389,7 @@ public final class CARingBuffer<T> {
 
    //region MARK: - Time Bounds Queue
 
-   func setTimeBounds(startTime: SampleTime, endTime: SampleTime) {
+   private func setTimeBounds(startTime: SampleTime, endTime: SampleTime) {
       let nextAbsoluteIndex = mTimeBoundsQueueCurrentIndex + 1 // Always increasing
       // Index always in range [0, kGeneralRingTimeBoundsQueueSize - 1]
       let elementIndex = Int(nextAbsoluteIndex & kGeneralRingTimeBoundsQueueMask)
@@ -355,7 +443,7 @@ public final class CARingBuffer<T> {
       if err != .NoError {
          return err
       }
-
+      
       if startRead > endTime || endRead < startTime {
          endRead = startRead
          return .NoError
