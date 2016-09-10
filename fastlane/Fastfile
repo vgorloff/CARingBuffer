@@ -3,37 +3,45 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "1.95.0"
+fastlane_version "1.102.0"
 
 import '../Shared/Conf/Scripts/fastlane.rb'
 
 AWLProjectName = "CARingBuffer.xcodeproj"
 AWLProjectRelativeFilePath = "#{AWLProjectName}"
 
-desc "Runs all the tests (C++ and Swift)."
-lane :test do
-  XcodeMacOSTest("Logic Tests: Swift", "Logic Tests: C++")
-end
-
-desc "Builds project."
-lane :build do
-  XcodeBuild("CARBMeasure", "CAPlayThrough")
-end
-
-desc "Builds when under CI (i.e. Travis)."
+desc "CI: Builds and run Swift tests."
 lane :ci do
   XcodeBuildRelease("CARBMeasure", "CAPlayThrough")
   XcodeMacOSTest("Logic Tests: Swift")
+  ValidateSources()
 end
 
-desc "Increment version number."
-desc "Usually should be runned after finishing release in Git Flow."
+desc "Manual: Increment version number."
+desc "Usually used when repository is on standard Git-Flow release branch."
 lane :bump do
   ensure_git_status_clean
   Bump(AWLProjectRelativeFilePath)
 end
 
-desc "Cleans project."
+desc "Manual: Cleans project."
 lane :clean do
   XcodeClean("CAPlayThrough", "CARBMeasure", "Logic Tests: Swift", "Logic Tests: C++")
+end
+
+desc "Manual: Builds project."
+lane :build do
+  XcodeBuild("CARBMeasure", "CAPlayThrough")
+  ValidateSources()
+end
+
+desc "Manual: Runs all the tests (C++ and Swift)."
+lane :test do
+  XcodeMacOSTest("Logic Tests: Swift", "Logic Tests: C++")
+  ValidateSources()
+end
+
+desc "Service: Update Fastlane and other Tools."
+lane :update do
+  SelfUpdate()
 end

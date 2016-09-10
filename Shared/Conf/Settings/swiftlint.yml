@@ -1,6 +1,7 @@
-disabled_rules:
-  - conditional_binding_cascade
-
+excluded:
+  - Vendor
+  - Tests
+  
 line_length:
   warning: 130
   error: 200
