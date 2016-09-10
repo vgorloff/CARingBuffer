@@ -1,6 +1,6 @@
 //
 //  CARBTests.CustomType.swift
-//  CARingBuffer
+//  WaveLabs
 //
 //  Created by Vlad Gorlov on 07.09.16.
 //  Copyright © 2016 WaveLabs. All rights reserved.
@@ -105,6 +105,54 @@ extension CARBSwiftTests {
       XCTAssertTrue(isSampleDataEqual(lhs: channelData4In, rhs: channelData4Out))
    }
 
+   func testIOWithMediaBufferType() {
+
+      func isSampleDataEqual(lhs: [Double], rhs: [Double]) -> Bool {
+         guard lhs.count == rhs.count else {
+            return false
+         }
+         for index in 0..<lhs.count {
+            if lhs[index] != rhs[index] {
+               return false
+            }
+         }
+         return true
+      }
+
+      var channelData1In = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5]
+      var channelData2In = [2.0, 2.1, 2.2, 2.3, 2.4, 2.5]
+      var channelData3In = [3.0, 3.1, 3.2, 3.3, 3.4, 3.5]
+      var channelData4In = [4.0, 4.1, 4.2, 4.3, 4.4, 4.5]
+      let mediaBufferListPtrIn = UnsafeMutablePointer<MediaBuffer<Double>>.allocate(capacity: 4)
+      mediaBufferListPtrIn[0] = MediaBuffer(mutableData: &channelData1In, numberOfElements: channelData1In.count)
+      mediaBufferListPtrIn[1] = MediaBuffer(mutableData: &channelData2In, numberOfElements: channelData2In.count)
+      mediaBufferListPtrIn[2] = MediaBuffer(mutableData: &channelData3In, numberOfElements: channelData3In.count)
+      mediaBufferListPtrIn[3] = MediaBuffer(mutableData: &channelData4In, numberOfElements: channelData4In.count)
+      let mediaBufferListIn = MediaBufferList(buffers: mediaBufferListPtrIn, numberBuffers: 4)
+
+      var channelData1Out = [10.0, 10.1, 10.2, 10.3, 10.4, 10.5]
+      var channelData2Out = [20.0, 20.1, 20.2, 20.3, 20.4, 20.5]
+      var channelData3Out = [30.0, 30.1, 30.2, 30.3, 30.4, 30.5]
+      var channelData4Out = [40.0, 40.1, 40.2, 40.3, 40.4, 40.5]
+      let mediaBufferListPtrOut = UnsafeMutablePointer<MediaBuffer<Double>>.allocate(capacity: 4)
+      mediaBufferListPtrOut[0] = MediaBuffer(mutableData: &channelData1Out, numberOfElements: channelData1Out.count)
+      mediaBufferListPtrOut[1] = MediaBuffer(mutableData: &channelData2Out, numberOfElements: channelData2Out.count)
+      mediaBufferListPtrOut[2] = MediaBuffer(mutableData: &channelData3Out, numberOfElements: channelData3Out.count)
+      mediaBufferListPtrOut[3] = MediaBuffer(mutableData: &channelData4Out, numberOfElements: channelData4Out.count)
+      let mediaBufferListOut = MediaBufferList(buffers: mediaBufferListPtrOut, numberBuffers: 4)
+
+      let rb = CARingBuffer<Double>(numberOfChannels: 4, capacityFrames: 8)
+      var status = CARingBufferError.NoError
+      status = rb.store(mediaBufferListIn, framesToWrite: 6, startWrite: 0)
+      XCTAssertTrue(status == .NoError)
+      status = rb.fetch(mediaBufferListOut, framesToRead: 6, startRead: 0)
+      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(isSampleDataEqual(lhs: channelData1In, rhs: channelData1Out))
+      XCTAssertTrue(isSampleDataEqual(lhs: channelData2In, rhs: channelData2Out))
+      XCTAssertTrue(isSampleDataEqual(lhs: channelData3In, rhs: channelData3Out))
+      XCTAssertTrue(isSampleDataEqual(lhs: channelData4In, rhs: channelData4Out))
+   }
+
    func testIOWithCustomDataType() {
 
       typealias ST = CustomSampleType
@@ -159,5 +207,5 @@ extension CARBSwiftTests {
       XCTAssertTrue(isSampleDataEqual(lhs: channelData3In, rhs: channelData3Out))
       XCTAssertTrue(isSampleDataEqual(lhs: channelData4In, rhs: channelData4Out))
    }
-   
+
 }
