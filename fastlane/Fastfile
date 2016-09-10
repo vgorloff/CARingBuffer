@@ -14,6 +14,7 @@ desc "CI: Builds and run Swift tests."
 lane :ci do
   XcodeBuildRelease("CARBMeasure", "CAPlayThrough")
   XcodeMacOSTest("Logic Tests: Swift")
+  ValidateSources()
 end
 
 desc "Manual: Increment version number."
