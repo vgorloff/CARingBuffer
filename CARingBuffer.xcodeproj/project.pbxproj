@@ -71,7 +71,6 @@
 		80B12CE91D21AD2E00B2FE2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80B12CEE1D21AD2E00B2FE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		80B12CF01D21AD2E00B2FE2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayThroughRenderUtility.swift; sourceTree = "<group>"; };
 		80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitUtility.swift; sourceTree = "<group>"; };
 		80B12D091D21B14C00B2FE2A /* AudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
@@ -133,7 +132,6 @@
 		80B12CE61D21AD2E00B2FE2A /* CAPlayThrough */ = {
 			isa = PBXGroup;
 			children = (
-				80B12CF01D21AD2E00B2FE2A /* Info.plist */,
 				80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */,
 				80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */,
 				80B12CE91D21AD2E00B2FE2A /* ViewController.swift */,
@@ -198,10 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				80FA42521D247AAD00937DD8 /* Readme.md */,
-				80FA42491D246B8500937DD8 /* Applications */,
+				80FA42491D246B8500937DD8 /* Sources */,
 				80C2051D1D189EE700A932E4 /* Shared */,
-				80C9CFC01D0CC94200960F60 /* Vendor */,
 				80C9CFB11D0CC6AF00960F60 /* Tests */,
+				80C9CFC01D0CC94200960F60 /* Vendor */,
 				80C9CFCD1D0D713900960F60 /* Frameworks */,
 				80C9CFA41D0CC6AF00960F60 /* Products */,
 			);
@@ -264,13 +262,13 @@
 			path = Media;
 			sourceTree = "<group>";
 		};
-		80FA42491D246B8500937DD8 /* Applications */ = {
+		80FA42491D246B8500937DD8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				8050152C1D0F722200AE0412 /* CARBMeasure */,
 				80B12CE61D21AD2E00B2FE2A /* CAPlayThrough */,
 			);
-			path = Applications;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,7 +596,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 10;
 				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = Applications/CAPlayThrough/Info.plist;
+				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -614,7 +612,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 10;
-				INFOPLIST_FILE = Applications/CAPlayThrough/Info.plist;
+				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
