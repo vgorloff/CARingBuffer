@@ -209,4 +209,56 @@ extension CARBSwiftTests {
       XCTAssertTrue(isSampleDataEqual(lhs: channelData4In, rhs: channelData4Out))
    }
 
+   func testBufferHasLessChannels() {
+      var channelData1In: [Float] = [10, 11, 12, 13]
+      var channelData2In: [Float] = [20, 21, 22, 23]
+      let mediaBufferListPtrIn = UnsafeMutablePointer<MediaBuffer<Float>>.allocate(capacity: 2)
+      mediaBufferListPtrIn[0] = MediaBuffer(mutableData: &channelData1In, numberOfElements: channelData1In.count)
+      mediaBufferListPtrIn[1] = MediaBuffer(mutableData: &channelData2In, numberOfElements: channelData2In.count)
+      let mediaBufferListIn = MediaBufferList(buffers: mediaBufferListPtrIn, numberOfBuffers: 2)
+      let rb = CARingBuffer<Float>(numberOfChannels: 1, capacityFrames: 8)
+      var status = CARingBufferError.NoError
+      status = rb.store(mediaBufferListIn, framesToWrite: 4, startWrite: 0)
+      XCTAssertTrue(status == .NoError)
+      status = rb.fetch(mediaBufferListIn, framesToRead: 4, startRead: 0)
+      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(channelData1In[0] == 10)
+      XCTAssertTrue(channelData1In[1] == 11)
+      XCTAssertTrue(channelData1In[2] == 12)
+      XCTAssertTrue(channelData1In[3] == 13)
+      XCTAssertTrue(channelData2In[0] == 0)
+      XCTAssertTrue(channelData2In[1] == 0)
+      XCTAssertTrue(channelData2In[2] == 0)
+      XCTAssertTrue(channelData2In[3] == 0)
+   }
+
+   func testBufferHasMoreChannels() {
+      var channelData1In: [Float] = [10, 11, 12, 13]
+      var channelData2In: [Float] = [20, 21, 22, 23]
+
+      let mediaBufferListPtrIn = UnsafeMutablePointer<MediaBuffer<Float>>.allocate(capacity: 1)
+      mediaBufferListPtrIn[0] = MediaBuffer(mutableData: &channelData1In, numberOfElements: channelData1In.count)
+      let mediaBufferListIn = MediaBufferList(buffers: mediaBufferListPtrIn, numberOfBuffers: 1)
+
+      let mediaBufferListPtrOut = UnsafeMutablePointer<MediaBuffer<Float>>.allocate(capacity: 2)
+      mediaBufferListPtrOut[0] = MediaBuffer(mutableData: &channelData1In, numberOfElements: channelData1In.count)
+      mediaBufferListPtrOut[1] = MediaBuffer(mutableData: &channelData2In, numberOfElements: channelData2In.count)
+      let mediaBufferListOut = MediaBufferList(buffers: mediaBufferListPtrOut, numberOfBuffers: 2)
+
+      let rb = CARingBuffer<Float>(numberOfChannels: 2, capacityFrames: 8)
+      var status = CARingBufferError.NoError
+      status = rb.store(mediaBufferListIn, framesToWrite: 4, startWrite: 0)
+      XCTAssertTrue(status == .NoError)
+      status = rb.fetch(mediaBufferListOut, framesToRead: 4, startRead: 0)
+      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(channelData1In[0] == 10)
+      XCTAssertTrue(channelData1In[1] == 11)
+      XCTAssertTrue(channelData1In[2] == 12)
+      XCTAssertTrue(channelData1In[3] == 13)
+      XCTAssertTrue(channelData2In[0] == 0)
+      XCTAssertTrue(channelData2In[1] == 0)
+      XCTAssertTrue(channelData2In[2] == 0)
+      XCTAssertTrue(channelData2In[3] == 0)
+   }
+
 }
