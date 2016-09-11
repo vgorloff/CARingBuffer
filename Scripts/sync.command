@@ -1,7 +1,7 @@
 #!/bin/bash
 # Proper header for a Bash script.
 
-AWLProjectDirPath=$(cd "$(dirname "$0")"; pwd)
+AWLProjectDirPath=$(cd "$(dirname "$0")/../"; pwd)
 cd "$AWLProjectDirPath"
 export AWLSyncLeft="$AWLProjectDirPath/Shared"
 export AWLSyncRight="$GV_VCS_HOME/BitBucket/WL"
