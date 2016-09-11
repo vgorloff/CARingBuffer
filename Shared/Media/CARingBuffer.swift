@@ -277,9 +277,9 @@ public final class CARingBuffer<T> {
 
    private func zero(_ mediaBufferList: MediaBufferList<T>, destOffset: SampleTime, nbytes: SampleTime) {
       let advanceDistance = Int(destOffset) / Int(mBytesPerFrame)
-      let numberOfChannels = mediaBufferList.numberBuffers
+      let numberOfChannels = mediaBufferList.numberOfBuffers
       for channel in 0..<numberOfChannels {
-         let channelBuffer = mediaBufferList[channel]
+         let channelBuffer = mediaBufferList[channel].pointee
          if destOffset > Int64(channelBuffer.dataByteSize) {
             continue
          }
@@ -309,9 +309,9 @@ public final class CARingBuffer<T> {
                       from buffers: UnsafeMutablePointer<T>, srcOffset: SampleTime, numberOfBytes: SampleTime) {
       let advanceOfSource = Int(srcOffset) / Int(mBytesPerFrame)
       let advanceOfDestination = Int(destOffset) / Int(mBytesPerFrame)
-      let numberOfChannels = mediaBuffer.numberBuffers
+      let numberOfChannels = mediaBuffer.numberOfBuffers
       for channel in 0 ..< numberOfChannels {
-         let channelBuffer = mediaBuffer[channel]
+         let channelBuffer = mediaBuffer[channel].pointee
          if destOffset > Int64(channelBuffer.dataByteSize) {
             continue
          }
@@ -351,9 +351,9 @@ public final class CARingBuffer<T> {
                       into buffers: UnsafeMutablePointer<T>, destOffset: SampleTime, numberOfBytes: SampleTime) {
       let advanceOfSource = Int(srcOffset) / Int(mBytesPerFrame)
       let advanceOfDestination = Int(destOffset) / Int(mBytesPerFrame)
-      let numberOfChannels = mediaBuffer.numberBuffers
+      let numberOfChannels = mediaBuffer.numberOfBuffers
       for channel in 0 ..< numberOfChannels {
-         let channelBuffer = mediaBuffer[channel]
+         let channelBuffer = mediaBuffer[channel].pointee
          if srcOffset > Int64(channelBuffer.dataByteSize) {
             continue
          }

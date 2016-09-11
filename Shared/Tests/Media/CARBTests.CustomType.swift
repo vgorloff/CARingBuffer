@@ -42,7 +42,8 @@ extension AudioBuffer {
       return mData?.assumingMemoryBound(to: CustomSampleType.self)
    }
    var mCustomTypeBuffer: UnsafeMutableBufferPointer<CustomSampleType> {
-      return UnsafeMutableBufferPointer<CustomSampleType>(start: mCustomTypeData, count: Int(mDataByteSize) / MemoryLayout<CustomSampleType>.stride)
+      return UnsafeMutableBufferPointer<CustomSampleType>(start: mCustomTypeData,
+                                                          count: Int(mDataByteSize) / MemoryLayout<CustomSampleType>.stride)
    }
    var mCustomTypeArray: [CustomSampleType] {
       return Array<CustomSampleType>(mCustomTypeBuffer)
@@ -128,7 +129,7 @@ extension CARBSwiftTests {
       mediaBufferListPtrIn[1] = MediaBuffer(mutableData: &channelData2In, numberOfElements: channelData2In.count)
       mediaBufferListPtrIn[2] = MediaBuffer(mutableData: &channelData3In, numberOfElements: channelData3In.count)
       mediaBufferListPtrIn[3] = MediaBuffer(mutableData: &channelData4In, numberOfElements: channelData4In.count)
-      let mediaBufferListIn = MediaBufferList(buffers: mediaBufferListPtrIn, numberBuffers: 4)
+      let mediaBufferListIn = MediaBufferList(buffers: mediaBufferListPtrIn, numberOfBuffers: 4)
 
       var channelData1Out = [10.0, 10.1, 10.2, 10.3, 10.4, 10.5]
       var channelData2Out = [20.0, 20.1, 20.2, 20.3, 20.4, 20.5]
@@ -139,7 +140,7 @@ extension CARBSwiftTests {
       mediaBufferListPtrOut[1] = MediaBuffer(mutableData: &channelData2Out, numberOfElements: channelData2Out.count)
       mediaBufferListPtrOut[2] = MediaBuffer(mutableData: &channelData3Out, numberOfElements: channelData3Out.count)
       mediaBufferListPtrOut[3] = MediaBuffer(mutableData: &channelData4Out, numberOfElements: channelData4Out.count)
-      let mediaBufferListOut = MediaBufferList(buffers: mediaBufferListPtrOut, numberBuffers: 4)
+      let mediaBufferListOut = MediaBufferList(buffers: mediaBufferListPtrOut, numberOfBuffers: 4)
 
       let rb = CARingBuffer<Double>(numberOfChannels: 4, capacityFrames: 8)
       var status = CARingBufferError.NoError
