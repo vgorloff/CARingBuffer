@@ -25,26 +25,37 @@ public struct MediaBuffer<T> {
       self.mutableData = UnsafeMutablePointer(mutating: data)
       self.data = data
    }
+   public subscript(index: UInt) -> T {
+      get {
+         precondition(index < numberOfElements)
+         return data[Int(index)]
+      }
+      set {
+         precondition(index < numberOfElements)
+         mutableData[Int(index)] = newValue
+      }
+   }
 }
 
 public struct MediaBufferList<T> {
-   public let numberBuffers: UInt
+   public let numberOfBuffers: UInt
    public let buffers: UnsafePointer<MediaBuffer<T>>
    public let mutableBuffers: UnsafeMutablePointer<MediaBuffer<T>>
-   public init(mutableBuffers: UnsafeMutablePointer<MediaBuffer<T>>, numberBuffers: Int) {
-      self.numberBuffers = UInt(numberBuffers)
+   public init(mutableBuffers: UnsafeMutablePointer<MediaBuffer<T>>, numberOfBuffers: Int) {
+      self.numberOfBuffers = UInt(numberOfBuffers)
       self.mutableBuffers = mutableBuffers
       self.buffers = UnsafePointer(mutableBuffers)
    }
-   public init(buffers: UnsafePointer<MediaBuffer<T>>, numberBuffers: Int) {
-      self.numberBuffers = UInt(numberBuffers)
+   public init(buffers: UnsafePointer<MediaBuffer<T>>, numberOfBuffers: Int) {
+      self.numberOfBuffers = UInt(numberOfBuffers)
       self.mutableBuffers = UnsafeMutablePointer(mutating: buffers)
       self.buffers = buffers
    }
-   public subscript(index: UInt) -> MediaBuffer<T> {
+   public subscript(index: UInt) -> UnsafePointer<MediaBuffer<T>> {
       get {
-         precondition(index < numberBuffers)
-         return buffers.advanced(by: Int(index)).pointee
+         precondition(index < numberOfBuffers)
+         return buffers.advanced(by: Int(index))
       }
    }
+
 }

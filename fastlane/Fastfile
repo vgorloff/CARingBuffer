@@ -12,7 +12,7 @@ AWLProjectRelativeFilePath = "#{AWLProjectName}"
 
 desc "CI: Builds and run Swift tests."
 lane :ci do
-  XcodeBuildRelease("CARBMeasure", "CAPlayThrough")
+  XcodeBuildRelease("Developer: Analyze Performance", "Demo: CAPlayThrough")
   XcodeMacOSTest("Logic Tests: Swift")
   ValidateSources()
 end
@@ -26,12 +26,12 @@ end
 
 desc "Manual: Cleans project."
 lane :clean do
-  XcodeClean("CAPlayThrough", "CARBMeasure", "Logic Tests: Swift", "Logic Tests: C++")
+  XcodeClean("Developer: Build Everything")
 end
 
 desc "Manual: Builds project."
 lane :build do
-  XcodeBuild("CARBMeasure", "CAPlayThrough")
+  XcodeBuild("Developer: Build Everything")
   ValidateSources()
 end
 
