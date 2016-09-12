@@ -7,10 +7,10 @@
             <IgnoreTimeShift/>
         </Comparison>
         <SyncConfig>
-            <Variant>Update</Variant>
+            <Variant>Custom</Variant>
             <CustomDirections>
                 <LeftOnly>right</LeftOnly>
-                <RightOnly>left</RightOnly>
+                <RightOnly>none</RightOnly>
                 <LeftNewer>right</LeftNewer>
                 <RightNewer>left</RightNewer>
                 <Different>none</Different>
@@ -31,18 +31,14 @@
                 <Item>*/.DS_Store</Item>
                 <Item>*/._.*</Item>
                 <Item>.git</Item>
+                <Item>*/.idea/</Item>
                 <Item>*.xcodeproj</Item>
+                <Item>*/Info.plist</Item>
             </Exclude>
             <TimeSpan Type="None">0</TimeSpan>
             <SizeMin Unit="None">0</SizeMin>
             <SizeMax Unit="None">0</SizeMax>
         </GlobalFilter>
-        <FolderPairs>
-            <Pair>
-                <Left>%GV_VCS_HOME%/GitHub/CARingBuffer/Shared</Left>
-                <Right>%GV_VCS_HOME%/BitBucket/WL</Right>
-            </Pair>
-        </FolderPairs>
         <OnCompletion/>
     </MainConfig>
     <GuiConfig>
