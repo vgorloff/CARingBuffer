@@ -47,7 +47,11 @@ public final class CARingBuffer<T> {
                                                                           count: Int(kGeneralRingTimeBoundsQueueSize))
    private var mTimeBoundsQueueCurrentIndex: Int32 = 0
 
-   private let mNumberChannels: UInt32
+   public var numberOfChannels: UInt32 {
+      return mNumberChannels
+   }
+
+   private let mNumberChannels: UInt32 // FIXME: Rename it and make public.
    /// Per channel capacity, must be a power of 2.
    private let mCapacityFrames: UInt32
    /// Used to for index calculation.
@@ -85,7 +89,7 @@ public final class CARingBuffer<T> {
       mBuffer.deallocate(capacity: Int(mBuffersLength))
    }
 
-   // MARK: - Public
+   // MARK: - Fetch and Store
 
    /// Copy framesToWrite of data into the ring buffer at the specified sample time.
    /// The sample time should normally increase sequentially, though gaps
@@ -256,7 +260,7 @@ public final class CARingBuffer<T> {
          return .NoError
    }
 
-   // MARK: • Fetch and Store
+   // MARK: • Fetch and Store (Private)
 
    private func storeABL(_ buffers: UnsafeMutablePointer<T>, destOffset: SampleTime, abl: UnsafePointer<AudioBufferList>,
                          srcOffset: SampleTime, numberOfBytes: SampleTime) {
@@ -424,7 +428,7 @@ public final class CARingBuffer<T> {
       assert(status)
    }
 
-   func getTimeBounds(startTime: inout SampleTime, endTime: inout SampleTime) -> CARingBufferError {
+   public func getTimeBounds(startTime: inout SampleTime, endTime: inout SampleTime) -> CARingBufferError {
       // Fail after a few tries.
       for _ in 0 ..< 8 {
          let curPtr = mTimeBoundsQueueCurrentIndex
