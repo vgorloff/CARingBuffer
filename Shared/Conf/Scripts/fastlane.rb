@@ -44,7 +44,7 @@ end
 
 def XcodeMacOSTest(*schemes)
   schemes.each { |schema|
-    scan(scheme: schema, output_directory: "fastlane/test_output/#{schema}", device: "macOS")
+    scan(scheme: schema, output_directory: "fastlane/test_output/#{schema}", destination: "platform=macOS")
   }
 end
 
