@@ -57,7 +57,7 @@ public extension OperationQueue {
 
 	public struct UserInteractive {
 		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
-			let q = Concurrent(name: name)
+			let q = concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
@@ -71,7 +71,7 @@ public extension OperationQueue {
 
 	public struct UserInitiated {
 		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
-			let q = Concurrent(name: name)
+			let q = concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
@@ -85,7 +85,7 @@ public extension OperationQueue {
 
 	public struct Utility {
 		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
-			let q = Concurrent(name: name)
+			let q = concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
@@ -99,7 +99,7 @@ public extension OperationQueue {
 
 	public struct Background {
 		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
-			let q = Concurrent(name: name)
+			let q = concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
@@ -113,7 +113,7 @@ public extension OperationQueue {
 
 	public struct Default {
 		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
-			let q = Concurrent(name: name)
+			let q = concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
@@ -127,37 +127,37 @@ public extension OperationQueue {
 
 	public struct NonConcurrent {
 		public static func userInteractive(name: String? = nil) -> OperationQueue {
-			return OperationQueue.UserInteractive.NonConcurrent(name: name)
+			return OperationQueue.UserInteractive.nonConcurrent(name: name)
 		}
 		public static func userInitiated(name: String? = nil) -> OperationQueue {
-			return OperationQueue.UserInitiated.NonConcurrent(name: name)
+			return OperationQueue.UserInitiated.nonConcurrent(name: name)
 		}
 		public static func utility(name: String? = nil) -> OperationQueue {
-			return OperationQueue.Utility.NonConcurrent(name: name)
+			return OperationQueue.Utility.nonConcurrent(name: name)
 		}
 		public static func background(name: String? = nil) -> OperationQueue {
-			return OperationQueue.Background.NonConcurrent(name: name)
+			return OperationQueue.Background.nonConcurrent(name: name)
 		}
 		public static func `default`(name: String? = nil) -> OperationQueue {
-			return OperationQueue.Default.NonConcurrent(name: name)
+			return OperationQueue.Default.nonConcurrent(name: name)
 		}
 	}
 
 	public struct Concurrent {
 		public static func userInteractive(name: String? = nil) -> OperationQueue {
-			return OperationQueue.UserInteractive.Concurrent(name: name)
+			return OperationQueue.UserInteractive.concurrent(name: name)
 		}
 		public static func userInitiated(name: String? = nil) -> OperationQueue {
-			return OperationQueue.UserInitiated.Concurrent(name: name)
+			return OperationQueue.UserInitiated.concurrent(name: name)
 		}
 		public static func utility(name: String? = nil) -> OperationQueue {
-			return OperationQueue.Utility.Concurrent(name: name)
+			return OperationQueue.Utility.concurrent(name: name)
 		}
 		public static func background(name: String? = nil) -> OperationQueue {
-			return OperationQueue.Background.Concurrent(name: name)
+			return OperationQueue.Background.concurrent(name: name)
 		}
 		public static func `default`(name: String? = nil) -> OperationQueue {
-			return OperationQueue.Default.Concurrent(name: name)
+			return OperationQueue.Default.concurrent(name: name)
 		}
 	}
 
@@ -171,7 +171,7 @@ public extension Bundle {
 
 	public func urlForResource(resourceName: String, resourceExtension: String) throws -> URL {
 		guard let url = url(forResource: resourceName, withExtension: resourceExtension) else {
-			throw BundleError.MissedURLForResource(resourceName: resourceName, resourceExtension: resourceExtension)
+			throw BundleError.missedURLForResource(resourceName: resourceName, resourceExtension: resourceExtension)
 		}
 		return url
 	}
@@ -190,7 +190,7 @@ public extension NSDictionary {
 	}
 	public func value<T>(forRequiredKey key: AnyObject) throws -> T {
 		guard let value = object(forKey: key) as? T else {
-         throw NSDictionaryError.MissedRequiredKey(String(describing: key))
+         throw NSDictionaryError.missedRequiredKey(String(describing: key))
 		}
 		return value
 	}
@@ -211,12 +211,12 @@ public extension NSDictionary {
 
 	public func writePlistToFile(path: String, atomically: Bool) throws {
 		if !write(toFile: path, atomically: atomically) {
-			throw NSDictionaryError.UnableToWriteToFile(path)
+			throw NSDictionaryError.unableToWriteToFile(path)
 		}
 	}
 	public static func readPlist(fromURL plistURL: URL) throws -> NSDictionary {
 		guard let plist = NSDictionary(contentsOf: plistURL) else {
-			throw NSDictionaryError.UnableToReadFromURL(plistURL)
+			throw NSDictionaryError.unableToReadFromURL(plistURL)
 		}
 		return plist
 	}
