@@ -9,7 +9,7 @@
 import Foundation
 
 public struct MediaBuffer<T> {
-   
+
    public let dataByteSize: UInt
    public let data: UnsafePointer<T>
    public let mutableData: UnsafeMutablePointer<T>
