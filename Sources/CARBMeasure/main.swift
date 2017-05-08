@@ -23,10 +23,10 @@ var status: CARingBufferError
 for iteration in 0 ..< UInt32(50_000_000) {
 	status = ringBuffer.store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
 	                          startWrite:  SampleTime(IOCapacity * iteration))
-	assert(status == .NoError)
+	assert(status == .noError)
 
 	status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: IOCapacity,
 	                          startRead: SampleTime(IOCapacity * iteration))
-	assert(status == .NoError)
+	assert(status == .noError)
 }
 print("Done!")
