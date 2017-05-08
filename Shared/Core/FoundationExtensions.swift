@@ -16,7 +16,6 @@ public extension DateFormatter {
 	}
 }
 
-
 public extension Pipe {
 
    public func readIntoString() -> String? {
@@ -57,12 +56,12 @@ public extension Process {
 public extension OperationQueue {
 
 	public struct UserInteractive {
-		public static func NonConcurrent(name: String? = nil) -> OperationQueue {
+		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
 			let q = Concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
-		public static func Concurrent(name: String? = nil) -> OperationQueue {
+		public static func concurrent(name: String? = nil) -> OperationQueue {
 			let q = OperationQueue()
 			q.qualityOfService = .userInteractive
 			q.name = name
@@ -71,12 +70,12 @@ public extension OperationQueue {
 	}
 
 	public struct UserInitiated {
-		public static func NonConcurrent(name: String? = nil) -> OperationQueue {
+		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
 			let q = Concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
-		public static func Concurrent(name: String? = nil) -> OperationQueue {
+		public static func concurrent(name: String? = nil) -> OperationQueue {
 			let q = OperationQueue()
 			q.qualityOfService = .userInitiated
 			q.name = name
@@ -85,12 +84,12 @@ public extension OperationQueue {
 	}
 
 	public struct Utility {
-		public static func NonConcurrent(name: String? = nil) -> OperationQueue {
+		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
 			let q = Concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
-		public static func Concurrent(name: String? = nil) -> OperationQueue {
+		public static func concurrent(name: String? = nil) -> OperationQueue {
 			let q = OperationQueue()
 			q.qualityOfService = .utility
 			q.name = name
@@ -99,12 +98,12 @@ public extension OperationQueue {
 	}
 
 	public struct Background {
-		public static func NonConcurrent(name: String? = nil) -> OperationQueue {
+		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
 			let q = Concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
-		public static func Concurrent(name: String? = nil) -> OperationQueue {
+		public static func concurrent(name: String? = nil) -> OperationQueue {
 			let q = OperationQueue()
 			q.qualityOfService = .background
 			q.name = name
@@ -113,12 +112,12 @@ public extension OperationQueue {
 	}
 
 	public struct Default {
-		public static func NonConcurrent(name: String? = nil) -> OperationQueue {
+		public static func nonConcurrent(name: String? = nil) -> OperationQueue {
 			let q = Concurrent(name: name)
 			q.maxConcurrentOperationCount = 1
 			return q
 		}
-		public static func Concurrent(name: String? = nil) -> OperationQueue {
+		public static func concurrent(name: String? = nil) -> OperationQueue {
 			let q = OperationQueue()
 			q.qualityOfService = .default
 			q.name = name
@@ -127,47 +126,45 @@ public extension OperationQueue {
 	}
 
 	public struct NonConcurrent {
-		public static func UserInteractive(name: String? = nil) -> OperationQueue {
+		public static func userInteractive(name: String? = nil) -> OperationQueue {
 			return OperationQueue.UserInteractive.NonConcurrent(name: name)
 		}
-		public static func UserInitiated(name: String? = nil) -> OperationQueue {
+		public static func userInitiated(name: String? = nil) -> OperationQueue {
 			return OperationQueue.UserInitiated.NonConcurrent(name: name)
 		}
-		public static func Utility(name: String? = nil) -> OperationQueue {
+		public static func utility(name: String? = nil) -> OperationQueue {
 			return OperationQueue.Utility.NonConcurrent(name: name)
 		}
-		public static func Background(name: String? = nil) -> OperationQueue {
+		public static func background(name: String? = nil) -> OperationQueue {
 			return OperationQueue.Background.NonConcurrent(name: name)
 		}
-		public static func Default(name: String? = nil) -> OperationQueue {
+		public static func `default`(name: String? = nil) -> OperationQueue {
 			return OperationQueue.Default.NonConcurrent(name: name)
 		}
 	}
 
 	public struct Concurrent {
-		public static func UserInteractive(name: String? = nil) -> OperationQueue {
+		public static func userInteractive(name: String? = nil) -> OperationQueue {
 			return OperationQueue.UserInteractive.Concurrent(name: name)
 		}
-		public static func UserInitiated(name: String? = nil) -> OperationQueue {
+		public static func userInitiated(name: String? = nil) -> OperationQueue {
 			return OperationQueue.UserInitiated.Concurrent(name: name)
 		}
-		public static func Utility(name: String? = nil) -> OperationQueue {
+		public static func utility(name: String? = nil) -> OperationQueue {
 			return OperationQueue.Utility.Concurrent(name: name)
 		}
-		public static func Background(name: String? = nil) -> OperationQueue {
+		public static func background(name: String? = nil) -> OperationQueue {
 			return OperationQueue.Background.Concurrent(name: name)
 		}
-		public static func Default(name: String? = nil) -> OperationQueue {
+		public static func `default`(name: String? = nil) -> OperationQueue {
 			return OperationQueue.Default.Concurrent(name: name)
 		}
 	}
 
 }
 
-// MARK:
-
 public enum BundleError: Error {
-	case MissedURLForResource(resourceName: String, resourceExtension: String)
+	case missedURLForResource(resourceName: String, resourceExtension: String)
 }
 
 public extension Bundle {
@@ -180,12 +177,10 @@ public extension Bundle {
 	}
 }
 
-// MARK:
-
 public enum NSDictionaryError: Error {
-	case UnableToWriteToFile(String)
-	case UnableToReadFromURL(URL)
-	case MissedRequiredKey(String)
+	case unableToWriteToFile(String)
+	case unableToReadFromURL(URL)
+	case missedRequiredKey(String)
 }
 
 public extension NSDictionary {
@@ -226,8 +221,6 @@ public extension NSDictionary {
 		return plist
 	}
 }
-
-// MARK:
 
 public extension DispatchSemaphore {
   public func wait( completion: (Void) -> Void) {
@@ -272,13 +265,11 @@ public extension DispatchQueue {
 
 }
 
-// MARK:
-
 public enum FileManagerError: Error {
-	case DirectoryIsNotAvailable(String)
-	case RegularFileIsNotAvailable(String)
-	case CanNotOpenFileAtPath(String)
-	case ExecutableNotFound(String)
+	case directoryIsNotAvailable(String)
+	case regularFileIsNotAvailable(String)
+	case canNotOpenFileAtPath(String)
+	case executableNotFound(String)
 }
 
 public extension FileManager {
@@ -349,7 +340,7 @@ public extension UserDefaults {
 	}
 
 	public func boolValue(key: String) -> Bool? {
-		if let _ = object(forKey: key) {
+		if object(forKey: key) != nil {
 			return bool(forKey: key)
 		} else {
 			return nil
@@ -357,7 +348,7 @@ public extension UserDefaults {
 	}
 
 	public func integerValue(key: String) -> Int? {
-		if let _ = object(forKey: key) {
+		if object(forKey: key) != nil {
 			return integer(forKey: key)
 		} else {
 			return nil

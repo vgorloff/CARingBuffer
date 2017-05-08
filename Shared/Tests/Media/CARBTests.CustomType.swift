@@ -95,11 +95,11 @@ extension CARBSwiftTests {
       ablPointerOut[3] = AudioBuffer(channelData4PtrOut, numberOfChannels: 1)
 
       let rb = CARingBuffer<Double>(numberOfChannels: 4, capacityFrames: 8)
-      var status = CARingBufferError.NoError
+      var status = CARingBufferError.noError
       status = rb.store(ablPointerIn.unsafePointer, framesToWrite: 6, startWrite: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       status = rb.fetch(ablPointerOut.unsafeMutablePointer, framesToRead: 6, startRead: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       XCTAssertTrue(isSampleDataEqual(lhs: channelData1In, rhs: channelData1Out))
       XCTAssertTrue(isSampleDataEqual(lhs: channelData2In, rhs: channelData2Out))
       XCTAssertTrue(isSampleDataEqual(lhs: channelData3In, rhs: channelData3Out))
@@ -143,11 +143,11 @@ extension CARBSwiftTests {
       let mediaBufferListOut = MediaBufferList(buffers: mediaBufferListPtrOut, numberOfBuffers: 4)
 
       let rb = CARingBuffer<Double>(numberOfChannels: 4, capacityFrames: 8)
-      var status = CARingBufferError.NoError
+      var status = CARingBufferError.noError
       status = rb.store(mediaBufferListIn, framesToWrite: 6, startWrite: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       status = rb.fetch(mediaBufferListOut, framesToRead: 6, startRead: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       XCTAssertTrue(isSampleDataEqual(lhs: channelData1In, rhs: channelData1Out))
       XCTAssertTrue(isSampleDataEqual(lhs: channelData2In, rhs: channelData2Out))
       XCTAssertTrue(isSampleDataEqual(lhs: channelData3In, rhs: channelData3Out))
@@ -198,11 +198,11 @@ extension CARBSwiftTests {
       ablPointerOut[3] = AudioBuffer(channelData4PtrOut, numberOfChannels: 1)
 
       let rb = CARingBuffer<CustomSampleType>(numberOfChannels: 4, capacityFrames: 8)
-      var status = CARingBufferError.NoError
+      var status = CARingBufferError.noError
       status = rb.store(ablPointerIn.unsafePointer, framesToWrite: 6, startWrite: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       status = rb.fetch(ablPointerOut.unsafeMutablePointer, framesToRead: 6, startRead: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       XCTAssertTrue(isSampleDataEqual(lhs: channelData1In, rhs: channelData1Out))
       XCTAssertTrue(isSampleDataEqual(lhs: channelData2In, rhs: channelData2Out))
       XCTAssertTrue(isSampleDataEqual(lhs: channelData3In, rhs: channelData3Out))
@@ -217,11 +217,11 @@ extension CARBSwiftTests {
       mediaBufferListPtrIn[1] = MediaBuffer(mutableData: &channelData2In, numberOfElements: channelData2In.count)
       let mediaBufferListIn = MediaBufferList(buffers: mediaBufferListPtrIn, numberOfBuffers: 2)
       let rb = CARingBuffer<Float>(numberOfChannels: 1, capacityFrames: 8)
-      var status = CARingBufferError.NoError
+      var status = CARingBufferError.noError
       status = rb.store(mediaBufferListIn, framesToWrite: 4, startWrite: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       status = rb.fetch(mediaBufferListIn, framesToRead: 4, startRead: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       XCTAssertTrue(channelData1In[0] == 10)
       XCTAssertTrue(channelData1In[1] == 11)
       XCTAssertTrue(channelData1In[2] == 12)
@@ -246,11 +246,11 @@ extension CARBSwiftTests {
       let mediaBufferListOut = MediaBufferList(buffers: mediaBufferListPtrOut, numberOfBuffers: 2)
 
       let rb = CARingBuffer<Float>(numberOfChannels: 2, capacityFrames: 8)
-      var status = CARingBufferError.NoError
+      var status = CARingBufferError.noError
       status = rb.store(mediaBufferListIn, framesToWrite: 4, startWrite: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       status = rb.fetch(mediaBufferListOut, framesToRead: 4, startRead: 0)
-      XCTAssertTrue(status == .NoError)
+      XCTAssertTrue(status == .noError)
       XCTAssertTrue(channelData1In[0] == 10)
       XCTAssertTrue(channelData1In[1] == 11)
       XCTAssertTrue(channelData1In[2] == 12)

@@ -81,7 +81,7 @@ public extension String {
 }
 
 public enum DictionaryError: Error {
-	case MissedRequiredKey(String)
+	case missedRequiredKey(String)
 }
 
 public extension Dictionary {
