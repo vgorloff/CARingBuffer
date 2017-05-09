@@ -39,9 +39,9 @@ class CARBSwiftPerformanceTests: XCTestCase {
       }
    }
 
-	func testPerformanceShort() {
-		performMeasure(CARBTestParameters.numberOfIterationsShort.rawValue)
-	}
+   func testPerformanceShort() {
+      performMeasure(CARBTestParameters.numberOfIterationsShort.rawValue)
+   }
 
    func testPerformanceMedium() {
       performMeasure(CARBTestParameters.numberOfIterationsMedium.rawValue)
