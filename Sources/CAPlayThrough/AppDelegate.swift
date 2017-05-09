@@ -15,8 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
    func applicationDidFinishLaunching(_ aNotification: Notification) {
       do {
-         let inputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .Input)
-         let outputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .Output)
+         let inputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .input)
+         let outputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .output)
          renderUtility = try PlayThroughRenderUtility(inputDevice: inputDeviceID, outputDevice: outputDeviceID)
          try renderUtility?.start()
       } catch {
@@ -32,6 +32,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       renderUtility = nil
       return true
    }
-
-
 }

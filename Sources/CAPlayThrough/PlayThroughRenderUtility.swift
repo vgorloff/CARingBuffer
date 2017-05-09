@@ -87,7 +87,7 @@ private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
    }
    let startFetch = sampleTime - renderUtility.inToOutSampleOffset
    let err = ringBuffer.fetch(ioDataInstance, framesToRead: inNumberFrames, startRead: startFetch.int64Value)
-   if err != .NoError {
+   if err != .noError {
       audioBuffers?.forEach { audioBuffer in audioBuffer.fillWithZeros() }
       var bufferStartTime: SampleTime = 0
       var bufferEndTime: SampleTime = 0
@@ -102,9 +102,9 @@ public final class PlayThroughRenderUtility {
 
    public enum Errors: Error {
       case OSStatusError(OSStatus)
-      case UnableToFindComponent(AudioComponentDescription)
-      case UnexpectedDeviceID(AudioDeviceID)
-      case UnableToInitialize(String)
+      case unableToFindComponent(AudioComponentDescription)
+      case unexpectedDeviceID(AudioDeviceID)
+      case unableToInitialize(String)
    }
 
    public let inputDevice: AudioDeviceID
@@ -139,8 +139,6 @@ public final class PlayThroughRenderUtility {
       _ = try? cleanup()
    }
 
-   // MARK: - Public
-
    public func start() throws {
       if try !isRunning() {
          try with(AudioOutputUnitStart(inputUnit))
@@ -167,9 +165,6 @@ public final class PlayThroughRenderUtility {
       return (auhalRunning != 0) || graphRunning.boolValue
    }
 
-
-   // MARK: - Private
-
    private func cleanup() throws {
       try stop()
       try with(AudioUnitUninitialize(inputUnit))
@@ -183,13 +178,13 @@ public final class PlayThroughRenderUtility {
       var desc = AudioComponentDescription(type: kAudioUnitType_Output, subType: kAudioUnitSubType_HALOutput)
       let comp = AudioComponentFindNext(nil, &desc)
       guard let componentInstance = comp else {
-         throw Errors.UnableToFindComponent(desc)
+         throw Errors.unableToFindComponent(desc)
       }
 
       var audioUnitRefeence: AudioUnit? = nil
       try with(AudioComponentInstanceNew(componentInstance, &audioUnitRefeence))
       guard let audioUnit = audioUnitRefeence else {
-         throw Errors.UnableToInitialize(String(describing: AudioUnit.self))
+         throw Errors.unableToInitialize(String(describing: AudioUnit.self))
       }
       try with(AudioUnitInitialize(audioUnit))
 
@@ -233,7 +228,7 @@ public final class PlayThroughRenderUtility {
       try with(NewAUGraph(&graphReference))
 
       guard let graph = graphReference else {
-         throw Errors.UnableToInitialize(String(describing: AUGraph.self))
+         throw Errors.unableToInitialize(String(describing: AUGraph.self))
       }
 
       try with(AUGraphOpen(graph)) // Open the Graph, AudioUnits are opened but not initialized
@@ -326,10 +321,10 @@ public final class PlayThroughRenderUtility {
 
    fileprivate static func computeThruOffset(inputDevice anInputDevice: AudioDeviceID,
                                              outputDevice: AudioDeviceID) throws -> UInt32 {
-      let inputOffset = try AudioDevice.safetyOffset(deviceID: anInputDevice, scope: .Input)
-      let outputOffset = try AudioDevice.safetyOffset(deviceID: outputDevice, scope: .Output)
-      let inputBuffer = try AudioDevice.bufferFrameSize(deviceID: anInputDevice, scope: .Input)
-      let outputBuffer = try AudioDevice.bufferFrameSize(deviceID: outputDevice, scope: .Output)
+      let inputOffset = try AudioDevice.safetyOffset(deviceID: anInputDevice, scope: .input)
+      let outputOffset = try AudioDevice.safetyOffset(deviceID: outputDevice, scope: .output)
+      let inputBuffer = try AudioDevice.bufferFrameSize(deviceID: anInputDevice, scope: .input)
+      let outputBuffer = try AudioDevice.bufferFrameSize(deviceID: outputDevice, scope: .output)
       return inputOffset + outputOffset + inputBuffer + outputBuffer
    }
 
@@ -349,7 +344,7 @@ public final class PlayThroughRenderUtility {
 
    private static func verifyDeviceID(_ deviceID: AudioDeviceID) throws {
       if deviceID == kAudioDeviceUnknown {
-         throw Errors.UnexpectedDeviceID(deviceID)
+         throw Errors.unexpectedDeviceID(deviceID)
       }
    }
    private func verifyDeviceID(_ deviceID: AudioDeviceID) throws {
