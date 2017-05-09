@@ -26,22 +26,22 @@ class CARBSwiftPerformanceTests: XCTestCase {
          for iteration in 0 ..< numberOfIterations {
             status = ringBuffer.store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
                startWrite: SampleTime(IOCapacity * iteration))
-            if status != .NoError {
+            if status != .noError {
                fatalError()
             }
 
             status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: IOCapacity,
                startRead: SampleTime(IOCapacity * iteration))
-            if status != .NoError {
+            if status != .noError {
                fatalError()
             }
          }
       }
    }
 
-	func testPerformanceShort() {
-		performMeasure(CARBTestParameters.numberOfIterationsShort.rawValue)
-	}
+   func testPerformanceShort() {
+      performMeasure(CARBTestParameters.numberOfIterationsShort.rawValue)
+   }
 
    func testPerformanceMedium() {
       performMeasure(CARBTestParameters.numberOfIterationsMedium.rawValue)
