@@ -328,11 +328,11 @@ public final class PlayThroughRenderUtility {
       return inputOffset + outputOffset + inputBuffer + outputBuffer
    }
 
-   private static func with(_ closure: @autoclosure (Void) -> OSStatus) throws {
+   private static func with(_ closure: @autoclosure () -> OSStatus) throws {
       try verifyStatusCode(closure())
    }
 
-   private func with(_ closure: @autoclosure (Void) -> OSStatus) throws {
+   private func with(_ closure: @autoclosure () -> OSStatus) throws {
       try PlayThroughRenderUtility.verifyStatusCode(closure())
    }
 
