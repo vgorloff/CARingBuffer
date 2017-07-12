@@ -15,9 +15,9 @@ class CARBSwiftPerformanceTests: XCTestCase {
       let numberOfChannels = CARBTestParameters.numberOfChannels.rawValue
       let IOCapacity = CARBTestParameters.ioCapacity.rawValue
       let audioFormat = AVAudioFormat(standardFormatWithSampleRate: Double(CARBTestParameters.sampleRate.rawValue),
-                                      channels: numberOfChannels)
-      let writeBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)
-      let readBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)
+                                      channels: numberOfChannels)!
+      let writeBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)!
+      let readBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)!
       let ringBuffer = CARingBuffer<Float>(numberOfChannels: numberOfChannels,
                                            capacityFrames: CARBTestParameters.bufferCapacityFrames.rawValue)
       CARBTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
