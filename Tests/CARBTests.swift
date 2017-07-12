@@ -17,7 +17,7 @@ class CARBSwiftTests: XCTestCase {
 
    override func setUp() {
       super.setUp()
-      let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)
+      let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)!
       writeBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: 16)
       secondaryWriteBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: 16)
       readBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: 16)

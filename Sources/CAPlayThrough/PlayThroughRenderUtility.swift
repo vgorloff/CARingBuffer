@@ -312,7 +312,7 @@ public final class PlayThroughRenderUtility {
       try AudioUnitUtility.setProperty(unit: outputUnit, propertyID: kAudioUnitProperty_StreamFormat,
                                        scope: kAudioUnitScope_Input, element: 0, data: &asbd)
 
-      let format = AVAudioFormat(streamDescription: &asbd)
+      let format = AVAudioFormat(streamDescription: &asbd)!
       inputBuffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: bufferSizeFrames)
 
       assert(asbd.mBytesPerFrame.intValue == MemoryLayout<Float>.size)

@@ -20,7 +20,7 @@ import AVFoundation
 
 @objc public final class CARBTestsUtility: NSObject {
 
-   public static func generateSampleChannelData(_ buffer: AVAudioPCMBuffer, numberOfFrames: UInt32, biasValue: UInt32 = 1) {
+   @objc public static func generateSampleChannelData(_ buffer: AVAudioPCMBuffer, numberOfFrames: UInt32, biasValue: UInt32 = 1) {
       let ablPointer = UnsafeMutableAudioBufferListPointer(buffer.mutableAudioBufferList)
       for bufferIndex in 0 ..< ablPointer.count {
          for frameIndex in 0 ..< numberOfFrames {
@@ -31,7 +31,7 @@ import AVFoundation
       buffer.frameLength = UInt32(numberOfFrames)
    }
 
-   public static func printChannelData(title: String, buffer: AVAudioPCMBuffer) {
+   @objc public static func printChannelData(title: String, buffer: AVAudioPCMBuffer) {
       print(title)
       let ablPointer = UnsafeMutableAudioBufferListPointer(buffer.mutableAudioBufferList)
       for frameIndex in 0 ..< buffer.frameLength {
@@ -43,8 +43,9 @@ import AVFoundation
       }
    }
 
-   public static func compareBuffersContents(_ writeBuffer: AVAudioPCMBuffer, writeBufferOffset: UInt32,
-                               readBuffer: AVAudioPCMBuffer, readBufferOffset: UInt32, numberOfFrames: UInt32) -> Bool {
+   @objc public static func compareBuffersContents(_ writeBuffer: AVAudioPCMBuffer, writeBufferOffset: UInt32,
+                                                   readBuffer: AVAudioPCMBuffer, readBufferOffset: UInt32,
+                                                   numberOfFrames: UInt32) -> Bool {
       assert(writeBuffer.frameLength >= writeBufferOffset + numberOfFrames)
       assert(readBuffer.frameLength >= readBufferOffset + numberOfFrames)
       let writeABLPointer = UnsafeMutableAudioBufferListPointer(unsafePointer: writeBuffer.audioBufferList)
@@ -63,7 +64,8 @@ import AVFoundation
       return true
    }
 
-   public static func checkBuffersContentsIsZero(_ buffer: AVAudioPCMBuffer, bufferOffset: UInt32, numberOfFrames: UInt32) -> Bool {
+   @objc public static func checkBuffersContentsIsZero(_ buffer: AVAudioPCMBuffer, bufferOffset: UInt32,
+                                                       numberOfFrames: UInt32) -> Bool {
       assert(buffer.frameLength >= bufferOffset + numberOfFrames)
       let ablPointer = UnsafeMutableAudioBufferListPointer(unsafePointer: buffer.audioBufferList)
       for numberOfBuffer in 0..<ablPointer.count {
