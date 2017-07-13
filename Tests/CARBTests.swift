@@ -6,8 +6,8 @@
 //  Copyright © 2016 WaveLabs. All rights reserved.
 //
 
-import XCTest
 import AVFoundation
+import XCTest
 
 class CARBSwiftTests: XCTestCase {
    var ringBuffer: CARingBuffer<Float>!
@@ -17,7 +17,7 @@ class CARBSwiftTests: XCTestCase {
 
    override func setUp() {
       super.setUp()
-      let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)
+      let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)!
       writeBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: 16)
       secondaryWriteBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: 16)
       readBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: 16)
@@ -50,7 +50,7 @@ class CARBSwiftTests: XCTestCase {
       XCTAssertTrue(status == .noError)
       CARBTestsUtility.printChannelData(title: "Read buffer (1 part):", buffer: readBuffer)
       XCTAssertTrue(CARBTestsUtility.compareBuffersContents(writeBuffer, writeBufferOffset: 0, readBuffer: readBuffer,
-         readBufferOffset: 0, numberOfFrames: 2))
+                                                            readBufferOffset: 0, numberOfFrames: 2))
       status = ringBuffer.getTimeBounds(startTime: &startTime, endTime: &endTime)
       XCTAssertTrue(status == .noError)
       XCTAssertTrue(startTime == 0 && endTime == 4)
@@ -59,7 +59,7 @@ class CARBSwiftTests: XCTestCase {
       XCTAssertTrue(status == .noError)
       CARBTestsUtility.printChannelData(title: "Read buffer (2 part):", buffer: readBuffer)
       XCTAssertTrue(CARBTestsUtility.compareBuffersContents(writeBuffer, writeBufferOffset: 2, readBuffer: readBuffer,
-         readBufferOffset: 0, numberOfFrames: 2))
+                                                            readBufferOffset: 0, numberOfFrames: 2))
       status = ringBuffer.getTimeBounds(startTime: &startTime, endTime: &endTime)
       XCTAssertTrue(status == .noError)
       XCTAssertTrue(startTime == 0 && endTime == 4)
@@ -84,14 +84,14 @@ class CARBSwiftTests: XCTestCase {
       XCTAssertTrue(status == .noError)
       CARBTestsUtility.printChannelData(title: "Read buffer (1 part):", buffer: readBuffer)
       XCTAssertTrue(CARBTestsUtility.compareBuffersContents(writeBuffer, writeBufferOffset: 0, readBuffer: readBuffer,
-         readBufferOffset: 2, numberOfFrames: 2))
+                                                            readBufferOffset: 2, numberOfFrames: 2))
       XCTAssertTrue(CARBTestsUtility.checkBuffersContentsIsZero(readBuffer, bufferOffset: 0, numberOfFrames: 2))
 
       status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: 4, startRead: 4)
       XCTAssertTrue(status == .noError)
       CARBTestsUtility.printChannelData(title: "Read buffer (2 part):", buffer: readBuffer)
       XCTAssertTrue(CARBTestsUtility.compareBuffersContents(writeBuffer, writeBufferOffset: 2, readBuffer: readBuffer,
-         readBufferOffset: 0, numberOfFrames: 2))
+                                                            readBufferOffset: 0, numberOfFrames: 2))
       XCTAssertTrue(CARBTestsUtility.checkBuffersContentsIsZero(readBuffer, bufferOffset: 2, numberOfFrames: 2))
    }
 
@@ -122,7 +122,7 @@ class CARBSwiftTests: XCTestCase {
       XCTAssertTrue(status == .noError)
       CARBTestsUtility.printChannelData(title: "Read buffer:", buffer: readBuffer)
       XCTAssertTrue(CARBTestsUtility.compareBuffersContents(writeBuffer, writeBufferOffset: 0, readBuffer: readBuffer,
-         readBufferOffset: 2, numberOfFrames: 4))
+                                                            readBufferOffset: 2, numberOfFrames: 4))
       XCTAssertTrue(CARBTestsUtility.checkBuffersContentsIsZero(readBuffer, bufferOffset: 0, numberOfFrames: 2))
       XCTAssertTrue(CARBTestsUtility.checkBuffersContentsIsZero(readBuffer, bufferOffset: 6, numberOfFrames: 2))
    }
@@ -169,9 +169,9 @@ class CARBSwiftTests: XCTestCase {
       CARBTestsUtility.printChannelData(title: "Read buffer:", buffer: readBuffer)
       XCTAssertTrue(CARBTestsUtility.checkBuffersContentsIsZero(readBuffer, bufferOffset: 0, numberOfFrames: 2))
       XCTAssertTrue(CARBTestsUtility.compareBuffersContents(secondaryWriteBuffer, writeBufferOffset: 2,
-         readBuffer: readBuffer, readBufferOffset: 2, numberOfFrames: 2))
+                                                            readBuffer: readBuffer, readBufferOffset: 2, numberOfFrames: 2))
       XCTAssertTrue(CARBTestsUtility.compareBuffersContents(writeBuffer, writeBufferOffset: 0, readBuffer: readBuffer,
-         readBufferOffset: 4, numberOfFrames: 6))
+                                                            readBufferOffset: 4, numberOfFrames: 6))
    }
 
    func testIOEdgeCases() {
@@ -186,5 +186,4 @@ class CARBSwiftTests: XCTestCase {
       status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: 0, startRead: 0)
       XCTAssertTrue(status == .noError)
    }
-
 }

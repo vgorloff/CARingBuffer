@@ -9,7 +9,7 @@
 import AVFoundation
 
 private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp,
-   inBusNumber, inNumberFrames, ioData in
+   inBusNumber, inNumberFrames, _ in
    let sampleTime = inTimeStamp.pointee.mSampleTime
    let renderUtility = unsafeBitCast(inRefCon, to: PlayThroughRenderUtility.self)
    if renderUtility.firstInputTime == nil {
@@ -30,8 +30,8 @@ private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { in
    return status
 }
 
-private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp,
-   inBusNumber, inNumberFrames, ioData in
+private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { inRefCon, _, inTimeStamp,
+   _, inNumberFrames, ioData in
    let renderUtility = unsafeBitCast(inRefCon, to: PlayThroughRenderUtility.self)
    let audioBuffers = UnsafeMutableAudioBufferListPointer(ioData)?.audioBuffers
    if renderUtility.firstInputTime == nil {
@@ -53,7 +53,7 @@ private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
       return status
    }
 
-   //use the varispeed playback rate to offset small discrepancies in sample rate
+   // use the varispeed playback rate to offset small discrepancies in sample rate
    let rate = inputTimeStamp.mRateScalar / outTimeStamp.mRateScalar
    status = AudioUnitSetParameter(renderUtility.varispeedUnit, kVarispeedParam_PlaybackRate, kAudioUnitScope_Global, 0,
                                   rate.floatValue, 0)
@@ -78,7 +78,7 @@ private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
       return noErr
    }
 
-   //copy the data from the buffers
+   // copy the data from the buffers
    guard let ringBuffer = renderUtility.ringBuffer else {
       return noErr
    }
@@ -125,11 +125,11 @@ public final class PlayThroughRenderUtility {
    public init(inputDevice anInput: AudioDeviceID, outputDevice anOutput: AudioDeviceID) throws {
       inputDevice = anInput
       outputDevice = anOutput
-      //Note: You can interface to input and output devices with "output" audio units.
-      //Please keep in mind that you are only allowed to have one output audio unit per graph (AUGraph).
-      //As you will see, this sample code splits up the two output units.  The "output" unit that will
-      //be used for device input will not be contained in a AUGraph, while the "output" unit that will
-      //interface the default output device will be in a graph.
+      // Note: You can interface to input and output devices with "output" audio units.
+      // Please keep in mind that you are only allowed to have one output audio unit per graph (AUGraph).
+      // As you will see, this sample code splits up the two output units.  The "output" unit that will
+      // be used for device input will not be contained in a AUGraph, while the "output" unit that will
+      // interface the default output device will be in a graph.
       inputUnit = try setupInputDevice(anInput) // Setup AUHAL for an input device
       auGraph = try setUpAUGraph()
       try setupOutputDevice(anOutput) // Setup Graph containing Varispeed Unit & Default Output Unit
@@ -181,7 +181,7 @@ public final class PlayThroughRenderUtility {
          throw Errors.unableToFindComponent(desc)
       }
 
-      var audioUnitRefeence: AudioUnit? = nil
+      var audioUnitRefeence: AudioUnit?
       try with(AudioComponentInstanceNew(componentInstance, &audioUnitRefeence))
       guard let audioUnit = audioUnitRefeence else {
          throw Errors.unableToInitialize(String(describing: AudioUnit.self))
@@ -224,7 +224,7 @@ public final class PlayThroughRenderUtility {
       var varispeedDesc = AudioComponentDescription(type: kAudioUnitType_FormatConverter, subType: kAudioUnitSubType_Varispeed)
       var outDesc = AudioComponentDescription(type: kAudioUnitType_Output, subType: kAudioUnitSubType_DefaultOutput)
 
-      var graphReference: AUGraph? = nil
+      var graphReference: AUGraph?
       try with(NewAUGraph(&graphReference))
 
       guard let graph = graphReference else {
@@ -237,10 +237,10 @@ public final class PlayThroughRenderUtility {
       try with(AUGraphAddNode(graph, &outDesc, &outputNode))
 
       // Get Audio Units from AUGraph nodes
-      var varispeedUnitReference: AudioUnit? = nil
+      var varispeedUnitReference: AudioUnit?
       try with(AUGraphNodeInfo(graph, varispeedNode, nil, &varispeedUnitReference))
       varispeedUnit = varispeedUnitReference
-      var outputUnitReference: AudioUnit? = nil
+      var outputUnitReference: AudioUnit?
       try with(AUGraphNodeInfo(graph, outputNode, nil, &outputUnitReference))
       outputUnit = outputUnitReference
 
@@ -249,7 +249,7 @@ public final class PlayThroughRenderUtility {
 
    private func setupOutputDevice(_ outputDevice: AudioDeviceID) throws {
       try verifyDeviceID(outputDevice)
-      //Set the Current Device to the Default Output Unit.
+      // Set the Current Device to the Default Output Unit.
       var outDevice = outputDevice
       try AudioUnitUtility.setProperty(unit: outputUnit, propertyID: kAudioOutputUnitProperty_CurrentDevice,
                                        scope: kAudioUnitScope_Global, element: 0, data: &outDevice)
@@ -288,9 +288,9 @@ public final class PlayThroughRenderUtility {
          try AudioUnitUtility.getProperty(unit: outputUnit, propertyID: kAudioUnitProperty_StreamFormat,
                                           scope: kAudioUnitScope_Output, element: 0)
 
-      //Set the format of all the AUs to the input/output devices channel count
-      //For a simple case, you want to set this to the lower of count of the channels
-      //in the input device vs output device
+      // Set the format of all the AUs to the input/output devices channel count
+      // For a simple case, you want to set this to the lower of count of the channels
+      // in the input device vs output device
       asbd.mChannelsPerFrame = min(asbd_dev1_in.mChannelsPerFrame, asbd_dev2_out.mChannelsPerFrame)
 
       // We must get the sample rate of the input device and set it to the stream format of AUHAL
@@ -304,7 +304,7 @@ public final class PlayThroughRenderUtility {
       try AudioUnitUtility.setProperty(unit: varispeedUnit, propertyID: kAudioUnitProperty_StreamFormat,
                                        scope: kAudioUnitScope_Input, element: 0, data: &asbd)
 
-      //Set the correct sample rate for the output device, but keep the channel count the same
+      // Set the correct sample rate for the output device, but keep the channel count the same
       rate = try AudioObjectUtility.getPropertyData(objectID: outputDevice, address: theAddress)
       asbd.mSampleRate = rate
       try AudioUnitUtility.setProperty(unit: varispeedUnit, propertyID: kAudioUnitProperty_StreamFormat,
@@ -312,7 +312,7 @@ public final class PlayThroughRenderUtility {
       try AudioUnitUtility.setProperty(unit: outputUnit, propertyID: kAudioUnitProperty_StreamFormat,
                                        scope: kAudioUnitScope_Input, element: 0, data: &asbd)
 
-      let format = AVAudioFormat(streamDescription: &asbd)
+      let format = AVAudioFormat(streamDescription: &asbd)!
       inputBuffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: bufferSizeFrames)
 
       assert(asbd.mBytesPerFrame.intValue == MemoryLayout<Float>.size)
@@ -328,11 +328,11 @@ public final class PlayThroughRenderUtility {
       return inputOffset + outputOffset + inputBuffer + outputBuffer
    }
 
-   private static func with(_ closure: @autoclosure (Void) -> OSStatus) throws {
+   private static func with(_ closure: @autoclosure () -> OSStatus) throws {
       try verifyStatusCode(closure())
    }
 
-   private func with(_ closure: @autoclosure (Void) -> OSStatus) throws {
+   private func with(_ closure: @autoclosure () -> OSStatus) throws {
       try PlayThroughRenderUtility.verifyStatusCode(closure())
    }
 
@@ -347,6 +347,7 @@ public final class PlayThroughRenderUtility {
          throw Errors.unexpectedDeviceID(deviceID)
       }
    }
+
    private func verifyDeviceID(_ deviceID: AudioDeviceID) throws {
       try PlayThroughRenderUtility.verifyDeviceID(deviceID)
    }
