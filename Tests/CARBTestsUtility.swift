@@ -9,9 +9,9 @@
 import AVFoundation
 
 @objc public enum CARBTestParameters: UInt32 {
-   case numberOfIterationsShort = 2_000_000
-   case numberOfIterationsMedium = 20_000_000
-   case numberOfIterationsLong = 200_000_000
+   case numberOfIterationsShort = 2000000
+   case numberOfIterationsMedium = 20000000
+   case numberOfIterationsLong = 200000000
    case sampleRate = 44100
    case numberOfChannels = 2
    case bufferCapacityFrames = 4096
@@ -52,8 +52,8 @@ import AVFoundation
       let readABLPointer = UnsafeMutableAudioBufferListPointer(unsafePointer: readBuffer.audioBufferList)
       assert(writeABLPointer.count == readABLPointer.count)
 
-      for numberOfBuffer in 0..<writeABLPointer.count {
-         for numberOfFrame in 0..<numberOfFrames {
+      for numberOfBuffer in 0 ..< writeABLPointer.count {
+         for numberOfFrame in 0 ..< numberOfFrames {
             let sampleValueWrite = writeABLPointer[numberOfBuffer].mFloatData?[Int(numberOfFrame + writeBufferOffset)]
             let sampleValueRead = readABLPointer[numberOfBuffer].mFloatData?[Int(numberOfFrame + readBufferOffset)]
             if sampleValueWrite != sampleValueRead {
@@ -68,8 +68,8 @@ import AVFoundation
                                                        numberOfFrames: UInt32) -> Bool {
       assert(buffer.frameLength >= bufferOffset + numberOfFrames)
       let ablPointer = UnsafeMutableAudioBufferListPointer(unsafePointer: buffer.audioBufferList)
-      for numberOfBuffer in 0..<ablPointer.count {
-         for numberOfFrame in 0..<numberOfFrames {
+      for numberOfBuffer in 0 ..< ablPointer.count {
+         for numberOfFrame in 0 ..< numberOfFrames {
             let sampleValue = ablPointer[numberOfBuffer].mFloatData?[Int(numberOfFrame + bufferOffset)]
             if sampleValue != 0 {
                return false

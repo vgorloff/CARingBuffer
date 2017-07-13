@@ -8,7 +8,7 @@
 
 import CoreAudio
 
-//region MARK: - Supporting Definitions
+// region MARK: - Supporting Definitions
 
 // Next power of two greater or equal to x
 fileprivate func nextPowerOfTwo(_ value: UInt32) -> UInt32 {
@@ -39,7 +39,7 @@ public enum CARingBufferError: Int32 {
    case CPUOverload = 4
 }
 
-//endregion
+// endregion
 
 public final class CARingBuffer<T> {
 
@@ -66,6 +66,7 @@ public final class CARingBuffer<T> {
    fileprivate var mBufferPointer: UnsafeMutableBufferPointer<T> {
       return UnsafeMutableBufferPointer(start: mBuffer, count: Int(mBuffersLength))
    }
+
    /// Buffer array just for debug purpose.
    fileprivate var mBufferArray: [T] {
       return Array(mBufferPointer)
@@ -143,122 +144,122 @@ extension CARingBuffer {
    }
 
    fileprivate func store(framesToWrite: UInt32, startWrite: SampleTime, storeProcedure: StoreProcedure) -> CARingBufferError {
-         if framesToWrite == 0 {
-            return .noError
-         }
-
-         if framesToWrite > mCapacityFrames {
-            return .tooMuch
-         }
-
-         let endWrite = startWrite + SampleTime(framesToWrite)
-         if startWrite < endTime() {
-            // going backwards, throw everything out
-            setTimeBounds(startTime: startWrite, endTime: startWrite)
-         } else if endWrite - startTime() <= SampleTime(mCapacityFrames) {
-            // the buffer has not yet wrapped and will not need to
-         } else {
-            // advance the start time past the region we are about to overwrite
-            let newStart = endWrite - SampleTime(mCapacityFrames)	// one buffer of time behind where we're writing
-            let newEnd = max(newStart, endTime())
-            setTimeBounds(startTime: newStart, endTime: newEnd)
-         }
-
-         let curEnd = endTime()
-         var offset0: SampleTime
-         var offset1: SampleTime
-         var nbytes: SampleTime
-         if startWrite > curEnd {
-            // we are skipping some samples, so zero the range we are skipping
-            offset0 = frameOffset(curEnd)
-            offset1 = frameOffset(startWrite)
-            if offset0 < offset1 {
-               zeroBuffer(offset: offset0, nbytes: offset1 - offset0)
-            } else {
-               zeroBuffer(offset: offset0, nbytes: SampleTime(mCapacityBytes) - offset0)
-               zeroBuffer(offset: 0, nbytes: offset1)
-            }
-            offset0 = offset1
-         } else {
-            offset0 = frameOffset(startWrite)
-         }
-
-         offset1 = frameOffset(endWrite)
-         if offset0 < offset1 {
-            storeProcedure(0, offset0, offset1 - offset0)
-         } else {
-            nbytes = SampleTime(mCapacityBytes) - offset0
-            storeProcedure(0, offset0, nbytes)
-            storeProcedure(nbytes, 0, offset1)
-         }
-
-         // now update the end time
-         setTimeBounds(startTime: startTime(), endTime: endWrite)
-
+      if framesToWrite == 0 {
          return .noError
+      }
+
+      if framesToWrite > mCapacityFrames {
+         return .tooMuch
+      }
+
+      let endWrite = startWrite + SampleTime(framesToWrite)
+      if startWrite < endTime() {
+         // going backwards, throw everything out
+         setTimeBounds(startTime: startWrite, endTime: startWrite)
+      } else if endWrite - startTime() <= SampleTime(mCapacityFrames) {
+         // the buffer has not yet wrapped and will not need to
+      } else {
+         // advance the start time past the region we are about to overwrite
+         let newStart = endWrite - SampleTime(mCapacityFrames) // one buffer of time behind where we're writing
+         let newEnd = max(newStart, endTime())
+         setTimeBounds(startTime: newStart, endTime: newEnd)
+      }
+
+      let curEnd = endTime()
+      var offset0: SampleTime
+      var offset1: SampleTime
+      var nbytes: SampleTime
+      if startWrite > curEnd {
+         // we are skipping some samples, so zero the range we are skipping
+         offset0 = frameOffset(curEnd)
+         offset1 = frameOffset(startWrite)
+         if offset0 < offset1 {
+            zeroBuffer(offset: offset0, nbytes: offset1 - offset0)
+         } else {
+            zeroBuffer(offset: offset0, nbytes: SampleTime(mCapacityBytes) - offset0)
+            zeroBuffer(offset: 0, nbytes: offset1)
+         }
+         offset0 = offset1
+      } else {
+         offset0 = frameOffset(startWrite)
+      }
+
+      offset1 = frameOffset(endWrite)
+      if offset0 < offset1 {
+         storeProcedure(0, offset0, offset1 - offset0)
+      } else {
+         nbytes = SampleTime(mCapacityBytes) - offset0
+         storeProcedure(0, offset0, nbytes)
+         storeProcedure(nbytes, 0, offset1)
+      }
+
+      // now update the end time
+      setTimeBounds(startTime: startTime(), endTime: endWrite)
+
+      return .noError
    }
 
    fileprivate func fetch(framesToRead: UInt32, startRead: SampleTime, zeroProcedure: ZeroProcedure,
                           fetchProcedure: FetchProcedure) -> CARingBufferError {
-         if framesToRead == 0 {
-            return .noError
-         }
-
-         var startRead = max(0, startRead)
-
-         var endRead = startRead + Int64(framesToRead)
-
-         let startRead0 = startRead
-         let endRead0 = endRead
-
-         let err = clipTimeBounds(startRead: &startRead, endRead: &endRead)
-         if err != .noError {
-            return err
-         }
-
-         if startRead == endRead {
-            zeroProcedure(0, Int64(framesToRead * mBytesPerFrame))
-            return .noError
-         }
-
-         let byteSize = (endRead - startRead) * Int64(mBytesPerFrame)
-
-         let destStartByteOffset = max(0, (startRead - startRead0) * Int64(mBytesPerFrame))
-
-         if destStartByteOffset > 0 {
-            zeroProcedure(0, min(Int64(framesToRead * mBytesPerFrame), destStartByteOffset))
-         }
-
-         let destEndSize = max(0, endRead0 - endRead)
-         if destEndSize > 0 {
-            zeroProcedure(destStartByteOffset + byteSize, destEndSize * Int64(mBytesPerFrame))
-         }
-
-         let offset0 = frameOffset(startRead)
-         let offset1 = frameOffset(endRead)
-         var nbytes: SampleTime = 0
-
-         if offset0 < offset1 {
-            nbytes = offset1 - offset0
-            fetchProcedure(offset0, destStartByteOffset, nbytes)
-         } else {
-            nbytes = Int64(mCapacityBytes) - offset0
-            fetchProcedure(offset0, destStartByteOffset, nbytes)
-            fetchProcedure(0, destStartByteOffset + nbytes, offset1)
-            nbytes += offset1
-         }
-
-         // FIXME: Do we really need to update mDataByteSize?.
-         //      let ablPointer = UnsafeMutableAudioBufferListPointer(abl)
-         //      for channel in 0..<ablPointer.count {
-         //         var dest = ablPointer[channel]
-         //         if dest.mData != nil {
-         // FIXME: This should be in sync with AVAudioPCMBuffer (Vlad Gorlov, 2016-06-12).
-         //            dest.mDataByteSize = UInt32(nbytes)
-         //         }
-         //      }
-
+      if framesToRead == 0 {
          return .noError
+      }
+
+      var startRead = max(0, startRead)
+
+      var endRead = startRead + Int64(framesToRead)
+
+      let startRead0 = startRead
+      let endRead0 = endRead
+
+      let err = clipTimeBounds(startRead: &startRead, endRead: &endRead)
+      if err != .noError {
+         return err
+      }
+
+      if startRead == endRead {
+         zeroProcedure(0, Int64(framesToRead * mBytesPerFrame))
+         return .noError
+      }
+
+      let byteSize = (endRead - startRead) * Int64(mBytesPerFrame)
+
+      let destStartByteOffset = max(0, (startRead - startRead0) * Int64(mBytesPerFrame))
+
+      if destStartByteOffset > 0 {
+         zeroProcedure(0, min(Int64(framesToRead * mBytesPerFrame), destStartByteOffset))
+      }
+
+      let destEndSize = max(0, endRead0 - endRead)
+      if destEndSize > 0 {
+         zeroProcedure(destStartByteOffset + byteSize, destEndSize * Int64(mBytesPerFrame))
+      }
+
+      let offset0 = frameOffset(startRead)
+      let offset1 = frameOffset(endRead)
+      var nbytes: SampleTime = 0
+
+      if offset0 < offset1 {
+         nbytes = offset1 - offset0
+         fetchProcedure(offset0, destStartByteOffset, nbytes)
+      } else {
+         nbytes = Int64(mCapacityBytes) - offset0
+         fetchProcedure(offset0, destStartByteOffset, nbytes)
+         fetchProcedure(0, destStartByteOffset + nbytes, offset1)
+         nbytes += offset1
+      }
+
+      // FIXME: Do we really need to update mDataByteSize?.
+      //      let ablPointer = UnsafeMutableAudioBufferListPointer(abl)
+      //      for channel in 0..<ablPointer.count {
+      //         var dest = ablPointer[channel]
+      //         if dest.mData != nil {
+      // FIXME: This should be in sync with AVAudioPCMBuffer (Vlad Gorlov, 2016-06-12).
+      //            dest.mDataByteSize = UInt32(nbytes)
+      //         }
+      //      }
+
+      return .noError
    }
 
    fileprivate func storeABL(_ buffers: UnsafeMutablePointer<T>, destOffset: SampleTime, abl: UnsafePointer<AudioBufferList>,
@@ -370,7 +371,7 @@ extension CARingBuffer {
       let advanceDistance = Int(destOffset) / Int(mBytesPerFrame)
       let ablPointer = UnsafeMutableAudioBufferListPointer(abl)
       let numberOfChannels = ablPointer.count
-      for channel in 0..<numberOfChannels {
+      for channel in 0 ..< numberOfChannels {
          let channelBuffer = ablPointer[channel]
          assert(channelBuffer.mNumberChannels == 1) // Supporting non interleaved channels at the moment
          if destOffset > Int64(channelBuffer.mDataByteSize) {
@@ -389,7 +390,7 @@ extension CARingBuffer {
    fileprivate func zeroMBL(_ mediaBufferList: MediaBufferList<T>, destOffset: SampleTime, nbytes: SampleTime) {
       let advanceDistance = Int(destOffset) / Int(mBytesPerFrame)
       let numberOfChannels = mediaBufferList.numberOfBuffers
-      for channel in 0..<numberOfChannels {
+      for channel in 0 ..< numberOfChannels {
          let channelBuffer = mediaBufferList[channel].pointee
          if destOffset > Int64(channelBuffer.dataByteSize) {
             continue
@@ -410,10 +411,9 @@ extension CARingBuffer {
          memset(positionWrite, 0, Int(nbytes))
       }
    }
-
 }
 
-//region MARK: - Time Bounds Queue
+// region MARK: - Time Bounds Queue
 extension CARingBuffer {
 
    fileprivate func setTimeBounds(startTime: SampleTime, endTime: SampleTime) {
@@ -430,7 +430,7 @@ extension CARingBuffer {
 
    public func getTimeBounds(startTime: inout SampleTime, endTime: inout SampleTime) -> CARingBufferError {
       // Fail after a few tries.
-      for _ in 0..<8 {
+      for _ in 0 ..< 8 {
          let curPtr = mTimeBoundsQueueCurrentIndex
          let index = curPtr & kGeneralRingTimeBoundsQueueMask
          let bounds = mTimeBoundsQueue[Int(index)]
@@ -482,4 +482,5 @@ extension CARingBuffer {
       return .noError
    }
 }
-//endregion
+
+// endregion

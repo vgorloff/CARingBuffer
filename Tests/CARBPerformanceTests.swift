@@ -6,8 +6,8 @@
 //  Copyright © 2016 WaveLabs. All rights reserved.
 //
 
-import XCTest
 import AVFoundation
+import XCTest
 
 class CARBSwiftPerformanceTests: XCTestCase {
 
@@ -21,17 +21,17 @@ class CARBSwiftPerformanceTests: XCTestCase {
       let ringBuffer = CARingBuffer<Float>(numberOfChannels: numberOfChannels,
                                            capacityFrames: CARBTestParameters.bufferCapacityFrames.rawValue)
       CARBTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
-      self.measure {
+      measure {
          var status: CARingBufferError
          for iteration in 0 ..< numberOfIterations {
             status = ringBuffer.store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
-               startWrite: SampleTime(IOCapacity * iteration))
+                                      startWrite: SampleTime(IOCapacity * iteration))
             if status != .noError {
                fatalError()
             }
 
             status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: IOCapacity,
-               startRead: SampleTime(IOCapacity * iteration))
+                                      startRead: SampleTime(IOCapacity * iteration))
             if status != .noError {
                fatalError()
             }

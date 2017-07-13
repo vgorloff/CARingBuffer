@@ -17,15 +17,15 @@ public struct MediaBuffer<T> {
 
    public init(mutableData: UnsafeMutablePointer<T>, numberOfElements: Int) {
       self.numberOfElements = UInt(numberOfElements)
-      self.dataByteSize = UInt(MemoryLayout<T>.stride * numberOfElements)
+      dataByteSize = UInt(MemoryLayout<T>.stride * numberOfElements)
       self.mutableData = mutableData
-      self.data = UnsafePointer(mutableData)
+      data = UnsafePointer(mutableData)
    }
 
    public init(data: UnsafePointer<T>, numberOfElements: Int) {
       self.numberOfElements = UInt(numberOfElements)
-      self.dataByteSize = UInt(MemoryLayout<T>.stride * numberOfElements)
-      self.mutableData = UnsafeMutablePointer(mutating: data)
+      dataByteSize = UInt(MemoryLayout<T>.stride * numberOfElements)
+      mutableData = UnsafeMutablePointer(mutating: data)
       self.data = data
    }
 
@@ -50,20 +50,17 @@ public struct MediaBufferList<T> {
    public init(mutableBuffers: UnsafeMutablePointer<MediaBuffer<T>>, numberOfBuffers: Int) {
       self.numberOfBuffers = UInt(numberOfBuffers)
       self.mutableBuffers = mutableBuffers
-      self.buffers = UnsafePointer(mutableBuffers)
+      buffers = UnsafePointer(mutableBuffers)
    }
 
    public init(buffers: UnsafePointer<MediaBuffer<T>>, numberOfBuffers: Int) {
       self.numberOfBuffers = UInt(numberOfBuffers)
-      self.mutableBuffers = UnsafeMutablePointer(mutating: buffers)
+      mutableBuffers = UnsafeMutablePointer(mutating: buffers)
       self.buffers = buffers
    }
 
    public subscript(index: UInt) -> UnsafePointer<MediaBuffer<T>> {
-      get {
-         precondition(index < numberOfBuffers)
-         return buffers.advanced(by: Int(index))
-      }
+      precondition(index < numberOfBuffers)
+      return buffers.advanced(by: Int(index))
    }
-
 }
