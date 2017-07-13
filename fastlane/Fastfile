@@ -35,12 +35,11 @@ end
 
 desc "Deploy release to GitHub."
 lane :deploy do
-   assets = Dir["#{ENV['PWD']}/**/*.export/*.app.zip"]
    releaseName = File.read("#{ENV['PWD']}/fastlane/ReleaseName.txt").strip
    releaseDescription = File.read("#{ENV['PWD']}/fastlane/ReleaseNotes.txt").strip
    github_release = set_github_release(
-     repository_name: "vgorloff/AUHost", api_token: ENV['AWL_GITHUB_TOKEN'], name: releaseName, tag_name: last_git_tag,
-     description: releaseDescription, commitish: "master", upload_assets: assets
+     repository_name: "vgorloff/CARingBuffer", api_token: ENV['AWL_GITHUB_TOKEN'], name: releaseName, tag_name: last_git_tag,
+     description: releaseDescription, commitish: "master"
    )
 end
 

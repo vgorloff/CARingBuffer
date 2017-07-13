@@ -6,8 +6,8 @@
 //  Copyright © 2016 WaveLabs. All rights reserved.
 //
 
-import XCTest
 import AVFoundation
+import XCTest
 
 struct CustomSampleInnerType: Equatable {
    let a: Int
@@ -17,6 +17,7 @@ struct CustomSampleInnerType: Equatable {
       b = Float(value)
    }
 }
+
 func == (lhs: CustomSampleInnerType, rhs: CustomSampleInnerType) -> Bool {
    return lhs.a == rhs.a && lhs.b == rhs.b
 }
@@ -33,6 +34,7 @@ struct CustomSampleType: Equatable {
       innerType = CustomSampleInnerType(value)
    }
 }
+
 func == (lhs: CustomSampleType, rhs: CustomSampleType) -> Bool {
    return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
 }
@@ -41,10 +43,12 @@ extension AudioBuffer {
    var mCustomTypeData: UnsafeMutablePointer<CustomSampleType>? {
       return mData?.assumingMemoryBound(to: CustomSampleType.self)
    }
+
    var mCustomTypeBuffer: UnsafeMutableBufferPointer<CustomSampleType> {
       return UnsafeMutableBufferPointer<CustomSampleType>(start: mCustomTypeData,
                                                           count: Int(mDataByteSize) / MemoryLayout<CustomSampleType>.stride)
    }
+
    var mCustomTypeArray: [CustomSampleType] {
       return Array<CustomSampleType>(mCustomTypeBuffer)
    }
@@ -58,7 +62,7 @@ extension CARBSwiftTests {
          guard lhs.count == rhs.count else {
             return false
          }
-         for index in 0..<lhs.count {
+         for index in 0 ..< lhs.count {
             if lhs[index] != rhs[index] {
                return false
             }
@@ -112,7 +116,7 @@ extension CARBSwiftTests {
          guard lhs.count == rhs.count else {
             return false
          }
-         for index in 0..<lhs.count {
+         for index in 0 ..< lhs.count {
             if lhs[index] != rhs[index] {
                return false
             }
@@ -161,7 +165,7 @@ extension CARBSwiftTests {
          guard lhs.count == rhs.count else {
             return false
          }
-         for index in 0..<lhs.count {
+         for index in 0 ..< lhs.count {
             if lhs[index] != rhs[index] {
                return false
             }
@@ -260,5 +264,4 @@ extension CARBSwiftTests {
       XCTAssertTrue(channelData2In[2] == 0)
       XCTAssertTrue(channelData2In[3] == 0)
    }
-
 }
