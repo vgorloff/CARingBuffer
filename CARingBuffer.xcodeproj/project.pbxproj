@@ -35,7 +35,7 @@
 		80B12CEC1D21AD2E00B2FE2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */; };
 		80B12CEF1D21AD2E00B2FE2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B12CED1D21AD2E00B2FE2A /* Main.storyboard */; };
 		80B12CF51D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */; };
-		80B12D021D21B00600B2FE2A /* AudioUnitUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */; };
+		80B12D021D21B00600B2FE2A /* AudioUnitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */; };
 		80B12D0B1D21B15000B2FE2A /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D091D21B14C00B2FE2A /* AudioDevice.swift */; };
 		80B12D1B1D21B27500B2FE2A /* AudioObjectUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */; };
 		80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
@@ -83,7 +83,7 @@
 		80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80B12CEE1D21AD2E00B2FE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayThroughRenderUtility.swift; sourceTree = "<group>"; };
-		80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitUtility.swift; sourceTree = "<group>"; };
+		80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
 		80B12D091D21B14C00B2FE2A /* AudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
 		80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
 		80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsCpp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +171,7 @@
 				801BE5AD1F16E62D00806169 /* Extensions */,
 				80B12D091D21B14C00B2FE2A /* AudioDevice.swift */,
 				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
-				80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */,
+				80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */,
 				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
 				8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */,
 			);
@@ -247,8 +247,8 @@
 		80C9CFC01D0CC94200960F60 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				80C205161D189E5F00A932E4 /* CoreAudio */,
 				8050DAE51D19D785007216D2 /* Readme.txt */,
+				80C205161D189E5F00A932E4 /* CoreAudio */,
 				80C2051D1D189EE700A932E4 /* WL */,
 			);
 			path = Vendor;
@@ -518,7 +518,7 @@
 				801BE5B21F16E68600806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
 				8046F3EA1D821FE8007F25E4 /* MediaBufferList.swift in Sources */,
 				801BE5B41F16E6B700806169 /* AudioBuffer.swift in Sources */,
-				80B12D021D21B00600B2FE2A /* AudioUnitUtility.swift in Sources */,
+				80B12D021D21B00600B2FE2A /* AudioUnitSettings.swift in Sources */,
 				80B12D1B1D21B27500B2FE2A /* AudioObjectUtility.swift in Sources */,
 				80B12CF51D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift in Sources */,
 				80B12CE81D21AD2E00B2FE2A /* AppDelegate.swift in Sources */,

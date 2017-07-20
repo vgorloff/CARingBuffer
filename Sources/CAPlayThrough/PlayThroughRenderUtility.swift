@@ -158,8 +158,9 @@ public final class PlayThroughRenderUtility {
    }
 
    public func isRunning() throws -> Bool {
-      let auhalRunning: UInt32 = try AudioUnitUtility.getProperty(unit: inputUnit, propertyID: kAudioOutputUnitProperty_IsRunning,
-                                                                  scope: kAudioUnitScope_Global, element: 0)
+      let auhalRunning: UInt32 = try AudioUnitSettings.getProperty(for: inputUnit,
+                                                                   propertyID: kAudioOutputUnitProperty_IsRunning,
+                                                                   scope: .global, element: 0)
       var graphRunning = DarwinBoolean(false)
       try with(AUGraphIsRunning(auGraph, &graphRunning))
       return (auhalRunning != 0) || graphRunning.boolValue
@@ -250,20 +251,19 @@ public final class PlayThroughRenderUtility {
    private func setupOutputDevice(_ outputDevice: AudioDeviceID) throws {
       try verifyDeviceID(outputDevice)
       // Set the Current Device to the Default Output Unit.
-      var outDevice = outputDevice
-      try AudioUnitUtility.setProperty(unit: outputUnit, propertyID: kAudioOutputUnitProperty_CurrentDevice,
-                                       scope: kAudioUnitScope_Global, element: 0, data: &outDevice)
+      try AudioUnitSettings.setProperty(for: outputUnit, propertyID: kAudioOutputUnitProperty_CurrentDevice,
+                                        scope: .global, element: 0, data: outputDevice)
 
       // Tell the output unit not to reset timestamps. Otherwise sample rate changes will cause sync los
-      var startAtZero: UInt32 = 0
-      try AudioUnitUtility.setProperty(unit: outputUnit, propertyID: kAudioOutputUnitProperty_StartTimestampsAtZero,
-                                       scope: kAudioUnitScope_Global, element: 0, data: &startAtZero)
+      let startAtZero: UInt32 = 0
+      try AudioUnitSettings.setProperty(for: outputUnit, propertyID: kAudioOutputUnitProperty_StartTimestampsAtZero,
+                                        scope: .global, element: 0, data: startAtZero)
       // Set up output callback
       let context = Unmanaged.passUnretained(self).toOpaque()
-      var renderCallbackStruct = AURenderCallbackStruct(inputProc: playThroughRenderUtilityOutputRenderCallback,
+      let renderCallbackStruct = AURenderCallbackStruct(inputProc: playThroughRenderUtilityOutputRenderCallback,
                                                         inputProcRefCon: context)
-      try AudioUnitUtility.setProperty(unit: varispeedUnit, propertyID: kAudioUnitProperty_SetRenderCallback,
-                                       scope: kAudioUnitScope_Input, element: 0, data: &renderCallbackStruct)
+      try AudioUnitSettings.setProperty(for: varispeedUnit, propertyID: kAudioUnitProperty_SetRenderCallback,
+                                        scope: .input, element: 0, data: renderCallbackStruct)
 
       try setupBuffers()
 
@@ -276,17 +276,17 @@ public final class PlayThroughRenderUtility {
 
    private func setupBuffers() throws {
       let bufferSizeFrames: UInt32 =
-         try AudioUnitUtility.getProperty(unit: inputUnit, propertyID: kAudioDevicePropertyBufferFrameSize,
-                                          scope: kAudioUnitScope_Global, element: 0)
+         try AudioUnitSettings.getProperty(for: inputUnit, propertyID: kAudioDevicePropertyBufferFrameSize,
+                                           scope: .global, element: 0)
       let asbd_dev1_in: AudioStreamBasicDescription =
-         try AudioUnitUtility.getProperty(unit: inputUnit, propertyID: kAudioUnitProperty_StreamFormat,
-                                          scope: kAudioUnitScope_Input, element: 1)
+         try AudioUnitSettings.getProperty(for: inputUnit, propertyID: kAudioUnitProperty_StreamFormat,
+                                           scope: .input, element: 1)
       var asbd: AudioStreamBasicDescription =
-         try AudioUnitUtility.getProperty(unit: inputUnit, propertyID: kAudioUnitProperty_StreamFormat,
-                                          scope: kAudioUnitScope_Output, element: 1)
+         try AudioUnitSettings.getProperty(for: inputUnit, propertyID: kAudioUnitProperty_StreamFormat,
+                                           scope: .output, element: 1)
       let asbd_dev2_out: AudioStreamBasicDescription =
-         try AudioUnitUtility.getProperty(unit: outputUnit, propertyID: kAudioUnitProperty_StreamFormat,
-                                          scope: kAudioUnitScope_Output, element: 0)
+         try AudioUnitSettings.getProperty(for: outputUnit, propertyID: kAudioUnitProperty_StreamFormat,
+                                           scope: .output, element: 0)
 
       // Set the format of all the AUs to the input/output devices channel count
       // For a simple case, you want to set this to the lower of count of the channels
@@ -299,18 +299,18 @@ public final class PlayThroughRenderUtility {
                                                   mElement: kAudioObjectPropertyElementMaster)
       var rate: Double = try AudioObjectUtility.getPropertyData(objectID: inputDevice, address: theAddress)
       asbd.mSampleRate = rate
-      try AudioUnitUtility.setProperty(unit: inputUnit, propertyID: kAudioUnitProperty_StreamFormat,
-                                       scope: kAudioUnitScope_Output, element: 1, data: &asbd)
-      try AudioUnitUtility.setProperty(unit: varispeedUnit, propertyID: kAudioUnitProperty_StreamFormat,
-                                       scope: kAudioUnitScope_Input, element: 0, data: &asbd)
+      try AudioUnitSettings.setProperty(for: inputUnit, propertyID: kAudioUnitProperty_StreamFormat,
+                                        scope: .output, element: 1, data: asbd)
+      try AudioUnitSettings.setProperty(for: varispeedUnit, propertyID: kAudioUnitProperty_StreamFormat,
+                                        scope: .input, element: 0, data: asbd)
 
       // Set the correct sample rate for the output device, but keep the channel count the same
       rate = try AudioObjectUtility.getPropertyData(objectID: outputDevice, address: theAddress)
       asbd.mSampleRate = rate
-      try AudioUnitUtility.setProperty(unit: varispeedUnit, propertyID: kAudioUnitProperty_StreamFormat,
-                                       scope: kAudioUnitScope_Output, element: 0, data: &asbd)
-      try AudioUnitUtility.setProperty(unit: outputUnit, propertyID: kAudioUnitProperty_StreamFormat,
-                                       scope: kAudioUnitScope_Input, element: 0, data: &asbd)
+      try AudioUnitSettings.setProperty(for: varispeedUnit, propertyID: kAudioUnitProperty_StreamFormat,
+                                        scope: .output, element: 0, data: asbd)
+      try AudioUnitSettings.setProperty(for: outputUnit, propertyID: kAudioUnitProperty_StreamFormat,
+                                        scope: .input, element: 0, data: asbd)
 
       let format = AVAudioFormat(streamDescription: &asbd)!
       inputBuffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: bufferSizeFrames)
