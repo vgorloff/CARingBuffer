@@ -2,9 +2,9 @@
 
 gitRepoDirPath = File.expand_path("#{File.dirname(__FILE__)}/..")
 
-require "#{gitRepoDirPath}/Vendor/WL/Conf/Scripts/lib/FileHeaderChecker.rb"
-require "#{gitRepoDirPath}/Vendor/WL/Conf/Scripts/lib/Tool.rb"
-require "#{gitRepoDirPath}/Vendor/WL/Conf/Scripts/lib/GitStatus.rb"
+require "#{gitRepoDirPath}/Vendor/WL/Scripts/lib/FileHeaderChecker.rb"
+require "#{gitRepoDirPath}/Vendor/WL/Scripts/lib/Tool.rb"
+require "#{gitRepoDirPath}/Vendor/WL/Scripts/lib/GitStatus.rb"
 
 changedFiles = GitStatus.new(gitRepoDirPath).changedFiles
 
