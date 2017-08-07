@@ -36,7 +36,7 @@ public enum CARingBufferError: Int32 {
    /// Fetch start time is earlier than buffer start time and fetch end time is later than buffer end time
    case tooMuch = 3
    /// The reader is unable to get enough CPU cycles to capture a consistent snapshot of the time bounds
-   case CPUOverload = 4
+   case cpuOverload = 4
 }
 
 // endregion
@@ -131,8 +131,19 @@ extension CARingBuffer {
          fetchMBL(into: mediaBuffers, destOffset: destOffset, from: mBuffer, srcOffset: srcOffset, numberOfBytes: numberOfBytes)
       }
    }
+
+   public func fetch(_ mediaBuffers: MediaBufferList<T>, offsetFrames: SampleTime, framesToRead: UInt32,
+                     startRead: SampleTime) -> CARingBufferError {
+      return fetch(framesToRead: framesToRead, startRead: startRead, zeroProcedure: { destOffset, numberOfBytes in
+         zeroMBL(mediaBuffers, destOffset: destOffset + offsetFrames, nbytes: numberOfBytes)
+      }) { srcOffset, destOffset, numberOfBytes in
+         fetchMBL(into: mediaBuffers, destOffset: destOffset + offsetFrames, from: mBuffer,
+                  srcOffset: srcOffset, numberOfBytes: numberOfBytes)
+      }
+   }
 }
 
+// MARK: - Private
 extension CARingBuffer {
 
    fileprivate typealias StoreProcedure = (_ srcOffset: SampleTime, _ destOffset: SampleTime, _ numberOfBytes: SampleTime) -> Void
@@ -443,7 +454,7 @@ extension CARingBuffer {
             return .noError
          }
       }
-      return .CPUOverload
+      return .cpuOverload
    }
 }
 

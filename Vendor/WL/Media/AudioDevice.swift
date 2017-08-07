@@ -80,7 +80,7 @@ public final class AudioDevice {
       var propertyAddress = AudioObjectPropertyAddress(mSelector: kAudioDevicePropertyDeviceName,
                                                        mScope: scope.audioObjectPropertyScope, mElement: 0)
       var propertyDataSize = try getPropertyDataSize(inObjectID: deviceID, inAddress: &propertyAddress)
-      var value = Array<CChar>(repeating: 0, count: propertyDataSize.intValue) // swiftlint:disable:this syntactic_sugar
+      var value = Array<CChar>(repeating: 0, count: Int(propertyDataSize)) // swiftlint:disable:this syntactic_sugar
       try getPropertyData(inObjectID: deviceID, inAddress: &propertyAddress, ioDataSize: &propertyDataSize, outData: &value)
       guard let deviceName = String(utf8String: &value) else {
          throw Errors.unableToGetProperty(kAudioDevicePropertyDeviceName)
@@ -93,7 +93,7 @@ public final class AudioDevice {
       var propertyAddress = AudioObjectPropertyAddress(mSelector: selector, mScope: kAudioObjectPropertyScopeGlobal,
                                                        mElement: kAudioObjectPropertyElementMaster)
       var value = AudioDeviceID(0)
-      try getPropertyData(inObjectID: kAudioObjectSystemObject.uint32Value, inAddress: &propertyAddress, outData: &value)
+      try getPropertyData(inObjectID: UInt32(kAudioObjectSystemObject), inAddress: &propertyAddress, outData: &value)
       return value
    }
 
@@ -101,11 +101,11 @@ public final class AudioDevice {
       var propertyAddress = AudioObjectPropertyAddress(mSelector: kAudioHardwarePropertyDevices,
                                                        mScope: kAudioObjectPropertyScopeGlobal,
                                                        mElement: kAudioObjectPropertyElementMaster)
-      var propertyDataSize = try getPropertyDataSize(inObjectID: kAudioObjectSystemObject.uint32Value,
+      var propertyDataSize = try getPropertyDataSize(inObjectID: UInt32(kAudioObjectSystemObject),
                                                      inAddress: &propertyAddress)
-      let numberOfDevices = propertyDataSize / MemoryLayout<AudioDeviceID>.size.uint32Value
-      var value: [AudioDeviceID] = Array(repeating: 0, count: numberOfDevices.intValue)
-      try getPropertyData(inObjectID: kAudioObjectSystemObject.uint32Value, inAddress: &propertyAddress,
+      let numberOfDevices = propertyDataSize / UInt32(MemoryLayout<AudioDeviceID>.size)
+      var value: [AudioDeviceID] = Array(repeating: 0, count: Int(numberOfDevices))
+      try getPropertyData(inObjectID: UInt32(kAudioObjectSystemObject), inAddress: &propertyAddress,
                           ioDataSize: &propertyDataSize, outData: &value)
       return value
    }
@@ -133,8 +133,8 @@ public final class AudioDevice {
                                           inQualifierDataSize: UInt32 = 0, inQualifierData: UnsafeRawPointer? = nil,
                                           outData: UnsafeMutablePointer<T>) throws {
       var propertyDataSize = try getPropertyDataSize(inObjectID: inObjectID, inAddress: inAddress)
-      guard propertyDataSize == MemoryLayout<T>.size.uint32Value else {
-         throw Errors.unexpectedPropertyDataSize(expected: MemoryLayout<T>.size.uint32Value, observed: propertyDataSize)
+      guard propertyDataSize == UInt32(MemoryLayout<T>.size) else {
+         throw Errors.unexpectedPropertyDataSize(expected: UInt32(MemoryLayout<T>.size), observed: propertyDataSize)
       }
       let status = AudioObjectGetPropertyData(inObjectID, inAddress, inQualifierDataSize, inQualifierData,
                                               &propertyDataSize, outData)

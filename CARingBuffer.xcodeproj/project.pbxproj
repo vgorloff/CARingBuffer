@@ -28,6 +28,9 @@
 		8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 805015561D109FBB00AE0412 /* CARBTests.mm */; };
 		805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 805015601D10A06300AE0412 /* CARingBuffer.cpp */; };
 		8050DAE61D19D785007216D2 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8050DAE51D19D785007216D2 /* Readme.txt */; };
+		805671E91F3910E000D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
+		805671EA1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
+		805671EB1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
 		8066E0DD1D10A53C00D32B44 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
 		8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */; };
 		80B12CE81D21AD2E00B2FE2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */; };
@@ -76,6 +79,7 @@
 		805015601D10A06300AE0412 /* CARingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CARingBuffer.cpp; sourceTree = "<group>"; };
 		805015611D10A06300AE0412 /* CARingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARingBuffer.h; sourceTree = "<group>"; };
 		8050DAE51D19D785007216D2 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		805671E81F3910E000D2C5B5 /* MediaBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBuffer.swift; sourceTree = "<group>"; };
 		8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
 		80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
 				80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */,
 				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
+				805671E81F3910E000D2C5B5 /* MediaBuffer.swift */,
 				8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */,
 			);
 			path = Media;
@@ -490,6 +495,7 @@
 				8046F3EB1D821FE8007F25E4 /* MediaBufferList.swift in Sources */,
 				801BE5B81F16E70400806169 /* AudioBuffer.swift in Sources */,
 				801BE5BA1F16E72400806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
+				805671EA1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +509,7 @@
 				801BE5AA1F16E3C000806169 /* CARBPerformanceTests.swift in Sources */,
 				801BE5B91F16E71600806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
 				801BE5AC1F16E5E400806169 /* CARBTestsUtility.swift in Sources */,
+				805671E91F3910E000D2C5B5 /* MediaBuffer.swift in Sources */,
 				80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +523,7 @@
 				80B12D0B1D21B15000B2FE2A /* AudioDevice.swift in Sources */,
 				801BE5B71F16E6F400806169 /* AudioComponentDescription.swift in Sources */,
 				801BE5B21F16E68600806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
+				805671EB1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */,
 				8046F3EA1D821FE8007F25E4 /* MediaBufferList.swift in Sources */,
 				801BE5B41F16E6B700806169 /* AudioBuffer.swift in Sources */,
 				80B12D021D21B00600B2FE2A /* AudioUnitSettings.swift in Sources */,
