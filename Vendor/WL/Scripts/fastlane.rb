@@ -19,3 +19,47 @@ def Bump(*relativePaths)
     git_commit(path: "./", message: "Version Bump #{awl_versionFromTag}x#{awl_buildNumber}")
   }
 end
+
+desc "Unsync source code."
+lane :unsync do
+   srcDirPath = ENV['AWL_LIB_SRC']
+   if Dir.exists?(srcDirPath)
+      projectFilePath = "#{ENV['PWD']}/CARingBuffer.xcodeproj"
+      fastlane_require 'xcodeproj'
+      project = Xcodeproj::Project.open(projectFilePath)
+      vendorGroup = project.groups.select { |g| g.path == "Vendor" }.first.groups.select { |g| g.name == "WL" }.first
+      vendorGroup.source_tree = "WL"
+      vendorGroup.path = nil
+      project.save()
+   end
+end
+
+desc "Sync source code."
+lane :sync do
+   srcDirPath = ENV['AWL_LIB_SRC']
+   dstDirPath = "#{ENV['PWD']}/Vendor/WL"
+   if Dir.exists?(srcDirPath)
+      projectFilePath = "#{ENV['PWD']}/CARingBuffer.xcodeproj"
+      fastlane_require 'xcodeproj'
+      project = Xcodeproj::Project.open(projectFilePath)
+      vendorGroup = project.groups.select { |g| g.path == "Vendor" }.first.groups.select { |g| g.name == "WL" }.first
+      swiftFiles = vendorGroup.recursive_children.select { |c| c.respond_to?(:real_path) }.select { |f| f.real_path.to_s.end_with?(".swift") }
+      swiftFiles = swiftFiles.map { |f| f.real_path.to_s.gsub("${WL}", ENV['AWL_LIB_SRC']) }
+      scriptFiles = Dir["#{srcDirPath}/Scripts/**/*"].select { |f| !File.directory?(f) }
+      files = swiftFiles + scriptFiles
+      if Dir.exists?(dstDirPath)
+         FileUtils.rm_r(dstDirPath)
+      end
+      files.each { |f|
+         dstFilePath = f.gsub(srcDirPath, dstDirPath)
+         dstFileDirPath = File.dirname(dstFilePath)
+         FileUtils.mkdir_p(dstFileDirPath)
+         FileUtils.cp(f, dstFileDirPath, :verbose => true)
+      }
+      vendorGroup.source_tree = "<group>"
+      vendorGroup.path = "WL"
+      project.save()
+   else
+      puts "! Environment variable if not found `AWL_LIB_SRC`. Skipping."
+   end
+end
