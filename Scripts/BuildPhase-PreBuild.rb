@@ -6,7 +6,7 @@ libraryFilePath = "#{ENV['AWL_LIB_SRC']}/Scripts/WL.rb"
 if File.exists?(libraryFilePath)
    require libraryFilePath
 else
-   require "#{gitRepoDirPath}/Vendor/WL/Scripts/fastlane.rb"
+   require "#{gitRepoDirPath}/Vendor/WL/Scripts/WL.rb"
 end
 
 changedFiles = GitStatus.new(gitRepoDirPath).changedFiles
