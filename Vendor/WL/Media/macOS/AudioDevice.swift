@@ -6,7 +6,6 @@
 //  Copyright © 2016 WaveLabs. All rights reserved.
 //
 
-#if os(OSX)
 import CoreAudio
 
 public final class AudioDevice {
@@ -160,4 +159,3 @@ public final class AudioDevice {
       }
    }
 }
-#endif
