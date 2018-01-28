@@ -144,6 +144,7 @@ extension CARingBuffer {
 }
 
 // MARK: - Private
+
 extension CARingBuffer {
 
    fileprivate typealias StoreProcedure = (_ srcOffset: SampleTime, _ destOffset: SampleTime, _ numberOfBytes: SampleTime) -> Void
