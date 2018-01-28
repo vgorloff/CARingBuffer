@@ -7,21 +7,17 @@ class Automation
    TmpDirPath = GitRepoDirPath + "/DerivedData"
    KeyChainPath = TmpDirPath + "/VST3NetSend.keychain"
    P12FilePath = GitRepoDirPath + '/Configuration/Codesign/DeveloperIDApplication.p12'
-   XCodeProjectFilePath = GitRepoDirPath + "/VST3NetSend.xcodeproj"
-   XCodeProjectSchema = "VST3NetSend"
+   XCodeProjectFilePath = GitRepoDirPath + "/CARingBuffer.xcodeproj"
+   XCodeProjectSchema = "Developer: Build Everything"
    VSTSDKDirPath = GitRepoDirPath + "/Vendor/Steinberg"
    VersionFilePath = GitRepoDirPath + "/Configuration/Version.xcconfig"
       
    def self.ci()
       if !Tool.isCIServer
-         XcodeBuilder.new(XCodeProjectFilePath).archive(XCodeProjectSchema, nil, true)
+         release()
          return
       end
       puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-      puts "→ Downloading dependencies..."
-      FileUtils.mkdir_p VSTSDKDirPath
-      `cd \"#{VSTSDKDirPath}\" && git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
-      `cd \"#{VSTSDKDirPath}/vst3sdk\" && git submodule update --init base pluginterfaces public.sdk`
       puts "→ Preparing environment..."
       FileUtils.mkdir_p TmpDirPath
       puts Tool.announceEnvVars
@@ -59,11 +55,15 @@ class Automation
       XcodeBuilder.new(XCodeProjectFilePath).clean(XCodeProjectSchema)
    end
    
+   def self.test()
+      XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: Swift")
+      XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: C++")
+   end
+   
    def self.release()
-      XcodeBuilder.new(XCodeProjectFilePath).archive(XCodeProjectSchema, nil, true)
-      apps = Dir["#{GitRepoDirPath}/**/*.xcarchive/**/*.vst3"].select { |f| File.directory?(f) }
-      apps.each { |app| Archive.zip(app) }
-      apps.each { |app| XcodeBuilder.validateBinary(app) }
+      XcodeBuilder.new(XCodeProjectFilePath).ci("Developer: Analyze Performance")
+      XcodeBuilder.new(XCodeProjectFilePath).ci("Demo: CAPlayThrough")
+      XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: Swift")
    end
    
    def self.verify()
@@ -101,7 +101,6 @@ class Automation
          return
       end
       require 'yaml'
-      assets = Dir["#{GitRepoDirPath}/**/*.xcarchive/**/*.vst3.zip"]
       releaseInfo = YAML.load_file("#{GitRepoDirPath}/Configuration/Release.yml")
       releaseName = releaseInfo['name']
       releaseDescriptions = releaseInfo['description'].map { |l| "* #{l}"}
@@ -109,11 +108,9 @@ class Automation
       version = Version.new(VersionFilePath).projectVersion
       puts "! Will make GitHub release → #{version}: \"#{releaseName}\""
       puts releaseDescriptions.map { |l| "  #{l}" }
-      assets.each { |f| puts "  #{f}" }
-      gh = GitHubRelease.new("vgorloff", "VST3NetSend")
+      gh = GitHubRelease.new("vgorloff", "CARingBuffer")
       Readline.readline("OK? > ")
       gh.release(version, releaseName, releaseDescription)
-      assets.each { |f| gh.uploadAsset(f) }
    end
 
 end
