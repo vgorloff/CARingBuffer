@@ -11,7 +11,7 @@ import CoreAudio
 
 public struct AudioObjectUtility {
 
-   public enum Errors: Error {
+   public enum Errors: Swift.Error {
       case OSStatusError(OSStatus)
       case unexpectedDataSize(expected: UInt32, observed: UInt32)
    }
@@ -33,7 +33,7 @@ public struct AudioObjectUtility {
                                          qualifierData: UnsafeRawPointer? = nil) throws -> T {
       let propertyDataSize = try getPropertyDataSize(objectID: objectID, address: address, qualifierDataSize: qualifierDataSize,
                                                      qualifierData: qualifierData)
-      let expectedDataSize = MemoryLayout<T>.size.uint32Value
+      let expectedDataSize = UInt32(MemoryLayout<T>.size)
       if propertyDataSize != expectedDataSize {
          throw Errors.unexpectedDataSize(expected: expectedDataSize, observed: propertyDataSize)
       }

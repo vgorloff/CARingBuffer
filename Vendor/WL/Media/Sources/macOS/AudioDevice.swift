@@ -18,7 +18,7 @@ public final class AudioDevice {
       }
    }
 
-   public enum Errors: Error {
+   public enum Errors: Swift.Error {
       case unexpectedDeviceID(AudioDeviceID)
       case audioHardwareError(OSStatus)
       case unableToGetProperty(AudioObjectPropertySelector)
