@@ -1,16 +1,4 @@
-# If you want to automatically update fastlane if a new version is available:
-# update_fastlane
 
-# This is the minimum version number required.
-# Update this, if you use features of a newer version
-fastlane_version "1.102.0"
-
-libraryFilePath = "#{ENV['AWL_LIB_SRC']}/Scripts/WL.rb"
-if File.exists?(libraryFilePath)
-   import libraryFilePath
-else
-   import "#{ENV['PWD']}/Vendor/WL/Scripts/WL.rb"
-end
 
 XCodeProjectFilePath = "#{ENV['PWD']}/CARingBuffer.xcodeproj"
 XCodeProjectSchema = "Developer: Build Everything"
@@ -46,34 +34,4 @@ lane :deploy do
      repository_name: "vgorloff/CARingBuffer", api_token: ENV['AWL_GITHUB_TOKEN'], name: releaseName, tag_name: last_git_tag,
      description: releaseDescription, commitish: "master"
    )
-end
-
-desc "Autocorrect source code."
-lane :autocorrect do
-   sh "swiftformat "\
-   "--allman false --binarygrouping none --commas inline --comments indent --decimalgrouping none --empty void "\
-   "--exponentcase lowercase --header ignore --hexgrouping none --hexliteralcase uppercase --ifdef noindent --indent 3 --insertlines enabled "\
-   "--linebreaks lf --octalgrouping none --patternlet inline --ranges spaced --removelines true --semicolons inline --self remove "\
-   "--stripunusedargs unnamed-only --trimwhitespace always --wraparguments disabled --wrapelements disabled "\
-   "\"#{ENV['PWD']}\""
-   sh "swiftlint autocorrect --path #{ENV['PWD']}"
-   ImportsOrganizer.new().process(ENV['PWD'])
-end
-
-desc "Verify source code."
-lane :verify do
-   `swiftlint lint --quiet --path #{ENV['PWD']}`
-   puts FileHeaderChecker.new(["WaveLabs"]).analyse("#{ENV['PWD']}/Sources")
-   puts FileHeaderChecker.new(["WaveLabs"]).analyse("#{ENV['PWD']}/Tests")
-   puts FileHeaderChecker.new(["WaveLabs"]).analyse("#{ENV['PWD']}/Vendor/WL")
-end
-
-desc "Unsync source code."
-lane :unsync do
-   srcUnsync(XCodeProjectFilePath)
-end
-
-desc "Sync source code."
-lane :sync do
-   srcSync(XCodeProjectFilePath)
 end

@@ -69,6 +69,8 @@
 		801BE5AE1F16E62D00806169 /* AudioBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBuffer.swift; sourceTree = "<group>"; };
 		801BE5B01F16E66B00806169 /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
 		801BE5B61F16E6EC00806169 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
+		8040365C201D58D30002412D /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		8040365D201D58D30002412D /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		8044E5D31F798F88005E5760 /* AudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
 		8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBufferList.swift; sourceTree = "<group>"; };
 		8050152B1D0F722200AE0412 /* CARBMeasure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CARBMeasure; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +95,6 @@
 		80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsCpp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
-		80FA42521D247AAD00937DD8 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		80FE0B301D20213200919C2F /* CARingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARingBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,22 +132,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		801BE5AD1F16E62D00806169 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				801BE5B61F16E6EC00806169 /* AudioComponentDescription.swift */,
-				801BE5B01F16E66B00806169 /* UnsafeMutableAudioBufferListPointer.swift */,
-				801BE5AE1F16E62D00806169 /* AudioBuffer.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		8044E5D21F798F88005E5760 /* macOS */ = {
+		1A597057431E5AB69599CD37 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
 				8044E5D31F798F88005E5760 /* AudioDevice.swift */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		8040365B201D58910002412D /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				8040365C201D58D30002412D /* Project.xcconfig */,
+				8040365D201D58D30002412D /* Version.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		8050152C1D0F722200AE0412 /* CARBMeasure */ = {
@@ -161,10 +161,10 @@
 			isa = PBXGroup;
 			children = (
 				80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */,
-				80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */,
-				80B12CE91D21AD2E00B2FE2A /* ViewController.swift */,
 				80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */,
 				80B12CED1D21AD2E00B2FE2A /* Main.storyboard */,
+				80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */,
+				80B12CE91D21AD2E00B2FE2A /* ViewController.swift */,
 			);
 			path = CAPlayThrough;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 		80B12CFA1D21AE4000B2FE2A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */,
+				B5B82A700F64896EE4CDF5CC /* Sources */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -180,13 +180,7 @@
 		80B12CFF1D21AF6B00B2FE2A /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				8044E5D21F798F88005E5760 /* macOS */,
-				801BE5AD1F16E62D00806169 /* Extensions */,
-				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
-				80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */,
-				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
-				805671E81F3910E000D2C5B5 /* MediaBuffer.swift */,
-				8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */,
+				CE3753FEE09D6A3EE2CD4BC5 /* Sources */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -218,13 +212,12 @@
 				80B12CFF1D21AF6B00B2FE2A /* Media */,
 			);
 			name = WL;
-			path = WL;
-			sourceTree = "<group>";
+			sourceTree = WL;
 		};
 		80C9CF991D0CC6AF00960F60 = {
 			isa = PBXGroup;
 			children = (
-				80FA42521D247AAD00937DD8 /* Readme.md */,
+				8040365B201D58910002412D /* Configuration */,
 				80FA42491D246B8500937DD8 /* Sources */,
 				80C9CFB11D0CC6AF00960F60 /* Tests */,
 				80C9CFC01D0CC94200960F60 /* Vendor */,
@@ -237,10 +230,10 @@
 		80C9CFA41D0CC6AF00960F60 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */,
 				8050152B1D0F722200AE0412 /* CARBMeasure */,
-				805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */,
 				80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */,
+				80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */,
+				805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,9 +243,9 @@
 			children = (
 				8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */,
 				801BE5A61F16E3A800806169 /* CARBPerformanceTests.swift */,
-				801BE5A81F16E3A800806169 /* CARBTests.CustomType.swift */,
 				805015561D109FBB00AE0412 /* CARBTests.mm */,
 				801BE5A71F16E3A800806169 /* CARBTests.swift */,
+				801BE5A81F16E3A800806169 /* CARBTests.CustomType.swift */,
 				801BE5A51F16E3A800806169 /* CARBTestsUtility.swift */,
 			);
 			path = Tests;
@@ -261,9 +254,9 @@
 		80C9CFC01D0CC94200960F60 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				8050DAE51D19D785007216D2 /* Readme.txt */,
 				80C205161D189E5F00A932E4 /* CoreAudio */,
 				80C2051D1D189EE700A932E4 /* WL */,
+				8050DAE51D19D785007216D2 /* Readme.txt */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -279,8 +272,40 @@
 		80FA42491D246B8500937DD8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8050152C1D0F722200AE0412 /* CARBMeasure */,
 				80B12CE61D21AD2E00B2FE2A /* CAPlayThrough */,
+				8050152C1D0F722200AE0412 /* CARBMeasure */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8ABD9AE86EBFC8D831F07059 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				801BE5AE1F16E62D00806169 /* AudioBuffer.swift */,
+				801BE5B61F16E6EC00806169 /* AudioComponentDescription.swift */,
+				801BE5B01F16E66B00806169 /* UnsafeMutableAudioBufferListPointer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B5B82A700F64896EE4CDF5CC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CE3753FEE09D6A3EE2CD4BC5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8ABD9AE86EBFC8D831F07059 /* Extensions */,
+				1A597057431E5AB69599CD37 /* macOS */,
+				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
+				80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */,
+				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
+				805671E81F3910E000D2C5B5 /* MediaBuffer.swift */,
+				8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -367,22 +392,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = WaveLabs;
 				TargetAttributes = {
 					8050152A1D0F722200AE0412 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E27KE6VTF6;
 					};
 					8050153F1D1089EA00AE0412 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E27KE6VTF6;
 						LastSwiftMigration = 0800;
 					};
 					80B12CE41D21AD2E00B2FE2A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E27KE6VTF6;
 						LastSwiftMigration = 0900;
 					};
 					80C9CFAC1D0CC6AF00960F60 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E27KE6VTF6;
 					};
 				};
 			};
@@ -446,8 +475,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n\"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 		8046F3F11D83701E007F25E4 /* Run Script: Pre-Build */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -460,8 +489,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n\"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 		80B940381D1B50040013FE1C /* Run Script: Pre-Build */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -474,8 +503,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n\"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 		80C205301D18A57A00A932E4 /* Run Script: Pre-Build */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -488,8 +517,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n\"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -573,7 +602,7 @@
 		805015301D0F722200AE0412 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 12;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -581,7 +610,7 @@
 		805015311D0F722200AE0412 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 12;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -589,8 +618,8 @@
 		805015461D1089EA00AE0412 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsSwift;
@@ -601,8 +630,8 @@
 		805015471D1089EA00AE0412 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsSwift;
@@ -614,8 +643,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -630,8 +659,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -643,6 +672,7 @@
 		};
 		80C9CFB51D0CC6AF00960F60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8040365C201D58D30002412D /* Project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -654,12 +684,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -690,12 +722,12 @@
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		80C9CFB61D0CC6AF00960F60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8040365C201D58D30002412D /* Project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -707,12 +739,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -735,18 +769,18 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_DISABLE_SAFETY_CHECKS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		80C9CFBB1D0CC6AF00960F60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsCpp;
@@ -757,8 +791,8 @@
 		80C9CFBC1D0CC6AF00960F60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsCpp;
