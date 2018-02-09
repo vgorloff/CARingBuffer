@@ -22,12 +22,16 @@
 		801BE5B81F16E70400806169 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BE5AE1F16E62D00806169 /* AudioBuffer.swift */; };
 		801BE5B91F16E71600806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BE5B01F16E66B00806169 /* UnsafeMutableAudioBufferListPointer.swift */; };
 		801BE5BA1F16E72400806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BE5B01F16E66B00806169 /* UnsafeMutableAudioBufferListPointer.swift */; };
+		8044E5D71F798FF5005E5760 /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044E5D31F798F88005E5760 /* AudioDevice.swift */; };
 		8046F3E91D821FDC007F25E4 /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */; };
 		8046F3EA1D821FE8007F25E4 /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */; };
 		8046F3EB1D821FE8007F25E4 /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */; };
 		8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 805015561D109FBB00AE0412 /* CARBTests.mm */; };
 		805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 805015601D10A06300AE0412 /* CARingBuffer.cpp */; };
 		8050DAE61D19D785007216D2 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8050DAE51D19D785007216D2 /* Readme.txt */; };
+		805671E91F3910E000D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
+		805671EA1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
+		805671EB1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
 		8066E0DD1D10A53C00D32B44 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
 		8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */; };
 		80B12CE81D21AD2E00B2FE2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */; };
@@ -35,8 +39,7 @@
 		80B12CEC1D21AD2E00B2FE2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */; };
 		80B12CEF1D21AD2E00B2FE2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B12CED1D21AD2E00B2FE2A /* Main.storyboard */; };
 		80B12CF51D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */; };
-		80B12D021D21B00600B2FE2A /* AudioUnitUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */; };
-		80B12D0B1D21B15000B2FE2A /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D091D21B14C00B2FE2A /* AudioDevice.swift */; };
+		80B12D021D21B00600B2FE2A /* AudioUnitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */; };
 		80B12D1B1D21B27500B2FE2A /* AudioObjectUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */; };
 		80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 		80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
@@ -66,6 +69,9 @@
 		801BE5AE1F16E62D00806169 /* AudioBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBuffer.swift; sourceTree = "<group>"; };
 		801BE5B01F16E66B00806169 /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
 		801BE5B61F16E6EC00806169 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
+		8040365C201D58D30002412D /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		8040365D201D58D30002412D /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		8044E5D31F798F88005E5760 /* AudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
 		8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBufferList.swift; sourceTree = "<group>"; };
 		8050152B1D0F722200AE0412 /* CARBMeasure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CARBMeasure; sourceTree = BUILT_PRODUCTS_DIR; };
 		805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsSwift.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +82,7 @@
 		805015601D10A06300AE0412 /* CARingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CARingBuffer.cpp; sourceTree = "<group>"; };
 		805015611D10A06300AE0412 /* CARingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARingBuffer.h; sourceTree = "<group>"; };
 		8050DAE51D19D785007216D2 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		805671E81F3910E000D2C5B5 /* MediaBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBuffer.swift; sourceTree = "<group>"; };
 		8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
 		80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,13 +90,11 @@
 		80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80B12CEE1D21AD2E00B2FE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayThroughRenderUtility.swift; sourceTree = "<group>"; };
-		80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitUtility.swift; sourceTree = "<group>"; };
-		80B12D091D21B14C00B2FE2A /* AudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
+		80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
 		80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
 		80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsCpp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
-		80FA42521D247AAD00937DD8 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		80FE0B301D20213200919C2F /* CARingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARingBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,14 +132,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		801BE5AD1F16E62D00806169 /* Extensions */ = {
+		1A597057431E5AB69599CD37 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				801BE5B61F16E6EC00806169 /* AudioComponentDescription.swift */,
-				801BE5B01F16E66B00806169 /* UnsafeMutableAudioBufferListPointer.swift */,
-				801BE5AE1F16E62D00806169 /* AudioBuffer.swift */,
+				8044E5D31F798F88005E5760 /* AudioDevice.swift */,
 			);
-			path = Extensions;
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		8040365B201D58910002412D /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				8040365C201D58D30002412D /* Project.xcconfig */,
+				8040365D201D58D30002412D /* Version.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		8050152C1D0F722200AE0412 /* CARBMeasure */ = {
@@ -149,10 +161,10 @@
 			isa = PBXGroup;
 			children = (
 				80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */,
-				80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */,
-				80B12CE91D21AD2E00B2FE2A /* ViewController.swift */,
 				80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */,
 				80B12CED1D21AD2E00B2FE2A /* Main.storyboard */,
+				80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */,
+				80B12CE91D21AD2E00B2FE2A /* ViewController.swift */,
 			);
 			path = CAPlayThrough;
 			sourceTree = "<group>";
@@ -160,7 +172,7 @@
 		80B12CFA1D21AE4000B2FE2A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */,
+				B5B82A700F64896EE4CDF5CC /* Sources */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -168,12 +180,7 @@
 		80B12CFF1D21AF6B00B2FE2A /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				801BE5AD1F16E62D00806169 /* Extensions */,
-				80B12D091D21B14C00B2FE2A /* AudioDevice.swift */,
-				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
-				80B12D001D21AFD100B2FE2A /* AudioUnitUtility.swift */,
-				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
-				8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */,
+				CE3753FEE09D6A3EE2CD4BC5 /* Sources */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -210,7 +217,7 @@
 		80C9CF991D0CC6AF00960F60 = {
 			isa = PBXGroup;
 			children = (
-				80FA42521D247AAD00937DD8 /* Readme.md */,
+				8040365B201D58910002412D /* Configuration */,
 				80FA42491D246B8500937DD8 /* Sources */,
 				80C9CFB11D0CC6AF00960F60 /* Tests */,
 				80C9CFC01D0CC94200960F60 /* Vendor */,
@@ -223,10 +230,10 @@
 		80C9CFA41D0CC6AF00960F60 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */,
 				8050152B1D0F722200AE0412 /* CARBMeasure */,
-				805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */,
 				80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */,
+				80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */,
+				805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,9 +243,9 @@
 			children = (
 				8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */,
 				801BE5A61F16E3A800806169 /* CARBPerformanceTests.swift */,
-				801BE5A81F16E3A800806169 /* CARBTests.CustomType.swift */,
 				805015561D109FBB00AE0412 /* CARBTests.mm */,
 				801BE5A71F16E3A800806169 /* CARBTests.swift */,
+				801BE5A81F16E3A800806169 /* CARBTests.CustomType.swift */,
 				801BE5A51F16E3A800806169 /* CARBTestsUtility.swift */,
 			);
 			path = Tests;
@@ -248,8 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				80C205161D189E5F00A932E4 /* CoreAudio */,
-				8050DAE51D19D785007216D2 /* Readme.txt */,
 				80C2051D1D189EE700A932E4 /* WL */,
+				8050DAE51D19D785007216D2 /* Readme.txt */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -265,8 +272,40 @@
 		80FA42491D246B8500937DD8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8050152C1D0F722200AE0412 /* CARBMeasure */,
 				80B12CE61D21AD2E00B2FE2A /* CAPlayThrough */,
+				8050152C1D0F722200AE0412 /* CARBMeasure */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8ABD9AE86EBFC8D831F07059 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				801BE5AE1F16E62D00806169 /* AudioBuffer.swift */,
+				801BE5B61F16E6EC00806169 /* AudioComponentDescription.swift */,
+				801BE5B01F16E66B00806169 /* UnsafeMutableAudioBufferListPointer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B5B82A700F64896EE4CDF5CC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CE3753FEE09D6A3EE2CD4BC5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8ABD9AE86EBFC8D831F07059 /* Extensions */,
+				1A597057431E5AB69599CD37 /* macOS */,
+				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
+				80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */,
+				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
+				805671E81F3910E000D2C5B5 /* MediaBuffer.swift */,
+				8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -353,22 +392,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = WaveLabs;
 				TargetAttributes = {
 					8050152A1D0F722200AE0412 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E27KE6VTF6;
 					};
 					8050153F1D1089EA00AE0412 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E27KE6VTF6;
 						LastSwiftMigration = 0800;
 					};
 					80B12CE41D21AD2E00B2FE2A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E27KE6VTF6;
 						LastSwiftMigration = 0900;
 					};
 					80C9CFAC1D0CC6AF00960F60 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E27KE6VTF6;
 					};
 				};
 			};
@@ -432,8 +475,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n\"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 		8046F3F11D83701E007F25E4 /* Run Script: Pre-Build */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -446,8 +489,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n\"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 		80B940381D1B50040013FE1C /* Run Script: Pre-Build */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -460,8 +503,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n\"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 		80C205301D18A57A00A932E4 /* Run Script: Pre-Build */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -474,8 +517,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n\"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -490,6 +533,7 @@
 				8046F3EB1D821FE8007F25E4 /* MediaBufferList.swift in Sources */,
 				801BE5B81F16E70400806169 /* AudioBuffer.swift in Sources */,
 				801BE5BA1F16E72400806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
+				805671EA1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +547,7 @@
 				801BE5AA1F16E3C000806169 /* CARBPerformanceTests.swift in Sources */,
 				801BE5B91F16E71600806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
 				801BE5AC1F16E5E400806169 /* CARBTestsUtility.swift in Sources */,
+				805671E91F3910E000D2C5B5 /* MediaBuffer.swift in Sources */,
 				80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,15 +558,16 @@
 			files = (
 				80B12CEA1D21AD2E00B2FE2A /* ViewController.swift in Sources */,
 				80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */,
-				80B12D0B1D21B15000B2FE2A /* AudioDevice.swift in Sources */,
 				801BE5B71F16E6F400806169 /* AudioComponentDescription.swift in Sources */,
 				801BE5B21F16E68600806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
+				805671EB1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */,
 				8046F3EA1D821FE8007F25E4 /* MediaBufferList.swift in Sources */,
 				801BE5B41F16E6B700806169 /* AudioBuffer.swift in Sources */,
-				80B12D021D21B00600B2FE2A /* AudioUnitUtility.swift in Sources */,
+				80B12D021D21B00600B2FE2A /* AudioUnitSettings.swift in Sources */,
 				80B12D1B1D21B27500B2FE2A /* AudioObjectUtility.swift in Sources */,
 				80B12CF51D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift in Sources */,
 				80B12CE81D21AD2E00B2FE2A /* AppDelegate.swift in Sources */,
+				8044E5D71F798FF5005E5760 /* AudioDevice.swift in Sources */,
 				80FA42431D245F3600937DD8 /* NumericTypesConversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,7 +602,7 @@
 		805015301D0F722200AE0412 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 12;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -564,7 +610,7 @@
 		805015311D0F722200AE0412 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 12;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -572,8 +618,8 @@
 		805015461D1089EA00AE0412 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsSwift;
@@ -584,8 +630,8 @@
 		805015471D1089EA00AE0412 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsSwift;
@@ -597,8 +643,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -613,8 +659,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -626,6 +672,7 @@
 		};
 		80C9CFB51D0CC6AF00960F60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8040365C201D58D30002412D /* Project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -633,14 +680,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -667,12 +722,12 @@
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		80C9CFB61D0CC6AF00960F60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8040365C201D58D30002412D /* Project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -680,14 +735,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -706,18 +769,18 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_DISABLE_SAFETY_CHECKS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		80C9CFBB1D0CC6AF00960F60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsCpp;
@@ -728,8 +791,8 @@
 		80C9CFBC1D0CC6AF00960F60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsCpp;

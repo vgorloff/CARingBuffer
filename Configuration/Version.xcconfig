@@ -1,0 +1,10 @@
+//
+//  Version.xcconfig
+//  WaveLabs
+//
+//  Created by Vlad Gorlov on 16.07.17.
+//  Copyright © 2017 Vlad Gorlov. All rights reserved.
+//
+
+APP_BUNDLE_VERSION=14
+APP_PROJECT_VERSION=1.0.11
