@@ -1,6 +1,6 @@
 //
 //  View.swift
-//  mcDecodeAppKit
+//  WLUI
 //
 //  Created by Vlad Gorlov on 16.10.17.
 //  Copyright © 2017 Demo. All rights reserved.

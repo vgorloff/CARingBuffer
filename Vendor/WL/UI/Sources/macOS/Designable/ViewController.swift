@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  mcUI-iOS
+//  WLUI
 //
 //  Created by Vlad Gorlov on 03.02.18.
 //  Copyright © 2018 Demo. All rights reserved.
@@ -47,23 +47,17 @@ open class ViewController: NSViewController {
    }
 
    open func setupUI() {
-
    }
 
    open func setupLayout() {
-
    }
 
    open func setupHandlers() {
-
    }
 
    open func setupDefaults() {
-
    }
 
    open func setupLayoutDefaults() {
-
    }
-
 }

@@ -84,7 +84,8 @@ class Automation
             end
          end
       else
-         puts h.analyseDir(GitRepoDirPath)
+         puts h.analyseDir(GitRepoDirPath + "/Sources")
+         puts h.analyseDir(GitRepoDirPath + "/Tests")
          if l.canRunSwiftFormat()
             puts "→ Correcting sources (SwiftFormat)..."
             l.correctWithSwiftFormat()

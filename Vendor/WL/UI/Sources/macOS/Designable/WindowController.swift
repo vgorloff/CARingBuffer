@@ -1,6 +1,6 @@
 //
 //  WindowController.swift
-//  mcUI-macOS
+//  WLUI
 //
 //  Created by Vlad Gorlov on 07.02.18.
 //  Copyright © 2018 Demo. All rights reserved.
@@ -34,10 +34,8 @@ open class WindowController: NSWindowController {
    }
 
    open func setupUI() {
-
    }
 
    open func setupHandlers() {
-
    }
 }

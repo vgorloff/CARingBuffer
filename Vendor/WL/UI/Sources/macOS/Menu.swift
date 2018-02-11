@@ -1,6 +1,6 @@
 //
 //  Menu.swift
-//  DocumentAppDemo
+//  WLUI
 //
 //  Created by Vlad Gorlov on 07.02.18.
 //  Copyright © 2018 Demo. All rights reserved.
@@ -43,7 +43,7 @@ extension Menu.App {
 
    public static var about: NSMenuItem {
       return NSMenuItem(title: "About \(Menu.applicationName)",
-         action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
+                        action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
    }
 
    public static func preferences(handler: @escaping () -> Void) -> NSMenuItem {
@@ -58,26 +58,25 @@ extension Menu.App {
 
    public static var hide: NSMenuItem {
       return NSMenuItem(title: "Hide \(Menu.applicationName)",
-         action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
+                        action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
    }
 
    public static var hideOthers: NSMenuItem {
       let item = NSMenuItem(title: "Hide Others",
-         action: #selector(NSApplication.hideOtherApplications(_:)), keyEquivalent: "h")
+                            action: #selector(NSApplication.hideOtherApplications(_:)), keyEquivalent: "h")
       item.keyEquivalentModifierMask = [.command, .option]
       return item
    }
 
    public static var showAll: NSMenuItem {
       return NSMenuItem(title: "Show All",
-         action: #selector(NSApplication.unhideAllApplications(_:)), keyEquivalent: "")
+                        action: #selector(NSApplication.unhideAllApplications(_:)), keyEquivalent: "")
    }
 
    public static var quit: NSMenuItem {
       return NSMenuItem(title: "Quit \(Menu.applicationName)",
-         action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+                        action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
    }
-
 }
 
 extension Menu.File {

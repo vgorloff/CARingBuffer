@@ -1,6 +1,6 @@
 //
 //  NSWindow.swift
-//  WL-iOS
+//  WLUI
 //
 //  Created by Vlad Gorlov on 29.01.18.
 //  Copyright © 2018 Demo. All rights reserved.

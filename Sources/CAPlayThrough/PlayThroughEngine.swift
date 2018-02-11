@@ -66,7 +66,7 @@ private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
       renderUtility.firstOutputTime = sampleTime
       let delta = (renderUtility.firstInputTime ?? 0) - (renderUtility.firstOutputTime ?? 0)
       let offset = try? PlayThroughEngine.computeThruOffset(inputDevice: renderUtility.inputDevice,
-                                                                   outputDevice: renderUtility.outputDevice)
+                                                            outputDevice: renderUtility.outputDevice)
       renderUtility.inToOutSampleOffset = (offset ?? 0).doubleValue
       if delta < 0 {
          renderUtility.inToOutSampleOffset -= delta
@@ -138,7 +138,6 @@ public final class PlayThroughEngine {
    deinit {
       _ = try? cleanup()
    }
-
 }
 
 extension PlayThroughEngine {
@@ -169,7 +168,6 @@ extension PlayThroughEngine {
       try with(AUGraphIsRunning(auGraph, &graphRunning))
       return (auhalRunning != 0) || graphRunning.boolValue
    }
-
 }
 
 extension PlayThroughEngine {
@@ -279,7 +277,7 @@ extension PlayThroughEngine {
       try with(AUGraphConnectNodeInput(auGraph, varispeedNode, 0, outputNode, 0))
       try with(AUGraphInitialize(auGraph))
       inToOutSampleOffset = try PlayThroughEngine.computeThruOffset(inputDevice: inputDevice,
-                                                                           outputDevice: outputDevice).doubleValue
+                                                                    outputDevice: outputDevice).doubleValue
    }
 
    private func setupBuffers() throws {
@@ -335,7 +333,6 @@ extension PlayThroughEngine {
       let outputBuffer = try AudioDevice.bufferFrameSize(deviceID: outputDevice, scope: .output)
       return inputOffset + outputOffset + inputBuffer + outputBuffer
    }
-
 }
 
 extension PlayThroughEngine {

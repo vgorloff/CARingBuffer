@@ -21,5 +21,4 @@ class MainWindowController: WindowController {
    public required init?(coder: NSCoder) {
       fatalError()
    }
-
 }

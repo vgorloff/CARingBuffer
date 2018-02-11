@@ -1,6 +1,6 @@
 //
 //  NSMenuItem.swift
-//  mcDecodeApp
+//  WLUI
 //
 //  Created by Vlad Gorlov on 15.10.17.
 //  Copyright © 2017 Demo. All rights reserved.

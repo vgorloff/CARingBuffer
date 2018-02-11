@@ -1,6 +1,6 @@
 //
 //  NSControl.swift
-//  XPCDemo
+//  WLUI
 //
 //  Created by Vlad Gorlov on 12.08.17.
 //  Copyright © 2017 Demo. All rights reserved.
