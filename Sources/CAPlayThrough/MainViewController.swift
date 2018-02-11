@@ -24,5 +24,4 @@ class MainViewController: ViewController {
       ]
       NSLayoutConstraint.activate(constraints)
    }
-
 }

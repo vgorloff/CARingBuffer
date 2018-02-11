@@ -20,7 +20,6 @@ class MainMenu: NSMenu {
    required init(coder decoder: NSCoder) {
       super.init(coder: decoder)
    }
-
 }
 
 extension MainMenu {
