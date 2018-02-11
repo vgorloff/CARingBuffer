@@ -17,8 +17,8 @@ test:
 release:
 	@ruby -r "`pwd`/Automation.rb" -e "Automation.release"
 
-verify:
-	@ruby -r "`pwd`/Automation.rb" -e "Automation.verify"
-
 deploy:
 	@ruby -r "`pwd`/Automation.rb" -e "Automation.deploy"
+
+verify:
+	@ruby -r "`pwd`/Automation.rb" -e "Automation.verify"

@@ -1,5 +1,5 @@
 //
-//  PlayThroughRenderUtility.swift
+//  PlayThroughEngine.swift
 //  WaveLabs
 //
 //  Created by Vlad Gorlov on 23.03.16.
@@ -11,7 +11,7 @@ import AVFoundation
 private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp,
    inBusNumber, inNumberFrames, _ in
    let sampleTime = inTimeStamp.pointee.mSampleTime
-   let renderUtility = unsafeBitCast(inRefCon, to: PlayThroughRenderUtility.self)
+   let renderUtility = unsafeBitCast(inRefCon, to: PlayThroughEngine.self)
    if renderUtility.firstInputTime == nil {
       renderUtility.firstInputTime = sampleTime
    }
@@ -32,7 +32,7 @@ private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { in
 
 private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { inRefCon, _, inTimeStamp,
    _, inNumberFrames, ioData in
-   let renderUtility = unsafeBitCast(inRefCon, to: PlayThroughRenderUtility.self)
+   let renderUtility = unsafeBitCast(inRefCon, to: PlayThroughEngine.self)
    let audioBuffers = UnsafeMutableAudioBufferListPointer(ioData)?.audioBuffers
    if renderUtility.firstInputTime == nil {
       audioBuffers?.forEach { audioBuffer in audioBuffer.fillWithZeros() }
@@ -65,8 +65,8 @@ private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
    if renderUtility.firstOutputTime == nil {
       renderUtility.firstOutputTime = sampleTime
       let delta = (renderUtility.firstInputTime ?? 0) - (renderUtility.firstOutputTime ?? 0)
-      let offset = try? PlayThroughRenderUtility.computeThruOffset(inputDevice: renderUtility.inputDevice,
-                                                                   outputDevice: renderUtility.outputDevice)
+      let offset = try? PlayThroughEngine.computeThruOffset(inputDevice: renderUtility.inputDevice,
+                                                            outputDevice: renderUtility.outputDevice)
       renderUtility.inToOutSampleOffset = (offset ?? 0).doubleValue
       if delta < 0 {
          renderUtility.inToOutSampleOffset -= delta
@@ -98,7 +98,7 @@ private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
    return noErr
 }
 
-public final class PlayThroughRenderUtility {
+public final class PlayThroughEngine {
 
    public enum Errors: Error {
       case OSStatusError(OSStatus)
@@ -138,6 +138,9 @@ public final class PlayThroughRenderUtility {
    deinit {
       _ = try? cleanup()
    }
+}
+
+extension PlayThroughEngine {
 
    public func start() throws {
       if try !isRunning() {
@@ -165,6 +168,9 @@ public final class PlayThroughRenderUtility {
       try with(AUGraphIsRunning(auGraph, &graphRunning))
       return (auhalRunning != 0) || graphRunning.boolValue
    }
+}
+
+extension PlayThroughEngine {
 
    private func cleanup() throws {
       try stop()
@@ -270,8 +276,8 @@ public final class PlayThroughRenderUtility {
       // the varispeed unit should only be connected after the input and output formats have been set
       try with(AUGraphConnectNodeInput(auGraph, varispeedNode, 0, outputNode, 0))
       try with(AUGraphInitialize(auGraph))
-      inToOutSampleOffset = try PlayThroughRenderUtility.computeThruOffset(inputDevice: inputDevice,
-                                                                           outputDevice: outputDevice).doubleValue
+      inToOutSampleOffset = try PlayThroughEngine.computeThruOffset(inputDevice: inputDevice,
+                                                                    outputDevice: outputDevice).doubleValue
    }
 
    private func setupBuffers() throws {
@@ -327,13 +333,16 @@ public final class PlayThroughRenderUtility {
       let outputBuffer = try AudioDevice.bufferFrameSize(deviceID: outputDevice, scope: .output)
       return inputOffset + outputOffset + inputBuffer + outputBuffer
    }
+}
+
+extension PlayThroughEngine {
 
    private static func with(_ closure: @autoclosure () -> OSStatus) throws {
       try verifyStatusCode(closure())
    }
 
    private func with(_ closure: @autoclosure () -> OSStatus) throws {
-      try PlayThroughRenderUtility.verifyStatusCode(closure())
+      try PlayThroughEngine.verifyStatusCode(closure())
    }
 
    private static func verifyStatusCode(_ status: OSStatus) throws {
@@ -349,6 +358,6 @@ public final class PlayThroughRenderUtility {
    }
 
    private func verifyDeviceID(_ deviceID: AudioDeviceID) throws {
-      try PlayThroughRenderUtility.verifyDeviceID(deviceID)
+      try PlayThroughEngine.verifyDeviceID(deviceID)
    }
 }
