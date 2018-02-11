@@ -284,8 +284,8 @@
 				80B12CFF1D21AF6B00B2FE2A /* Media */,
 				5E087F94CE5D910DC612B349 /* UI */,
 			);
-			name = WL;
-			sourceTree = WL;
+			path = WL;
+			sourceTree = "<group>";
 		};
 		80C9CF991D0CC6AF00960F60 = {
 			isa = PBXGroup;
