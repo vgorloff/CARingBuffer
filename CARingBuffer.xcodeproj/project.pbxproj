@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02DFF8515A74E136E171CA2A /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36317B1C2B216E07D693B7A1 /* Window.swift */; };
+		15E081BFDFE25C94DE513A9F /* ObjCAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D44D293563041E6ADA494F /* ObjCAssociation.swift */; };
+		29443BA0216D0A06D4C74444 /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A384081775E7EC41A24FE7 /* NSView.swift */; };
+		2C6DA91190B3578EA16331DA /* NSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FBAFEF849373C5B56E779 /* NSMenuItem.swift */; };
+		46971737376AA2B977A36EC4 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E0306C1F821551D9F89B13 /* Menu.swift */; };
+		47583D9A28827DC608BD7A84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3E37959865592DD33A5C2 /* ViewController.swift */; };
+		5E7515920B33BC2459327C2B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE34D7FAD3A51A74A32E87 /* View.swift */; };
+		6ABB50DD30F5CD6056E9D8A6 /* DispatchUntil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5E7A7E93FE90BE63E40897 /* DispatchUntil.swift */; };
+		762118A1215BC23DCAD221BC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F8BEAF6A662508F15867F /* Button.swift */; };
 		80079E721D21D9B100E93DB3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80079E711D21D9AA00E93DB3 /* main.swift */; };
 		801BE5A91F16E3B300806169 /* CARBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BE5A71F16E3A800806169 /* CARBTests.swift */; };
 		801BE5AA1F16E3C000806169 /* CARBPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BE5A61F16E3A800806169 /* CARBPerformanceTests.swift */; };
@@ -34,18 +43,25 @@
 		805671EB1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
 		8066E0DD1D10A53C00D32B44 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
 		8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */; };
-		80B12CE81D21AD2E00B2FE2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */; };
-		80B12CEA1D21AD2E00B2FE2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CE91D21AD2E00B2FE2A /* ViewController.swift */; };
+		8068878820308A6800E70134 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068878720308A6800E70134 /* main.swift */; };
+		8068878A20308A9A00E70134 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068878920308A9A00E70134 /* Application.swift */; };
+		8068878C20308B8200E70134 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068878B20308B8200E70134 /* MainMenu.swift */; };
+		8068878E20308C7B00E70134 /* AudioObjectUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068878D20308C7600E70134 /* AudioObjectUtility.swift */; };
+		8068879120308D3E00E70134 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068878F20308D3900E70134 /* MainWindowController.swift */; };
+		806887932030925400E70134 /* NSControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806887922030925400E70134 /* NSControl.swift */; };
+		80B12CEA1D21AD2E00B2FE2A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CE91D21AD2E00B2FE2A /* MainViewController.swift */; };
 		80B12CEC1D21AD2E00B2FE2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */; };
-		80B12CEF1D21AD2E00B2FE2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B12CED1D21AD2E00B2FE2A /* Main.storyboard */; };
-		80B12CF51D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */; };
+		80B12CF51D21ADAC00B2FE2A /* PlayThroughEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CF41D21ADAC00B2FE2A /* PlayThroughEngine.swift */; };
 		80B12D021D21B00600B2FE2A /* AudioUnitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */; };
-		80B12D1B1D21B27500B2FE2A /* AudioObjectUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */; };
 		80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 		80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
 		80FA42431D245F3600937DD8 /* NumericTypesConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */; };
 		80FE0B311D20213200919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
 		80FE0B381D2021A900919C2F /* CARingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE0B301D20213200919C2F /* CARingBuffer.swift */; };
+		9555AD74116BDBE083A07D9E /* NSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A493C41068CA5FE9FB649 /* NSWindow.swift */; };
+		A4D7C0223180C28723FD7E31 /* NSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48909953DED1095E57804CE /* NSMenu.swift */; };
+		D15AA372ED78CD1795441937 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76EE58B00FB4B9D0F9B43E /* NSButton.swift */; };
+		DD9EC12CAC295C6191E86341 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C62F28485DC0A7A6101527 /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +77,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		19A384081775E7EC41A24FE7 /* NSView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
+		36317B1C2B216E07D693B7A1 /* Window.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		363FBAFEF849373C5B56E779 /* NSMenuItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
+		60D44D293563041E6ADA494F /* ObjCAssociation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ObjCAssociation.swift; sourceTree = "<group>"; };
+		67D3E37959865592DD33A5C2 /* ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E9F8BEAF6A662508F15867F /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		80079E711D21D9AA00E93DB3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		801BE5A51F16E3A800806169 /* CARBTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBTestsUtility.swift; sourceTree = "<group>"; };
 		801BE5A61F16E3A800806169 /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
@@ -84,18 +106,28 @@
 		8050DAE51D19D785007216D2 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
 		805671E81F3910E000D2C5B5 /* MediaBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBuffer.swift; sourceTree = "<group>"; };
 		8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
+		8068878720308A6800E70134 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8068878920308A9A00E70134 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		8068878B20308B8200E70134 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		8068878D20308C7600E70134 /* AudioObjectUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
+		8068878F20308D3900E70134 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		806887922030925400E70134 /* NSControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSControl.swift; sourceTree = "<group>"; };
 		80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80B12CE91D21AD2E00B2FE2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80B12CE91D21AD2E00B2FE2A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		80B12CEE1D21AD2E00B2FE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayThroughRenderUtility.swift; sourceTree = "<group>"; };
+		80B12CF41D21ADAC00B2FE2A /* PlayThroughEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayThroughEngine.swift; sourceTree = "<group>"; };
 		80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
-		80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
 		80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsCpp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		80E0306C1F821551D9F89B13 /* Menu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
 		80FE0B301D20213200919C2F /* CARingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CARingBuffer.swift; sourceTree = "<group>"; };
+		887A493C41068CA5FE9FB649 /* NSWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
+		A8C62F28485DC0A7A6101527 /* WindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		BB5E7A7E93FE90BE63E40897 /* DispatchUntil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DispatchUntil.swift; sourceTree = "<group>"; };
+		D7CE34D7FAD3A51A74A32E87 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		E48909953DED1095E57804CE /* NSMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSMenu.swift; sourceTree = "<group>"; };
+		FC76EE58B00FB4B9D0F9B43E /* NSButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,12 +164,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18DE5765822ECE05CA8FF8C3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E051B335CD644E0DC6B63DD3 /* macOS */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		1A597057431E5AB69599CD37 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
 				8044E5D31F798F88005E5760 /* AudioDevice.swift */,
+				8068878D20308C7600E70134 /* AudioObjectUtility.swift */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		3C66361950EC60E7B44316B1 /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				6E9F8BEAF6A662508F15867F /* Button.swift */,
+				D7CE34D7FAD3A51A74A32E87 /* View.swift */,
+				67D3E37959865592DD33A5C2 /* ViewController.swift */,
+				36317B1C2B216E07D693B7A1 /* Window.swift */,
+				A8C62F28485DC0A7A6101527 /* WindowController.swift */,
+			);
+			path = Designable;
+			sourceTree = "<group>";
+		};
+		455827F0562AF8E2B62A383A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C9720CFCBC531BB65E96A580 /* Conditions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5E087F94CE5D910DC612B349 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C115DA4D01612FEE79E7435D /* Extensions */,
+				18DE5765822ECE05CA8FF8C3 /* Sources */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		8040365B201D58910002412D /* Configuration */ = {
@@ -160,11 +230,13 @@
 		80B12CE61D21AD2E00B2FE2A /* CAPlayThrough */ = {
 			isa = PBXGroup;
 			children = (
-				80B12CE71D21AD2E00B2FE2A /* AppDelegate.swift */,
+				8068878920308A9A00E70134 /* Application.swift */,
 				80B12CEB1D21AD2E00B2FE2A /* Assets.xcassets */,
-				80B12CED1D21AD2E00B2FE2A /* Main.storyboard */,
-				80B12CF41D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift */,
-				80B12CE91D21AD2E00B2FE2A /* ViewController.swift */,
+				8068878720308A6800E70134 /* main.swift */,
+				8068878B20308B8200E70134 /* MainMenu.swift */,
+				80B12CE91D21AD2E00B2FE2A /* MainViewController.swift */,
+				8068878F20308D3900E70134 /* MainWindowController.swift */,
+				80B12CF41D21ADAC00B2FE2A /* PlayThroughEngine.swift */,
 			);
 			path = CAPlayThrough;
 			sourceTree = "<group>";
@@ -210,9 +282,10 @@
 			children = (
 				80B12CFA1D21AE4000B2FE2A /* Core */,
 				80B12CFF1D21AF6B00B2FE2A /* Media */,
+				5E087F94CE5D910DC612B349 /* UI */,
 			);
-			path = WL;
-			sourceTree = "<group>";
+			name = WL;
+			sourceTree = WL;
 		};
 		80C9CF991D0CC6AF00960F60 = {
 			isa = PBXGroup;
@@ -288,12 +361,43 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8B95E0B1DEB02CE65BA40D41 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				806887922030925400E70134 /* NSControl.swift */,
+				FC76EE58B00FB4B9D0F9B43E /* NSButton.swift */,
+				E48909953DED1095E57804CE /* NSMenu.swift */,
+				363FBAFEF849373C5B56E779 /* NSMenuItem.swift */,
+				19A384081775E7EC41A24FE7 /* NSView.swift */,
+				887A493C41068CA5FE9FB649 /* NSWindow.swift */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
 		B5B82A700F64896EE4CDF5CC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				455827F0562AF8E2B62A383A /* Components */,
 				80FA42421D245E5800937DD8 /* NumericTypesConversions.swift */,
+				60D44D293563041E6ADA494F /* ObjCAssociation.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		C115DA4D01612FEE79E7435D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B95E0B1DEB02CE65BA40D41 /* macOS */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C9720CFCBC531BB65E96A580 /* Conditions */ = {
+			isa = PBXGroup;
+			children = (
+				BB5E7A7E93FE90BE63E40897 /* DispatchUntil.swift */,
+			);
+			path = Conditions;
 			sourceTree = "<group>";
 		};
 		CE3753FEE09D6A3EE2CD4BC5 /* Sources */ = {
@@ -301,13 +405,21 @@
 			children = (
 				8ABD9AE86EBFC8D831F07059 /* Extensions */,
 				1A597057431E5AB69599CD37 /* macOS */,
-				80B12D1A1D21B27500B2FE2A /* AudioObjectUtility.swift */,
 				80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */,
 				80FE0B301D20213200919C2F /* CARingBuffer.swift */,
 				805671E81F3910E000D2C5B5 /* MediaBuffer.swift */,
 				8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		E051B335CD644E0DC6B63DD3 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				3C66361950EC60E7B44316B1 /* Designable */,
+				80E0306C1F821551D9F89B13 /* Menu.swift */,
+			);
+			path = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,7 +561,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80B12CEC1D21AD2E00B2FE2A /* Assets.xcassets in Resources */,
-				80B12CEF1D21AD2E00B2FE2A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +667,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80B12CEA1D21AD2E00B2FE2A /* ViewController.swift in Sources */,
+				8068878A20308A9A00E70134 /* Application.swift in Sources */,
+				80B12CEA1D21AD2E00B2FE2A /* MainViewController.swift in Sources */,
 				80B12D1E1D21B5C200B2FE2A /* CARingBuffer.swift in Sources */,
 				801BE5B71F16E6F400806169 /* AudioComponentDescription.swift in Sources */,
 				801BE5B21F16E68600806169 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
@@ -564,11 +676,27 @@
 				8046F3EA1D821FE8007F25E4 /* MediaBufferList.swift in Sources */,
 				801BE5B41F16E6B700806169 /* AudioBuffer.swift in Sources */,
 				80B12D021D21B00600B2FE2A /* AudioUnitSettings.swift in Sources */,
-				80B12D1B1D21B27500B2FE2A /* AudioObjectUtility.swift in Sources */,
-				80B12CF51D21ADAC00B2FE2A /* PlayThroughRenderUtility.swift in Sources */,
-				80B12CE81D21AD2E00B2FE2A /* AppDelegate.swift in Sources */,
+				8068878820308A6800E70134 /* main.swift in Sources */,
+				8068878E20308C7B00E70134 /* AudioObjectUtility.swift in Sources */,
+				8068878C20308B8200E70134 /* MainMenu.swift in Sources */,
+				80B12CF51D21ADAC00B2FE2A /* PlayThroughEngine.swift in Sources */,
 				8044E5D71F798FF5005E5760 /* AudioDevice.swift in Sources */,
+				806887932030925400E70134 /* NSControl.swift in Sources */,
+				8068879120308D3E00E70134 /* MainWindowController.swift in Sources */,
 				80FA42431D245F3600937DD8 /* NumericTypesConversions.swift in Sources */,
+				A4D7C0223180C28723FD7E31 /* NSMenu.swift in Sources */,
+				2C6DA91190B3578EA16331DA /* NSMenuItem.swift in Sources */,
+				46971737376AA2B977A36EC4 /* Menu.swift in Sources */,
+				15E081BFDFE25C94DE513A9F /* ObjCAssociation.swift in Sources */,
+				DD9EC12CAC295C6191E86341 /* WindowController.swift in Sources */,
+				47583D9A28827DC608BD7A84 /* ViewController.swift in Sources */,
+				02DFF8515A74E136E171CA2A /* Window.swift in Sources */,
+				6ABB50DD30F5CD6056E9D8A6 /* DispatchUntil.swift in Sources */,
+				5E7515920B33BC2459327C2B /* View.swift in Sources */,
+				9555AD74116BDBE083A07D9E /* NSWindow.swift in Sources */,
+				762118A1215BC23DCAD221BC /* Button.swift in Sources */,
+				D15AA372ED78CD1795441937 /* NSButton.swift in Sources */,
+				29443BA0216D0A06D4C74444 /* NSView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,17 +714,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		80B12CED1D21AD2E00B2FE2A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				80B12CEE1D21AD2E00B2FE2A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		805015301D0F722200AE0412 /* Debug */ = {
@@ -769,7 +886,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_DISABLE_SAFETY_CHECKS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
