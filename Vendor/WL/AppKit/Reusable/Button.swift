@@ -15,7 +15,7 @@ public class Button: NSButton {
       bezelStyle = .rounded
    }
 
-   required init?(coder: NSCoder) {
+   public required init?(coder: NSCoder) {
       fatalError()
    }
 
