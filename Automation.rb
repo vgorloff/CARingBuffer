@@ -1,5 +1,9 @@
 MainFile = "#{ENV['AWL_LIB_SRC']}/Scripts/Automation.rb"
-if File.exist?(MainFile) then require MainFile else require_relative "Vendor/WL/Scripts/lib/Core.rb" end
+if File.exist?(MainFile)
+  require MainFile
+else
+  Dir[File.dirname(__FILE__) + "/Vendor/WL/Scripts/**/*.rb"].each { |f| require f }
+end
 
 class Automation
 
@@ -88,7 +92,8 @@ class Automation
          puts h.analyseDir(GitRepoDirPath + "/Tests")
          if l.canRunSwiftFormat()
             puts "→ Correcting sources (SwiftFormat)..."
-            l.correctWithSwiftFormat()
+            l.correctWithSwiftFormat(GitRepoDirPath + "/Sources")
+            l.correctWithSwiftFormat(GitRepoDirPath + "/Tests")
          end
          if l.canRunSwiftLint()
             puts "→ Correcting sources (SwiftLint)..."
