@@ -10,16 +10,29 @@ import AppKit
 
 open class View: NSView {
 
-   public var backgroundColor: NSColor?
+   public var backgroundColor: NSColor? {
+      didSet {
+         setNeedsDisplay(bounds)
+      }
+   }
    private var mIsFlipped: Bool?
 
    open override var isFlipped: Bool {
       return mIsFlipped ?? super.isFlipped
    }
 
+   public convenience init(backgroundColor: NSColor) {
+      self.init()
+      self.backgroundColor = backgroundColor
+   }
+
    public init() {
       super.init(frame: NSRect())
-      initializeView()
+      setupUI()
+      setupLayout()
+      setupDataSource()
+      setupHandlers()
+      setupDefaults()
    }
 
    public required init?(coder decoder: NSCoder) {
@@ -35,8 +48,19 @@ open class View: NSView {
       }
    }
 
-   open func initializeView() {
-      // Do something
+   open func setupUI() {
+   }
+
+   open func setupLayout() {
+   }
+
+   open func setupHandlers() {
+   }
+
+   open func setupDefaults() {
+   }
+
+   open func setupDataSource() {
    }
 }
 

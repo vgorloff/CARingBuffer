@@ -17,6 +17,11 @@ extension NSMenuItem {
       setHandler(handler)
    }
 
+   public convenience init(submenu: NSMenu) {
+      self.init()
+      self.submenu = submenu
+   }
+
    public func setHandler(_ handler: Handler?) {
       target = self
       action = #selector(wavelabsActionHandler(_:))

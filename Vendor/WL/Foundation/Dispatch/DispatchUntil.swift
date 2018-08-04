@@ -1,6 +1,6 @@
 //
 //  DispatchUntil.swift
-//  WaveLabs
+//  mcCore
 //
 //  Created by Vlad Gorlov on 10/01/2017.
 //  Copyright © 2017 WaveLabs. All rights reserved.

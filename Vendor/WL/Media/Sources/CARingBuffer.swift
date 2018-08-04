@@ -86,7 +86,7 @@ public final class CARingBuffer<T> {
    }
 
    deinit {
-      mBuffer.deallocate(capacity: Int(mBuffersLength))
+      mBuffer.deallocate()
    }
 }
 

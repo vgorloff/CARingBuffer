@@ -1,19 +1,25 @@
 //
-//  WindowController.swift
-//  WLUI
+//  GenericWindowController.swift
+//  mcVendor
 //
-//  Created by Vlad Gorlov on 07.02.18.
-//  Copyright © 2018 Demo. All rights reserved.
+//  Created by Vlad Gorlov on 16.07.18.
 //
 
 import AppKit
 
-open class WindowController: NSWindowController {
+open class GenericWindowController<T: NSViewController>: NSWindowController {
 
    public let contentWindow: Window
+   public let viewController: T
 
-   public init(window: Window, viewController: ViewController) {
+   public convenience init(viewController: T, windowSize: CGSize = CGSize(width: 800, height: 600)) {
+      let window = Window(contentRect: CGRect(origin: CGPoint(), size: windowSize), style: .default)
+      self.init(window: window, viewController: viewController)
+   }
+
+   public init(window: Window, viewController: T) {
       contentWindow = window
+      self.viewController = viewController
       super.init(window: window)
       let frameSize = contentWindow.contentRect(forFrameRect: contentWindow.frame).size
       viewController.view.setFrameSize(frameSize)

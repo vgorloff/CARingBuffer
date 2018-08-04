@@ -1,6 +1,6 @@
 //
 //  NumericTypesConversions.swift
-//  WaveLabs
+//  mcCore
 //
 //  Created by Vlad Gorlov on 29.06.16.
 //  Copyright © 2016 WaveLabs. All rights reserved.

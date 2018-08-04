@@ -40,7 +40,7 @@ public struct AudioObjectUtility {
       do {
          let data = UnsafeMutablePointer<T>.allocate(capacity: 1)
          defer {
-            data.deallocate(capacity: 1)
+            data.deallocate()
          }
          var dataSize = expectedDataSize
          var addressValue = address

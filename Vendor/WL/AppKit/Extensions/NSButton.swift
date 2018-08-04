@@ -16,6 +16,7 @@ extension NSButton {
       } else {
          self.init()
          self.title = title
+         bezelStyle = .rounded
       }
    }
 

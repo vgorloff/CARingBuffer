@@ -1,5 +1,6 @@
 ## OS X
 .DS_Store
+._*.*
 
 ## Local developer settings
 Developer.xcconfig
@@ -27,4 +28,5 @@ xcbaselines
 *.xccheckout
 *.moved-aside
 *.xcscmblueprint
-
+*.xctimeline
+*.profraw

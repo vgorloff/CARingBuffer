@@ -8,7 +8,6 @@
 
 import AppKit
 
-// TODO: Use generics to define ViewType.
 open class ViewController: NSViewController {
 
    public let contentView = View()
@@ -36,28 +35,33 @@ open class ViewController: NSViewController {
    open override func viewDidAppear() {
       super.viewDidAppear()
       layoutUntil.fulfill()
+      view.assertOnAmbiguityInSubviewsLayout()
    }
 
    open override func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupLayout()
+      setupDataSource()
       setupHandlers()
       setupDefaults()
    }
 
-   open func setupUI() {
+   @objc dynamic open func setupUI() {
    }
 
-   open func setupLayout() {
+   @objc dynamic open func setupLayout() {
    }
 
-   open func setupHandlers() {
+   @objc dynamic open func setupHandlers() {
    }
 
-   open func setupDefaults() {
+   @objc dynamic open func setupDefaults() {
    }
 
-   open func setupLayoutDefaults() {
+   @objc dynamic open func setupDataSource() {
+   }
+
+   @objc dynamic open func setupLayoutDefaults() {
    }
 }
