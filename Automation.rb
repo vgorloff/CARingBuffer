@@ -6,7 +6,7 @@ class Automation
    GitRepoDirPath = ENV['PWD']
    TmpDirPath = GitRepoDirPath + "/DerivedData"
    KeyChainPath = TmpDirPath + "/VST3NetSend.keychain"
-   P12FilePath = GitRepoDirPath + '/Configuration/Codesign/DeveloperIDApplication.p12'
+   P12FilePath = GitRepoDirPath + '/Codesign/DeveloperIDApplication.p12'
    XCodeProjectFilePath = GitRepoDirPath + "/CARingBuffer.xcodeproj"
    XCodeProjectSchema = "Developer: Build Everything"
    VSTSDKDirPath = GitRepoDirPath + "/Vendor/Steinberg"

@@ -168,9 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				803A8D0A2115ED3D006E5472 /* Extensions */,
-				803A8CF52115ECE9006E5472 /* Sources */,
 				803A8CE52115EC69006E5472 /* Media */,
 				803A8CC42115EC1F006E5472 /* Reusable */,
+				803A8CF52115ECE9006E5472 /* Sources */,
 			);
 			path = AppKit;
 			sourceTree = "<group>";
@@ -178,11 +178,11 @@
 		803A8CC42115EC1F006E5472 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				803A8CE32115EC31006E5472 /* Button.swift */,
 				803A8DE72115EEE2006E5472 /* GenericWindowController.swift */,
 				803A8D032115ED24006E5472 /* View.swift */,
 				803A8D022115ED24006E5472 /* ViewController.swift */,
 				803A8D052115ED24006E5472 /* Window.swift */,
-				803A8CE32115EC31006E5472 /* Button.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -207,12 +207,12 @@
 		803A8D0A2115ED3D006E5472 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				803A8D2B2115ED60006E5472 /* NSView.swift */,
-				803A8D2A2115ED60006E5472 /* NSWindow.swift */,
 				803A8D242115ED50006E5472 /* NSButton.swift */,
 				803A8D252115ED50006E5472 /* NSControl.swift */,
 				803A8D222115ED50006E5472 /* NSMenu.swift */,
 				803A8D232115ED50006E5472 /* NSMenuItem.swift */,
+				803A8D2B2115ED60006E5472 /* NSView.swift */,
+				803A8D2A2115ED60006E5472 /* NSWindow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,9 +220,9 @@
 		803A8D2E2115ED81006E5472 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				803A8DE92115EF04006E5472 /* Sources */,
-				803A8DD02115EDEE006E5472 /* ObjectiveC */,
 				803A8D322115ED81006E5472 /* Dispatch */,
+				803A8DD02115EDEE006E5472 /* ObjectiveC */,
+				803A8DE92115EF04006E5472 /* Sources */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -262,9 +262,9 @@
 		803A8DD32115EE25006E5472 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				803A8DDB2115EE25006E5472 /* AudioBuffer.swift */,
 				803A8DD52115EE25006E5472 /* AudioComponentDescription.swift */,
 				803A8DD92115EE25006E5472 /* UnsafeMutableAudioBufferListPointer.swift */,
-				803A8DDB2115EE25006E5472 /* AudioBuffer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -339,14 +339,13 @@
 		80C2051D1D189EE700A932E4 /* WL */ = {
 			isa = PBXGroup;
 			children = (
+				803A8C732115EC02006E5472 /* AppKit */,
 				803A8D682115EDB5006E5472 /* Core */,
 				803A8D2E2115ED81006E5472 /* Foundation */,
-				803A8C732115EC02006E5472 /* AppKit */,
 				80B12CFF1D21AF6B00B2FE2A /* Media */,
 			);
-			name = WL;
-			path = /Users/vova/Dropbox/Developer/Projects/WL;
-			sourceTree = WL;
+			path = WL;
+			sourceTree = "<group>";
 		};
 		80C9CF991D0CC6AF00960F60 = {
 			isa = PBXGroup;
