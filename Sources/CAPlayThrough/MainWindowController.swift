@@ -8,14 +8,12 @@
 
 import AppKit
 
-class MainWindowController: WindowController {
-
-   let viewController = MainViewController()
+class MainWindowController: GenericWindowController<MainViewController> {
 
    init() {
       let window = Window(contentRect: CGRect(origin: CGPoint(), size: CGSize(width: 300, height: 172)), style: .default)
       window.styleMask.remove(.resizable)
-      super.init(window: window, viewController: viewController)
+      super.init(window: window, viewController: MainViewController())
    }
 
    public required init?(coder: NSCoder) {
