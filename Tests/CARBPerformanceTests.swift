@@ -12,26 +12,26 @@ import XCTest
 class CARBSwiftPerformanceTests: XCTestCase {
 
    func performMeasure(_ numberOfIterations: UInt32) {
-      let numberOfChannels = CARBTestParameters.numberOfChannels.rawValue
-      let IOCapacity = CARBTestParameters.ioCapacity.rawValue
-      let audioFormat = AVAudioFormat(standardFormatWithSampleRate: Double(CARBTestParameters.sampleRate.rawValue),
+      let numberOfChannels = RingBufferTestParameters.numberOfChannels.rawValue
+      let IOCapacity = RingBufferTestParameters.ioCapacity.rawValue
+      let audioFormat = AVAudioFormat(standardFormatWithSampleRate: Double(RingBufferTestParameters.sampleRate.rawValue),
                                       channels: numberOfChannels)!
       let writeBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)!
       let readBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)!
-      let ringBuffer = CARingBuffer<Float>(numberOfChannels: numberOfChannels,
-                                           capacityFrames: CARBTestParameters.bufferCapacityFrames.rawValue)
-      CARBTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
+      let ringBuffer = RingBuffer<Float>(numberOfChannels: Int(numberOfChannels),
+                                         capacityFrames: Int(RingBufferTestParameters.bufferCapacityFrames.rawValue))
+      RingBufferTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
       measure {
-         var status: CARingBufferError
+         var status: RingBufferError
          for iteration in 0 ..< numberOfIterations {
-            status = ringBuffer.store(writeBuffer.audioBufferList, framesToWrite: IOCapacity,
-                                      startWrite: SampleTime(IOCapacity * iteration))
+            status = ringBuffer.store(writeBuffer.audioBufferList, framesToWrite: Int64(IOCapacity),
+                                      startWrite: Int64(IOCapacity * iteration))
             if status != .noError {
                fatalError()
             }
 
-            status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: IOCapacity,
-                                      startRead: SampleTime(IOCapacity * iteration))
+            status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: Int64(IOCapacity),
+                                      startRead: Int64(IOCapacity * iteration))
             if status != .noError {
                fatalError()
             }
@@ -40,14 +40,14 @@ class CARBSwiftPerformanceTests: XCTestCase {
    }
 
    func testPerformanceShort() {
-      performMeasure(CARBTestParameters.numberOfIterationsShort.rawValue)
+      performMeasure(RingBufferTestParameters.numberOfIterationsShort.rawValue)
    }
 
    func testPerformanceMedium() {
-      performMeasure(CARBTestParameters.numberOfIterationsMedium.rawValue)
+      performMeasure(RingBufferTestParameters.numberOfIterationsMedium.rawValue)
    }
 
    func testPerformanceLong() {
-      performMeasure(CARBTestParameters.numberOfIterationsLong.rawValue)
+      performMeasure(RingBufferTestParameters.numberOfIterationsLong.rawValue)
    }
 }
