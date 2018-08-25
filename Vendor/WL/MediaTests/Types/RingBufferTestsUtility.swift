@@ -1,5 +1,5 @@
 //
-//  CARBTestsUtility.swift
+//  RingBufferTestsUtility.swift
 //  WaveLabs
 //
 //  Created by Vlad Gorlov on 14.06.16.
@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-@objc public enum CARBTestParameters: UInt32 {
+@objc public enum RingBufferTestParameters: UInt32 {
    case numberOfIterationsShort = 2000000
    case numberOfIterationsMedium = 20000000
    case numberOfIterationsLong = 100000000
@@ -18,7 +18,7 @@ import AVFoundation
    case ioCapacity = 512
 }
 
-@objc public final class CARBTestsUtility: NSObject {
+@objc public final class RingBufferTestsUtility: NSObject {
 
    @objc public static func generateSampleChannelData(_ buffer: AVAudioPCMBuffer, numberOfFrames: UInt32, biasValue: UInt32 = 1) {
       let ablPointer = UnsafeMutableAudioBufferListPointer(buffer.mutableAudioBufferList)

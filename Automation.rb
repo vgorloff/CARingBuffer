@@ -60,14 +60,12 @@ class Automation
    end
    
    def self.test()
-      XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: Swift")
       XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: C++")
    end
    
    def self.release()
       XcodeBuilder.new(XCodeProjectFilePath).ci("Developer: Analyze Performance")
       XcodeBuilder.new(XCodeProjectFilePath).ci("Demo: CAPlayThrough")
-      XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: Swift")
    end
    
    def self.verify()

@@ -8,6 +8,8 @@
 
 import AVFoundation
 
+private typealias SampleTime = RingBufferTimeBounds.SampleTime
+
 private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp,
    inBusNumber, inNumberFrames, _ in
    let sampleTime = inTimeStamp.pointee.mSampleTime
@@ -23,8 +25,10 @@ private let playThroughRenderUtilityInputRenderCallback: AURenderCallback = { in
                                 buffer.mutableAudioBufferList)
    if status == noErr {
       if let ringBuffer = renderUtility.ringBuffer {
-         status = ringBuffer.store(buffer.audioBufferList, framesToWrite: inNumberFrames,
-                                   startWrite: sampleTime.int64Value).rawValue
+         if ringBuffer.store(buffer.audioBufferList, framesToWrite: SampleTime(inNumberFrames),
+                             startWrite: sampleTime.int64Value) != .noError {
+            status = OSStatus(AVError.unknown.rawValue)
+         }
       }
    }
    return status
@@ -86,13 +90,15 @@ private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
       return noErr
    }
    let startFetch = sampleTime - renderUtility.inToOutSampleOffset
-   let err = ringBuffer.fetch(ioDataInstance, framesToRead: inNumberFrames, startRead: startFetch.int64Value)
+   let err = ringBuffer.fetch(ioDataInstance, framesToRead: SampleTime(inNumberFrames), startRead: startFetch.int64Value)
    if err != .noError {
       audioBuffers?.forEach { audioBuffer in audioBuffer.fillWithZeros() }
-      var bufferStartTime: SampleTime = 0
-      var bufferEndTime: SampleTime = 0
-      _ = ringBuffer.getTimeBounds(startTime: &bufferStartTime, endTime: &bufferEndTime)
-      renderUtility.inToOutSampleOffset = sampleTime - bufferStartTime.doubleValue
+      switch ringBuffer.getTimeBounds() {
+      case .failure:
+         break // // FIXME: Handle error.
+      case .success(let bufferStartTime, let bufferEndTime):
+         renderUtility.inToOutSampleOffset = sampleTime - bufferStartTime.doubleValue
+      }
    }
 
    return noErr
@@ -117,7 +123,7 @@ public final class PlayThroughEngine {
    private var outputUnit: AudioUnit!
    private var auGraph: AUGraph!
    fileprivate var inputBuffer: AVAudioPCMBuffer!
-   fileprivate var ringBuffer: CARingBuffer<Float>!
+   fileprivate var ringBuffer: RingBuffer<Float>!
    fileprivate var inToOutSampleOffset: Double = 0
    fileprivate var firstInputTime: Double?
    fileprivate var firstOutputTime: Double?
@@ -322,7 +328,8 @@ extension PlayThroughEngine {
       inputBuffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: bufferSizeFrames)
 
       assert(asbd.mBytesPerFrame.intValue == MemoryLayout<Float>.size)
-      ringBuffer = CARingBuffer<Float>(numberOfChannels: asbd.mChannelsPerFrame, capacityFrames: bufferSizeFrames * 20)
+      ringBuffer = RingBuffer<Float>(numberOfChannels: Int(asbd.mChannelsPerFrame),
+                                     capacityFrames: Int(bufferSizeFrames * 20))
    }
 
    fileprivate static func computeThruOffset(inputDevice anInputDevice: AudioDeviceID,

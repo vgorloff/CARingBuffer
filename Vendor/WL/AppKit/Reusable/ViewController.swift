@@ -10,7 +10,7 @@ import AppKit
 
 open class ViewController: NSViewController {
 
-   public let contentView = View()
+   public let contentView: View
    private let layoutUntil = DispatchUntil()
 
    open override func loadView() {
@@ -18,6 +18,12 @@ open class ViewController: NSViewController {
    }
 
    public init() {
+      contentView = View()
+      super.init(nibName: nil, bundle: nil)
+   }
+
+   public init(view: View) {
+      contentView = view
       super.init(nibName: nil, bundle: nil)
    }
 
@@ -36,6 +42,7 @@ open class ViewController: NSViewController {
       super.viewDidAppear()
       layoutUntil.fulfill()
       view.assertOnAmbiguityInSubviewsLayout()
+      onViewDidAppear()
    }
 
    open override func viewDidLoad() {
@@ -45,6 +52,11 @@ open class ViewController: NSViewController {
       setupDataSource()
       setupHandlers()
       setupDefaults()
+   }
+
+   open override func viewWillAppear() {
+      super.viewWillAppear()
+      onViewWillAppear()
    }
 
    @objc dynamic open func setupUI() {
@@ -63,5 +75,11 @@ open class ViewController: NSViewController {
    }
 
    @objc dynamic open func setupLayoutDefaults() {
+   }
+
+   @objc dynamic open func onViewWillAppear() {
+   }
+
+   @objc dynamic open func onViewDidAppear() {
    }
 }

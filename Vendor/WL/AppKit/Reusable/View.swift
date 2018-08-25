@@ -33,6 +33,13 @@ open class View: NSView {
       setupDataSource()
       setupHandlers()
       setupDefaults()
+
+      if #available(OSX 10.14, *) {
+      } else {
+         // TODO: Update to support `highContrastLight`.
+         // See: https://stackoverflow.com/q/51774587/1418981
+         setupAppearance(.light)
+      }
    }
 
    public required init?(coder decoder: NSCoder) {
@@ -48,19 +55,22 @@ open class View: NSView {
       }
    }
 
-   open func setupUI() {
+   @objc dynamic open func setupUI() {
    }
 
-   open func setupLayout() {
+   @objc dynamic open func setupLayout() {
    }
 
-   open func setupHandlers() {
+   @objc dynamic open func setupHandlers() {
    }
 
-   open func setupDefaults() {
+   @objc dynamic open func setupDefaults() {
    }
 
-   open func setupDataSource() {
+   @objc dynamic open func setupDataSource() {
+   }
+
+   @objc dynamic open func setupAppearance(_ appearance: SystemAppearance) {
    }
 }
 

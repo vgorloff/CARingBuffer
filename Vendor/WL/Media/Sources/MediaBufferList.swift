@@ -30,4 +30,12 @@ public struct MediaBufferList<T> {
       precondition(index < numberOfBuffers)
       return buffers.advanced(by: Int(index))
    }
+
+   public var arrayOfBuffers: [MediaBuffer<T>] {
+      var result: [MediaBuffer<T>] = []
+      for index in 0 ..< numberOfBuffers {
+         result.append(self[index].pointee)
+      }
+      return result
+   }
 }

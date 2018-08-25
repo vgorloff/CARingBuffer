@@ -112,7 +112,9 @@ extension NSView {
             print("- " + $0.debugDescription)
             $0.autolayoutTrace()
          }
-         assert(value.isEmpty)
+         if RuntimeInfo.shouldAssertOnAmbiguousLayout {
+            assert(value.isEmpty)
+         }
       }
    }
 }
