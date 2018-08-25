@@ -55,26 +55,6 @@ open class View: NSView {
       }
    }
 
-   @available(OSX 10.14, *)
-   open override func viewDidChangeEffectiveAppearance() {
-      super.viewDidChangeEffectiveAppearance()
-      if let value = effectiveAppearance.bestMatch(from: [.aqua, .darkAqua, .accessibilityHighContrastAqua,
-                                                          .accessibilityHighContrastDarkAqua]) {
-         switch value {
-         case .aqua:
-            setupAppearance(.light)
-         case .darkAqua:
-            setupAppearance(.dark)
-         case .accessibilityHighContrastAqua:
-            setupAppearance(.highContrastLight)
-         case .accessibilityHighContrastDarkAqua:
-            setupAppearance(.highContrastDark)
-         default:
-            break
-         }
-      }
-   }
-
    @objc dynamic open func setupUI() {
    }
 
