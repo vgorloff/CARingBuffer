@@ -38,4 +38,19 @@ public struct MediaBuffer<T> {
          mutableData[Int(index)] = newValue
       }
    }
+
+   public var bufferPointer: UnsafeMutableBufferPointer<T> {
+      return UnsafeMutableBufferPointer<T>(start: mutableData, count: Int(numberOfElements))
+   }
+}
+
+extension QuickLookProxy {
+
+   public convenience init<T>(_ mediaBuffer: MediaBuffer<T>) {
+      if let mediaBuffer = mediaBuffer as? MediaBuffer<Float> {
+         self.init(data: Array(mediaBuffer.bufferPointer))
+      } else {
+         self.init(object: nil)
+      }
+   }
 }

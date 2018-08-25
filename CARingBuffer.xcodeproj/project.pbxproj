@@ -196,15 +196,14 @@
 		027ECCF5CF88C6C62E35ED54 /* WL */ = {
 			isa = PBXGroup;
 			children = (
-				80A65222213012CB00D3B156 /* MediaTests */,
 				B6E8BBAAC83C21078FCB1F88 /* AppKit */,
 				B0F3332B5717C431EB5EED1A /* Core */,
 				378E674A9E556B5ED23D3190 /* Foundation */,
 				9DBB58F0D47FA197BD3BC342 /* Media */,
+				80A65222213012CB00D3B156 /* MediaTests */,
 			);
-			name = WL;
-			path = /Users/vova/Dropbox/Developer/Projects/WL;
-			sourceTree = WL;
+			path = WL;
+			sourceTree = "<group>";
 		};
 		195E57BC596844280128678B /* Extensions */ = {
 			isa = PBXGroup;
@@ -232,11 +231,11 @@
 			isa = PBXGroup;
 			children = (
 				8068878920308A9A00E70134 /* Application.swift */,
-				8068878720308A6800E70134 /* main.swift */,
 				8068878B20308B8200E70134 /* MainMenu.swift */,
 				80B12CE91D21AD2E00B2FE2A /* MainViewController.swift */,
 				8068878F20308D3900E70134 /* MainWindowController.swift */,
 				80B12CF41D21ADAC00B2FE2A /* PlayThroughEngine.swift */,
+				8068878720308A6800E70134 /* main.swift */,
 			);
 			path = CAPlayThrough;
 			sourceTree = "<group>";
@@ -244,10 +243,10 @@
 		378E674A9E556B5ED23D3190 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				80A6523E2130133000D3B156 /* Testability */,
 				5DCC63B8DDF3E3095693ADE9 /* Dispatch */,
 				3E06698B6CA537A52127E385 /* ObjectiveC */,
 				88AD703BF3DC77E8B6109E84 /* Sources */,
+				80A6523E2130133000D3B156 /* Testability */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -263,8 +262,8 @@
 		42E2C9202D2938F0F7B22BAE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				80A652622130141400D3B156 /* SystemAppearance.swift */,
 				803A8D002115ECF6006E5472 /* Menu.swift */,
+				80A652622130141400D3B156 /* SystemAppearance.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -290,12 +289,12 @@
 		6930D8064CE9E61D7205C9C8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				80A652162130129D00D3B156 /* RingBuffer.swift */,
-				80A652182130129D00D3B156 /* RingBufferOffsets.swift */,
-				80A652172130129D00D3B156 /* RingBufferTimeBounds.swift */,
 				80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */,
 				805671E81F3910E000D2C5B5 /* MediaBuffer.swift */,
 				8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */,
+				80A652162130129D00D3B156 /* RingBuffer.swift */,
+				80A652182130129D00D3B156 /* RingBufferOffsets.swift */,
+				80A652172130129D00D3B156 /* RingBufferTimeBounds.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -336,8 +335,8 @@
 		80A65249213013C200D3B156 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				80A6525F213013E200D3B156 /* CGSize.swift */,
 				80A65257213013C200D3B156 /* CGPoint.swift */,
+				80A6525F213013E200D3B156 /* CGSize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -377,8 +376,8 @@
 		88AD703BF3DC77E8B6109E84 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				80A652472130137900D3B156 /* RuntimeInfo.swift */,
 				803A8DEE2115EF04006E5472 /* BuildInfo.swift */,
+				80A652472130137900D3B156 /* RuntimeInfo.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -405,8 +404,8 @@
 		B0F3332B5717C431EB5EED1A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				80A65249213013C200D3B156 /* Extensions */,
 				6A0A30A9247A9D9D1FC33949 /* Converters */,
+				80A65249213013C200D3B156 /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -446,10 +445,10 @@
 		D8456B395133FD9EABC1418C /* PublicUtility */ = {
 			isa = PBXGroup;
 			children = (
+				805015601D10A06300AE0412 /* CARingBuffer.cpp */,
 				8050155D1D10A06300AE0412 /* CAAtomic.h */,
 				8050155E1D10A06300AE0412 /* CAAutoDisposer.h */,
 				8050155F1D10A06300AE0412 /* CABitOperations.h */,
-				805015601D10A06300AE0412 /* CARingBuffer.cpp */,
 				805015611D10A06300AE0412 /* CARingBuffer.h */,
 			);
 			path = PublicUtility;
@@ -475,8 +474,8 @@
 			isa = PBXGroup;
 			children = (
 				8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */,
-				801BE5A61F16E3A800806169 /* CARBPerformanceTests.swift */,
 				805015561D109FBB00AE0412 /* CARBTests.mm */,
+				801BE5A61F16E3A800806169 /* CARBPerformanceTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
