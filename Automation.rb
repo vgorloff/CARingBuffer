@@ -60,7 +60,6 @@ class Automation
    end
    
    def self.test()
-      XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: Swift")
       XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: C++")
    end
    
