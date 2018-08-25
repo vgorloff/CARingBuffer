@@ -21,14 +21,12 @@ let ringBuffer = RingBuffer<Float>(numberOfChannels: numberOfChannels, capacityF
 
 RingBufferTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
 var status: RingBufferError
-for iteration in 0 ..< UInt32(50000000) {
-   status = ringBuffer.store(writeBuffer.audioBufferList,
-                             framesToWrite: SampleTime(IOCapacity),
+for iteration in 0 ..< UInt32(10_000_000) {
+   status = ringBuffer.store(writeBuffer.audioBufferList, framesToWrite: SampleTime(IOCapacity),
                              startWrite: SampleTime(IOCapacity * iteration))
    assert(status == .noError)
 
-   status = ringBuffer.fetch(readBuffer.mutableAudioBufferList,
-                             framesToRead: SampleTime(IOCapacity),
+   status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: SampleTime(IOCapacity),
                              startRead: SampleTime(IOCapacity * iteration))
    assert(status == .noError)
 }
