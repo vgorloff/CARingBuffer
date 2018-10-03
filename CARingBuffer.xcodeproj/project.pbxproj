@@ -440,8 +440,7 @@
 				AD9EEFA44420F1BECFF9FC8A /* Shared */,
 				BAFF7A520816032486F25D67 /* UI */,
 			);
-			name = WL;
-			path = ../../../../../Developer/Projects/WL;
+			path = WL;
 			sourceTree = "<group>";
 		};
 		82806CB2A433CAF49F54904B /* Sources */ = {
