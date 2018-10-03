@@ -9,46 +9,7 @@ class Project < AbstractProject
 
    def initialize(rootDirPath)
       super(rootDirPath)
-      @tmpDirPath = rootDirPath + "/DerivedData"
-      @keyChainPath = @tmpDirPath + "/VST3NetSend.keychain"
-      @p12FilePath = rootDirPath + '/Codesign/DeveloperIDApplication.p12'
       @projectFilePath = rootDirPath + "/CARingBuffer.xcodeproj"
-      @versionFilePath = rootDirPath + "/Configuration/Version.xcconfig"
-   end
-
-   def ci()
-      unless Environment.isCI
-         release()
-         return
-      end
-      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-      puts "→ Preparing environment..."
-      FileUtils.mkdir_p @tmpDirPath
-      puts Environment.announceEnvVars
-      puts "→ Setting up keychain..."
-      kc = KeyChain.create(@keyChainPath)
-      puts KeyChain.list
-      defaultKeyChain = KeyChain.default
-      puts "→ Default keychain: #{defaultKeyChain}"
-      kc.setSettings()
-      kc.info()
-      kc.import(@p12FilePath, ENV['AWL_P12_PASSWORD'], ["/usr/bin/codesign"])
-      kc.setKeyCodesignPartitionList()
-      kc.dump()
-      KeyChain.setDefault(kc.nameOrPath)
-      puts "→ Default keychain now: #{KeyChain.default}"
-      begin
-         puts "→ Making build..."
-         release()
-         puts "→ Making cleanup..."
-         KeyChain.setDefault(defaultKeyChain)
-         KeyChain.delete(kc.nameOrPath)
-      rescue StandardError
-         KeyChain.setDefault(defaultKeyChain)
-         KeyChain.delete(kc.nameOrPath)
-         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-         raise
-      end
    end
 
    def build()
@@ -60,24 +21,18 @@ class Project < AbstractProject
       XcodeBuilder.new(@projectFilePath).clean("CAPlayThrough")
       XcodeBuilder.new(@projectFilePath).clean("CARBMeasure")
    end
-
+   
    def release()
       XcodeBuilder.new(@projectFilePath).ci("CAPlayThrough")
       XcodeBuilder.new(@projectFilePath).ci("CARBMeasure")
    end
+   
+   def archive()
+      release()
+   end
 
    def deploy()
-      require 'yaml'
-      releaseInfo = YAML.load_file("#{@rootDirPath}/Configuration/Release.yml")
-      releaseName = releaseInfo['name']
-      releaseDescriptions = releaseInfo['description'].map { |l| "* #{l}" }
-      releaseDescription = releaseDescriptions.join("\n")
-      version = Version.new(@versionFilePath).projectVersion
-      puts "! Will make GitHub release → #{version}: \"#{releaseName}\""
-      puts releaseDescriptions.map { |l| "  #{l}" }
-      gh = GitHubRelease.new("vgorloff", "CARingBuffer")
-      Readline.readline("OK? > ")
-      gh.release(version, releaseName, releaseDescription)
+      gitHubRelease([])
    end
 
    def generate()
