@@ -11,7 +11,8 @@ import AppKit
 class Application: NSApplication {
 
    private var renderUtility: PlayThroughEngine?
-   private lazy var windowController = MainWindowController()
+   private lazy var viewController = MainViewController()
+   private lazy var windowController = MainWindowController(viewController: viewController)
    private lazy var mainAppMenu = MainMenu()
 
    override init() {
@@ -35,7 +36,7 @@ class Application: NSApplication {
 extension Application: NSApplicationDelegate {
 
    func applicationDidFinishLaunching(_: Notification) {
-      windowController.viewController.toggleEngineButton.setHandler { [weak self] in
+      viewController.toggleEngineButton.setHandler { [weak self] in
          self?.toggleEngine()
       }
       windowController.showWindow(nil)
@@ -68,7 +69,7 @@ extension Application {
    }
 
    private func updateUI() throws {
-      let button = windowController.viewController.toggleEngineButton
+      let button = viewController.toggleEngineButton
       if try renderUtility?.isRunning() == true {
          button.title = "Stop"
       } else {

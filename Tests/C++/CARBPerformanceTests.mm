@@ -6,9 +6,9 @@
 //  Copyright © 2016 WaveLabs. All rights reserved.
 //
 
-#import "CARBTestsCpp-Swift.h"
-#import "CARingBuffer.h"
 #import <AVFoundation/AVFoundation.h>
+#import "CppTests-Swift.h"
+#import "CARingBuffer.h"
 #import <XCTest/XCTest.h>
 
 @interface CARBCppPerformanceTests : XCTestCase

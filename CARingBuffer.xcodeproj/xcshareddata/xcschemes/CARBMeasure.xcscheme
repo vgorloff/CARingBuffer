@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8050152A1D0F722200AE0412"
+               BlueprintIdentifier = "EA705F28AD62A9DCA4C76158"
                BuildableName = "CARBMeasure"
                BlueprintName = "CARBMeasure"
                ReferencedContainer = "container:CARingBuffer.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8050152A1D0F722200AE0412"
+            BlueprintIdentifier = "EA705F28AD62A9DCA4C76158"
             BuildableName = "CARBMeasure"
             BlueprintName = "CARBMeasure"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8050152A1D0F722200AE0412"
+            BlueprintIdentifier = "EA705F28AD62A9DCA4C76158"
             BuildableName = "CARBMeasure"
             BlueprintName = "CARBMeasure"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
@@ -67,14 +67,14 @@
    <ProfileAction
       buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = "/Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/Resources/templates/Time Profiler.tracetemplate"
+      savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8050152A1D0F722200AE0412"
+            BlueprintIdentifier = "EA705F28AD62A9DCA4C76158"
             BuildableName = "CARBMeasure"
             BlueprintName = "CARBMeasure"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
