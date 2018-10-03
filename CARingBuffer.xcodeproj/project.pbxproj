@@ -712,8 +712,7 @@
 				C1BBAD840E5554656958313F /* Shared */,
 				2FDC00970FE1F8B9793F7867 /* UI */,
 			);
-			name = WL;
-			path = ../../../../../Developer/Projects/WL;
+			path = WL;
 			sourceTree = "<group>";
 		};
 		FD0052CEBCEF95F1C4F75AE6 /* Extensions */ = {
