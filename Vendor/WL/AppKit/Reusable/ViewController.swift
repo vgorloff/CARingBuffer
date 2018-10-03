@@ -59,27 +59,27 @@ open class ViewController: NSViewController {
       onViewWillAppear()
    }
 
-   @objc dynamic open func setupUI() {
+   @objc open dynamic func setupUI() {
    }
 
-   @objc dynamic open func setupLayout() {
+   @objc open dynamic func setupLayout() {
    }
 
-   @objc dynamic open func setupHandlers() {
+   @objc open dynamic func setupHandlers() {
    }
 
-   @objc dynamic open func setupDefaults() {
+   @objc open dynamic func setupDefaults() {
    }
 
-   @objc dynamic open func setupDataSource() {
+   @objc open dynamic func setupDataSource() {
    }
 
-   @objc dynamic open func setupLayoutDefaults() {
+   @objc open dynamic func setupLayoutDefaults() {
    }
 
-   @objc dynamic open func onViewWillAppear() {
+   @objc open dynamic func onViewWillAppear() {
    }
 
-   @objc dynamic open func onViewDidAppear() {
+   @objc open dynamic func onViewDidAppear() {
    }
 }

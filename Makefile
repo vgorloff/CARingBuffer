@@ -17,8 +17,8 @@ test:
 release:
 	@ruby -r "`pwd`/Project.rb" -e "Project.new(\"`pwd`\").release"
 
-deploy:
-	@ruby -r "`pwd`/Project.rb" -e "Project.new(\"`pwd`\").deploy"
-
 verify:
 	@ruby -r "`pwd`/Project.rb" -e "Project.new(\"`pwd`\").verify"
+
+deploy:
+	@ruby -r "`pwd`/Project.rb" -e "Project.new(\"`pwd`\").deploy"

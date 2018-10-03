@@ -1,6 +1,6 @@
 //
 //  QuickLookProxy.swift
-//  mcBase-macOS
+//  Foundation
 //
 //  Created by Vlad Gorlov on 20.08.18.
 //  Copyright © 2018 WaveLabs. All rights reserved.
@@ -12,21 +12,25 @@ public typealias QLP = QuickLookProxy
 
 public class QuickLookProxy: NSObject {
 
-   public let object: AnyObject?
+   public typealias Transformer = (Any) -> QuickLookProxyType?
 
-   public init(data: [Float]) {
-      object = QuickLookFactory.object(from: data)
-      super.init()
+   private static var transformers: [(Any.Type, Transformer)] = []
+
+   public static func register(for type: Any.Type, transformer: @escaping Transformer) {
+      transformers.append((type, transformer))
    }
 
-   public init(data: [[Float]]) {
-      object = QuickLookFactory.object(from: data)
-      super.init()
-   }
+   public private(set) var object: AnyObject?
 
-   public init(object: AnyObject?) {
-      self.object = object
+   public init(_ value: Any) {
       super.init()
+      let transformers = type(of: self).transformers.filter { $0.0 == type(of: value) }.map { $0.1 }
+      for transformer in transformers {
+         if let value = transformer(value), let object = QuickLookFactory.object(from: value) {
+            self.object = object
+            break
+         }
+      }
    }
 
    @objc public func debugQuickLookObject() -> AnyObject? {
@@ -38,3 +42,5 @@ public class QuickLookProxy: NSObject {
    }
 }
 
+extension QuickLookProxy {
+}

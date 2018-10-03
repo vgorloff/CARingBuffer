@@ -9,12 +9,12 @@
 import CoreAudio
 
 public struct AudioObjectUtility {
-   
+
    public enum Errors: Swift.Error {
       case OSStatusError(OSStatus)
       case unexpectedDataSize(expected: UInt32, observed: UInt32)
    }
-   
+
    public static func getPropertyDataSize(objectID: AudioObjectID, address: AudioObjectPropertyAddress,
                                           qualifierDataSize: UInt32 = 0,
                                           qualifierData: UnsafeRawPointer? = nil) throws -> UInt32 {
@@ -26,7 +26,7 @@ public struct AudioObjectUtility {
       }
       return propertyDataSize
    }
-   
+
    public static func getPropertyData<T>(objectID: AudioObjectID, address: AudioObjectPropertyAddress,
                                          qualifierDataSize: UInt32 = 0,
                                          qualifierData: UnsafeRawPointer? = nil) throws -> T {
@@ -53,7 +53,7 @@ public struct AudioObjectUtility {
          }
          resultValue = data.pointee
       }
-      
+
       return resultValue
    }
 }

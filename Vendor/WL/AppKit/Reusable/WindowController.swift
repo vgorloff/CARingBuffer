@@ -1,5 +1,5 @@
 //
-//  GenericWindowController.swift
+//  WindowController.swift
 //  mcVendor
 //
 //  Created by Vlad Gorlov on 16.07.18.
@@ -7,17 +7,17 @@
 
 import AppKit
 
-open class GenericWindowController<T: NSViewController>: NSWindowController {
+open class WindowController: NSWindowController {
 
    public let contentWindow: Window
-   public let viewController: T
+   public let viewController: NSViewController
 
-   public convenience init(viewController: T, windowSize: CGSize = CGSize(width: 800, height: 600)) {
+   public convenience init(viewController: NSViewController, windowSize: CGSize = CGSize(width: 800, height: 600)) {
       let window = Window(contentRect: CGRect(origin: CGPoint(), size: windowSize), style: .default)
       self.init(window: window, viewController: viewController)
    }
 
-   public init(window: Window, viewController: T) {
+   public init(window: Window, viewController: NSViewController) {
       contentWindow = window
       self.viewController = viewController
       super.init(window: window)

@@ -10,47 +10,36 @@ import Foundation
 
 public struct MediaBuffer<T> {
 
-   public let dataByteSize: UInt
+   public let dataByteSize: Int
    public let data: UnsafePointer<T>
    public let mutableData: UnsafeMutablePointer<T>
-   public let numberOfElements: UInt
+   public let numberOfElements: Int
 
    public init(mutableData: UnsafeMutablePointer<T>, numberOfElements: Int) {
-      self.numberOfElements = UInt(numberOfElements)
-      dataByteSize = UInt(MemoryLayout<T>.stride * numberOfElements)
+      self.numberOfElements = numberOfElements
+      dataByteSize = MemoryLayout<T>.stride * numberOfElements
       self.mutableData = mutableData
       data = UnsafePointer(mutableData)
    }
 
    public init(data: UnsafePointer<T>, numberOfElements: Int) {
-      self.numberOfElements = UInt(numberOfElements)
-      dataByteSize = UInt(MemoryLayout<T>.stride * numberOfElements)
+      self.numberOfElements = numberOfElements
+      dataByteSize = MemoryLayout<T>.stride * numberOfElements
       mutableData = UnsafeMutablePointer(mutating: data)
       self.data = data
    }
 
-   public subscript(index: UInt) -> T {
+   public subscript(index: Int) -> T {
       get {
          precondition(index < numberOfElements)
-         return data[Int(index)]
+         return data[index]
       } set {
          precondition(index < numberOfElements)
-         mutableData[Int(index)] = newValue
+         mutableData[index] = newValue
       }
    }
 
    public var bufferPointer: UnsafeMutableBufferPointer<T> {
       return UnsafeMutableBufferPointer<T>(start: mutableData, count: Int(numberOfElements))
-   }
-}
-
-extension QuickLookProxy {
-
-   public convenience init<T>(_ mediaBuffer: MediaBuffer<T>) {
-      if let mediaBuffer = mediaBuffer as? MediaBuffer<Float> {
-         self.init(data: Array(mediaBuffer.bufferPointer))
-      } else {
-         self.init(object: nil)
-      }
    }
 }

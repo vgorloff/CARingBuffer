@@ -7,11 +7,40 @@
 //
 
 import CoreGraphics
+#if os(iOS) || os(tvOS) || os(watchOS)
+import UIKit
+#elseif os(OSX)
+import AppKit
+#endif
 
 extension CGSize {
 
-   public init(squareDimension: CGFloat) {
-      self.init(width: squareDimension, height: squareDimension)
+   public init(squareSide: CGFloat) {
+      self.init(width: squareSide, height: squareSide)
+   }
+
+   public init(width: CGFloat) {
+      self.init(width: width, height: 0)
+   }
+
+   public init(height: CGFloat) {
+      self.init(width: 0, height: height)
+   }
+
+   public init(intrinsicWidth: CGFloat) {
+      #if os(iOS) || os(tvOS) || os(watchOS)
+      self.init(width: intrinsicWidth, height: UIView.noIntrinsicMetric)
+      #elseif os(OSX)
+      self.init(width: intrinsicWidth, height: NSView.noIntrinsicMetric)
+      #endif
+   }
+
+   public init(intrinsicHeight: CGFloat) {
+      #if os(iOS) || os(tvOS) || os(watchOS)
+      self.init(width: UIView.noIntrinsicMetric, height: intrinsicHeight)
+      #elseif os(OSX)
+      self.init(width: NSView.noIntrinsicMetric, height: intrinsicHeight)
+      #endif
    }
 
    public func scale(by factor: CGFloat) -> CGSize {
@@ -100,9 +129,5 @@ public extension CGSize {
 
    func aspectFill(toSize newSize: CGSize) -> CGRect {
       return aspectResize(toSize: newSize, withResizeMethod: .fill)
-   }
-
-   init(squareSide: CGFloat) {
-      self.init(width: squareSide, height: squareSide)
    }
 }
