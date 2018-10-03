@@ -328,8 +328,8 @@ extension PlayThroughEngine {
       inputBuffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: bufferSizeFrames)
 
       assert(asbd.mBytesPerFrame.intValue == MemoryLayout<Float>.size)
-      ringBuffer = RingBuffer<Float>(numberOfChannels: Int(asbd.mChannelsPerFrame),
-                                     capacityFrames: Int(bufferSizeFrames * 20))
+      ringBuffer = RingBuffer<Float>(numberOfBuffers: Int(asbd.mChannelsPerFrame),
+                                     numberOfElements: Int(bufferSizeFrames * 20))
    }
 
    fileprivate static func computeThruOffset(inputDevice anInputDevice: AudioDeviceID,
