@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "35D0B2940F45B1DC04F45BB9"
+               BlueprintIdentifier = "AA80ABDB08648D362D0EA1DF"
                BlueprintName = "CAPlayThrough"
                ReferencedContainer = "container:CARingBuffer.xcodeproj"
                BuildableName = "CAPlayThrough.app">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "35D0B2940F45B1DC04F45BB9"
+            BlueprintIdentifier = "AA80ABDB08648D362D0EA1DF"
             BlueprintName = "CAPlayThrough"
             ReferencedContainer = "container:CARingBuffer.xcodeproj"
             BuildableName = "CAPlayThrough.app">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "35D0B2940F45B1DC04F45BB9"
+            BlueprintIdentifier = "AA80ABDB08648D362D0EA1DF"
             BlueprintName = "CAPlayThrough"
             ReferencedContainer = "container:CARingBuffer.xcodeproj"
             BuildableName = "CAPlayThrough.app">
@@ -71,7 +71,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "35D0B2940F45B1DC04F45BB9"
+            BlueprintIdentifier = "AA80ABDB08648D362D0EA1DF"
             BlueprintName = "CAPlayThrough"
             ReferencedContainer = "container:CARingBuffer.xcodeproj"
             BuildableName = "CAPlayThrough.app">

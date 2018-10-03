@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "961F6FA5D71143537D983E25"
+               BlueprintIdentifier = "A5624E9502871FF800148060"
                BlueprintName = "Verify"
                ReferencedContainer = "container:CARingBuffer.xcodeproj"
                BuildableName = "Verify">

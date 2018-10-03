@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BFF85A6A354FDE5DB41C8E97"
+               BlueprintIdentifier = "166191E52095641E87C2F604"
                BlueprintName = "Autocorrect"
                ReferencedContainer = "container:CARingBuffer.xcodeproj"
                BuildableName = "Autocorrect">

@@ -21,7 +21,7 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2AFAE7229E37FDDE055BFD89"
+               BlueprintIdentifier = "EE5C02B7D63AA1DA892B9620"
                BlueprintName = "CppTests"
                ReferencedContainer = "container:CARingBuffer.xcodeproj"
                BuildableName = "CppTests.xctest">
