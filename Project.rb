@@ -9,13 +9,12 @@ class Project < AbstractProject
 
    def initialize(rootDirPath)
       super(rootDirPath)
-      TmpDirPath = GitRepoDirPath + "/DerivedData"
-      KeyChainPath = TmpDirPath + "/VST3NetSend.keychain"
-      P12FilePath = GitRepoDirPath + '/Codesign/DeveloperIDApplication.p12'
-      XCodeProjectFilePath = GitRepoDirPath + "/CARingBuffer.xcodeproj"
-      XCodeProjectSchema = "Developer: Build Everything"
-      VSTSDKDirPath = GitRepoDirPath + "/Vendor/Steinberg"
-      VersionFilePath = GitRepoDirPath + "/Configuration/Version.xcconfig"
+      @tmpDirPath = rootDirPath + "/DerivedData"
+      @keyChainPath = @tmpDirPath + "/VST3NetSend.keychain"
+      @p12FilePath = rootDirPath + '/Codesign/DeveloperIDApplication.p12'
+      @projectFilePath = rootDirPath + "/CARingBuffer.xcodeproj"
+      @projectSchema = "Developer: Build Everything"
+      @versionFilePath = rootDirPath + "/Configuration/Version.xcconfig"
    end
 
    def ci()
@@ -25,16 +24,16 @@ class Project < AbstractProject
       end
       puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
       puts "→ Preparing environment..."
-      FileUtils.mkdir_p TmpDirPath
+      FileUtils.mkdir_p @tmpDirPath
       puts Tool.announceEnvVars
       puts "→ Setting up keychain..."
-      kc = KeyChain.create(KeyChainPath)
+      kc = KeyChain.create(@keyChainPath)
       puts KeyChain.list
       defaultKeyChain = KeyChain.default
       puts "→ Default keychain: #{defaultKeyChain}"
       kc.setSettings()
       kc.info()
-      kc.import(P12FilePath, ENV['AWL_P12_PASSWORD'], ["/usr/bin/codesign"])
+      kc.import(@p12FilePath, ENV['AWL_P12_PASSWORD'], ["/usr/bin/codesign"])
       kc.setKeyCodesignPartitionList()
       kc.dump()
       KeyChain.setDefault(kc.nameOrPath)
@@ -45,7 +44,7 @@ class Project < AbstractProject
          puts "→ Making cleanup..."
          KeyChain.setDefault(defaultKeyChain)
          KeyChain.delete(kc.nameOrPath)
-      rescue
+      rescue StandardError
          KeyChain.setDefault(defaultKeyChain)
          KeyChain.delete(kc.nameOrPath)
          puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -62,21 +61,21 @@ class Project < AbstractProject
    end
 
    def self.test()
-      XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: C++")
+      XcodeBuilder.new(@projectFilePath).test("Logic Tests: C++")
    end
 
    def release()
-      XcodeBuilder.new(XCodeProjectFilePath).ci("Developer: Analyze Performance")
-      XcodeBuilder.new(XCodeProjectFilePath).ci("Demo: CAPlayThrough")
+      XcodeBuilder.new(@projectFilePath).ci("Developer: Analyze Performance")
+      XcodeBuilder.new(@projectFilePath).ci("Demo: CAPlayThrough")
    end
 
    def deploy()
       require 'yaml'
-      releaseInfo = YAML.load_file("#{GitRepoDirPath}/Configuration/Release.yml")
+      releaseInfo = YAML.load_file("#{@rootDirPath}/Configuration/Release.yml")
       releaseName = releaseInfo['name']
-      releaseDescriptions = releaseInfo['description'].map { |l| "* #{l}"}
+      releaseDescriptions = releaseInfo['description'].map { |l| "* #{l}" }
       releaseDescription = releaseDescriptions.join("\n")
-      version = Version.new(VersionFilePath).projectVersion
+      version = Version.new(@versionFilePath).projectVersion
       puts "! Will make GitHub release → #{version}: \"#{releaseName}\""
       puts releaseDescriptions.map { |l| "  #{l}" }
       gh = GitHubRelease.new("vgorloff", "CARingBuffer")
@@ -85,41 +84,20 @@ class Project < AbstractProject
    end
 
    def generate()
-      project = XcodeProject.new(projectPath: File.join(@rootDirPath, "VST3NetSend.xcodeproj"), vendorSubpath: 'WL')
-      netSendKit = project.addFramework(name: "VST3NetSendKit",
-                                        sources: ["Sources/NetSendKit"], platform: :osx, deploymentTarget: "10.11",
-                                        bundleID: "ua.com.wavelabs.vst3.$(PRODUCT_NAME)",
-                                        buildSettings: {
-                                           "SWIFT_INSTALL_OBJC_HEADER" => "YES",
-                                           "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES" => "YES",
-                                           "APPLICATION_EXTENSION_API_ONLY" => "YES",
-                                           "OTHER_LDFLAGS" => "-framework AudioToolbox",
-                                           "DEFINES_MODULE" => "YES",
-                                           "LD_RUNPATH_SEARCH_PATHS" => "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks"
-                                        })
-      project.useFilters(target: netSendKit, filters: [
-                            "Core/Formatters/IntegerFormatter*", "Foundation/os/log/*", "Foundation/Sources/*Info*",
-                            "Media/Extensions/AudioComponentDescription*", "Media/Sources/AudioUnit*"
+      project = XcodeProject.new(projectPath: File.join(@rootDirPath, "CARingBuffer_.xcodeproj"), vendorSubpath: 'WL')
+      app = project.addApp(name: "CAPlayThrough",
+                           sources: ["Sources/CAPlayThrough"], platform: :osx, deploymentTarget: "10.11", needsLogger: true)
+      project.useFilters(target: app, filters: [
+                            "AppKit/Extensions/NSButton*", "AppKit/Extensions/NSMenu*", "AppKit/Extensions/NSView*", "AppKit/Extensions/NSWindow*",
+                            "AppKit/Extensions/NSControl*", "AppKit/Reusable/View*", "Foundation/Dispatch/Dispatch*",
+                            "AppKit/Sources/SystemAppearance*", "Core/Converters/NumericTypes*", "Foundation/NSRegularExpression/*",
+                            "AppKit/Sources/Menu*", "AppKit/Media/Audio*", "AppKit/Reusable/Button*", "AppKit/Reusable/Window*",
+                            "Foundation/Extensions/CG*", "Foundation/Notification/*", "Foundation/Extensions/EdgeInsets*",
+                            "Foundation/Testability/*", "Foundation/os/log/*", "Foundation/Sources/*Info*", "Foundation/ObjectiveC/*",
+                            "Media/Sources/Ring*", "Media/Sources/Media*", "Media/Sources/AudioUnit*", "Media/Extensions/*Audio*",
+                            "Media/Sources/*Type*", "UI/Layout/*", "UI/Reporting/*", "UI/Extensions/*", "Core/Concurrency/Atomic*",
+                            "Foundation/Extensions/Scanner*", "Foundation/Extensions/*Dictionary*", "Foundation/Extensions/*String*"
                          ])
-
-      netSend = project.addBundle(name: "VST3NetSend",
-                                  sources: ["Sources/VST"], platform: :osx, deploymentTarget: "10.11",
-                                  bundleID: "ua.com.wavelabs.$(PRODUCT_NAME)",
-                                  buildSettings: {
-                                     "DSTROOT" => "$(HOME)",
-                                     "INSTALL_PATH" => "/Library/Audio/Plug-Ins/VST3/WaveLabs",
-                                     "EXPORTED_SYMBOLS_FILE" => "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp",
-                                     "WRAPPER_EXTENSION" => "vst3",
-                                     "GCC_PREFIX_HEADER" => "Sources/VST/Prefix.h",
-                                     "GCC_PREPROCESSOR_DEFINITIONS_Debug" => "DEVELOPMENT=1 $(inherited)",
-                                     "GCC_PREPROCESSOR_DEFINITIONS_Release" => "RELEASE=1 NDEBUG=1 $(inherited)",
-                                     "DEPLOYMENT_LOCATION" => "YES",
-                                     "GENERATE_PKGINFO_FILE" => "YES",
-                                     "SKIP_INSTALL" => "NO",
-                                     "OTHER_LDFLAGS" => "-framework AudioToolbox -framework CoreAudio -framework Cocoa -framework AudioUnit"
-                                  })
-
-      project.addDependencies(to: netSend, dependencies: [netSendKit])
       project.save()
    end
 
