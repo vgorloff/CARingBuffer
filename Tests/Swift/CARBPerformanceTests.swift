@@ -1,6 +1,6 @@
 //
 //  CARBPerformanceTests.swift
-//  WaveLabs
+//  WL
 //
 //  Created by Vlad Gorlov on 12.06.16.
 //  Copyright © 2016 WaveLabs. All rights reserved.
@@ -18,8 +18,8 @@ class CARBSwiftPerformanceTests: XCTestCase {
                                       channels: numberOfChannels)!
       let writeBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)!
       let readBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)!
-      let ringBuffer = RingBuffer<Float>(numberOfChannels: Int(numberOfChannels),
-                                         capacityFrames: Int(RingBufferTestParameters.bufferCapacityFrames.rawValue))
+      let ringBuffer = RingBuffer<Float>(numberOfBuffers: Int(numberOfChannels),
+                                         numberOfElements: Int(RingBufferTestParameters.bufferCapacityFrames.rawValue))
       RingBufferTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
       measure {
          var status: RingBufferError
