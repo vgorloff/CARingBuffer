@@ -98,6 +98,13 @@ class Project < AbstractProject
                             "Media/Sources/*Type*", "UI/Layout/*", "UI/Reporting/*", "UI/Extensions/*", "Core/Concurrency/Atomic*",
                             "Foundation/Extensions/Scanner*", "Foundation/Extensions/*Dictionary*", "Foundation/Extensions/*String*"
                          ])
+
+      tool = project.addTool(name: "CARBMeasure", sources: ["Sources/CARBMeasure"], platform: :osx)
+      project.useFilters(target: tool, filters: [
+         "Media/Sources/Ring*", "Media/Sources/Media*", "Core/Concurrency/Atomic*", "Media/Sources/*Type*",
+         "Media/Extensions/*Audio*", "Foundation/Testability/*", "Foundation/Extensions/CG*",
+         "Foundation/Extensions/EdgeInsets*", "MediaTests/Types/RingBufferTestsUtility*"
+      ])
       project.save()
    end
 
