@@ -17,7 +17,7 @@ let IOCapacity: UInt32 = 512
 let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: AVAudioChannelCount(numberOfChannels))!
 let writeBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)!
 let readBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: IOCapacity)!
-let ringBuffer = RingBuffer<Float>(numberOfChannels: numberOfChannels, capacityFrames: 4096)
+let ringBuffer = RingBuffer<Float>(numberOfBuffers: numberOfChannels, numberOfElements: 4096)
 
 RingBufferTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IOCapacity)
 var status: RingBufferError
