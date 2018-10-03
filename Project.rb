@@ -13,7 +13,6 @@ class Project < AbstractProject
       @keyChainPath = @tmpDirPath + "/VST3NetSend.keychain"
       @p12FilePath = rootDirPath + '/Codesign/DeveloperIDApplication.p12'
       @projectFilePath = rootDirPath + "/CARingBuffer.xcodeproj"
-      @projectSchema = "Developer: Build Everything"
       @versionFilePath = rootDirPath + "/Configuration/Version.xcconfig"
    end
 
@@ -25,7 +24,7 @@ class Project < AbstractProject
       puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
       puts "→ Preparing environment..."
       FileUtils.mkdir_p @tmpDirPath
-      puts Tool.announceEnvVars
+      puts Environment.announceEnvVars
       puts "→ Setting up keychain..."
       kc = KeyChain.create(@keyChainPath)
       puts KeyChain.list
@@ -53,20 +52,18 @@ class Project < AbstractProject
    end
 
    def build()
-      XcodeBuilder.new(@projectFilePath).build(@projectSchema)
+      XcodeBuilder.new(@projectFilePath).build("CAPlayThrough")
+      XcodeBuilder.new(@projectFilePath).build("CARBMeasure")
    end
 
    def clean()
-      XcodeBuilder.new(@projectFilePath).clean(@projectSchema)
-   end
-
-   def self.test()
-      XcodeBuilder.new(@projectFilePath).test("Logic Tests: C++")
+      XcodeBuilder.new(@projectFilePath).clean("CAPlayThrough")
+      XcodeBuilder.new(@projectFilePath).clean("CARBMeasure")
    end
 
    def release()
-      XcodeBuilder.new(@projectFilePath).ci("Developer: Analyze Performance")
-      XcodeBuilder.new(@projectFilePath).ci("Demo: CAPlayThrough")
+      XcodeBuilder.new(@projectFilePath).ci("CAPlayThrough")
+      XcodeBuilder.new(@projectFilePath).ci("CARBMeasure")
    end
 
    def deploy()
@@ -100,13 +97,13 @@ class Project < AbstractProject
                          ])
       setupSources(project, app)
 
-      tool = project.addTool(name: "CARBMeasure", sources: ["Sources/CARBMeasure"], platform: :osx)
+      tool = project.addTool(name: "CARBMeasure", sources: ["Sources/CARBMeasure"], platform: :osx, deploymentTarget: "10.11")
       setupSources(project, tool)
 
-      swiftTests = project.addTest(name: "SwiftTests", sources: "Tests/Swift", platform: :osx, needsSchema: true)
+      swiftTests = project.addTest(name: "SwiftTests", sources: "Tests/Swift", platform: :osx, deploymentTarget: "10.11", needsSchema: true)
       setupSources(project, swiftTests)
 
-      cppTests = project.addTest(name: "CppTests", sources: "Tests/C++", platform: :osx, needsSchema: true, buildSettings: {
+      cppTests = project.addTest(name: "CppTests", sources: "Tests/C++", platform: :osx, deploymentTarget: "10.11", needsSchema: true, buildSettings: {
          "SWIFT_INSTALL_OBJC_HEADER" => "YES"
       })
       setupSources(project, cppTests)
