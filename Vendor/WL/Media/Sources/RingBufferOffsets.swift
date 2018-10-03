@@ -12,28 +12,33 @@ class RingBufferOffsets {
 
    typealias SampleTime = RingBufferTimeBounds.SampleTime
 
-   struct UpdateProcedure {
-      let sourceOffset: SampleTime
-      let destinationOffset: SampleTime
-      let numberOfElements: SampleTime
+   let timeBounds: RingBufferTimeBounds
+
+   private(set) var numberOfElements: SampleTime
+
+   init(numberOfElements: SampleTime) {
+      timeBounds = RingBufferTimeBounds()
+      self.numberOfElements = numberOfElements
    }
 
-   struct ZeroProcedure {
-      let offset: SampleTime
-      let numberOfElements: SampleTime
+   init(other: RingBufferOffsets) {
+      numberOfElements = other.numberOfElements
+      timeBounds = RingBufferTimeBounds(other: other.timeBounds)
    }
-
-   let timeBounds = RingBufferTimeBounds()
-
-   let capacity: SampleTime
-
-   init(capacity: SampleTime) {
-      self.capacity = capacity
-   }
-
 }
 
 extension RingBufferOffsets {
+
+   func resize(numberOfElements newNumberOfElements: SampleTime) {
+      let difference = numberOfElements - newNumberOfElements
+      if difference > 0 {
+         let bounds = timeBounds.bounds
+         var newStart = bounds.start + difference
+         newStart = min(newStart, bounds.end)
+         timeBounds.set(start: newStart, end: bounds.end)
+      }
+      numberOfElements = newNumberOfElements
+   }
 
    func store(framesToWrite: SampleTime, startWrite: SampleTime,
               storeProcedure: (UpdateProcedure) -> Void, zeroProcedure: (ZeroProcedure) -> Void) -> RingBufferError {
@@ -42,7 +47,7 @@ extension RingBufferOffsets {
          return .noError
       }
 
-      if framesToWrite > capacity {
+      if framesToWrite > numberOfElements {
          return .tooMuch
       }
 
@@ -53,11 +58,11 @@ extension RingBufferOffsets {
          if startWrite < timeBounds.bounds.end {
             // Going backwards, throw everything out
             timeBounds.set(start: startWrite, end: startWrite)
-         } else if endWrite - timeBounds.bounds.start <= capacity {
+         } else if endWrite - timeBounds.bounds.start <= numberOfElements {
             // The buffer has not yet wrapped and will not need to
          } else {
             // Advance the start time past the region we are about to overwrite
-            let newStart = endWrite - capacity // One buffer of time behind where we're writing
+            let newStart = endWrite - numberOfElements // One buffer of time behind where we're writing
             let newEnd = max(newStart, timeBounds.bounds.end)
             timeBounds.set(start: newStart, end: newEnd)
          }
@@ -68,26 +73,26 @@ extension RingBufferOffsets {
       var offset1: SampleTime
       if startWrite > curEnd {
          // We are skipping some samples, so zero the range we are skipping
-         offset0 = curEnd % capacity
-         offset1 = startWrite % capacity
+         offset0 = curEnd % numberOfElements
+         offset1 = startWrite % numberOfElements
          if offset0 < offset1 {
             zeroProcedure(ZeroProcedure(offset: offset0, numberOfElements: offset1 - offset0))
          } else {
-            zeroProcedure(ZeroProcedure(offset: offset0, numberOfElements: capacity - offset0))
+            zeroProcedure(ZeroProcedure(offset: offset0, numberOfElements: numberOfElements - offset0))
             zeroProcedure(ZeroProcedure(offset: 0, numberOfElements: offset1))
          }
          offset0 = offset1
       } else {
-         offset0 = startWrite % capacity
+         offset0 = startWrite % numberOfElements
       }
 
-      offset1 = endWrite % capacity
+      offset1 = endWrite % numberOfElements
       if offset0 < offset1 {
          storeProcedure(UpdateProcedure(sourceOffset: 0, destinationOffset: offset0, numberOfElements: offset1 - offset0))
       } else {
-         let numberOfElements = capacity - offset0
-         storeProcedure(UpdateProcedure(sourceOffset: 0, destinationOffset: offset0, numberOfElements: numberOfElements))
-         storeProcedure(UpdateProcedure(sourceOffset: numberOfElements, destinationOffset: 0, numberOfElements: offset1))
+         let numOfElements = numberOfElements - offset0
+         storeProcedure(UpdateProcedure(sourceOffset: 0, destinationOffset: offset0, numberOfElements: numOfElements))
+         storeProcedure(UpdateProcedure(sourceOffset: numOfElements, destinationOffset: 0, numberOfElements: offset1))
       }
 
       // Updating the end time
@@ -103,49 +108,49 @@ extension RingBufferOffsets {
          return .noError
       }
 
-      var startRead = max(0, startRead)
-      var endRead = startRead + framesToRead
+      var location = Location(start: max(0, startRead), length: framesToRead)
+      let originalLocation = Location(location: location)
 
-      let startRead0 = startRead
-      let endRead0 = endRead
-
-      if timeBounds.clip(start: &startRead, end: &endRead) == false {
+      if timeBounds.clip(start: &location.start, end: &location.end) == false {
          return .cpuOverload
       }
 
       // Out of range case.
-      if startRead == endRead {
+      if location.isEmpty {
          zeroProcedure(ZeroProcedure(offset: 0, numberOfElements: framesToRead))
          return .noError
       }
 
-      let elementsSize = endRead - startRead
-
-      let destinationOffset = max(0, (startRead - startRead0))
+      let destinationOffset = max(0, location.start - originalLocation.start)
       if destinationOffset > 0 {
-         zeroProcedure(ZeroProcedure(offset: 0, numberOfElements: min(framesToRead, destinationOffset)))
+         let procedure = ZeroProcedure(offset: 0, numberOfElements: min(framesToRead, destinationOffset))
+         zeroProcedure(procedure)
       }
 
-      let destEndSize = max(0, endRead0 - endRead)
+      let destEndSize = max(0, originalLocation.end - location.end)
       if destEndSize > 0 {
-         zeroProcedure(ZeroProcedure(offset: destinationOffset + elementsSize, numberOfElements: destEndSize))
+         let procedure = ZeroProcedure(offset: destinationOffset + location.length, numberOfElements: destEndSize)
+         zeroProcedure(procedure)
       }
 
-      let offset0 = startRead % capacity
-      let offset1 = endRead % capacity
-      var numberOfElements: SampleTime = 0
+      let indexes = Location(start: location.start % numberOfElements, end: location.end % numberOfElements)
+      var numOfElements: SampleTime = 0
 
-      if offset0 < offset1 {
-         numberOfElements = offset1 - offset0
-         fetchProcedure(UpdateProcedure(sourceOffset: offset0, destinationOffset: destinationOffset,
-                                        numberOfElements: numberOfElements))
+      if indexes.start < indexes.end {
+         numOfElements = indexes.length
+         fetchProcedure(UpdateProcedure(sourceOffset: indexes.start, destinationOffset: destinationOffset,
+                                        numberOfElements: numOfElements))
       } else {
-         numberOfElements = capacity - offset0
-         fetchProcedure(UpdateProcedure(sourceOffset: offset0, destinationOffset: destinationOffset,
-                                        numberOfElements: numberOfElements))
-         fetchProcedure(UpdateProcedure(sourceOffset: 0, destinationOffset: destinationOffset + numberOfElements,
-                                        numberOfElements: offset1))
-         numberOfElements += offset1
+         numOfElements = numberOfElements - indexes.start
+         let procedure = UpdateProcedure(sourceOffset: indexes.start, destinationOffset: destinationOffset,
+                                         numberOfElements: numOfElements)
+         fetchProcedure(procedure)
+         if indexes.end > 0 {
+            let procedure = UpdateProcedure(sourceOffset: 0, destinationOffset: destinationOffset + numOfElements,
+                                            numberOfElements: indexes.end)
+            fetchProcedure(procedure)
+            numOfElements += indexes.end
+         }
       }
 
       // FIXME: Do we really need to update mDataByteSize?.
@@ -160,5 +165,47 @@ extension RingBufferOffsets {
 
       return .noError
    }
+}
 
+extension RingBufferOffsets {
+
+   struct UpdateProcedure {
+      let sourceOffset: SampleTime
+      let destinationOffset: SampleTime
+      let numberOfElements: SampleTime
+   }
+
+   struct ZeroProcedure {
+      let offset: SampleTime
+      let numberOfElements: SampleTime
+   }
+
+   struct Location {
+
+      var start: SampleTime
+      var end: SampleTime
+
+      init(start: SampleTime, end: SampleTime) {
+         self.start = start
+         self.end = end
+      }
+
+      init(start: SampleTime, length: SampleTime) {
+         self.start = start
+         end = start + length
+      }
+
+      init(location: Location) {
+         start = location.start
+         end = location.end
+      }
+
+      var length: SampleTime {
+         return end - start
+      }
+
+      var isEmpty: Bool {
+         return end == start
+      }
+   }
 }

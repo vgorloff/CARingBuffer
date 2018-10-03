@@ -15,6 +15,7 @@ open class View: NSView {
          setNeedsDisplay(bounds)
       }
    }
+
    private var mIsFlipped: Bool?
 
    open override var isFlipped: Bool {
@@ -55,22 +56,42 @@ open class View: NSView {
       }
    }
 
-   @objc dynamic open func setupUI() {
+   @available(OSX 10.14, *)
+   open override func viewDidChangeEffectiveAppearance() {
+      super.viewDidChangeEffectiveAppearance()
+      if let value = effectiveAppearance.bestMatch(from: [.aqua, .darkAqua, .accessibilityHighContrastAqua,
+                                                          .accessibilityHighContrastDarkAqua]) {
+         switch value {
+         case .aqua:
+            setupAppearance(.light)
+         case .darkAqua:
+            setupAppearance(.dark)
+         case .accessibilityHighContrastAqua:
+            setupAppearance(.highContrastLight)
+         case .accessibilityHighContrastDarkAqua:
+            setupAppearance(.highContrastDark)
+         default:
+            break
+         }
+      }
    }
 
-   @objc dynamic open func setupLayout() {
+   @objc open dynamic func setupUI() {
    }
 
-   @objc dynamic open func setupHandlers() {
+   @objc open dynamic func setupLayout() {
    }
 
-   @objc dynamic open func setupDefaults() {
+   @objc open dynamic func setupHandlers() {
    }
 
-   @objc dynamic open func setupDataSource() {
+   @objc open dynamic func setupDefaults() {
    }
 
-   @objc dynamic open func setupAppearance(_ appearance: SystemAppearance) {
+   @objc open dynamic func setupDataSource() {
+   }
+
+   @objc open dynamic func setupAppearance(_: SystemAppearance) {
    }
 }
 

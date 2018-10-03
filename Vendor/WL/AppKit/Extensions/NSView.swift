@@ -10,6 +10,14 @@ import AppKit
 
 extension NSView {
 
+   public func convertFromBacking(_ value: CGFloat) -> CGFloat {
+      return convertFromBacking(NSSize(width: value, height: value)).width
+   }
+
+   public func convertToBacking(_ value: CGFloat) -> CGFloat {
+      return convertToBacking(NSSize(width: value, height: value)).width
+   }
+
    public func addSubviews(_ views: NSView...) {
       for view in views {
          addSubview(view)

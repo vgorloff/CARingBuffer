@@ -8,16 +8,6 @@
 
 import CoreAudio
 
-public protocol RingBufferType {
-   init()
-}
-
-extension Float: RingBufferType {}
-extension Int32: RingBufferType {}
-extension Int: RingBufferType {}
-extension Double: RingBufferType {}
-
-
 public enum RingBufferError: Int {
 
    case noError = 0
@@ -29,35 +19,43 @@ public enum RingBufferError: Int {
    case cpuOverload
 }
 
-public final class RingBuffer<T: RingBufferType> {
+public final class RingBuffer<T: DefaultInitializerType> {
 
    public typealias SampleTime = RingBufferTimeBounds.SampleTime
 
-   public let numberOfChannels: Int
+   public private(set) var numberOfBuffers: Int
+   public private(set) var numberOfElements: Int
 
+   private var maxNumberOfElements: Int = 0
    let offsets: RingBufferOffsets
 
-   private let capacityFrames: Int
-   private let bytesPerFrame: SampleTime
+   private let bytesPerFrame: SampleTime = SampleTime(MemoryLayout<T>.stride)
+   private var buffer: UnsafeMutablePointer<T>
 
-   private let bufferLength: Int /// Number of allocated elements in buffer for all channels.
-   private let buffer: UnsafeMutablePointer<T>
-
-   /// Buffer pointer just for debug purpose.
-   var bufferPointer: UnsafeMutableBufferPointer<T> {
-      return UnsafeMutableBufferPointer(start: buffer, count: bufferLength)
+   /// - parameter numberOfBuffers: Number of channels (non-interleaved).
+   /// - parameter numberOfElements: Capacity per every channel.
+   public init(numberOfBuffers: Int, numberOfElements: Int) {
+      self.numberOfBuffers = numberOfBuffers
+      self.numberOfElements = numberOfElements
+      offsets = RingBufferOffsets(numberOfElements: SampleTime(numberOfElements))
+      maxNumberOfElements = Int(Double(numberOfElements) * 1.5) // Reserving capacity.
+      let capacity = maxNumberOfElements * numberOfBuffers
+      buffer = UnsafeMutablePointer<T>.allocate(capacity: capacity)
+      buffer.initialize(repeating: T(), count: capacity)
    }
 
-   /// - parameter numberOfChannels: Number of channels (non-interleaved).
-   /// - parameter capacityFrames: Capacity per every channel.
-   public init(numberOfChannels: Int, capacityFrames: Int) {
-      self.numberOfChannels = numberOfChannels
-      self.capacityFrames = capacityFrames
-      bytesPerFrame = SampleTime(MemoryLayout<T>.stride)
-      offsets = RingBufferOffsets(capacity: SampleTime(capacityFrames))
-      bufferLength = Int(capacityFrames * numberOfChannels)
-      buffer = UnsafeMutablePointer<T>.allocate(capacity: bufferLength)
-      buffer.initialize(repeating: T(), count: bufferLength)
+   public convenience init() {
+      self.init(numberOfBuffers: 0, numberOfElements: 0)
+   }
+
+   private init(other: RingBuffer) {
+      numberOfBuffers = other.numberOfBuffers
+      numberOfElements = other.numberOfElements
+      maxNumberOfElements = other.maxNumberOfElements
+      offsets = RingBufferOffsets(other: other.offsets)
+      let capacity = maxNumberOfElements * numberOfBuffers
+      buffer = UnsafeMutablePointer<T>.allocate(capacity: capacity)
+      buffer.initialize(from: other.buffer, count: capacity)
    }
 
    deinit {
@@ -66,6 +64,20 @@ public final class RingBuffer<T: RingBufferType> {
 }
 
 extension RingBuffer {
+
+   /// Number of allocated elements in buffer for all channels.
+   private var bufferLength: Int {
+      return numberOfBuffers * maxNumberOfElements
+   }
+
+   /// Buffer pointer just for debug purpose.
+   var bufferPointer: UnsafeMutableBufferPointer<T> {
+      return UnsafeMutableBufferPointer(start: buffer, count: bufferLength)
+   }
+
+   public func clone() -> RingBuffer {
+      return RingBuffer(other: self)
+   }
 
    public func getTimeBounds() -> RingBufferTimeBounds.Result {
       return offsets.timeBounds.get()
@@ -99,6 +111,10 @@ extension RingBuffer {
       })
    }
 
+   public func store(_ buffers: MediaBufferCollection<T>, startWrite: SampleTime) -> RingBufferError {
+      return store(buffers.mediaBufferList, framesToWrite: numericCast(buffers.numberOfElements), startWrite: startWrite)
+   }
+
    public func store(_ mediaBuffers: MediaBufferList<T>,
                      framesToWrite: SampleTime, startWrite: SampleTime) -> RingBufferError {
       return offsets.store(framesToWrite: framesToWrite, startWrite: startWrite, storeProcedure: { info in
@@ -121,13 +137,71 @@ extension RingBuffer {
                      startRead: SampleTime) -> RingBufferError {
       return offsets.fetch(framesToRead: framesToRead, startRead: startRead, fetchProcedure: { info in
          let info = RingBufferOffsets.UpdateProcedure(sourceOffset: info.sourceOffset,
-                                                        destinationOffset: info.destinationOffset + offsetFrames,
-                                                        numberOfElements: info.numberOfElements)
+                                                      destinationOffset: info.destinationOffset + offsetFrames,
+                                                      numberOfElements: info.numberOfElements)
          fetch(into: mediaBuffers, from: buffer, info: info)
       }, zeroProcedure: { info in
          let info = RingBufferOffsets.ZeroProcedure(offset: info.offset + offsetFrames, numberOfElements: info.numberOfElements)
          zero(mediaBufferList: mediaBuffers, info: info)
       })
+   }
+
+   @discardableResult
+   public func sizeToFitCapacity() -> Bool {
+      return resize(numberOfElements: maxNumberOfElements)
+   }
+
+   @discardableResult
+   public func resize(numberOfElements: Int) -> Bool {
+      if self.numberOfElements != numberOfElements {
+         offsets.resize(numberOfElements: SampleTime(numberOfElements))
+         let result = reserveCapacity(newNumberOfElements: numberOfElements)
+         self.numberOfElements = numberOfElements
+         return result
+      }
+      return false
+   }
+
+   @discardableResult
+   public func resize(numberOfBuffers: Int) -> Bool {
+      if self.numberOfBuffers != numberOfBuffers {
+         let result = reserveCapacity(newNumberOfBuffers: numberOfBuffers)
+         self.numberOfBuffers = numberOfBuffers
+         return result
+      }
+      return false
+   }
+
+   @discardableResult
+   public func resize(numberOfBuffers: Int, numberOfElements: Int) -> Bool {
+      var isUpdated = resize(numberOfBuffers: numberOfBuffers)
+      isUpdated = resize(numberOfElements: numberOfElements) || isUpdated
+      return isUpdated
+   }
+
+   @discardableResult
+   public func reserveCapacity(numberOfElements: Int) -> Bool {
+      if numberOfElements > self.numberOfElements {
+         let result = reserveCapacity(newNumberOfElements: numberOfElements)
+         return result
+      }
+      return false
+   }
+
+   @discardableResult
+   public func reserveCapacity(numberOfBuffers: Int) -> Bool {
+      if numberOfBuffers > self.numberOfBuffers {
+         let result = reserveCapacity(newNumberOfBuffers: numberOfBuffers)
+         return result
+      }
+      return false
+   }
+
+   @discardableResult
+   public func reserveCapacity(numberOfBuffers: Int, numberOfElements: Int) -> Bool {
+      var isUpdated = reserveCapacity(numberOfBuffers: numberOfBuffers)
+      isUpdated = reserveCapacity(numberOfElements: numberOfElements) || isUpdated
+      return isUpdated
    }
 }
 
@@ -135,16 +209,69 @@ extension RingBuffer {
 
 extension RingBuffer {
 
+   private func reserveCapacity(newNumberOfElements: Int) -> Bool {
+      var isUpdated = false
+      if newNumberOfElements > maxNumberOfElements {
+         isUpdated = true
+         let newMaxNumberOfElements = Int(Double(newNumberOfElements) * 1.5) // Reserving capacity.
+         let capacity = numberOfBuffers * newMaxNumberOfElements
+         let newBuffer = UnsafeMutablePointer<T>.allocate(capacity: capacity)
+         newBuffer.initialize(repeating: T(), count: capacity)
+         for index in 0 ..< numberOfBuffers {
+            let positionRead = buffer.advanced(by: index * maxNumberOfElements)
+            let positionWrite = newBuffer.advanced(by: index * newMaxNumberOfElements)
+            positionWrite.moveInitialize(from: positionRead, count: numberOfElements)
+         }
+         buffer.deallocate()
+         buffer = newBuffer
+         maxNumberOfElements = newMaxNumberOfElements
+      } else if newNumberOfElements < numberOfElements {
+         isUpdated = true
+         let lengthDifference = numberOfElements - newNumberOfElements
+         for index in 0 ..< numberOfBuffers {
+            let positionRead = buffer.advanced(by: index * maxNumberOfElements + lengthDifference)
+            let positionWrite = buffer.advanced(by: index * maxNumberOfElements)
+            positionWrite.moveInitialize(from: positionRead, count: newNumberOfElements)
+         }
+         // FIXME: Check and restore deinitialization routine.
+         // let numberOfElementsToDeinitialize = numberOfElements - newNumberOfElements
+         // for index in 0 ..< numberOfBuffers {
+         //    let position = buffer.advanced(by: index * numberOfElements + newNumberOfElements)
+         //    position.deinitialize(count: numberOfElementsToDeinitialize)
+         // }
+      }
+      return isUpdated
+   }
+
+   private func reserveCapacity(newNumberOfBuffers: Int) -> Bool {
+      var isUpdated = false
+      if newNumberOfBuffers > numberOfBuffers {
+         isUpdated = true
+         let capacity = newNumberOfBuffers * maxNumberOfElements
+         let newBuffer = UnsafeMutablePointer<T>.allocate(capacity: capacity)
+         newBuffer.initialize(repeating: T(), count: capacity)
+         newBuffer.moveInitialize(from: buffer, count: bufferLength)
+         buffer.deallocate()
+         buffer = newBuffer
+      } else if numberOfBuffers < newNumberOfBuffers {
+         isUpdated = true
+         let numberOfBuffersToDeinitialize = numberOfBuffers - newNumberOfBuffers
+         let position = buffer.advanced(by: newNumberOfBuffers * maxNumberOfElements)
+         position.deinitialize(count: numberOfBuffersToDeinitialize * maxNumberOfElements)
+      }
+      return isUpdated
+   }
+
    private func store(from abl: UnsafePointer<AudioBufferList>, into buffer: UnsafeMutablePointer<T>,
                       info: RingBufferOffsets.UpdateProcedure) {
 
       let bufferList = UnsafeMutableAudioBufferListPointer(unsafePointer: abl)
-      let numOfChannels = max(bufferList.count, numberOfChannels)
+      let numOfChannels = max(bufferList.count, numberOfBuffers)
       for channel in 0 ..< numOfChannels {
-         guard channel < numberOfChannels else { // Ring buffer has less channels than input buffer
+         guard channel < numberOfBuffers else { // Ring buffer has less channels than input buffer
             continue
          }
-         let positionWrite = buffer.advanced(by: Int(info.destinationOffset) + channel * capacityFrames)
+         let positionWrite = buffer.advanced(by: Int(info.destinationOffset) + channel * maxNumberOfElements)
 
          if channel < bufferList.count {
             let channelBuffer = bufferList[channel]
@@ -188,8 +315,8 @@ extension RingBuffer {
 
          let positionWrite = channelData.advanced(by: Int(info.destinationOffset))
          let numberOfElements = min(info.numberOfElements, channelCapacity - info.destinationOffset)
-         if channel < numberOfChannels { // Ring buffer has less channels than output buffer
-            let positionRead = buffer.advanced(by: Int(info.sourceOffset) + channel * capacityFrames)
+         if channel < numberOfBuffers { // Ring buffer has less channels than output buffer
+            let positionRead = buffer.advanced(by: Int(info.sourceOffset) + channel * maxNumberOfElements)
             positionWrite.assign(from: positionRead, count: Int(numberOfElements))
          } else {
             positionWrite.initialize(repeating: T(), count: Int(numberOfElements))
@@ -220,14 +347,14 @@ extension RingBuffer {
 
    private func store(from mediaBuffer: MediaBufferList<T>, into buffer: UnsafeMutablePointer<T>,
                       info: RingBufferOffsets.UpdateProcedure) {
-      let numOfChannels = max(Int(mediaBuffer.numberOfBuffers), numberOfChannels)
+      let numOfChannels = max(Int(mediaBuffer.numberOfBuffers), numberOfBuffers)
       for channel in 0 ..< numOfChannels {
-         guard channel < numberOfChannels else { // Ring buffer has less channels than input buffer
+         guard channel < numberOfBuffers else { // Ring buffer has less channels than input buffer
             continue
          }
-         let positionWrite = buffer.advanced(by: Int(info.destinationOffset) + channel * capacityFrames)
+         let positionWrite = buffer.advanced(by: Int(info.destinationOffset) + channel * maxNumberOfElements)
          if channel < mediaBuffer.numberOfBuffers {
-            let channelBuffer = mediaBuffer[UInt(channel)].pointee
+            let channelBuffer = mediaBuffer[channel].pointee
             if info.sourceOffset > Int64(channelBuffer.numberOfElements) {
                continue // FIXME: Need to zero buffer for missed range
             }
@@ -242,16 +369,16 @@ extension RingBuffer {
 
    private func fetch(into mediaBuffer: MediaBufferList<T>, from buffer: UnsafeMutablePointer<T>,
                       info: RingBufferOffsets.UpdateProcedure) {
-      for channel in 0 ..< Int(mediaBuffer.numberOfBuffers) {
-         let channelBuffer = mediaBuffer[UInt(channel)].pointee
+      for channel in 0 ..< mediaBuffer.numberOfBuffers {
+         let channelBuffer = mediaBuffer[channel].pointee
          if info.destinationOffset > SampleTime(channelBuffer.numberOfElements) {
             continue
          }
          let positionWrite = channelBuffer.data.advanced(by: Int(info.destinationOffset))
          let writeDestination = UnsafeMutablePointer(mutating: positionWrite)
          let numOfElements = min(info.numberOfElements, SampleTime(channelBuffer.numberOfElements) - info.destinationOffset)
-         if channel < numberOfChannels { // Ring buffer has less channels than output buffer
-            let positionRead = buffer.advanced(by: Int(info.sourceOffset) + channel * capacityFrames)
+         if channel < numberOfBuffers { // Ring buffer has less channels than output buffer
+            let positionRead = buffer.advanced(by: Int(info.sourceOffset) + channel * maxNumberOfElements)
             writeDestination.assign(from: positionRead, count: Int(numOfElements))
          } else {
             writeDestination.initialize(repeating: T(), count: Int(info.numberOfElements))
@@ -260,8 +387,8 @@ extension RingBuffer {
    }
 
    private func zero(mediaBufferList: MediaBufferList<T>, info: RingBufferOffsets.ZeroProcedure) {
-      for channel in 0 ..< Int(mediaBufferList.numberOfBuffers) {
-         let channelBuffer = mediaBufferList[UInt(channel)].pointee
+      for channel in 0 ..< mediaBufferList.numberOfBuffers {
+         let channelBuffer = mediaBufferList[channel].pointee
          if info.offset > SampleTime(channelBuffer.numberOfElements) {
             continue
          }
@@ -274,9 +401,9 @@ extension RingBuffer {
    }
 
    private func zero(info: RingBufferOffsets.ZeroProcedure) {
-      assert(Int(info.offset + info.numberOfElements) <= capacityFrames)
-      for channel in 0 ..< numberOfChannels {
-         let positionWrite = buffer.advanced(by: Int(info.offset) + channel * capacityFrames)
+      assert(Int(info.offset + info.numberOfElements) <= numberOfElements)
+      for channel in 0 ..< numberOfBuffers {
+         let positionWrite = buffer.advanced(by: Int(info.offset) + channel * maxNumberOfElements)
          positionWrite.initialize(repeating: T(), count: Int(info.numberOfElements))
       }
    }
@@ -287,26 +414,13 @@ extension RingBuffer {
 extension RingBuffer: CustomReflectable {
 
    public var customMirror: Mirror {
-      var children: [(String?, Any)] = [
-         ("numberOfChannels", numberOfChannels), ("capacityFrames", capacityFrames)
-      ]
+      var children: [(String?, Any)] = [("numberOfBuffers", numberOfBuffers), ("numberOfElements", numberOfElements)]
       switch offsets.timeBounds.get() {
       case .failure:
          break
-      case.success(let start, let end):
-         children += [("start", start), ("end", end)]
+      case .success(let start, let end):
+         children += [("timeBounds", "\(start) ... \(end) [\(end - start)]")]
       }
       return Mirror(self, children: children)
-   }
-}
-
-extension QuickLookProxy {
-
-   public convenience init<T>(_ ringBuffer: RingBuffer<T>) {
-      if let ringBuffer = ringBuffer as? RingBuffer<Float> {
-         self.init(data: Array(ringBuffer.bufferPointer))
-      } else {
-         self.init(object: nil)
-      }
    }
 }

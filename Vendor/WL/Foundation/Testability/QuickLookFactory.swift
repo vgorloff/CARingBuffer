@@ -15,7 +15,7 @@ import UIKit
 
 // See also:
 // - https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/CustomClassDisplay_in_QuickLook/
-public struct QuickLookFactory {
+struct QuickLookFactory {
 
    #if os(OSX)
    private typealias BezierPath = NSBezierPath
@@ -26,6 +26,16 @@ public struct QuickLookFactory {
    #endif
 
    private static let height: Float = 120
+
+   #if os(OSX)
+   static func object(from value: QuickLookProxyType) -> AnyObject? {
+      switch value {
+      case .array1x(let data):
+         return QuickLookFactory.object(from: data)
+      case .array2x(let data):
+         return QuickLookFactory.object(from: data)
+      }
+   }
 
    static func object(from data: [[Float]]) -> AnyObject? {
       let images = data.map { image(from: $0) }
@@ -59,12 +69,11 @@ public struct QuickLookFactory {
       return path
    }
 
-   #if os(OSX)
    private static func image(from path: BezierPath, size: CGSize) -> Image {
       let lineWidth: CGFloat = 1
       let paddings: CGFloat = 0.5 * lineWidth
       let size = size.insetBy(dx: 2 * -paddings, dy: 2 * -paddings)
-      path.transform(using: AffineTransform.init(translationByX: paddings, byY: paddings + CGFloat(0.5 * height)))
+      path.transform(using: AffineTransform(translationByX: paddings, byY: paddings + CGFloat(0.5 * height)))
       path.lineWidth = lineWidth
       return NSImage(size: size, flipped: false) { rect in
          NSColor.blue.setStroke()
@@ -75,13 +84,14 @@ public struct QuickLookFactory {
          return true
       }
    }
+
    private static func stack(images: [Image]) -> Image {
       let separatorWidth: CGFloat = 4
       let sizes = images.map { $0.size } // Assuming similar width and Height
       var maxHeight = sizes.map { $0.height }.reduce(0) { $0 + $1 }
       maxHeight += separatorWidth * CGFloat(images.count - 1)
       let size = CGSize(width: sizes.first?.width ?? 0, height: maxHeight)
-      return NSImage(size: size, flipped: false) { rect in
+      return NSImage(size: size, flipped: false) { _ in
          var offset: CGFloat = 0
          for image in images {
             image.draw(at: CGPoint(x: 0, y: offset), from: .zero, operation: .copy, fraction: 1)
@@ -90,9 +100,10 @@ public struct QuickLookFactory {
          return true
       }
    }
+
    #else
-   private static func image(from path: BezierPath) -> Image {
-      fatalError()
+   static func object(from value: QuickLookProxyType) -> AnyObject? {
+      return nil
    }
    #endif
 }

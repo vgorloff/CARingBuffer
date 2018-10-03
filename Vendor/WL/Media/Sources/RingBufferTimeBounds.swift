@@ -12,17 +12,6 @@ public class RingBufferTimeBounds {
 
    public typealias SampleTime = Int64
 
-   public enum Result {
-      case failure
-      case success(start: SampleTime, end: SampleTime)
-   }
-
-   struct Bounds {
-      var start: SampleTime = 0
-      var end: SampleTime = 0
-      var queueIndex: Int64 = 0
-   }
-
    private let queueSize: Int64
    private var queue: ContiguousArray<Bounds>
    private var queueIndex: Int64 = 0
@@ -32,6 +21,11 @@ public class RingBufferTimeBounds {
       queue = ContiguousArray<Bounds>(repeating: Bounds(), count: Int(queueSize))
    }
 
+   init(other: RingBufferTimeBounds) {
+      queueSize = other.queueSize
+      queue = other.queue
+      queueIndex = other.queueIndex
+   }
 }
 
 extension RingBufferTimeBounds {
@@ -73,7 +67,7 @@ extension RingBufferTimeBounds {
       let nextAbsoluteIndex = queueIndex + 1 // Always increasing
       let elementIndex = nextAbsoluteIndex % queueSize
       queue[Int(elementIndex)] = Bounds(start: start, end: end, queueIndex: nextAbsoluteIndex)
-      let status = OSAtomicCompareAndSwap64Barrier(queueIndex, nextAbsoluteIndex, &queueIndex)
+      let status = Atomic.compareAndSwap64Barrier(oldValue: queueIndex, newValue: nextAbsoluteIndex, theValue: &queueIndex)
       assert(status)
    }
 
@@ -104,5 +98,19 @@ extension RingBufferTimeBounds {
          return .failure
       }
       return .success(start: start, end: end)
+   }
+}
+
+extension RingBufferTimeBounds {
+
+   public enum Result {
+      case failure
+      case success(start: SampleTime, end: SampleTime)
+   }
+
+   struct Bounds {
+      var start: SampleTime = 0
+      var end: SampleTime = 0
+      var queueIndex: Int64 = 0
    }
 }

@@ -18,5 +18,4 @@ public class Button: NSButton {
    public required init?(coder: NSCoder) {
       fatalError()
    }
-
 }

@@ -89,6 +89,10 @@ extension Menu.File {
       return NSMenuItem(title: "Open…", action: #selector(NSDocumentController.openDocument(_:)), keyEquivalent: "o")
    }
 
+   public static func open(handler: @escaping () -> Void) -> NSMenuItem {
+      return NSMenuItem(title: "Open…", keyEquivalent: "o", handler: handler)
+   }
+
    public static var close: NSMenuItem {
       return NSMenuItem(title: "Close", action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w")
    }

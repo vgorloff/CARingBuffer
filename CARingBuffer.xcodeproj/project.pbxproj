@@ -6,536 +6,756 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		166191E52095641E87C2F604 /* Autocorrect */ = {
+			isa = PBXAggregateTarget;
+			buildPhases = (
+				22D4461934205EACE6DA64ED /* Run Script: Autocorrect */,
+			);
+			dependencies = (
+			);
+			name = Autocorrect;
+		};
+		A5624E9502871FF800148060 /* Verify */ = {
+			isa = PBXAggregateTarget;
+			buildPhases = (
+				8B6238746D778D829AA01B6A /* Run Script: Verify */,
+			);
+			dependencies = (
+			);
+			name = Verify;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		80079E721D21D9B100E93DB3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80079E711D21D9AA00E93DB3 /* main.swift */; };
-		801BE5AA1F16E3C000806169 /* CARBPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BE5A61F16E3A800806169 /* CARBPerformanceTests.swift */; };
-		803A8CE42115EC4B006E5472 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8CE32115EC31006E5472 /* Button.swift */; };
-		803A8CF32115EC79006E5472 /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8CF22115EC76006E5472 /* AudioDevice.swift */; };
-		803A8CF42115EC79006E5472 /* AudioObjectUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8CF12115EC76006E5472 /* AudioObjectUtility.swift */; };
-		803A8D012115ECF8006E5472 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D002115ECF6006E5472 /* Menu.swift */; };
-		803A8D062115ED24006E5472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D022115ED24006E5472 /* ViewController.swift */; };
-		803A8D072115ED24006E5472 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D032115ED24006E5472 /* View.swift */; };
-		803A8D092115ED24006E5472 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D052115ED24006E5472 /* Window.swift */; };
-		803A8D262115ED50006E5472 /* NSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D222115ED50006E5472 /* NSMenu.swift */; };
-		803A8D272115ED50006E5472 /* NSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D232115ED50006E5472 /* NSMenuItem.swift */; };
-		803A8D282115ED50006E5472 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D242115ED50006E5472 /* NSButton.swift */; };
-		803A8D292115ED50006E5472 /* NSControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D252115ED50006E5472 /* NSControl.swift */; };
-		803A8D2C2115ED60006E5472 /* NSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D2A2115ED60006E5472 /* NSWindow.swift */; };
-		803A8D2D2115ED60006E5472 /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D2B2115ED60006E5472 /* NSView.swift */; };
-		803A8D672115ED99006E5472 /* DispatchUntil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D332115ED81006E5472 /* DispatchUntil.swift */; };
-		803A8DD22115EDF4006E5472 /* ObjCAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DD12115EDEE006E5472 /* ObjCAssociation.swift */; };
-		803A8DDD2115EE2F006E5472 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DD92115EE25006E5472 /* UnsafeMutableAudioBufferListPointer.swift */; };
-		803A8DDE2115EE30006E5472 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DD92115EE25006E5472 /* UnsafeMutableAudioBufferListPointer.swift */; };
-		803A8DDF2115EE30006E5472 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DD92115EE25006E5472 /* UnsafeMutableAudioBufferListPointer.swift */; };
-		803A8DE02115EE30006E5472 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DD92115EE25006E5472 /* UnsafeMutableAudioBufferListPointer.swift */; };
-		803A8DE12115EE36006E5472 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DD52115EE25006E5472 /* AudioComponentDescription.swift */; };
-		803A8DE22115EE3B006E5472 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DDB2115EE25006E5472 /* AudioBuffer.swift */; };
-		803A8DE32115EE3B006E5472 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DDB2115EE25006E5472 /* AudioBuffer.swift */; };
-		803A8DE42115EE3C006E5472 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DDB2115EE25006E5472 /* AudioBuffer.swift */; };
-		803A8DE52115EE3C006E5472 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DDB2115EE25006E5472 /* AudioBuffer.swift */; };
-		803A8DE62115EEB0006E5472 /* NumericTypesConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8D712115EDB5006E5472 /* NumericTypesConversions.swift */; };
-		803A8DE82115EEE2006E5472 /* GenericWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DE72115EEE2006E5472 /* GenericWindowController.swift */; };
-		803A8DF52115EF1C006E5472 /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803A8DEE2115EF04006E5472 /* BuildInfo.swift */; };
-		8046F3E91D821FDC007F25E4 /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */; };
-		8046F3EA1D821FE8007F25E4 /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */; };
-		8046F3EB1D821FE8007F25E4 /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */; };
-		8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 805015561D109FBB00AE0412 /* CARBTests.mm */; };
-		805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 805015601D10A06300AE0412 /* CARingBuffer.cpp */; };
-		8050DAE61D19D785007216D2 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8050DAE51D19D785007216D2 /* Readme.txt */; };
-		805671E91F3910E000D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
-		805671EA1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
-		805671EB1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805671E81F3910E000D2C5B5 /* MediaBuffer.swift */; };
-		8066E0DD1D10A53C00D32B44 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
-		8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */; };
-		8068878820308A6800E70134 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068878720308A6800E70134 /* main.swift */; };
-		8068878A20308A9A00E70134 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068878920308A9A00E70134 /* Application.swift */; };
-		8068878C20308B8200E70134 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068878B20308B8200E70134 /* MainMenu.swift */; };
-		8068879120308D3E00E70134 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068878F20308D3900E70134 /* MainWindowController.swift */; };
-		80A65219213012B100D3B156 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652162130129D00D3B156 /* RingBuffer.swift */; };
-		80A6521A213012B100D3B156 /* RingBufferOffsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652182130129D00D3B156 /* RingBufferOffsets.swift */; };
-		80A6521B213012B100D3B156 /* RingBufferTimeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652172130129D00D3B156 /* RingBufferTimeBounds.swift */; };
-		80A6521C213012B200D3B156 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652162130129D00D3B156 /* RingBuffer.swift */; };
-		80A6521D213012B200D3B156 /* RingBufferOffsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652182130129D00D3B156 /* RingBufferOffsets.swift */; };
-		80A6521E213012B200D3B156 /* RingBufferTimeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652172130129D00D3B156 /* RingBufferTimeBounds.swift */; };
-		80A6521F213012B300D3B156 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652162130129D00D3B156 /* RingBuffer.swift */; };
-		80A65220213012B300D3B156 /* RingBufferOffsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652182130129D00D3B156 /* RingBufferOffsets.swift */; };
-		80A65221213012B300D3B156 /* RingBufferTimeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652172130129D00D3B156 /* RingBufferTimeBounds.swift */; };
-		80A65235213012F300D3B156 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A65224213012CB00D3B156 /* RingBufferTestsUtility.swift */; };
-		80A65236213012F400D3B156 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A65224213012CB00D3B156 /* RingBufferTestsUtility.swift */; };
-		80A65237213012F400D3B156 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A65224213012CB00D3B156 /* RingBufferTestsUtility.swift */; };
-		80A652412130134C00D3B156 /* QuickLookFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6523F2130133000D3B156 /* QuickLookFactory.swift */; };
-		80A652422130134C00D3B156 /* QuickLookProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652402130133000D3B156 /* QuickLookProxy.swift */; };
-		80A652442130134D00D3B156 /* QuickLookProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652402130133000D3B156 /* QuickLookProxy.swift */; };
-		80A652452130134E00D3B156 /* QuickLookFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6523F2130133000D3B156 /* QuickLookFactory.swift */; };
-		80A652462130134E00D3B156 /* QuickLookProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652402130133000D3B156 /* QuickLookProxy.swift */; };
-		80A652482130138A00D3B156 /* RuntimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652472130137900D3B156 /* RuntimeInfo.swift */; };
-		80A65260213013E600D3B156 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6525F213013E200D3B156 /* CGSize.swift */; };
-		80A65261213013E600D3B156 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A65257213013C200D3B156 /* CGPoint.swift */; };
-		80A652632130141400D3B156 /* SystemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652622130141400D3B156 /* SystemAppearance.swift */; };
-		80A6526421301BC300D3B156 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A65257213013C200D3B156 /* CGPoint.swift */; };
-		80A6526521301BC500D3B156 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6525F213013E200D3B156 /* CGSize.swift */; };
-		80A6526621301C2E00D3B156 /* QuickLookFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6523F2130133000D3B156 /* QuickLookFactory.swift */; };
-		80A6526721301C3F00D3B156 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6525F213013E200D3B156 /* CGSize.swift */; };
-		80A6526821301C3F00D3B156 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A65257213013C200D3B156 /* CGPoint.swift */; };
-		80A6526921301CBC00D3B156 /* QuickLookFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6523F2130133000D3B156 /* QuickLookFactory.swift */; };
-		80A6526A21301CBC00D3B156 /* QuickLookProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A652402130133000D3B156 /* QuickLookProxy.swift */; };
-		80A6526B21301CC900D3B156 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6525F213013E200D3B156 /* CGSize.swift */; };
-		80A6526C21301CC900D3B156 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A65257213013C200D3B156 /* CGPoint.swift */; };
-		80B12CEA1D21AD2E00B2FE2A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CE91D21AD2E00B2FE2A /* MainViewController.swift */; };
-		80B12CF51D21ADAC00B2FE2A /* PlayThroughEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12CF41D21ADAC00B2FE2A /* PlayThroughEngine.swift */; };
-		80B12D021D21B00600B2FE2A /* AudioUnitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */; };
-		80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */; };
+		01FA51DC884ECF16A3F4F35E /* QuickLookFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92A26F64D6F3384BC8C44 /* QuickLookFactory.swift */; };
+		022B2D6DF595B00F383069BC /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7ECAF85BC30FDB7EEDF423 /* Scanner.swift */; };
+		05522E858311378D0C2A6159 /* PlayThroughEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2056F74A244B539485FDC /* PlayThroughEngine.swift */; };
+		09B462E815896E8165170454 /* ObjCAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E548C2799662B3C24805D /* ObjCAssociation.swift */; };
+		0C881D64357CA5AFEFF7E87A /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE46C42091F4AB70D42922 /* Atomic.swift */; };
+		0C926908228A28765D03A80A /* AudioComponentInstantiationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5DD957CC0CCD94E46DEF6 /* AudioComponentInstantiationOptions.swift */; };
+		0DE15C5549ABADCE97477E05 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B239E4B2A9446F5E983CF /* AudioComponentDescription.swift */; };
+		0F5AA73582C9C06F7DD9ACBF /* NSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAFAD2718D42581C098174 /* NSMenuItem.swift */; };
+		10B6809E20C6F5C8584241E6 /* AudioComponentFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB648BFB9CB239DFE34D2A7 /* AudioComponentFlags.swift */; };
+		1152388B082BAF0B860C4C77 /* AtomicPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D82C5CA38B7F3F3925FCB /* AtomicPair.swift */; };
+		14177B26F610CEA6717A231C /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F5FC9515C08BA786F5012A /* MediaBuffer.swift */; };
+		149EAACEAA25B25DB4A5D8A7 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C11E2112C55CA584D4384C /* Window.swift */; };
+		15BD9A20EFF7F1632AB24C57 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058F9C8D0B9DC504DD11E744 /* Dictionary.swift */; };
+		15E8A5B7634E41F07358926B /* AVAudioPCMBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E713808B8429251D5FBB42AA /* AVAudioPCMBuffer.swift */; };
+		167F0DC32B3C6E39F3D3ECBB /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA74D6E69D6D4A38EDCB99E /* CGPoint.swift */; };
+		174ACF44B1A7E428C96B1938 /* AudioComponentFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB648BFB9CB239DFE34D2A7 /* AudioComponentFlags.swift */; };
+		175F78F89CF094C8FABB034E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3A0124BDE1B6B40283FC7 /* String.swift */; };
+		1940C02DEEBD04032C4AFC47 /* LayoutFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC30F6B638B7EE14679A687 /* LayoutFormatParser.swift */; };
+		1CCCCF281F556342D59020EE /* AudioComponentFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB648BFB9CB239DFE34D2A7 /* AudioComponentFlags.swift */; };
+		1D7FD9650843A3B3FA5530C0 /* String.Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68E64631F4319C575050706 /* String.Index.swift */; };
+		1F2DCC2E9E0DDAAB2BE1E0F4 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F5FC9515C08BA786F5012A /* MediaBuffer.swift */; };
+		1F3D9183FF67C71075B643FA /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE46C42091F4AB70D42922 /* Atomic.swift */; };
+		1F58D857C7FED60188B510B4 /* AVAudioPCMBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E713808B8429251D5FBB42AA /* AVAudioPCMBuffer.swift */; };
+		21A6C656EBD8352395E4EF12 /* DefaultInitializerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA05FA577E2D1577271D63B /* DefaultInitializerType.swift */; };
+		22E30C385DDCFB9B886067BD /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B239E4B2A9446F5E983CF /* AudioComponentDescription.swift */; };
+		2415F663E765912E01B27C02 /* AudioComponentInstantiationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5DD957CC0CCD94E46DEF6 /* AudioComponentInstantiationOptions.swift */; };
+		24AE0DEA8C2E2452A01BA381 /* AtomicPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D82C5CA38B7F3F3925FCB /* AtomicPair.swift */; };
+		2552669D1F3A103423F554A0 /* NSButton.BezelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3612D48FC50A519AED8C1D94 /* NSButton.BezelStyle.swift */; };
+		28434A6A991B05C31CA4BF80 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F5FC9515C08BA786F5012A /* MediaBuffer.swift */; };
+		28868EB6370FA4B10752F061 /* NSRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8DAEF1E43D05EECBEC5C03 /* NSRegularExpression.swift */; };
+		28FB5E61B088EC9CBFD78D9B /* RingBufferOffsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7E266B8EB0FD9260BF4D4 /* RingBufferOffsets.swift */; };
+		29E6B2F5A07CD81BF7C21F7B /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD40CF70B46CB292E8277 /* CGRect.swift */; };
+		2A47464553FD967E8641652D /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25345D121BE078B6FC193CBF /* NSMutableAttributedString.swift */; };
+		2AB86B747C05AF9210204230 /* DispatchUntil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8384664886210BE616F79E17 /* DispatchUntil.swift */; };
+		2AE2F6F1AAA9FBFB17D861D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081FDB226476A85528EB62A /* ViewController.swift */; };
+		2E44565BA039A756998ED0EA /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB89796F1F2BB30527A5727 /* MediaBufferList.swift */; };
+		2F452BCB225CB3989E31E2D1 /* AudioComponentInstantiationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5DD957CC0CCD94E46DEF6 /* AudioComponentInstantiationOptions.swift */; };
+		31BB4D49AA428C9CDAFAA433 /* DefaultInitializerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA05FA577E2D1577271D63B /* DefaultInitializerType.swift */; };
+		33BC32E3957FCBF267C9773F /* QuickLookProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6510C8E6FB8CCB99C2888C /* QuickLookProxyType.swift */; };
+		366A4F87A0923E21AC600890 /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497F2C6DC3FA15B5FEB004D /* BuildInfo.swift */; };
+		3F0B652F978CA215C06A5892 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEC977A135F0BEF7FB06 /* RingBuffer.swift */; };
+		417766974224558784D4C3B7 /* CARBTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 222F5F98D15478DE3B92B165 /* CARBTests.mm */; };
+		44559FDA28198E3102140686 /* RingBufferOffsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7E266B8EB0FD9260BF4D4 /* RingBufferOffsets.swift */; };
+		499BEAEEF7435619CCE3B39C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FF7BCC6DB76AB5E9F9405 /* Button.swift */; };
+		49CC105B0E4F49BC56BE22F3 /* MediaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F5FC9515C08BA786F5012A /* MediaBuffer.swift */; };
+		4C19315896F5A98A76E99CE1 /* AVAudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649C25F41C2A67CE32255D1B /* AVAudioBuffer.swift */; };
+		4D341F0DE0196C1AA5C91EC1 /* DispatchOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260C149FBA7E65F36235348 /* DispatchOnce.swift */; };
+		5017068ADE8495FE26A532F1 /* MediaBufferCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7B5EE851B4D62029DA85 /* MediaBufferCollection.swift */; };
+		54189A6C7FDD2A88BC912053 /* LayoutConstraintDynamics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0B7009EEF9E2D933331C1 /* LayoutConstraintDynamics.swift */; };
+		554E2875030F48F240A4012C /* QuickLookProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6510C8E6FB8CCB99C2888C /* QuickLookProxyType.swift */; };
+		55861CE193320C5AA188834B /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D3CAA3BF60ACE0D070ACB /* AudioBuffer.swift */; };
+		5648C517F99FB61D4701AAD7 /* AtomicPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D82C5CA38B7F3F3925FCB /* AtomicPair.swift */; };
+		56EE7C4F528D6A6EAF7D7225 /* RingBufferTimeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D396F58CA5B37591AEDD25 /* RingBufferTimeBounds.swift */; };
+		593FAD4F9D734F59B79D734F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A9EBEAF4E2BE7ADEAED2F /* Menu.swift */; };
+		5A8B0FF468F633891421F078 /* AudioComponentFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB648BFB9CB239DFE34D2A7 /* AudioComponentFlags.swift */; };
+		5D93B1FB4BB232BFCA71A5ED /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8884C7E7314A2363278915 /* UnsafeMutableAudioBufferListPointer.swift */; };
+		5E6430DFD0F47FDCD35F4758 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD40CF70B46CB292E8277 /* CGRect.swift */; };
+		601BB5443E206847369B5A59 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B009F6048E920DF875EDFA8 /* CGSize.swift */; };
+		66184CC1AC672BBBA0A64273 /* NSLayoutYAxisAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CB42A009694941D4BE851 /* NSLayoutYAxisAnchor.swift */; };
+		6BC084CE4D09D1CD287732F1 /* FailureReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33B6BF48D5AC822C2ACB0A /* FailureReporting.swift */; };
+		6CBE0F922D76A6FD033F7F26 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD40CF70B46CB292E8277 /* CGRect.swift */; };
+		6F6DD79D84FA1272D2D83B40 /* AVAudioPCMBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E713808B8429251D5FBB42AA /* AVAudioPCMBuffer.swift */; };
+		6F8DC09111ACB1858F34AEC1 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D3CAA3BF60ACE0D070ACB /* AudioBuffer.swift */; };
+		6F93356EF8ED773505239B88 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8884C7E7314A2363278915 /* UnsafeMutableAudioBufferListPointer.swift */; };
+		6FD3588B4645E71B51EB85B8 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE511291F9D2723AA0A15B70 /* EdgeInsets.swift */; };
+		720EC47F8A971F21CA199E84 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D3CAA3BF60ACE0D070ACB /* AudioBuffer.swift */; };
+		72C73515973193A899DE52A5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39D86572C5C4567C719C650 /* Log.swift */; };
+		739B214227EA0C204D21938D /* RingBufferTimeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D396F58CA5B37591AEDD25 /* RingBufferTimeBounds.swift */; };
+		77EF8C07DB69E010654007D7 /* AVAudioPCMBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E713808B8429251D5FBB42AA /* AVAudioPCMBuffer.swift */; };
+		7C69E8032D87A838672AA8D7 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA74D6E69D6D4A38EDCB99E /* CGPoint.swift */; };
+		7E6707098B6D36220DF45A70 /* NSControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2CE2CE85D551424DD5EB99 /* NSControl.swift */; };
+		7EA02D82C02710B996D010CA /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB89796F1F2BB30527A5727 /* MediaBufferList.swift */; };
+		80AE9C9C1553C1C4298E386E /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA74D6E69D6D4A38EDCB99E /* CGPoint.swift */; };
+		80E61BF6BDAEDD3EAAA1FF03 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F349EC0E2C54398C71057222 /* WindowController.swift */; };
+		8112D8F306C7CDF35E6583C4 /* RingBufferTimeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D396F58CA5B37591AEDD25 /* RingBufferTimeBounds.swift */; };
+		813C5649DE18912BB2249B03 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEF944AC7312CED7BEE3BB /* Logger.swift */; };
+		81E247EB6F47B3A654D14F54 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567748DB0C6DECA7A5C770B6 /* RingBufferTestsUtility.swift */; };
+		8259A31B025F3EBA62AB902D /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4BB55E0E813891E87498C8 /* MainMenu.swift */; };
+		831B0B102657EBA65DF490F3 /* MediaBufferCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7B5EE851B4D62029DA85 /* MediaBufferCollection.swift */; };
+		86353B310486F2D1C98F59A3 /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430679FA56E95F8AB6B882D /* NSView.swift */; };
+		870E17776DEF8B64B7F55F8D /* RingBufferOffsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7E266B8EB0FD9260BF4D4 /* RingBufferOffsets.swift */; };
+		87A116D8D76890FA75DBF3B3 /* QuickLookFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92A26F64D6F3384BC8C44 /* QuickLookFactory.swift */; };
+		8AD5BABFC5289D6E62390B4C /* QuickLookProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6510C8E6FB8CCB99C2888C /* QuickLookProxyType.swift */; };
+		8ADB83B6C581CF46E0BBC700 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8E701A03C107273AB3A1C /* LayoutConstraint.swift */; };
+		8E166DF7B9918006F9931A17 /* RuntimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFD05BFA13CE5787A3580C5 /* RuntimeInfo.swift */; };
+		96942B30C749DBD1E52668A4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9470477FA2E7F47D2D800B24 /* MainViewController.swift */; };
+		98500C11988743D81CEACD03 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D3CAA3BF60ACE0D070ACB /* AudioBuffer.swift */; };
+		98877B7D47A66AEC4688096D /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB89796F1F2BB30527A5727 /* MediaBufferList.swift */; };
+		9981046A9A8948B6E3865D0D /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE511291F9D2723AA0A15B70 /* EdgeInsets.swift */; };
+		9A65BB9F6D576019B9435A55 /* MediaBufferCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7B5EE851B4D62029DA85 /* MediaBufferCollection.swift */; };
+		9CA6D3B2ED018184702B5760 /* NSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2E4EBB3F09329E497C55A /* NSWindow.swift */; };
+		9D2828FB076315B19EBE0D62 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FAB079D044B5FACA9CE62E /* NSButton.swift */; };
+		9D8B6DB8C94FCE6C5EFCC61D /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEC977A135F0BEF7FB06 /* RingBuffer.swift */; };
+		9DC52FDA165F6F5CC810512F /* QuickLookFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92A26F64D6F3384BC8C44 /* QuickLookFactory.swift */; };
+		9F0FAE46C66E34D4EB819433 /* NumericTypesConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF42023CE256543D19E71C /* NumericTypesConversions.swift */; };
+		9F3EED1C98CFD78B908BA06D /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE46C42091F4AB70D42922 /* Atomic.swift */; };
+		9FD040C8207616F07D1AC076 /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF130E198E6C1BECFE7DC940 /* AudioDevice.swift */; };
+		A0D829FDECCB650454E55DC1 /* NSDataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54219AC5553B0C715C891710 /* NSDataDetector.swift */; };
+		A4B535DC38D4E1BAD0434DB6 /* QuickLookProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6510C8E6FB8CCB99C2888C /* QuickLookProxyType.swift */; };
+		A5BB66B2EB92519221762E8A /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE511291F9D2723AA0A15B70 /* EdgeInsets.swift */; };
+		A69400F70587C474AAC35706 /* GenericNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DC3E6E6510986AABC99416 /* GenericNotification.swift */; };
+		A7616C1A5673134E746B5E75 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD40CF70B46CB292E8277 /* CGRect.swift */; };
+		A94113AB2B2A1719E64D73BC /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8884C7E7314A2363278915 /* UnsafeMutableAudioBufferListPointer.swift */; };
+		AAAD4E20A19D94B1B253967C /* DefaultInitializerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA05FA577E2D1577271D63B /* DefaultInitializerType.swift */; };
+		AABF6F37CA7AA4D0FC8A5D02 /* AudioObjectUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0F13388E992102F593B942 /* AudioObjectUtility.swift */; };
+		AC5C4B6250ED0D4E57CE8326 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571D79858D1D4073FF76694 /* MainWindowController.swift */; };
+		ADFF4766CD709346857622E2 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8884C7E7314A2363278915 /* UnsafeMutableAudioBufferListPointer.swift */; };
+		AF30295F70F4343E171BE7BC /* SystemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604B8245C61DB523E79A888 /* SystemAppearance.swift */; };
+		AFBBD03ADC0FC332BCD101D6 /* QuickLookProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CB736A94F5B871177A0675 /* QuickLookProxy.swift */; };
+		B00E38D4AFC74543FA9E585A /* CoreAudioSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F56FFB90EA2D98A4000DBB5B /* CoreAudioSDK.cpp */; };
+		B283A2401734F0FFD34F86B3 /* AudioComponentInstantiationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5DD957CC0CCD94E46DEF6 /* AudioComponentInstantiationOptions.swift */; };
+		B34A799E95487908051C2343 /* MediaBufferCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7B5EE851B4D62029DA85 /* MediaBufferCollection.swift */; };
+		B34B53DF66BB659751F86AC8 /* RingBufferTimeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D396F58CA5B37591AEDD25 /* RingBufferTimeBounds.swift */; };
+		B7DD99E9F507E4EF6E7DDF57 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F10434BAC50988D5E2AB2 /* NSLayoutConstraint.swift */; };
+		B849E963049B116C35A2D5F5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8C02AD4B30EE78067FEF1 /* main.swift */; };
+		B97D64F682731B3C003B3EC3 /* QuickLookProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CB736A94F5B871177A0675 /* QuickLookProxy.swift */; };
+		BD9D55D8E3BAD63DE655E27E /* QuickLookProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CB736A94F5B871177A0675 /* QuickLookProxy.swift */; };
+		BD9D920E43B83BDD94A19886 /* CARBPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476862C8BE864015380ED79F /* CARBPerformanceTests.swift */; };
+		C13BF56D0DCA9722DA7C2E39 /* NSDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F12FAEEBE4A58EF29B4452 /* NSDictionary.swift */; };
+		C6BB6AFCE2DA26CEFF1B1D3C /* RingBufferOffsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7E266B8EB0FD9260BF4D4 /* RingBufferOffsets.swift */; };
+		C6DE94EAF5439A6688811A63 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B239E4B2A9446F5E983CF /* AudioComponentDescription.swift */; };
+		C8BE5A6E497F5F553203F801 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567748DB0C6DECA7A5C770B6 /* RingBufferTestsUtility.swift */; };
+		CA2A219411B169C9C90C4A43 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B239E4B2A9446F5E983CF /* AudioComponentDescription.swift */; };
+		CA3D8FEC1D47A50CC181FFE9 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEC977A135F0BEF7FB06 /* RingBuffer.swift */; };
+		CFEA945CAE4248A1271CC1E2 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567748DB0C6DECA7A5C770B6 /* RingBufferTestsUtility.swift */; };
+		D3499DCBC642084FE357E9B5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F488BFB0B05FADF81C7E30B /* View.swift */; };
+		D3B4A1AD5D56C012F5615C18 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B66479104956F52D7930EB /* CALayer.swift */; };
+		D65F0A2BFAF998F559C2519B /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB89796F1F2BB30527A5727 /* MediaBufferList.swift */; };
+		D7361E2AABFC4D3F67A76980 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B009F6048E920DF875EDFA8 /* CGSize.swift */; };
+		D7AC777ADD2405C77ED327F2 /* NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E81391107B892491DAD813E /* NSViewController.swift */; };
+		D960CC6C07D9A322A2E73A23 /* NSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A31AA126E859107E237D /* NSMenu.swift */; };
+		D9B841EE6563DFBBA59D51B2 /* AtomicPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D82C5CA38B7F3F3925FCB /* AtomicPair.swift */; };
+		DED7EDFC1627C7829A1E77D8 /* SuccessReportingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D99024704DD359CE6B642D /* SuccessReportingType.swift */; };
+		DFCC36F0CC60B4D60D809A33 /* AVAudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649C25F41C2A67CE32255D1B /* AVAudioBuffer.swift */; };
+		DFDD9138D42AEC83B846792F /* AVAudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649C25F41C2A67CE32255D1B /* AVAudioBuffer.swift */; };
+		E2A983170F583B4E6D56389A /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEC977A135F0BEF7FB06 /* RingBuffer.swift */; };
+		E44A9F9329CB5EE95CCC8D66 /* QuickLookProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CB736A94F5B871177A0675 /* QuickLookProxy.swift */; };
+		E5DE5479687117F98D5CF67E /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE511291F9D2723AA0A15B70 /* EdgeInsets.swift */; };
+		E71A7F40393716B22EB203BF /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA74D6E69D6D4A38EDCB99E /* CGPoint.swift */; };
+		E739F3CAA244F7D7161DFFB2 /* AudioUnitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1965593E075BCF2F021ECC /* AudioUnitSettings.swift */; };
+		E87192A18BF79585E8E11FAF /* RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC600AEF1AA6EE9B62A270 /* RegEx.swift */; };
+		EAB82E494A797B883812135B /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567748DB0C6DECA7A5C770B6 /* RingBufferTestsUtility.swift */; };
+		EB8EEEF95F278D5D97092A8A /* AVAudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649C25F41C2A67CE32255D1B /* AVAudioBuffer.swift */; };
+		EDE5FD4C8EE64E892CEFB3CE /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CEEAEF9FB72FFEE53FC6CB /* NotificationObserver.swift */; };
+		EE2DE45A8F227E04B03CA51D /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0345589F75946341C15E936B /* CARBPerformanceTests.mm */; };
+		F27FBABDD86F56F3378CA36F /* DefaultInitializerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA05FA577E2D1577271D63B /* DefaultInitializerType.swift */; };
+		F3458DAD6FE89EFBE36924F0 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BAE45123168B9A619AEE1 /* Application.swift */; };
+		F36C1D1E6E9E283DC25A1DA4 /* QuickLookFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92A26F64D6F3384BC8C44 /* QuickLookFactory.swift */; };
+		F574738528C5A7992DBA9A63 /* LayoutPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4730F1BCCC20862533C03 /* LayoutPriority.swift */; };
+		F7351C02F0C77328BB6F4EF7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB91B880A118494069BF8998 /* main.swift */; };
+		F776C56BC8DE2116B6969E36 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B009F6048E920DF875EDFA8 /* CGSize.swift */; };
+		FA08A98C549FDF51A02411B5 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE46C42091F4AB70D42922 /* Atomic.swift */; };
+		FABD60841F99B29F1E071F9F /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0DF8AD532C20AE36AD9DB /* NSAttributedString.swift */; };
+		FBB0DC3A33EED1E9CF8DD093 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B009F6048E920DF875EDFA8 /* CGSize.swift */; };
+		FBE2FF5EF5E54984DE1D59D8 /* DispatchSkipOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80F45DB4851965F859D0F2 /* DispatchSkipOnce.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		805015291D0F722200AE0412 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		80079E711D21D9AA00E93DB3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		801BE5A61F16E3A800806169 /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
-		803A8CE32115EC31006E5472 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		803A8CF12115EC76006E5472 /* AudioObjectUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
-		803A8CF22115EC76006E5472 /* AudioDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
-		803A8D002115ECF6006E5472 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		803A8D022115ED24006E5472 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		803A8D032115ED24006E5472 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		803A8D052115ED24006E5472 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
-		803A8D222115ED50006E5472 /* NSMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMenu.swift; sourceTree = "<group>"; };
-		803A8D232115ED50006E5472 /* NSMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
-		803A8D242115ED50006E5472 /* NSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
-		803A8D252115ED50006E5472 /* NSControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSControl.swift; sourceTree = "<group>"; };
-		803A8D2A2115ED60006E5472 /* NSWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
-		803A8D2B2115ED60006E5472 /* NSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
-		803A8D332115ED81006E5472 /* DispatchUntil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchUntil.swift; sourceTree = "<group>"; };
-		803A8D712115EDB5006E5472 /* NumericTypesConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
-		803A8DD12115EDEE006E5472 /* ObjCAssociation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjCAssociation.swift; sourceTree = "<group>"; };
-		803A8DD52115EE25006E5472 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
-		803A8DD92115EE25006E5472 /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
-		803A8DDB2115EE25006E5472 /* AudioBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBuffer.swift; sourceTree = "<group>"; };
-		803A8DE72115EEE2006E5472 /* GenericWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWindowController.swift; sourceTree = "<group>"; };
-		803A8DEE2115EF04006E5472 /* BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
-		8040365C201D58D30002412D /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		8040365D201D58D30002412D /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
-		8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBufferList.swift; sourceTree = "<group>"; };
-		8050152B1D0F722200AE0412 /* CARBMeasure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CARBMeasure; sourceTree = BUILT_PRODUCTS_DIR; };
-		805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsSwift.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		805015561D109FBB00AE0412 /* CARBTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBTests.mm; sourceTree = "<group>"; };
-		8050155D1D10A06300AE0412 /* CAAtomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAtomic.h; sourceTree = "<group>"; };
-		8050155E1D10A06300AE0412 /* CAAutoDisposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAutoDisposer.h; sourceTree = "<group>"; };
-		8050155F1D10A06300AE0412 /* CABitOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CABitOperations.h; sourceTree = "<group>"; };
-		805015601D10A06300AE0412 /* CARingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CARingBuffer.cpp; sourceTree = "<group>"; };
-		805015611D10A06300AE0412 /* CARingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARingBuffer.h; sourceTree = "<group>"; };
-		8050DAE51D19D785007216D2 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
-		805671E81F3910E000D2C5B5 /* MediaBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBuffer.swift; sourceTree = "<group>"; };
-		8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
-		8068878720308A6800E70134 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		8068878920308A9A00E70134 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		8068878B20308B8200E70134 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
-		8068878F20308D3900E70134 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		80A652162130129D00D3B156 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
-		80A652172130129D00D3B156 /* RingBufferTimeBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBufferTimeBounds.swift; sourceTree = "<group>"; };
-		80A652182130129D00D3B156 /* RingBufferOffsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBufferOffsets.swift; sourceTree = "<group>"; };
-		80A65224213012CB00D3B156 /* RingBufferTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBufferTestsUtility.swift; sourceTree = "<group>"; };
-		80A6523F2130133000D3B156 /* QuickLookFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookFactory.swift; sourceTree = "<group>"; };
-		80A652402130133000D3B156 /* QuickLookProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookProxy.swift; sourceTree = "<group>"; };
-		80A652472130137900D3B156 /* RuntimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeInfo.swift; sourceTree = "<group>"; };
-		80A65257213013C200D3B156 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
-		80A6525F213013E200D3B156 /* CGSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
-		80A652622130141400D3B156 /* SystemAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAppearance.swift; sourceTree = "<group>"; };
-		80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		80B12CE91D21AD2E00B2FE2A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		80B12CF41D21ADAC00B2FE2A /* PlayThroughEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayThroughEngine.swift; sourceTree = "<group>"; };
-		80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
-		80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARBTestsCpp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		01D396F58CA5B37591AEDD25 /* RingBufferTimeBounds.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RingBufferTimeBounds.swift; sourceTree = "<group>"; };
+		0345589F75946341C15E936B /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
+		058F9C8D0B9DC504DD11E744 /* Dictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		07FEF944AC7312CED7BEE3BB /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		0B8DAEF1E43D05EECBEC5C03 /* NSRegularExpression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSRegularExpression.swift; sourceTree = "<group>"; };
+		0D80F45DB4851965F859D0F2 /* DispatchSkipOnce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DispatchSkipOnce.swift; sourceTree = "<group>"; };
+		0F488BFB0B05FADF81C7E30B /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		1260C149FBA7E65F36235348 /* DispatchOnce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DispatchOnce.swift; sourceTree = "<group>"; };
+		12FAB079D044B5FACA9CE62E /* NSButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
+		1B0F13388E992102F593B942 /* AudioObjectUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
+		1E81391107B892491DAD813E /* NSViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSViewController.swift; sourceTree = "<group>"; };
+		222F5F98D15478DE3B92B165 /* CARBTests.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = CARBTests.mm; sourceTree = "<group>"; };
+		25345D121BE078B6FC193CBF /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
+		2A1E548C2799662B3C24805D /* ObjCAssociation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ObjCAssociation.swift; sourceTree = "<group>"; };
+		2C7ECAF85BC30FDB7EEDF423 /* Scanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		2C9FD40CF70B46CB292E8277 /* CGRect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		33CB736A94F5B871177A0675 /* QuickLookProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickLookProxy.swift; sourceTree = "<group>"; };
+		342703F023FF963D12BA9058 /* Tests-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Tests-macOS.xcconfig"; sourceTree = "<group>"; };
+		3612D48FC50A519AED8C1D94 /* NSButton.BezelStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSButton.BezelStyle.swift; sourceTree = "<group>"; };
+		371F2E6EE970002440417AE5 /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A28FAD1877E4614CB6E6786 /* CARBMeasure. */ = {isa = PBXFileReference; includeInIndex = 0; path = CARBMeasure.; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C0FF7BCC6DB76AB5E9F9405 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		3DAAFAD2718D42581C098174 /* NSMenuItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
+		3EFC600AEF1AA6EE9B62A270 /* RegEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegEx.swift; sourceTree = "<group>"; };
+		4497F2C6DC3FA15B5FEB004D /* BuildInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
+		476862C8BE864015380ED79F /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
+		47CEEAEF9FB72FFEE53FC6CB /* NotificationObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
+		48ADD004F52F63888B4DFEBE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48DC3E6E6510986AABC99416 /* GenericNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenericNotification.swift; sourceTree = "<group>"; };
+		4A2CE2CE85D551424DD5EB99 /* NSControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSControl.swift; sourceTree = "<group>"; };
+		4C4BB55E0E813891E87498C8 /* MainMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		532E7B5EE851B4D62029DA85 /* MediaBufferCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MediaBufferCollection.swift; sourceTree = "<group>"; };
+		54219AC5553B0C715C891710 /* NSDataDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSDataDetector.swift; sourceTree = "<group>"; };
+		567748DB0C6DECA7A5C770B6 /* RingBufferTestsUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RingBufferTestsUtility.swift; sourceTree = "<group>"; };
+		5DB648BFB9CB239DFE34D2A7 /* AudioComponentFlags.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioComponentFlags.swift; sourceTree = "<group>"; };
+		5F33B6BF48D5AC822C2ACB0A /* FailureReporting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FailureReporting.swift; sourceTree = "<group>"; };
+		60D99024704DD359CE6B642D /* SuccessReportingType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuccessReportingType.swift; sourceTree = "<group>"; };
+		63D3A0124BDE1B6B40283FC7 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		649C25F41C2A67CE32255D1B /* AVAudioBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AVAudioBuffer.swift; sourceTree = "<group>"; };
+		687CB42A009694941D4BE851 /* NSLayoutYAxisAnchor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSLayoutYAxisAnchor.swift; sourceTree = "<group>"; };
+		6AFC5B8187999381C6011190 /* SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B009F6048E920DF875EDFA8 /* CGSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		70F2E4EBB3F09329E497C55A /* NSWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
+		77F12FAEEBE4A58EF29B4452 /* NSDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSDictionary.swift; sourceTree = "<group>"; };
+		7C1965593E075BCF2F021ECC /* AudioUnitSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
+		7C1BAE45123168B9A619AEE1 /* Application.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		8384664886210BE616F79E17 /* DispatchUntil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DispatchUntil.swift; sourceTree = "<group>"; };
+		87DF42023CE256543D19E71C /* NumericTypesConversions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
+		89AF6819F5B679A08FD8E9AC /* App-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "App-macOS.xcconfig"; sourceTree = "<group>"; };
+		8B1D595C9123EA57A864CF3E /* Tool-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Tool-macOS.xcconfig"; sourceTree = "<group>"; };
+		8B69AEC977A135F0BEF7FB06 /* RingBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		9470477FA2E7F47D2D800B24 /* MainViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		972B239E4B2A9446F5E983CF /* AudioComponentDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
+		99F5FC9515C08BA786F5012A /* MediaBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MediaBuffer.swift; sourceTree = "<group>"; };
+		9BB4730F1BCCC20862533C03 /* LayoutPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutPriority.swift; sourceTree = "<group>"; };
+		9BB89796F1F2BB30527A5727 /* MediaBufferList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MediaBufferList.swift; sourceTree = "<group>"; };
+		A0FE46C42091F4AB70D42922 /* Atomic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
+		A39D86572C5C4567C719C650 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		A3A5DD957CC0CCD94E46DEF6 /* AudioComponentInstantiationOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioComponentInstantiationOptions.swift; sourceTree = "<group>"; };
+		A3C2056F74A244B539485FDC /* PlayThroughEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayThroughEngine.swift; sourceTree = "<group>"; };
+		A604B8245C61DB523E79A888 /* SystemAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemAppearance.swift; sourceTree = "<group>"; };
+		A9D1A31AA126E859107E237D /* NSMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSMenu.swift; sourceTree = "<group>"; };
+		B081FDB226476A85528EB62A /* ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B3C11E2112C55CA584D4384C /* Window.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		C68E64631F4319C575050706 /* String.Index.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.Index.swift; sourceTree = "<group>"; };
+		CCF0B7009EEF9E2D933331C1 /* LayoutConstraintDynamics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutConstraintDynamics.swift; sourceTree = "<group>"; };
+		CEA74D6E69D6D4A38EDCB99E /* CGPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		D02D82C5CA38B7F3F3925FCB /* AtomicPair.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtomicPair.swift; sourceTree = "<group>"; };
+		D430679FA56E95F8AB6B882D /* NSView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
+		D98F10434BAC50988D5E2AB2 /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
+		DAC7E266B8EB0FD9260BF4D4 /* RingBufferOffsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RingBufferOffsets.swift; sourceTree = "<group>"; };
+		DEC30F6B638B7EE14679A687 /* LayoutFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutFormatParser.swift; sourceTree = "<group>"; };
+		DF0D3CAA3BF60ACE0D070ACB /* AudioBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioBuffer.swift; sourceTree = "<group>"; };
+		DF6510C8E6FB8CCB99C2888C /* QuickLookProxyType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickLookProxyType.swift; sourceTree = "<group>"; };
+		E1A0DF8AD532C20AE36AD9DB /* NSAttributedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
+		E36F643CDAD8AD5C84C9FF3F /* Project.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		E4B66479104956F52D7930EB /* CALayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		E571D79858D1D4073FF76694 /* MainWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		E5BBEDA8DE2D09A4B4FB81EB /* CppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E713808B8429251D5FBB42AA /* AVAudioPCMBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AVAudioPCMBuffer.swift; sourceTree = "<group>"; };
+		EBA05FA577E2D1577271D63B /* DefaultInitializerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultInitializerType.swift; sourceTree = "<group>"; };
+		EE511291F9D2723AA0A15B70 /* EdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		EF130E198E6C1BECFE7DC940 /* AudioDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
+		F349EC0E2C54398C71057222 /* WindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		F49A9EBEAF4E2BE7ADEAED2F /* Menu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		F56FFB90EA2D98A4000DBB5B /* CoreAudioSDK.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = CoreAudioSDK.cpp; sourceTree = "<group>"; };
+		F6E8C02AD4B30EE78067FEF1 /* main.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F6E8E701A03C107273AB3A1C /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		FB91B880A118494069BF8998 /* main.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FDF92A26F64D6F3384BC8C44 /* QuickLookFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickLookFactory.swift; sourceTree = "<group>"; };
+		FE8884C7E7314A2363278915 /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
+		FFFD05BFA13CE5787A3580C5 /* RuntimeInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RuntimeInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		805015281D0F722200AE0412 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8050153D1D1089EA00AE0412 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8066E0DD1D10A53C00D32B44 /* AVFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80B12CE21D21AD2E00B2FE2A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80C9CFAA1D0CC6AF00960F60 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80C9CFCC1D0CD1B200960F60 /* AVFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
-		027ECCF5CF88C6C62E35ED54 /* WL */ = {
+		0557E8D8D1E193378C4DB4D6 /* os */ = {
 			isa = PBXGroup;
 			children = (
-				B6E8BBAAC83C21078FCB1F88 /* AppKit */,
-				B0F3332B5717C431EB5EED1A /* Core */,
-				378E674A9E556B5ED23D3190 /* Foundation */,
-				9DBB58F0D47FA197BD3BC342 /* Media */,
-				80A65222213012CB00D3B156 /* MediaTests */,
+				88D59D88AEC4EB39053975C6 /* log */,
 			);
-			path = WL;
+			name = os;
+			path = os;
 			sourceTree = "<group>";
 		};
-		195E57BC596844280128678B /* Extensions */ = {
+		09F2EB7D25DA5CD342D1A130 /* ObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				803A8D242115ED50006E5472 /* NSButton.swift */,
-				803A8D252115ED50006E5472 /* NSControl.swift */,
-				803A8D222115ED50006E5472 /* NSMenu.swift */,
-				803A8D232115ED50006E5472 /* NSMenuItem.swift */,
-				803A8D2B2115ED60006E5472 /* NSView.swift */,
-				803A8D2A2115ED60006E5472 /* NSWindow.swift */,
+				2A1E548C2799662B3C24805D /* ObjCAssociation.swift */,
 			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		1E507C9954087C306A09AA54 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				8040365C201D58D30002412D /* Project.xcconfig */,
-				8040365D201D58D30002412D /* Version.xcconfig */,
-			);
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		26DCF7DAAEC6765948F6FB94 /* CAPlayThrough */ = {
-			isa = PBXGroup;
-			children = (
-				8068878920308A9A00E70134 /* Application.swift */,
-				8068878B20308B8200E70134 /* MainMenu.swift */,
-				80B12CE91D21AD2E00B2FE2A /* MainViewController.swift */,
-				8068878F20308D3900E70134 /* MainWindowController.swift */,
-				80B12CF41D21ADAC00B2FE2A /* PlayThroughEngine.swift */,
-				8068878720308A6800E70134 /* main.swift */,
-			);
-			path = CAPlayThrough;
-			sourceTree = "<group>";
-		};
-		378E674A9E556B5ED23D3190 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				5DCC63B8DDF3E3095693ADE9 /* Dispatch */,
-				3E06698B6CA537A52127E385 /* ObjectiveC */,
-				88AD703BF3DC77E8B6109E84 /* Sources */,
-				80A6523E2130133000D3B156 /* Testability */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		3E06698B6CA537A52127E385 /* ObjectiveC */ = {
-			isa = PBXGroup;
-			children = (
-				803A8DD12115EDEE006E5472 /* ObjCAssociation.swift */,
-			);
+			name = ObjectiveC;
 			path = ObjectiveC;
 			sourceTree = "<group>";
 		};
-		42E2C9202D2938F0F7B22BAE /* Sources */ = {
+		1D2025C8902DD18ACA044985 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				803A8D002115ECF6006E5472 /* Menu.swift */,
-				80A652622130141400D3B156 /* SystemAppearance.swift */,
+				EF130E198E6C1BECFE7DC940 /* AudioDevice.swift */,
+				1B0F13388E992102F593B942 /* AudioObjectUtility.swift */,
 			);
+			name = Media;
+			path = Media;
+			sourceTree = "<group>";
+		};
+		21DABAC187F5F6C9115997FE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				38A463BD9CE91B5DE98FBC2E /* Concurrency */,
+				CBCF438CBA42F0382B2619EF /* Converters */,
+			);
+			name = Core;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		224D50A2C22C918B17DE0945 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DDB2A268CC21C1F58EF257F4 /* CAPlayThrough */,
+				CC50657E23D51418B70919FB /* CARBMeasure */,
+			);
+			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		5DCC63B8DDF3E3095693ADE9 /* Dispatch */ = {
+		2FDC00970FE1F8B9793F7867 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				803A8D332115ED81006E5472 /* DispatchUntil.swift */,
+				30182A55F1879B281C52736D /* Extensions */,
+				401E0D6600F6F67BC9BD3725 /* Layout */,
+				5914BC0DE244F655B978450D /* Reporting */,
 			);
-			path = Dispatch;
+			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
-		6923B6B83D1D91B688486463 /* Extensions */ = {
+		30182A55F1879B281C52736D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				803A8DDB2115EE25006E5472 /* AudioBuffer.swift */,
-				803A8DD52115EE25006E5472 /* AudioComponentDescription.swift */,
-				803A8DD92115EE25006E5472 /* UnsafeMutableAudioBufferListPointer.swift */,
+				E4B66479104956F52D7930EB /* CALayer.swift */,
+				9BB4730F1BCCC20862533C03 /* LayoutPriority.swift */,
+				D98F10434BAC50988D5E2AB2 /* NSLayoutConstraint.swift */,
+				687CB42A009694941D4BE851 /* NSLayoutYAxisAnchor.swift */,
 			);
+			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		6930D8064CE9E61D7205C9C8 /* Sources */ = {
+		38A463BD9CE91B5DE98FBC2E /* Concurrency */ = {
 			isa = PBXGroup;
 			children = (
-				80B12D001D21AFD100B2FE2A /* AudioUnitSettings.swift */,
-				805671E81F3910E000D2C5B5 /* MediaBuffer.swift */,
-				8046F3E81D821FDC007F25E4 /* MediaBufferList.swift */,
-				80A652162130129D00D3B156 /* RingBuffer.swift */,
-				80A652182130129D00D3B156 /* RingBufferOffsets.swift */,
-				80A652172130129D00D3B156 /* RingBufferTimeBounds.swift */,
+				A0FE46C42091F4AB70D42922 /* Atomic.swift */,
+				D02D82C5CA38B7F3F3925FCB /* AtomicPair.swift */,
 			);
+			name = Concurrency;
+			path = Concurrency;
+			sourceTree = "<group>";
+		};
+		401E0D6600F6F67BC9BD3725 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				F6E8E701A03C107273AB3A1C /* LayoutConstraint.swift */,
+				CCF0B7009EEF9E2D933331C1 /* LayoutConstraintDynamics.swift */,
+				DEC30F6B638B7EE14679A687 /* LayoutFormatParser.swift */,
+			);
+			name = Layout;
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		44AF4D830C011DB693B5DDA5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7C1965593E075BCF2F021ECC /* AudioUnitSettings.swift */,
+				EBA05FA577E2D1577271D63B /* DefaultInitializerType.swift */,
+				99F5FC9515C08BA786F5012A /* MediaBuffer.swift */,
+				532E7B5EE851B4D62029DA85 /* MediaBufferCollection.swift */,
+				9BB89796F1F2BB30527A5727 /* MediaBufferList.swift */,
+				8B69AEC977A135F0BEF7FB06 /* RingBuffer.swift */,
+				DAC7E266B8EB0FD9260BF4D4 /* RingBufferOffsets.swift */,
+				01D396F58CA5B37591AEDD25 /* RingBufferTimeBounds.swift */,
+			);
+			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		6A0A30A9247A9D9D1FC33949 /* Converters */ = {
+		48CFB17120B7D951E09FF50C /* MediaTests */ = {
 			isa = PBXGroup;
 			children = (
-				803A8D712115EDB5006E5472 /* NumericTypesConversions.swift */,
+				B51A237997C3F1192EACB300 /* Types */,
 			);
-			path = Converters;
-			sourceTree = "<group>";
-		};
-		80A65222213012CB00D3B156 /* MediaTests */ = {
-			isa = PBXGroup;
-			children = (
-				80A65223213012CB00D3B156 /* Types */,
-			);
+			name = MediaTests;
 			path = MediaTests;
 			sourceTree = "<group>";
 		};
-		80A65223213012CB00D3B156 /* Types */ = {
+		4B5A7E3F43DC39CF33461CFA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				80A65224213012CB00D3B156 /* RingBufferTestsUtility.swift */,
+				CEA74D6E69D6D4A38EDCB99E /* CGPoint.swift */,
+				2C9FD40CF70B46CB292E8277 /* CGRect.swift */,
+				6B009F6048E920DF875EDFA8 /* CGSize.swift */,
+				058F9C8D0B9DC504DD11E744 /* Dictionary.swift */,
+				EE511291F9D2723AA0A15B70 /* EdgeInsets.swift */,
+				E1A0DF8AD532C20AE36AD9DB /* NSAttributedString.swift */,
+				77F12FAEEBE4A58EF29B4452 /* NSDictionary.swift */,
+				25345D121BE078B6FC193CBF /* NSMutableAttributedString.swift */,
+				2C7ECAF85BC30FDB7EEDF423 /* Scanner.swift */,
+				63D3A0124BDE1B6B40283FC7 /* String.swift */,
+				C68E64631F4319C575050706 /* String.Index.swift */,
 			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		80A6523E2130133000D3B156 /* Testability */ = {
-			isa = PBXGroup;
-			children = (
-				80A6523F2130133000D3B156 /* QuickLookFactory.swift */,
-				80A652402130133000D3B156 /* QuickLookProxy.swift */,
-			);
-			path = Testability;
-			sourceTree = "<group>";
-		};
-		80A65249213013C200D3B156 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				80A65257213013C200D3B156 /* CGPoint.swift */,
-				80A6525F213013E200D3B156 /* CGSize.swift */,
-			);
+			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		80C9CF991D0CC6AF00960F60 = {
+		4EEB35833C18DDD773C73F48 /* NSRegularExpression */ = {
 			isa = PBXGroup;
 			children = (
-				1E507C9954087C306A09AA54 /* Configuration */,
-				FFED6805A4FF119C92057DE3 /* Sources */,
-				FEE674AF51F6441169E7DA67 /* Tests */,
-				996B92B2E79D6964CF1F200F /* Vendor */,
-				80C9CFCD1D0D713900960F60 /* Frameworks */,
-				80C9CFA41D0CC6AF00960F60 /* Products */,
+				54219AC5553B0C715C891710 /* NSDataDetector.swift */,
+				0B8DAEF1E43D05EECBEC5C03 /* NSRegularExpression.swift */,
+				3EFC600AEF1AA6EE9B62A270 /* RegEx.swift */,
+			);
+			name = NSRegularExpression;
+			path = NSRegularExpression;
+			sourceTree = "<group>";
+		};
+		54B9D5D0CA05A83B3D976F4E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4497F2C6DC3FA15B5FEB004D /* BuildInfo.swift */,
+				FFFD05BFA13CE5787A3580C5 /* RuntimeInfo.swift */,
+			);
+			name = Sources;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		560CBA3D4BE2E7027F437DAA /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				61DF826755F85F4C48C6EC2A /* Dispatch */,
+				4B5A7E3F43DC39CF33461CFA /* Extensions */,
+				4EEB35833C18DDD773C73F48 /* NSRegularExpression */,
+				CCD0A9D47B39463DF617FC96 /* Notification */,
+				09F2EB7D25DA5CD342D1A130 /* ObjectiveC */,
+				54B9D5D0CA05A83B3D976F4E /* Sources */,
+				B1D201D118F343EB62402D80 /* Testability */,
+				0557E8D8D1E193378C4DB4D6 /* os */,
+			);
+			name = Foundation;
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		59090E72C9E273291F7D7665 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				649C25F41C2A67CE32255D1B /* AVAudioBuffer.swift */,
+				E713808B8429251D5FBB42AA /* AVAudioPCMBuffer.swift */,
+				DF0D3CAA3BF60ACE0D070ACB /* AudioBuffer.swift */,
+				972B239E4B2A9446F5E983CF /* AudioComponentDescription.swift */,
+				5DB648BFB9CB239DFE34D2A7 /* AudioComponentFlags.swift */,
+				A3A5DD957CC0CCD94E46DEF6 /* AudioComponentInstantiationOptions.swift */,
+				FE8884C7E7314A2363278915 /* UnsafeMutableAudioBufferListPointer.swift */,
+			);
+			name = Extensions;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5914BC0DE244F655B978450D /* Reporting */ = {
+			isa = PBXGroup;
+			children = (
+				5F33B6BF48D5AC822C2ACB0A /* FailureReporting.swift */,
+				60D99024704DD359CE6B642D /* SuccessReportingType.swift */,
+			);
+			name = Reporting;
+			path = Reporting;
+			sourceTree = "<group>";
+		};
+		5F863E53258C7D7E4D9599CE /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				E36F643CDAD8AD5C84C9FF3F /* Project.xcconfig */,
+			);
+			name = Configuration;
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		61DF826755F85F4C48C6EC2A /* Dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				1260C149FBA7E65F36235348 /* DispatchOnce.swift */,
+				0D80F45DB4851965F859D0F2 /* DispatchSkipOnce.swift */,
+				8384664886210BE616F79E17 /* DispatchUntil.swift */,
+			);
+			name = Dispatch;
+			path = Dispatch;
+			sourceTree = "<group>";
+		};
+		88D59D88AEC4EB39053975C6 /* log */ = {
+			isa = PBXGroup;
+			children = (
+				A39D86572C5C4567C719C650 /* Log.swift */,
+			);
+			name = log;
+			path = log;
+			sourceTree = "<group>";
+		};
+		8B95FAF02E87D37DD49A55B7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E22E40C4F7E041B314981EBE /* C++ */,
+				9B95EB60557850F1C4E6DD64 /* Swift */,
+			);
+			name = Tests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9B95EB60557850F1C4E6DD64 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				476862C8BE864015380ED79F /* CARBPerformanceTests.swift */,
+			);
+			name = Swift;
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		9BC3D43CE8B8490C8671D7DB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F49A9EBEAF4E2BE7ADEAED2F /* Menu.swift */,
+				A604B8245C61DB523E79A888 /* SystemAppearance.swift */,
+			);
+			name = Sources;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9F2961CA49D459CD7A7AA931 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				F66D1E08E0975FCEA33669CE /* WL */,
+			);
+			name = Vendor;
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		AA741BC981E1F8E4D4EACE2B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				89AF6819F5B679A08FD8E9AC /* App-macOS.xcconfig */,
+				342703F023FF963D12BA9058 /* Tests-macOS.xcconfig */,
+				8B1D595C9123EA57A864CF3E /* Tool-macOS.xcconfig */,
+			);
+			name = Configuration;
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		B186925C6150AB824A3B5FF2 = {
+			isa = PBXGroup;
+			children = (
+				5F863E53258C7D7E4D9599CE /* Configuration */,
+				EA7FFA17F3872D74C100D8A4 /* Products */,
+				224D50A2C22C918B17DE0945 /* Sources */,
+				8B95FAF02E87D37DD49A55B7 /* Tests */,
+				9F2961CA49D459CD7A7AA931 /* Vendor */,
+				8B95FAF02E87D37DD49A55B7 /* Tests */,
+				9F2961CA49D459CD7A7AA931 /* Vendor */,
+				EA7FFA17F3872D74C100D8A4 /* Products */,
 			);
 			sourceTree = "<group>";
-			usesTabs = 0;
 		};
-		80C9CFA41D0CC6AF00960F60 /* Products */ = {
+		B1D201D118F343EB62402D80 /* Testability */ = {
 			isa = PBXGroup;
 			children = (
-				8050152B1D0F722200AE0412 /* CARBMeasure */,
-				80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */,
-				80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */,
-				805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */,
+				FDF92A26F64D6F3384BC8C44 /* QuickLookFactory.swift */,
+				33CB736A94F5B871177A0675 /* QuickLookProxy.swift */,
+				DF6510C8E6FB8CCB99C2888C /* QuickLookProxyType.swift */,
+			);
+			name = Testability;
+			path = Testability;
+			sourceTree = "<group>";
+		};
+		B51A237997C3F1192EACB300 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				567748DB0C6DECA7A5C770B6 /* RingBufferTestsUtility.swift */,
+			);
+			name = Types;
+			path = Types;
+			sourceTree = "<group>";
+		};
+		C1BBAD840E5554656958313F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AA741BC981E1F8E4D4EACE2B /* Configuration */,
+				07FEF944AC7312CED7BEE3BB /* Logger.swift */,
+			);
+			name = Shared;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C74FD90F6BF665645E4B30F9 /* AppKit */ = {
+			isa = PBXGroup;
+			children = (
+				FD0052CEBCEF95F1C4F75AE6 /* Extensions */,
+				1D2025C8902DD18ACA044985 /* Media */,
+				CD91FD69BB3E2A9F04F56FEE /* Reusable */,
+				9BC3D43CE8B8490C8671D7DB /* Sources */,
+			);
+			name = AppKit;
+			path = AppKit;
+			sourceTree = "<group>";
+		};
+		CBCF438CBA42F0382B2619EF /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				87DF42023CE256543D19E71C /* NumericTypesConversions.swift */,
+			);
+			name = Converters;
+			path = Converters;
+			sourceTree = "<group>";
+		};
+		CC50657E23D51418B70919FB /* CARBMeasure */ = {
+			isa = PBXGroup;
+			children = (
+				F6E8C02AD4B30EE78067FEF1 /* main.swift */,
+			);
+			name = CARBMeasure;
+			path = CARBMeasure;
+			sourceTree = "<group>";
+		};
+		CCD0A9D47B39463DF617FC96 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				48DC3E6E6510986AABC99416 /* GenericNotification.swift */,
+				47CEEAEF9FB72FFEE53FC6CB /* NotificationObserver.swift */,
+			);
+			name = Notification;
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		CD91FD69BB3E2A9F04F56FEE /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				3C0FF7BCC6DB76AB5E9F9405 /* Button.swift */,
+				0F488BFB0B05FADF81C7E30B /* View.swift */,
+				B081FDB226476A85528EB62A /* ViewController.swift */,
+				B3C11E2112C55CA584D4384C /* Window.swift */,
+				F349EC0E2C54398C71057222 /* WindowController.swift */,
+			);
+			name = Reusable;
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		DDB2A268CC21C1F58EF257F4 /* CAPlayThrough */ = {
+			isa = PBXGroup;
+			children = (
+				48ADD004F52F63888B4DFEBE /* Info.plist */,
+				7C1BAE45123168B9A619AEE1 /* Application.swift */,
+				4C4BB55E0E813891E87498C8 /* MainMenu.swift */,
+				9470477FA2E7F47D2D800B24 /* MainViewController.swift */,
+				E571D79858D1D4073FF76694 /* MainWindowController.swift */,
+				A3C2056F74A244B539485FDC /* PlayThroughEngine.swift */,
+				FB91B880A118494069BF8998 /* main.swift */,
+			);
+			name = CAPlayThrough;
+			path = CAPlayThrough;
+			sourceTree = "<group>";
+		};
+		E22E40C4F7E041B314981EBE /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				F56FFB90EA2D98A4000DBB5B /* CoreAudioSDK.cpp */,
+				0345589F75946341C15E936B /* CARBPerformanceTests.mm */,
+				222F5F98D15478DE3B92B165 /* CARBTests.mm */,
+			);
+			name = "C++";
+			path = "C++";
+			sourceTree = "<group>";
+		};
+		EA7FFA17F3872D74C100D8A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A28FAD1877E4614CB6E6786 /* CARBMeasure. */,
+				371F2E6EE970002440417AE5 /* CAPlayThrough.app */,
+				E5BBEDA8DE2D09A4B4FB81EB /* CppTests.xctest */,
+				6AFC5B8187999381C6011190 /* SwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		80C9CFCD1D0D713900960F60 /* Frameworks */ = {
+		EB87DC646FCEF65FB11BB8EF /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				80C9CFCB1D0CD1B200960F60 /* AVFoundation.framework */,
+				59090E72C9E273291F7D7665 /* Extensions */,
+				44AF4D830C011DB693B5DDA5 /* Sources */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		88AD703BF3DC77E8B6109E84 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				803A8DEE2115EF04006E5472 /* BuildInfo.swift */,
-				80A652472130137900D3B156 /* RuntimeInfo.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		996B92B2E79D6964CF1F200F /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				DA0EFFFA873603684B0C7309 /* CoreAudio */,
-				027ECCF5CF88C6C62E35ED54 /* WL */,
-				8050DAE51D19D785007216D2 /* Readme.txt */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		9DBB58F0D47FA197BD3BC342 /* Media */ = {
-			isa = PBXGroup;
-			children = (
-				6923B6B83D1D91B688486463 /* Extensions */,
-				6930D8064CE9E61D7205C9C8 /* Sources */,
-			);
+			name = Media;
 			path = Media;
 			sourceTree = "<group>";
 		};
-		B0F3332B5717C431EB5EED1A /* Core */ = {
+		F66D1E08E0975FCEA33669CE /* WL */ = {
 			isa = PBXGroup;
 			children = (
-				6A0A30A9247A9D9D1FC33949 /* Converters */,
-				80A65249213013C200D3B156 /* Extensions */,
+				C74FD90F6BF665645E4B30F9 /* AppKit */,
+				21DABAC187F5F6C9115997FE /* Core */,
+				560CBA3D4BE2E7027F437DAA /* Foundation */,
+				EB87DC646FCEF65FB11BB8EF /* Media */,
+				48CFB17120B7D951E09FF50C /* MediaTests */,
+				C1BBAD840E5554656958313F /* Shared */,
+				2FDC00970FE1F8B9793F7867 /* UI */,
 			);
-			path = Core;
+			path = WL;
 			sourceTree = "<group>";
 		};
-		B6E8BBAAC83C21078FCB1F88 /* AppKit */ = {
+		FD0052CEBCEF95F1C4F75AE6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				195E57BC596844280128678B /* Extensions */,
-				BEBBEF279A8A30C86EA66C63 /* Media */,
-				C427CE5DFF8646BE2B1CC9EB /* Reusable */,
-				42E2C9202D2938F0F7B22BAE /* Sources */,
+				12FAB079D044B5FACA9CE62E /* NSButton.swift */,
+				3612D48FC50A519AED8C1D94 /* NSButton.BezelStyle.swift */,
+				4A2CE2CE85D551424DD5EB99 /* NSControl.swift */,
+				A9D1A31AA126E859107E237D /* NSMenu.swift */,
+				3DAAFAD2718D42581C098174 /* NSMenuItem.swift */,
+				D430679FA56E95F8AB6B882D /* NSView.swift */,
+				1E81391107B892491DAD813E /* NSViewController.swift */,
+				70F2E4EBB3F09329E497C55A /* NSWindow.swift */,
 			);
-			path = AppKit;
-			sourceTree = "<group>";
-		};
-		BEBBEF279A8A30C86EA66C63 /* Media */ = {
-			isa = PBXGroup;
-			children = (
-				803A8CF22115EC76006E5472 /* AudioDevice.swift */,
-				803A8CF12115EC76006E5472 /* AudioObjectUtility.swift */,
-			);
-			path = Media;
-			sourceTree = "<group>";
-		};
-		C427CE5DFF8646BE2B1CC9EB /* Reusable */ = {
-			isa = PBXGroup;
-			children = (
-				803A8CE32115EC31006E5472 /* Button.swift */,
-				803A8DE72115EEE2006E5472 /* GenericWindowController.swift */,
-				803A8D032115ED24006E5472 /* View.swift */,
-				803A8D022115ED24006E5472 /* ViewController.swift */,
-				803A8D052115ED24006E5472 /* Window.swift */,
-			);
-			path = Reusable;
-			sourceTree = "<group>";
-		};
-		D8456B395133FD9EABC1418C /* PublicUtility */ = {
-			isa = PBXGroup;
-			children = (
-				805015601D10A06300AE0412 /* CARingBuffer.cpp */,
-				8050155D1D10A06300AE0412 /* CAAtomic.h */,
-				8050155E1D10A06300AE0412 /* CAAutoDisposer.h */,
-				8050155F1D10A06300AE0412 /* CABitOperations.h */,
-				805015611D10A06300AE0412 /* CARingBuffer.h */,
-			);
-			path = PublicUtility;
-			sourceTree = "<group>";
-		};
-		DA0EFFFA873603684B0C7309 /* CoreAudio */ = {
-			isa = PBXGroup;
-			children = (
-				D8456B395133FD9EABC1418C /* PublicUtility */,
-			);
-			path = CoreAudio;
-			sourceTree = "<group>";
-		};
-		DDE401041C4E1D0A2C69A65B /* CARBMeasure */ = {
-			isa = PBXGroup;
-			children = (
-				80079E711D21D9AA00E93DB3 /* main.swift */,
-			);
-			path = CARBMeasure;
-			sourceTree = "<group>";
-		};
-		FEE674AF51F6441169E7DA67 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				8066E0E11D10A77900D32B44 /* CARBPerformanceTests.mm */,
-				805015561D109FBB00AE0412 /* CARBTests.mm */,
-				801BE5A61F16E3A800806169 /* CARBPerformanceTests.swift */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		FFED6805A4FF119C92057DE3 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				26DCF7DAAEC6765948F6FB94 /* CAPlayThrough */,
-				DDE401041C4E1D0A2C69A65B /* CARBMeasure */,
-			);
-			path = Sources;
+			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8050152A1D0F722200AE0412 /* CARBMeasure */ = {
+		17467CF9230680B2E673DB7C /* SwiftTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8050152F1D0F722200AE0412 /* Build configuration list for PBXNativeTarget "CARBMeasure" */;
+			buildConfigurationList = C903E10DB09B088C28A02A80 /* Build configuration list for PBXNativeTarget "SwiftTests" */;
 			buildPhases = (
-				8046F3F11D83701E007F25E4 /* Run Script: Pre-Build */,
-				805015271D0F722200AE0412 /* Sources */,
-				805015281D0F722200AE0412 /* Frameworks */,
-				805015291D0F722200AE0412 /* CopyFiles */,
+				ADEDEB0BEAC85F7B6C9A3021 /* Run Script: Verify */,
+				685693702FA8429060DE2E1C /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CARBMeasure;
-			productName = CARingBufferMeasure;
-			productReference = 8050152B1D0F722200AE0412 /* CARBMeasure */;
-			productType = "com.apple.product-type.tool";
-		};
-		8050153F1D1089EA00AE0412 /* CARBTestsSwift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 805015451D1089EA00AE0412 /* Build configuration list for PBXNativeTarget "CARBTestsSwift" */;
-			buildPhases = (
-				80B940381D1B50040013FE1C /* Run Script: Pre-Build */,
-				8050153C1D1089EA00AE0412 /* Sources */,
-				8050153D1D1089EA00AE0412 /* Frameworks */,
-				8050153E1D1089EA00AE0412 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CARBTestsSwift;
-			productName = CARBTestsSwift;
-			productReference = 805015401D1089EA00AE0412 /* CARBTestsSwift.xctest */;
+			name = SwiftTests;
+			productName = SwiftTests;
+			productReference = 6AFC5B8187999381C6011190 /* SwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		80B12CE41D21AD2E00B2FE2A /* CAPlayThrough */ = {
+		AA80ABDB08648D362D0EA1DF /* CAPlayThrough */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80B12CF31D21AD2E00B2FE2A /* Build configuration list for PBXNativeTarget "CAPlayThrough" */;
+			buildConfigurationList = 14520351544D10A8F60892ED /* Build configuration list for PBXNativeTarget "CAPlayThrough" */;
 			buildPhases = (
-				8046F3F01D8369A0007F25E4 /* Run Script: Pre-Build */,
-				80B12CE11D21AD2E00B2FE2A /* Sources */,
-				80B12CE21D21AD2E00B2FE2A /* Frameworks */,
-				80B12CE31D21AD2E00B2FE2A /* Resources */,
+				89990472E8C2C08943AB4068 /* Run Script: Verify */,
+				15FF0979B86A1711AB16968C /* Sources */,
 			);
 			buildRules = (
 			);
@@ -543,518 +763,500 @@
 			);
 			name = CAPlayThrough;
 			productName = CAPlayThrough;
-			productReference = 80B12CE51D21AD2E00B2FE2A /* CAPlayThrough.app */;
+			productReference = 371F2E6EE970002440417AE5 /* CAPlayThrough.app */;
 			productType = "com.apple.product-type.application";
 		};
-		80C9CFAC1D0CC6AF00960F60 /* CARBTestsCpp */ = {
+		EA705F28AD62A9DCA4C76158 /* CARBMeasure */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80C9CFBA1D0CC6AF00960F60 /* Build configuration list for PBXNativeTarget "CARBTestsCpp" */;
+			buildConfigurationList = C1B0D6BCF026A60BEA7B1C5B /* Build configuration list for PBXNativeTarget "CARBMeasure" */;
 			buildPhases = (
-				80C205301D18A57A00A932E4 /* Run Script: Pre-Build */,
-				80C9CFA91D0CC6AF00960F60 /* Sources */,
-				80C9CFAA1D0CC6AF00960F60 /* Frameworks */,
-				80C9CFAB1D0CC6AF00960F60 /* Resources */,
+				F4D4F80E77E7B5BDA1CFAD1F /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CARBTestsCpp;
-			productName = CARingBufferTests;
-			productReference = 80C9CFAD1D0CC6AF00960F60 /* CARBTestsCpp.xctest */;
+			name = CARBMeasure;
+			productName = CARBMeasure;
+			productReference = 3A28FAD1877E4614CB6E6786 /* CARBMeasure. */;
+			productType = "com.apple.product-type.tool";
+		};
+		EE5C02B7D63AA1DA892B9620 /* CppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F48059F8E6562C86DBACC1A7 /* Build configuration list for PBXNativeTarget "CppTests" */;
+			buildPhases = (
+				DBE3DA17AA5E4C3E9F06225B /* Run Script: Verify */,
+				D3EFDA9558A49AFB0DC65757 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CppTests;
+			productName = CppTests;
+			productReference = E5BBEDA8DE2D09A4B4FB81EB /* CppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		80C9CF9A1D0CC6AF00960F60 /* Project object */ = {
+		EE055C613722ECEDECD786C9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = WaveLabs;
-				TargetAttributes = {
-					8050152A1D0F722200AE0412 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = E27KE6VTF6;
-					};
-					8050153F1D1089EA00AE0412 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = E27KE6VTF6;
-						LastSwiftMigration = 0800;
-					};
-					80B12CE41D21AD2E00B2FE2A = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = E27KE6VTF6;
-						LastSwiftMigration = 0900;
-					};
-					80C9CFAC1D0CC6AF00960F60 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = E27KE6VTF6;
-					};
-				};
 			};
-			buildConfigurationList = 80C9CF9D1D0CC6AF00960F60 /* Build configuration list for PBXProject "CARingBuffer" */;
+			buildConfigurationList = 4E5A56533A9F3C81B462CFEA /* Build configuration list for PBXProject "CARingBuffer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = 80C9CF991D0CC6AF00960F60;
-			productRefGroup = 80C9CFA41D0CC6AF00960F60 /* Products */;
+			mainGroup = B186925C6150AB824A3B5FF2;
+			productRefGroup = EA7FFA17F3872D74C100D8A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8050153F1D1089EA00AE0412 /* CARBTestsSwift */,
-				80C9CFAC1D0CC6AF00960F60 /* CARBTestsCpp */,
-				8050152A1D0F722200AE0412 /* CARBMeasure */,
-				80B12CE41D21AD2E00B2FE2A /* CAPlayThrough */,
+				AA80ABDB08648D362D0EA1DF /* CAPlayThrough */,
+				EA705F28AD62A9DCA4C76158 /* CARBMeasure */,
+				17467CF9230680B2E673DB7C /* SwiftTests */,
+				EE5C02B7D63AA1DA892B9620 /* CppTests */,
+				A5624E9502871FF800148060 /* Verify */,
+				166191E52095641E87C2F604 /* Autocorrect */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		8050153E1D1089EA00AE0412 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80B12CE31D21AD2E00B2FE2A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80C9CFAB1D0CC6AF00960F60 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8050DAE61D19D785007216D2 /* Readme.txt in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXShellScriptBuildPhase section */
-		8046F3F01D8369A0007F25E4 /* Run Script: Pre-Build */ = {
+		22D4461934205EACE6DA64ED /* Run Script: Autocorrect */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
-			name = "Run Script: Pre-Build";
+			name = "Run Script: Autocorrect";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify\n";
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').autocorrect()\"";
+			showEnvVarsInLog = 1;
 		};
-		8046F3F11D83701E007F25E4 /* Run Script: Pre-Build */ = {
+		89990472E8C2C08943AB4068 /* Run Script: Verify */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
-			name = "Run Script: Pre-Build";
+			name = "Run Script: Verify";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify\n";
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').verify('Sources/CAPlayThrough')\"";
+			showEnvVarsInLog = 1;
 		};
-		80B940381D1B50040013FE1C /* Run Script: Pre-Build */ = {
+		8B6238746D778D829AA01B6A /* Run Script: Verify */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
-			name = "Run Script: Pre-Build";
+			name = "Run Script: Verify";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify\n";
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').verify()\"";
+			showEnvVarsInLog = 1;
 		};
-		80C205301D18A57A00A932E4 /* Run Script: Pre-Build */ = {
+		ADEDEB0BEAC85F7B6C9A3021 /* Run Script: Verify */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
-			name = "Run Script: Pre-Build";
+			name = "Run Script: Verify";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').verify('Tests/Swift')\"";
+			showEnvVarsInLog = 1;
+		};
+		DBE3DA17AA5E4C3E9F06225B /* Run Script: Verify */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: Verify";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').verify('Tests/C++')\"";
+			showEnvVarsInLog = 1;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		805015271D0F722200AE0412 /* Sources */ = {
+		15FF0979B86A1711AB16968C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80A65235213012F300D3B156 /* RingBufferTestsUtility.swift in Sources */,
-				80A6521E213012B200D3B156 /* RingBufferTimeBounds.swift in Sources */,
-				80A6521D213012B200D3B156 /* RingBufferOffsets.swift in Sources */,
-				803A8DDE2115EE30006E5472 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
-				80A6526B21301CC900D3B156 /* CGSize.swift in Sources */,
-				803A8DE32115EE3B006E5472 /* AudioBuffer.swift in Sources */,
-				80079E721D21D9B100E93DB3 /* main.swift in Sources */,
-				80A6526C21301CC900D3B156 /* CGPoint.swift in Sources */,
-				80A6526A21301CBC00D3B156 /* QuickLookProxy.swift in Sources */,
-				80A6521C213012B200D3B156 /* RingBuffer.swift in Sources */,
-				8046F3EB1D821FE8007F25E4 /* MediaBufferList.swift in Sources */,
-				805671EA1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */,
-				80A6526921301CBC00D3B156 /* QuickLookFactory.swift in Sources */,
+				8259A31B025F3EBA62AB902D /* MainMenu.swift in Sources */,
+				AC5C4B6250ED0D4E57CE8326 /* MainWindowController.swift in Sources */,
+				05522E858311378D0C2A6159 /* PlayThroughEngine.swift in Sources */,
+				96942B30C749DBD1E52668A4 /* MainViewController.swift in Sources */,
+				F3458DAD6FE89EFBE36924F0 /* Application.swift in Sources */,
+				F7351C02F0C77328BB6F4EF7 /* main.swift in Sources */,
+				813C5649DE18912BB2249B03 /* Logger.swift in Sources */,
+				9D2828FB076315B19EBE0D62 /* NSButton.swift in Sources */,
+				2552669D1F3A103423F554A0 /* NSButton.BezelStyle.swift in Sources */,
+				D960CC6C07D9A322A2E73A23 /* NSMenu.swift in Sources */,
+				0F5AA73582C9C06F7DD9ACBF /* NSMenuItem.swift in Sources */,
+				86353B310486F2D1C98F59A3 /* NSView.swift in Sources */,
+				D7AC777ADD2405C77ED327F2 /* NSViewController.swift in Sources */,
+				9CA6D3B2ED018184702B5760 /* NSWindow.swift in Sources */,
+				7E6707098B6D36220DF45A70 /* NSControl.swift in Sources */,
+				2AE2F6F1AAA9FBFB17D861D5 /* ViewController.swift in Sources */,
+				D3499DCBC642084FE357E9B5 /* View.swift in Sources */,
+				2AB86B747C05AF9210204230 /* DispatchUntil.swift in Sources */,
+				4D341F0DE0196C1AA5C91EC1 /* DispatchOnce.swift in Sources */,
+				FBE2FF5EF5E54984DE1D59D8 /* DispatchSkipOnce.swift in Sources */,
+				AF30295F70F4343E171BE7BC /* SystemAppearance.swift in Sources */,
+				9F0FAE46C66E34D4EB819433 /* NumericTypesConversions.swift in Sources */,
+				E87192A18BF79585E8E11FAF /* RegEx.swift in Sources */,
+				A0D829FDECCB650454E55DC1 /* NSDataDetector.swift in Sources */,
+				28868EB6370FA4B10752F061 /* NSRegularExpression.swift in Sources */,
+				593FAD4F9D734F59B79D734F /* Menu.swift in Sources */,
+				9FD040C8207616F07D1AC076 /* AudioDevice.swift in Sources */,
+				AABF6F37CA7AA4D0FC8A5D02 /* AudioObjectUtility.swift in Sources */,
+				499BEAEEF7435619CCE3B39C /* Button.swift in Sources */,
+				80E61BF6BDAEDD3EAAA1FF03 /* WindowController.swift in Sources */,
+				149EAACEAA25B25DB4A5D8A7 /* Window.swift in Sources */,
+				EDE5FD4C8EE64E892CEFB3CE /* NotificationObserver.swift in Sources */,
+				A69400F70587C474AAC35706 /* GenericNotification.swift in Sources */,
+				72C73515973193A899DE52A5 /* Log.swift in Sources */,
+				366A4F87A0923E21AC600890 /* BuildInfo.swift in Sources */,
+				8E166DF7B9918006F9931A17 /* RuntimeInfo.swift in Sources */,
+				09B462E815896E8165170454 /* ObjCAssociation.swift in Sources */,
+				E739F3CAA244F7D7161DFFB2 /* AudioUnitSettings.swift in Sources */,
+				1940C02DEEBD04032C4AFC47 /* LayoutFormatParser.swift in Sources */,
+				54189A6C7FDD2A88BC912053 /* LayoutConstraintDynamics.swift in Sources */,
+				8ADB83B6C581CF46E0BBC700 /* LayoutConstraint.swift in Sources */,
+				6BC084CE4D09D1CD287732F1 /* FailureReporting.swift in Sources */,
+				DED7EDFC1627C7829A1E77D8 /* SuccessReportingType.swift in Sources */,
+				D3B4A1AD5D56C012F5615C18 /* CALayer.swift in Sources */,
+				B7DD99E9F507E4EF6E7DDF57 /* NSLayoutConstraint.swift in Sources */,
+				F574738528C5A7992DBA9A63 /* LayoutPriority.swift in Sources */,
+				66184CC1AC672BBBA0A64273 /* NSLayoutYAxisAnchor.swift in Sources */,
+				022B2D6DF595B00F383069BC /* Scanner.swift in Sources */,
+				C13BF56D0DCA9722DA7C2E39 /* NSDictionary.swift in Sources */,
+				15BD9A20EFF7F1632AB24C57 /* Dictionary.swift in Sources */,
+				1D7FD9650843A3B3FA5530C0 /* String.Index.swift in Sources */,
+				FABD60841F99B29F1E071F9F /* NSAttributedString.swift in Sources */,
+				2A47464553FD967E8641652D /* NSMutableAttributedString.swift in Sources */,
+				175F78F89CF094C8FABB034E /* String.swift in Sources */,
+				9D8B6DB8C94FCE6C5EFCC61D /* RingBuffer.swift in Sources */,
+				C6BB6AFCE2DA26CEFF1B1D3C /* RingBufferOffsets.swift in Sources */,
+				739B214227EA0C204D21938D /* RingBufferTimeBounds.swift in Sources */,
+				9A65BB9F6D576019B9435A55 /* MediaBufferCollection.swift in Sources */,
+				49CC105B0E4F49BC56BE22F3 /* MediaBuffer.swift in Sources */,
+				D65F0A2BFAF998F559C2519B /* MediaBufferList.swift in Sources */,
+				D9B841EE6563DFBBA59D51B2 /* AtomicPair.swift in Sources */,
+				1F3D9183FF67C71075B643FA /* Atomic.swift in Sources */,
+				31BB4D49AA428C9CDAFAA433 /* DefaultInitializerType.swift in Sources */,
+				B283A2401734F0FFD34F86B3 /* AudioComponentInstantiationOptions.swift in Sources */,
+				22E30C385DDCFB9B886067BD /* AudioComponentDescription.swift in Sources */,
+				77EF8C07DB69E010654007D7 /* AVAudioPCMBuffer.swift in Sources */,
+				EB8EEEF95F278D5D97092A8A /* AVAudioBuffer.swift in Sources */,
+				10B6809E20C6F5C8584241E6 /* AudioComponentFlags.swift in Sources */,
+				ADFF4766CD709346857622E2 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
+				6F8DC09111ACB1858F34AEC1 /* AudioBuffer.swift in Sources */,
+				9DC52FDA165F6F5CC810512F /* QuickLookFactory.swift in Sources */,
+				8AD5BABFC5289D6E62390B4C /* QuickLookProxyType.swift in Sources */,
+				AFBBD03ADC0FC332BCD101D6 /* QuickLookProxy.swift in Sources */,
+				D7361E2AABFC4D3F67A76980 /* CGSize.swift in Sources */,
+				E71A7F40393716B22EB203BF /* CGPoint.swift in Sources */,
+				6CBE0F922D76A6FD033F7F26 /* CGRect.swift in Sources */,
+				9981046A9A8948B6E3865D0D /* EdgeInsets.swift in Sources */,
+				C8BE5A6E497F5F553203F801 /* RingBufferTestsUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8050153C1D1089EA00AE0412 /* Sources */ = {
+		685693702FA8429060DE2E1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80A65220213012B300D3B156 /* RingBufferOffsets.swift in Sources */,
-				80A6526421301BC300D3B156 /* CGPoint.swift in Sources */,
-				80A652462130134E00D3B156 /* QuickLookProxy.swift in Sources */,
-				8046F3E91D821FDC007F25E4 /* MediaBufferList.swift in Sources */,
-				80A6521F213012B300D3B156 /* RingBuffer.swift in Sources */,
-				801BE5AA1F16E3C000806169 /* CARBPerformanceTests.swift in Sources */,
-				80A65237213012F400D3B156 /* RingBufferTestsUtility.swift in Sources */,
-				803A8DE52115EE3C006E5472 /* AudioBuffer.swift in Sources */,
-				80A652452130134E00D3B156 /* QuickLookFactory.swift in Sources */,
-				805671E91F3910E000D2C5B5 /* MediaBuffer.swift in Sources */,
-				80A65221213012B300D3B156 /* RingBufferTimeBounds.swift in Sources */,
-				803A8DE02115EE30006E5472 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
-				80A6526521301BC500D3B156 /* CGSize.swift in Sources */,
+				BD9D920E43B83BDD94A19886 /* CARBPerformanceTests.swift in Sources */,
+				3F0B652F978CA215C06A5892 /* RingBuffer.swift in Sources */,
+				44559FDA28198E3102140686 /* RingBufferOffsets.swift in Sources */,
+				8112D8F306C7CDF35E6583C4 /* RingBufferTimeBounds.swift in Sources */,
+				831B0B102657EBA65DF490F3 /* MediaBufferCollection.swift in Sources */,
+				14177B26F610CEA6717A231C /* MediaBuffer.swift in Sources */,
+				98877B7D47A66AEC4688096D /* MediaBufferList.swift in Sources */,
+				1152388B082BAF0B860C4C77 /* AtomicPair.swift in Sources */,
+				FA08A98C549FDF51A02411B5 /* Atomic.swift in Sources */,
+				21A6C656EBD8352395E4EF12 /* DefaultInitializerType.swift in Sources */,
+				2F452BCB225CB3989E31E2D1 /* AudioComponentInstantiationOptions.swift in Sources */,
+				C6DE94EAF5439A6688811A63 /* AudioComponentDescription.swift in Sources */,
+				15E8A5B7634E41F07358926B /* AVAudioPCMBuffer.swift in Sources */,
+				DFCC36F0CC60B4D60D809A33 /* AVAudioBuffer.swift in Sources */,
+				5A8B0FF468F633891421F078 /* AudioComponentFlags.swift in Sources */,
+				A94113AB2B2A1719E64D73BC /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
+				55861CE193320C5AA188834B /* AudioBuffer.swift in Sources */,
+				F36C1D1E6E9E283DC25A1DA4 /* QuickLookFactory.swift in Sources */,
+				A4B535DC38D4E1BAD0434DB6 /* QuickLookProxyType.swift in Sources */,
+				E44A9F9329CB5EE95CCC8D66 /* QuickLookProxy.swift in Sources */,
+				F776C56BC8DE2116B6969E36 /* CGSize.swift in Sources */,
+				80AE9C9C1553C1C4298E386E /* CGPoint.swift in Sources */,
+				29E6B2F5A07CD81BF7C21F7B /* CGRect.swift in Sources */,
+				E5DE5479687117F98D5CF67E /* EdgeInsets.swift in Sources */,
+				81E247EB6F47B3A654D14F54 /* RingBufferTestsUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80B12CE11D21AD2E00B2FE2A /* Sources */ = {
+		D3EFDA9558A49AFB0DC65757 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8068878A20308A9A00E70134 /* Application.swift in Sources */,
-				803A8DE12115EE36006E5472 /* AudioComponentDescription.swift in Sources */,
-				80B12CEA1D21AD2E00B2FE2A /* MainViewController.swift in Sources */,
-				80A652632130141400D3B156 /* SystemAppearance.swift in Sources */,
-				803A8D2D2115ED60006E5472 /* NSView.swift in Sources */,
-				803A8DE82115EEE2006E5472 /* GenericWindowController.swift in Sources */,
-				803A8DF52115EF1C006E5472 /* BuildInfo.swift in Sources */,
-				803A8D262115ED50006E5472 /* NSMenu.swift in Sources */,
-				803A8D672115ED99006E5472 /* DispatchUntil.swift in Sources */,
-				803A8D072115ED24006E5472 /* View.swift in Sources */,
-				803A8CE42115EC4B006E5472 /* Button.swift in Sources */,
-				803A8D2C2115ED60006E5472 /* NSWindow.swift in Sources */,
-				803A8DD22115EDF4006E5472 /* ObjCAssociation.swift in Sources */,
-				803A8D292115ED50006E5472 /* NSControl.swift in Sources */,
-				803A8CF42115EC79006E5472 /* AudioObjectUtility.swift in Sources */,
-				805671EB1F3910F900D2C5B5 /* MediaBuffer.swift in Sources */,
-				80A6521A213012B100D3B156 /* RingBufferOffsets.swift in Sources */,
-				8046F3EA1D821FE8007F25E4 /* MediaBufferList.swift in Sources */,
-				803A8D092115ED24006E5472 /* Window.swift in Sources */,
-				803A8D282115ED50006E5472 /* NSButton.swift in Sources */,
-				80B12D021D21B00600B2FE2A /* AudioUnitSettings.swift in Sources */,
-				8068878820308A6800E70134 /* main.swift in Sources */,
-				80A65219213012B100D3B156 /* RingBuffer.swift in Sources */,
-				8068878C20308B8200E70134 /* MainMenu.swift in Sources */,
-				80B12CF51D21ADAC00B2FE2A /* PlayThroughEngine.swift in Sources */,
-				803A8DE22115EE3B006E5472 /* AudioBuffer.swift in Sources */,
-				80A65260213013E600D3B156 /* CGSize.swift in Sources */,
-				80A65261213013E600D3B156 /* CGPoint.swift in Sources */,
-				803A8DDD2115EE2F006E5472 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
-				803A8DE62115EEB0006E5472 /* NumericTypesConversions.swift in Sources */,
-				803A8D062115ED24006E5472 /* ViewController.swift in Sources */,
-				803A8CF32115EC79006E5472 /* AudioDevice.swift in Sources */,
-				80A652412130134C00D3B156 /* QuickLookFactory.swift in Sources */,
-				8068879120308D3E00E70134 /* MainWindowController.swift in Sources */,
-				80A6521B213012B100D3B156 /* RingBufferTimeBounds.swift in Sources */,
-				80A652482130138A00D3B156 /* RuntimeInfo.swift in Sources */,
-				803A8D272115ED50006E5472 /* NSMenuItem.swift in Sources */,
-				80A652422130134C00D3B156 /* QuickLookProxy.swift in Sources */,
-				803A8D012115ECF8006E5472 /* Menu.swift in Sources */,
+				B00E38D4AFC74543FA9E585A /* CoreAudioSDK.cpp in Sources */,
+				EE2DE45A8F227E04B03CA51D /* CARBPerformanceTests.mm in Sources */,
+				417766974224558784D4C3B7 /* CARBTests.mm in Sources */,
+				E2A983170F583B4E6D56389A /* RingBuffer.swift in Sources */,
+				870E17776DEF8B64B7F55F8D /* RingBufferOffsets.swift in Sources */,
+				56EE7C4F528D6A6EAF7D7225 /* RingBufferTimeBounds.swift in Sources */,
+				5017068ADE8495FE26A532F1 /* MediaBufferCollection.swift in Sources */,
+				28434A6A991B05C31CA4BF80 /* MediaBuffer.swift in Sources */,
+				7EA02D82C02710B996D010CA /* MediaBufferList.swift in Sources */,
+				24AE0DEA8C2E2452A01BA381 /* AtomicPair.swift in Sources */,
+				0C881D64357CA5AFEFF7E87A /* Atomic.swift in Sources */,
+				AAAD4E20A19D94B1B253967C /* DefaultInitializerType.swift in Sources */,
+				0C926908228A28765D03A80A /* AudioComponentInstantiationOptions.swift in Sources */,
+				0DE15C5549ABADCE97477E05 /* AudioComponentDescription.swift in Sources */,
+				6F6DD79D84FA1272D2D83B40 /* AVAudioPCMBuffer.swift in Sources */,
+				4C19315896F5A98A76E99CE1 /* AVAudioBuffer.swift in Sources */,
+				1CCCCF281F556342D59020EE /* AudioComponentFlags.swift in Sources */,
+				5D93B1FB4BB232BFCA71A5ED /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
+				720EC47F8A971F21CA199E84 /* AudioBuffer.swift in Sources */,
+				87A116D8D76890FA75DBF3B3 /* QuickLookFactory.swift in Sources */,
+				33BC32E3957FCBF267C9773F /* QuickLookProxyType.swift in Sources */,
+				B97D64F682731B3C003B3EC3 /* QuickLookProxy.swift in Sources */,
+				601BB5443E206847369B5A59 /* CGSize.swift in Sources */,
+				167F0DC32B3C6E39F3D3ECBB /* CGPoint.swift in Sources */,
+				5E6430DFD0F47FDCD35F4758 /* CGRect.swift in Sources */,
+				A5BB66B2EB92519221762E8A /* EdgeInsets.swift in Sources */,
+				EAB82E494A797B883812135B /* RingBufferTestsUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80C9CFA91D0CC6AF00960F60 /* Sources */ = {
+		F4D4F80E77E7B5BDA1CFAD1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803A8DE42115EE3C006E5472 /* AudioBuffer.swift in Sources */,
-				8050155A1D10A00900AE0412 /* CARBTests.mm in Sources */,
-				805015631D10A06900AE0412 /* CARingBuffer.cpp in Sources */,
-				80A6526621301C2E00D3B156 /* QuickLookFactory.swift in Sources */,
-				80A652442130134D00D3B156 /* QuickLookProxy.swift in Sources */,
-				80A65236213012F400D3B156 /* RingBufferTestsUtility.swift in Sources */,
-				8066E0E31D10A78300D32B44 /* CARBPerformanceTests.mm in Sources */,
-				80A6526721301C3F00D3B156 /* CGSize.swift in Sources */,
-				80A6526821301C3F00D3B156 /* CGPoint.swift in Sources */,
-				803A8DDF2115EE30006E5472 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
+				B849E963049B116C35A2D5F5 /* main.swift in Sources */,
+				CA3D8FEC1D47A50CC181FFE9 /* RingBuffer.swift in Sources */,
+				28FB5E61B088EC9CBFD78D9B /* RingBufferOffsets.swift in Sources */,
+				B34B53DF66BB659751F86AC8 /* RingBufferTimeBounds.swift in Sources */,
+				B34A799E95487908051C2343 /* MediaBufferCollection.swift in Sources */,
+				1F2DCC2E9E0DDAAB2BE1E0F4 /* MediaBuffer.swift in Sources */,
+				2E44565BA039A756998ED0EA /* MediaBufferList.swift in Sources */,
+				5648C517F99FB61D4701AAD7 /* AtomicPair.swift in Sources */,
+				9F3EED1C98CFD78B908BA06D /* Atomic.swift in Sources */,
+				F27FBABDD86F56F3378CA36F /* DefaultInitializerType.swift in Sources */,
+				2415F663E765912E01B27C02 /* AudioComponentInstantiationOptions.swift in Sources */,
+				CA2A219411B169C9C90C4A43 /* AudioComponentDescription.swift in Sources */,
+				1F58D857C7FED60188B510B4 /* AVAudioPCMBuffer.swift in Sources */,
+				DFDD9138D42AEC83B846792F /* AVAudioBuffer.swift in Sources */,
+				174ACF44B1A7E428C96B1938 /* AudioComponentFlags.swift in Sources */,
+				6F93356EF8ED773505239B88 /* UnsafeMutableAudioBufferListPointer.swift in Sources */,
+				98500C11988743D81CEACD03 /* AudioBuffer.swift in Sources */,
+				01FA51DC884ECF16A3F4F35E /* QuickLookFactory.swift in Sources */,
+				554E2875030F48F240A4012C /* QuickLookProxyType.swift in Sources */,
+				BD9D55D8E3BAD63DE655E27E /* QuickLookProxy.swift in Sources */,
+				FBB0DC3A33EED1E9CF8DD093 /* CGSize.swift in Sources */,
+				7C69E8032D87A838672AA8D7 /* CGPoint.swift in Sources */,
+				A7616C1A5673134E746B5E75 /* CGRect.swift in Sources */,
+				6FD3588B4645E71B51EB85B8 /* EdgeInsets.swift in Sources */,
+				CFEA945CAE4248A1271CC1E2 /* RingBufferTestsUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		805015301D0F722200AE0412 /* Debug */ = {
+		37C091369E56B6BEEE54D219 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89AF6819F5B679A08FD8E9AC /* App-macOS.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		805015311D0F722200AE0412 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		805015461D1089EA00AE0412 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		805015471D1089EA00AE0412 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		80B12CF11D21AD2E00B2FE2A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CAPlayThrough;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CAPlayThrough;
+			};
+			name = Release;
+		};
+		9C2C82E674F23EB51104CA33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 342703F023FF963D12BA9058 /* Tests-macOS.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Swift/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = SwiftTests;
 			};
 			name = Debug;
 		};
-		80B12CF21D21AD2E00B2FE2A /* Release */ = {
+		A496F179499A7BD099ABDC42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 342703F023FF963D12BA9058 /* Tests-macOS.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tests/C++/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = CppTests;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+			};
+			name = Release;
+		};
+		BD1A8912E404C5B975F4C7F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E36F643CDAD8AD5C84C9FF3F /* Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DC000365930FED967CD2065E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 342703F023FF963D12BA9058 /* Tests-macOS.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "Tests/C++/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = CppTests;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+			};
+			name = Debug;
+		};
+		DCA301DA1A090FA66950EB8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E36F643CDAD8AD5C84C9FF3F /* Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		E120272DE27CE5505DD04513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B1D595C9123EA57A864CF3E /* Tool-macOS.xcconfig */;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = CARBMeasure;
+			};
+			name = Debug;
+		};
+		E710ED1CD944155B7B89A80B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B1D595C9123EA57A864CF3E /* Tool-macOS.xcconfig */;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = CARBMeasure;
+			};
+			name = Release;
+		};
+		E94D41A8808F0E45DA28F69D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 342703F023FF963D12BA9058 /* Tests-macOS.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Swift/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = SwiftTests;
+			};
+			name = Release;
+		};
+		F508D87CB9CC14E19BBC0CAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89AF6819F5B679A08FD8E9AC /* App-macOS.xcconfig */;
+			buildSettings = {
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CAPlayThrough;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		80C9CFB51D0CC6AF00960F60 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8040365C201D58D30002412D /* Project.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				PRODUCT_NAME = CAPlayThrough;
 			};
 			name = Debug;
-		};
-		80C9CFB61D0CC6AF00960F60 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8040365C201D58D30002412D /* Project.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = fast;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				SDKROOT = macosx;
-				SWIFT_DISABLE_SAFETY_CHECKS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		80C9CFBB1D0CC6AF00960F60 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsCpp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		80C9CFBC1D0CC6AF00960F60 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.CARBTestsCpp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8050152F1D0F722200AE0412 /* Build configuration list for PBXNativeTarget "CARBMeasure" */ = {
+		14520351544D10A8F60892ED /* Build configuration list for PBXNativeTarget "CAPlayThrough" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				805015301D0F722200AE0412 /* Debug */,
-				805015311D0F722200AE0412 /* Release */,
+				37C091369E56B6BEEE54D219 /* Release */,
+				F508D87CB9CC14E19BBC0CAC /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		805015451D1089EA00AE0412 /* Build configuration list for PBXNativeTarget "CARBTestsSwift" */ = {
+		4E5A56533A9F3C81B462CFEA /* Build configuration list for PBXProject "CARingBuffer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				805015461D1089EA00AE0412 /* Debug */,
-				805015471D1089EA00AE0412 /* Release */,
+				DCA301DA1A090FA66950EB8C /* Debug */,
+				BD1A8912E404C5B975F4C7F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80B12CF31D21AD2E00B2FE2A /* Build configuration list for PBXNativeTarget "CAPlayThrough" */ = {
+		C1B0D6BCF026A60BEA7B1C5B /* Build configuration list for PBXNativeTarget "CARBMeasure" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				80B12CF11D21AD2E00B2FE2A /* Debug */,
-				80B12CF21D21AD2E00B2FE2A /* Release */,
+				E710ED1CD944155B7B89A80B /* Release */,
+				E120272DE27CE5505DD04513 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80C9CF9D1D0CC6AF00960F60 /* Build configuration list for PBXProject "CARingBuffer" */ = {
+		C903E10DB09B088C28A02A80 /* Build configuration list for PBXNativeTarget "SwiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				80C9CFB51D0CC6AF00960F60 /* Debug */,
-				80C9CFB61D0CC6AF00960F60 /* Release */,
+				E94D41A8808F0E45DA28F69D /* Release */,
+				9C2C82E674F23EB51104CA33 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80C9CFBA1D0CC6AF00960F60 /* Build configuration list for PBXNativeTarget "CARBTestsCpp" */ = {
+		F48059F8E6562C86DBACC1A7 /* Build configuration list for PBXNativeTarget "CppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				80C9CFBB1D0CC6AF00960F60 /* Debug */,
-				80C9CFBC1D0CC6AF00960F60 /* Release */,
+				A496F179499A7BD099ABDC42 /* Release */,
+				DC000365930FED967CD2065E /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 80C9CF9A1D0CC6AF00960F60 /* Project object */;
+	rootObject = EE055C613722ECEDECD786C9 /* Project object */;
 }
