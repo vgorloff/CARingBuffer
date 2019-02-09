@@ -13,18 +13,18 @@ class Project < AbstractProject
    end
 
    def build()
-      XcodeBuilder.new(@projectFilePath).build("CAPlayThrough")
-      XcodeBuilder.new(@projectFilePath).build("CARBMeasure")
+      XcodeBuilder.new(@projectFilePath).build("CAPlayThrough-macOS")
+      XcodeBuilder.new(@projectFilePath).build("CARBMeasure-macOS")
    end
 
    def clean()
-      XcodeBuilder.new(@projectFilePath).clean("CAPlayThrough")
-      XcodeBuilder.new(@projectFilePath).clean("CARBMeasure")
+      XcodeBuilder.new(@projectFilePath).clean("CAPlayThrough-macOS")
+      XcodeBuilder.new(@projectFilePath).clean("CARBMeasure-macOS")
    end
 
    def release()
-      XcodeBuilder.new(@projectFilePath).ci("CAPlayThrough")
-      XcodeBuilder.new(@projectFilePath).ci("CARBMeasure")
+      XcodeBuilder.new(@projectFilePath).ci("CAPlayThrough-macOS")
+      XcodeBuilder.new(@projectFilePath).ci("CARBMeasure-macOS")
    end
 
    def archive()
