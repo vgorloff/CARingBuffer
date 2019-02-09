@@ -29,4 +29,13 @@ extension NSWindow {
          self.init(contentRect: contentRect, styleMask: styleMask, backing: .buffered, defer: true)
       }
    }
+
+   public func removeTitlebarAccessoryViewController(_ vc: NSTitlebarAccessoryViewController) {
+      for (idx, controller) in titlebarAccessoryViewControllers.enumerated() {
+         if controller == vc {
+            removeTitlebarAccessoryViewController(at: idx)
+            return
+         }
+      }
+   }
 }

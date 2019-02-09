@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import mcUI
 
 extension NSViewController {
 
@@ -18,8 +19,9 @@ extension NSViewController {
 
    public func embedChildViewController(_ vc: NSViewController, container: NSView? = nil) {
       addChild(vc)
+      let targetView = container ?? view
       // Fix for possible layout issues. Origin: https://stackoverflow.com/a/49255958/1418981
-      var frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+      var frame = CGRect(x: 0, y: 0, width: targetView.frame.width, height: targetView.frame.height)
       if frame.size.width == 0 {
          frame.size.width = CGFloat.leastNormalMagnitude
       }
@@ -28,7 +30,7 @@ extension NSViewController {
       }
       vc.view.frame = frame
       vc.view.autoresizingMask = [.height, .width]
-      (container ?? view).addSubview(vc.view)
+      targetView.addSubview(vc.view)
    }
 
    public func unembedChildViewController(_ vc: NSViewController) {

@@ -391,8 +391,7 @@
 				G_678D19761341B6F8E485E848619CDFD8 /* Libs */,
 				G_B38D15B9DF57A589CE2F64213C93E572 /* WL */,
 			);
-			name = Vendor;
-			path = ../../../../Developer/Projects;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		G_7E736D45598F0BB67C5D1D2FEBE72820 /* log */ = {
