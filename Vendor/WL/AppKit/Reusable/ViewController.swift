@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import mcFoundation
 
 open class ViewController: NSViewController {
 
@@ -42,7 +43,6 @@ open class ViewController: NSViewController {
       super.viewDidAppear()
       layoutUntil.fulfill()
       view.assertOnAmbiguityInSubviewsLayout()
-      onViewDidAppear()
    }
 
    open override func viewDidLoad() {
@@ -52,11 +52,6 @@ open class ViewController: NSViewController {
       setupDataSource()
       setupHandlers()
       setupDefaults()
-   }
-
-   open override func viewWillAppear() {
-      super.viewWillAppear()
-      onViewWillAppear()
    }
 
    @objc open dynamic func setupUI() {
@@ -75,11 +70,5 @@ open class ViewController: NSViewController {
    }
 
    @objc open dynamic func setupLayoutDefaults() {
-   }
-
-   @objc open dynamic func onViewWillAppear() {
-   }
-
-   @objc open dynamic func onViewDidAppear() {
    }
 }

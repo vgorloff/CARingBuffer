@@ -7,6 +7,8 @@
 //
 
 import AppKit
+import mcFoundation
+import mcTypes
 
 extension NSMenuItem {
 

@@ -32,16 +32,24 @@ open class WindowController: NSWindowController {
       }
 
       setupUI()
+      setupLayout()
       setupHandlers()
+      setupDefaults()
    }
 
    public required init?(coder: NSCoder) {
       fatalError()
    }
 
-   open func setupUI() {
+   @objc open dynamic func setupUI() {
    }
 
-   open func setupHandlers() {
+   @objc open dynamic func setupHandlers() {
+   }
+
+   @objc open dynamic func setupLayout() {
+   }
+
+   @objc open dynamic func setupDefaults() {
    }
 }

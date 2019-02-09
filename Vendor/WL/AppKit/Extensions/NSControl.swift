@@ -7,6 +7,8 @@
 //
 
 import AppKit
+import mcFoundation
+import mcTypes
 
 extension NSControl {
 
@@ -14,9 +16,15 @@ extension NSControl {
 
    public func setHandler(_ handler: Handler?) {
       target = self
-      action = #selector(wavelabsActionHandler(_:))
+      action = #selector(appActionHandler(_:))
       if let handler = handler {
          ObjCAssociation.setCopyNonAtomic(value: handler, to: self, forKey: &OBJCAssociationKeys.actionHandler)
+      }
+   }
+
+   public func setHandler<T: NSObject>(_ caller: T, _ handler: @escaping (T) -> Void) {
+      setHandler { [weak caller] in guard let caller = caller else { return }
+         handler(caller)
       }
    }
 }
@@ -24,10 +32,10 @@ extension NSControl {
 extension NSControl {
 
    private struct OBJCAssociationKeys {
-      static var actionHandler = "com.wavelabs.actionHandler"
+      static var actionHandler = "app.ui.actionHandler"
    }
 
-   @objc private func wavelabsActionHandler(_ sender: NSControl) {
+   @objc private func appActionHandler(_ sender: NSControl) {
       guard sender == self else {
          return
       }

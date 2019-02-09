@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import mcCore
+import mcObjC
+import mcConcurrencyOC
 
 public class RingBufferTimeBounds {
 
@@ -14,7 +17,10 @@ public class RingBufferTimeBounds {
 
    private let queueSize: Int64
    private var queue: ContiguousArray<Bounds>
-   private var queueIndex: Int64 = 0
+   private var queueIndex: Int64 {
+      return atomic.load()
+   }
+   private var atomic = Int64Atomic(value: 0)
 
    init(queueSize: Int64 = 32) {
       self.queueSize = queueSize
@@ -24,7 +30,7 @@ public class RingBufferTimeBounds {
    init(other: RingBufferTimeBounds) {
       queueSize = other.queueSize
       queue = other.queue
-      queueIndex = other.queueIndex
+      atomic = Int64Atomic(value: other.atomic.load())
    }
 }
 
@@ -67,7 +73,8 @@ extension RingBufferTimeBounds {
       let nextAbsoluteIndex = queueIndex + 1 // Always increasing
       let elementIndex = nextAbsoluteIndex % queueSize
       queue[Int(elementIndex)] = Bounds(start: start, end: end, queueIndex: nextAbsoluteIndex)
-      let status = Atomic.compareAndSwap64Barrier(oldValue: queueIndex, newValue: nextAbsoluteIndex, theValue: &queueIndex)
+      var expected = queueIndex
+      let status = atomic.compareExchangeStrong(withExpected: &expected, desired: nextAbsoluteIndex)
       assert(status)
    }
 
