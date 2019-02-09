@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NT_8993857EBA7EFBC9A25FB966E9D0E3F0"
-               BuildableName = "CAPlayThrough.app"
-               BlueprintName = "CAPlayThrough-macOS"
+               BlueprintIdentifier = "NT_014B13630EF79B56C6143DBF15CB34D3"
+               BuildableName = "CARBMeasure"
+               BlueprintName = "CARBMeasure-macOS"
                ReferencedContainer = "container:CARingBuffer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -36,18 +36,18 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_8993857EBA7EFBC9A25FB966E9D0E3F0"
-            BuildableName = "CAPlayThrough.app"
-            BlueprintName = "CAPlayThrough-macOS"
+            BlueprintIdentifier = "NT_014B13630EF79B56C6143DBF15CB34D3"
+            BuildableName = "CARBMeasure"
+            BlueprintName = "CARBMeasure-macOS"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_8993857EBA7EFBC9A25FB966E9D0E3F0"
-            BuildableName = "CAPlayThrough.app"
-            BlueprintName = "CAPlayThrough-macOS"
+            BlueprintIdentifier = "NT_014B13630EF79B56C6143DBF15CB34D3"
+            BuildableName = "CARBMeasure"
+            BlueprintName = "CARBMeasure-macOS"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,18 +64,18 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_8993857EBA7EFBC9A25FB966E9D0E3F0"
-            BuildableName = "CAPlayThrough.app"
-            BlueprintName = "CAPlayThrough-macOS"
+            BlueprintIdentifier = "NT_014B13630EF79B56C6143DBF15CB34D3"
+            BuildableName = "CARBMeasure"
+            BlueprintName = "CARBMeasure-macOS"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_8993857EBA7EFBC9A25FB966E9D0E3F0"
-            BuildableName = "CAPlayThrough.app"
-            BlueprintName = "CAPlayThrough-macOS"
+            BlueprintIdentifier = "NT_014B13630EF79B56C6143DBF15CB34D3"
+            BuildableName = "CARBMeasure"
+            BlueprintName = "CARBMeasure-macOS"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

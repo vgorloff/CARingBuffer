@@ -40,10 +40,6 @@ class Project < AbstractProject
       gen = XCGen.new(File.join(@rootDirPath, "CARingBuffer.xcodeproj"))
       gen.setDeploymentTarget("10.12", "macOS")
       app = gen.addApplication("CAPlayThrough", "Sources/CAPlayThrough", "macOS")
-      gen.addBuildSettings(app, {
-         "SWIFT_OBJC_BRIDGING_HEADER" => "Tests/Bridging-Header.h",
-         "SWIFT_INCLUDE_PATHS" => "Tests"
-      })
       gen.addComponentFiles(app, [
          "AudioDevice.swift", "AudioUnitSettings.swift", "AudioObjectUtility.swift", "AudioComponentDescription.swift",
          "AppKit/.+/(NS|)WindowController\.swift", "AppKit/.+/(NS|)Window\.swift", "AppKit/.+/(NS|)ViewController\.swift", "AppKit/.+/(NS|)Menu.*\.swift",
@@ -54,33 +50,32 @@ class Project < AbstractProject
       ])
       setupSources(gen, app)
 
+      tool = gen.addTool("CARBMeasure", "Sources/CARBMeasure", "macOS")
+      setupSources(gen, tool)
+      gen.addTestFiles(tool, ["RingBufferTestsUtility.swift"])
 
       swiftTests = gen.addTest("SwiftTests", "Tests/Swift", "macOS", false)
       setupSources(gen, swiftTests)
-      gen.addTestFiles(swiftTests, [ "RingBufferTestsUtility.swift"])
-      gen.addBuildSettings(swiftTests, {
-         "SWIFT_OBJC_BRIDGING_HEADER" => "Tests/Bridging-Header.h",
-         "SWIFT_INCLUDE_PATHS" => "Tests"
-      })
+      gen.addTestFiles(swiftTests, ["RingBufferTestsUtility.swift"])
 
       cppTests = gen.addTest("CppTests", "Tests/C++", "macOS", false)
       gen.addBuildSettings(cppTests, {
-         "SWIFT_OBJC_BRIDGING_HEADER" => "Tests/Bridging-Header.h",
-         "SWIFT_INCLUDE_PATHS" => "Tests",
          "SWIFT_INSTALL_OBJC_HEADER" => "YES"
       })
       setupSources(gen, cppTests)
-      gen.addTestFiles(cppTests, [ "RingBufferTestsUtility.swift"])
+      gen.addTestFiles(cppTests, ["RingBufferTestsUtility.swift"])
 
-      # tool = project.addTool(name: "CARBMeasure", sources: ["Sources/CARBMeasure"], platform: :osx, deploymentTarget: "10.11")
-      # setupSources(gen, tool)
       gen.save()
    end
 
-   def setupSources(project, target)
-      project.addComponentFiles(target, [ "RingBuffer.*\.swift", "Atomic.m", "Atomic.h", "MediaBuffer.*\.swift",
+   def setupSources(gen, target)
+      gen.addComponentFiles(target, [ "RingBuffer.*\.swift", "Atomic.m", "Atomic.h", "MediaBuffer.*\.swift",
          "DefaultInitializerType.swift", "UnsafeMutableAudioBufferListPointer.swift", "AudioBuffer.swift"
       ])
+      gen.addBuildSettings(target, {
+         "SWIFT_OBJC_BRIDGING_HEADER" => "Tests/Bridging-Header.h",
+         "SWIFT_INCLUDE_PATHS" => "Tests"
+      })
    end
 
 end
