@@ -23,6 +23,8 @@
 		BF_255B5534F2FD26D45EE572AB247D59C5 /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2F73D3BC8BC3A2CFD67CE1E58821705B /* BuildInfo.swift */; };
 		BF_26DD895BE87A70C467D3F5F9D943CC48 /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_DD9E5D369021152AE4418D9F3292DA5D /* UnsafeMutableAudioBufferListPointer.swift */; };
 		BF_26E25793FF6C1343882CADAE08C2F76B /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_5B57D6DD59BDEB302E04DF9FC1A6DBAE /* RingBuffer.swift */; };
+		BF_2BCA76F8EC8DA140BA8D0DE36351027C /* String.Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_30FB9582542DEBC28C075181E64A79C9 /* String.Index.swift */; };
+		BF_2C94603FDE1C196388FBCCC1B21A4E6C /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FDECADC33688401FB366510626A8ED24 /* NotificationObserver.swift */; };
 		BF_2F7722C2B778F78A0166D8CC4F35EB3B /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_298B26EB6091235E7A0EEE981985644F /* RingBufferTestsUtility.swift */; };
 		BF_2FFFE287635875EDF71335B79EA9BDF3 /* Atomic.m in Sources */ = {isa = PBXBuildFile; fileRef = FR_FC0B9E1E263A3C1E5C5AC99BDB54F5D4 /* Atomic.m */; };
 		BF_34916D300E99684BA87855AEFD1F223D /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_5A076DD2D0A1AF1E08B7BD33456639DB /* MediaBufferList.swift */; };
@@ -92,6 +94,7 @@
 		BF_E7F2CCEAF6E688FEBFBA97B2D723D453 /* AudioBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_56F63D17A51808707C2C6C7DAC50ECF8 /* AudioBuffer.swift */; };
 		BF_EE6640C1F9D27CE044DEB5036116D654 /* PlayThroughEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C655C608CD6B743245B0DB8F1DF4EB68 /* PlayThroughEngine.swift */; };
 		BF_F353199AEB9955C5D86157C86EB70CF8 /* MediaBufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_5A076DD2D0A1AF1E08B7BD33456639DB /* MediaBufferList.swift */; };
+		BF_F52B48D9DED42047FACF0357C66E8F86 /* NSAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EA1F08D75F3714C6599ED9767A9482EC /* NSAppearance.swift */; };
 		BF_F60716795257D52384A4E7C327D82C50 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_E23666BF8DFD2D3B4A4E18C20C2C5D44 /* MainViewController.swift */; };
 		BF_F6AA28542F5DF08065793CA3824491CD /* UnsafeMutableAudioBufferListPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_DD9E5D369021152AE4418D9F3292DA5D /* UnsafeMutableAudioBufferListPointer.swift */; };
 		BF_FED60342DBD08CDA25077012B0A57159 /* CARBPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_BA49CECF9FC3E27B0CB1D1695D7BCEDF /* CARBPerformanceTests.swift */; };
@@ -117,6 +120,7 @@
 		FR_2E597D9650B285DAD74CA6EA20FC6987 /* CppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_2F23ECB3D3156C4AC9A95406DEFE628D /* NumericTypesConversions.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NumericTypesConversions.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
 		FR_2F73D3BC8BC3A2CFD67CE1E58821705B /* BuildInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = BuildInfo.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
+		FR_30FB9582542DEBC28C075181E64A79C9 /* String.Index.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = String.Index.swift; path = String.Index.swift; sourceTree = "<group>"; };
 		FR_3F661F14AD0DE00DD5FE423216448E2C /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ViewController.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FR_412ED8AEC9972AAD7914753BB01C1173 /* NSViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSViewController.swift; path = NSViewController.swift; sourceTree = "<group>"; };
 		FR_43337681F7C9FF232C441EB2E0DD9192 /* MainWindowController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MainWindowController.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		FR_DD9E5D369021152AE4418D9F3292DA5D /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = UnsafeMutableAudioBufferListPointer.swift; path = UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
 		FR_E23666BF8DFD2D3B4A4E18C20C2C5D44 /* MainViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MainViewController.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FR_E5BF277582842CF6B125163E047CC340 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AudioComponentDescription.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
+		FR_EA1F08D75F3714C6599ED9767A9482EC /* NSAppearance.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSAppearance.swift; path = NSAppearance.swift; sourceTree = "<group>"; };
 		FR_EA8A9054C1F4D05F4FEBD27F27D74A67 /* Tests-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; lastKnownFileType = text.xcconfig; name = "Tests-macOS.xcconfig"; path = "Tests-macOS.xcconfig"; sourceTree = "<group>"; };
 		FR_ECA2FFBB78AFCA8CEC0C2A938DD5C5CF /* CoreAudioSDK.cpp */ = {isa = PBXFileReference; name = CoreAudioSDK.cpp; path = CoreAudioSDK.cpp; sourceTree = "<group>"; };
 		FR_EDB8D49825EE98AADE1B9F2651E2118A /* MediaBufferCollection.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MediaBufferCollection.swift; path = MediaBufferCollection.swift; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 		FR_F3900EF11EFDA580A7A6D1DE2EC36DCA /* Menu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Menu.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FR_FC0B9E1E263A3C1E5C5AC99BDB54F5D4 /* Atomic.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; name = Atomic.m; path = Atomic.m; sourceTree = "<group>"; };
 		FR_FCC99D790CADF837F2200EA60765FC29 /* AudioObjectUtility.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AudioObjectUtility.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
+		FR_FDECADC33688401FB366510626A8ED24 /* NotificationObserver.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NotificationObserver.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
 		FR_FE737915159DA42300D65B52C2472E22 /* NSButton.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSButton.swift; path = NSButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,6 +266,15 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		G_36AAA740233BA37BE3B431FE5C54881E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FR_EA1F08D75F3714C6599ED9767A9482EC /* NSAppearance.swift */,
+			);
+			name = Extensions;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		G_3E2CE03C0811F4A9F3FF1EA4FA82B5A3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +326,7 @@
 		G_45810C60EE5C2A142EAE61FC83FAD328 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				G_36AAA740233BA37BE3B431FE5C54881E /* Extensions */,
 				G_1763383A3144D8C19B621802FF6C7D76 /* Reporting */,
 				G_E4203515BEA3A9C9D3DAC0B5EB57B6AA /* Sources */,
 			);
@@ -356,6 +372,15 @@
 			);
 			name = Extensions;
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		G_6203CEA73CEA82C8F5F1874E229415E7 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				FR_FDECADC33688401FB366510626A8ED24 /* NotificationObserver.swift */,
+			);
+			name = Notification;
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		G_62572FF5A8DBE51E0DF2DE2435F40992 /* Swift */ = {
@@ -409,6 +434,7 @@
 			children = (
 				G_EAFDE18D905945EA770100A5FF572EA8 /* Dispatch */,
 				G_DC1C30F44C171F070AE81414E82A74F7 /* Extensions */,
+				G_6203CEA73CEA82C8F5F1874E229415E7 /* Notification */,
 				G_32F1F1FCDEC2282C0EE8D97264FDC412 /* Sources */,
 				G_E1012CB8AE3E4F306CD06509EEBF02CD /* os */,
 			);
@@ -514,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				FR_73D55A72E4947BA984C5666B386641B9 /* FileManager.swift */,
+				FR_30FB9582542DEBC28C075181E64A79C9 /* String.Index.swift */,
 				FR_BB9C9D4A05FD1ED1B529CAEFABDB4B7F /* String.swift */,
 			);
 			name = Extensions;
@@ -720,10 +747,13 @@
 				BF_BA1332D7374955DF5A346C496B5F48F4 /* Application.swift in Sources */,
 				BF_20F77D72EC46F3DB71B7E4983BA42EFB /* main.swift in Sources */,
 				BF_C5E7ED3966E21A04B85AB9A94030FB1E /* FailureReporting.swift in Sources */,
+				BF_F52B48D9DED42047FACF0357C66E8F86 /* NSAppearance.swift in Sources */,
 				BF_C7886EDF4A77F7B382B6C43212B323AC /* SystemAppearance.swift in Sources */,
 				BF_6C1142B2F29CE57C3988381CBDE4199A /* ObjCAssociation.swift in Sources */,
 				BF_857E0B199E4B4DFD7A098DAA92ED4A5F /* NumericTypesConversions.swift in Sources */,
+				BF_2C94603FDE1C196388FBCCC1B21A4E6C /* NotificationObserver.swift in Sources */,
 				BF_0D08730FDB866F6243F6AF8D0F0E18CB /* DispatchUntil.swift in Sources */,
+				BF_2BCA76F8EC8DA140BA8D0DE36351027C /* String.Index.swift in Sources */,
 				BF_076F5DD13C1AC4C0156E5DCC230E17F7 /* FileManager.swift in Sources */,
 				BF_BB65BCC9C62B07CF4724BED3482EB7BF /* String.swift in Sources */,
 				BF_255B5534F2FD26D45EE572AB247D59C5 /* BuildInfo.swift in Sources */,
