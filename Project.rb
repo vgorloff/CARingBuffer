@@ -1,38 +1,9 @@
-MAIN_FILE = "#{ENV['AWL_SCRIPTS']}/Automation.rb".freeze
-if File.exist?(MAIN_FILE)
-   require MAIN_FILE
-else
-   Dir[File.dirname(__FILE__) + "/Vendor/WL/Scripts/**/*.rb"].each { |file| require file }
-end
+require "#{ENV['AWL_SCRIPTS']}/Automation.rb"
 
 class Project < AbstractProject
 
-   def initialize(rootDirPath)
-      super(rootDirPath)
-      @projectFilePath = rootDirPath + "/CARingBuffer.xcodeproj"
-   end
-
-   def build()
-      XcodeBuilder.new(@projectFilePath).build("CAPlayThrough-macOS")
-      XcodeBuilder.new(@projectFilePath).build("CARBMeasure-macOS")
-   end
-
-   def clean()
-      XcodeBuilder.new(@projectFilePath).clean("CAPlayThrough-macOS")
-      XcodeBuilder.new(@projectFilePath).clean("CARBMeasure-macOS")
-   end
-
-   def release()
-      XcodeBuilder.new(@projectFilePath).ci("CAPlayThrough-macOS")
-      XcodeBuilder.new(@projectFilePath).ci("CARBMeasure-macOS")
-   end
-
-   def archive()
-      release()
-   end
-
    def deploy()
-      gitHubRelease([])
+      gitHubRelease(assets: [])
    end
 
    def generate()
@@ -43,10 +14,10 @@ class Project < AbstractProject
       gen.addComponentFiles(app, [
          "AudioDevice.swift", "AudioUnitSettings.swift", "AudioObjectUtility.swift", "AudioComponentDescription.swift",
          "AppKit/.+/(NS|)WindowController\.swift", "AppKit/.+/(NS|)Window\.swift", "AppKit/.+/(NS|)ViewController\.swift", "AppKit/.+/(NS|)Menu.*\.swift",
-         "AppKit/.+/(NS|)View\.swift", "AppKit/.+/(NS|)Button\.swift", "NSControl.swift",
+         "AppKit/.+/(NS|)View\.swift", "AppKit/.+/(NS|)Button\.swift", "NSControl.swift", "NSAppearance.swift",
          "BuildInfo.swift", "RuntimeInfo.swift", "FailureReporting.swift", "ObjCAssociation.swift", "DispatchUntil.swift",
          "NumericTypesConversions.swift", "FileManager.swift", "SystemAppearance.swift", "Log.swift",
-         "UnfairLock.swift", "String.swift", "NonRecursiveLocking.swift"
+         "UnfairLock.swift", "String.swift", "String.Index.swift", "NonRecursiveLocking.swift", "NotificationObserver.swift"
       ])
       setupSources(gen, app)
 
