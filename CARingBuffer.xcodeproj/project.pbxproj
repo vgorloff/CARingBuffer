@@ -75,7 +75,7 @@
 		BF_C41351B533D43E09CA91CEEEF856FD37 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_F3900EF11EFDA580A7A6D1DE2EC36DCA /* Menu.swift */; };
 		BF_C59F9501DA2A38517EA212020C4221C4 /* MediaBufferCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EDB8D49825EE98AADE1B9F2651E2118A /* MediaBufferCollection.swift */; };
 		BF_C5E7ED3966E21A04B85AB9A94030FB1E /* FailureReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_0172685C808E803286BC10ADD7E56C34 /* FailureReporting.swift */; };
-		BF_CB992377E53C8D8BE92D7CA3DE986C2C /* SystemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_F61ACD8EC6EEAFEDCE5C73EA6E14B680 /* SystemAppearance.swift */; };
+		BF_C7886EDF4A77F7B382B6C43212B323AC /* SystemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AC3D692A4657E6E4E978BA2D282E39AD /* SystemAppearance.swift */; };
 		BF_CD71F3BF806F116B90E391408B91CD78 /* RingBufferTimeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_4D32C22C2CA06B3004A65F7E0539E1C8 /* RingBufferTimeBounds.swift */; };
 		BF_CF9237C28884EBA2B62B596198535D8B /* DefaultInitializerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_6B7B608685B47BFB95783B7BAAD633DB /* DefaultInitializerType.swift */; };
 		BF_D00F74432BEC851A753A0AD9E7FE6AC2 /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_6685D676C5BC0EEF6C5B78323DD37D3F /* UnfairLock.swift */; };
@@ -142,6 +142,7 @@
 		FR_938765184682D9D28C02B8ACFFEFEB20 /* Log.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Log.swift; path = Log.swift; sourceTree = "<group>"; };
 		FR_9887F480BCF35C8D10CBAB2194F4BB56 /* Tool-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; lastKnownFileType = text.xcconfig; name = "Tool-macOS.xcconfig"; path = "Tool-macOS.xcconfig"; sourceTree = "<group>"; };
 		FR_A2961A54812E2E85D4F6A72C8DDBE8D1 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; name = CARBPerformanceTests.mm; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
+		FR_AC3D692A4657E6E4E978BA2D282E39AD /* SystemAppearance.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = SystemAppearance.swift; path = SystemAppearance.swift; sourceTree = "<group>"; };
 		FR_BA49CECF9FC3E27B0CB1D1695D7BCEDF /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = CARBPerformanceTests.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
 		FR_BB9BF13D60BEA69F956B907FE4E22FC1 /* AudioDevice.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AudioDevice.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
 		FR_BB9C9D4A05FD1ED1B529CAEFABDB4B7F /* String.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = String.swift; path = String.swift; sourceTree = "<group>"; };
@@ -156,7 +157,6 @@
 		FR_EDB8D49825EE98AADE1B9F2651E2118A /* MediaBufferCollection.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MediaBufferCollection.swift; path = MediaBufferCollection.swift; sourceTree = "<group>"; };
 		FR_F0F59773387252D6BB3ED1C23BD32664 /* App-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; lastKnownFileType = text.xcconfig; name = "App-macOS.xcconfig"; path = "App-macOS.xcconfig"; sourceTree = "<group>"; };
 		FR_F3900EF11EFDA580A7A6D1DE2EC36DCA /* Menu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Menu.swift; path = Menu.swift; sourceTree = "<group>"; };
-		FR_F61ACD8EC6EEAFEDCE5C73EA6E14B680 /* SystemAppearance.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = SystemAppearance.swift; path = SystemAppearance.swift; sourceTree = "<group>"; };
 		FR_FC0B9E1E263A3C1E5C5AC99BDB54F5D4 /* Atomic.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; name = Atomic.m; path = Atomic.m; sourceTree = "<group>"; };
 		FR_FCC99D790CADF837F2200EA60765FC29 /* AudioObjectUtility.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AudioObjectUtility.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
 		FR_FE737915159DA42300D65B52C2472E22 /* NSButton.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSButton.swift; path = NSButton.swift; sourceTree = "<group>"; };
@@ -312,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				G_1763383A3144D8C19B621802FF6C7D76 /* Reporting */,
+				G_E4203515BEA3A9C9D3DAC0B5EB57B6AA /* Sources */,
 			);
 			name = UI;
 			path = UI;
@@ -467,7 +468,6 @@
 			isa = PBXGroup;
 			children = (
 				FR_F3900EF11EFDA580A7A6D1DE2EC36DCA /* Menu.swift */,
-				FR_F61ACD8EC6EEAFEDCE5C73EA6E14B680 /* SystemAppearance.swift */,
 			);
 			name = Sources;
 			path = Sources;
@@ -537,6 +537,15 @@
 			);
 			name = Concurrency;
 			path = Concurrency;
+			sourceTree = "<group>";
+		};
+		G_E4203515BEA3A9C9D3DAC0B5EB57B6AA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FR_AC3D692A4657E6E4E978BA2D282E39AD /* SystemAppearance.swift */,
+			);
+			name = Sources;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		G_E7EC9D6CA0981542B667D19831DB65ED /* AppKit */ = {
@@ -711,6 +720,7 @@
 				BF_BA1332D7374955DF5A346C496B5F48F4 /* Application.swift in Sources */,
 				BF_20F77D72EC46F3DB71B7E4983BA42EFB /* main.swift in Sources */,
 				BF_C5E7ED3966E21A04B85AB9A94030FB1E /* FailureReporting.swift in Sources */,
+				BF_C7886EDF4A77F7B382B6C43212B323AC /* SystemAppearance.swift in Sources */,
 				BF_6C1142B2F29CE57C3988381CBDE4199A /* ObjCAssociation.swift in Sources */,
 				BF_857E0B199E4B4DFD7A098DAA92ED4A5F /* NumericTypesConversions.swift in Sources */,
 				BF_0D08730FDB866F6243F6AF8D0F0E18CB /* DispatchUntil.swift in Sources */,
@@ -729,7 +739,6 @@
 				BF_40A1323791643D68A0C5139D1B0B06D4 /* NSView.swift in Sources */,
 				BF_69F8A788ED65893908897DFC31602BED /* NSViewController.swift in Sources */,
 				BF_C41351B533D43E09CA91CEEEF856FD37 /* Menu.swift in Sources */,
-				BF_CB992377E53C8D8BE92D7CA3DE986C2C /* SystemAppearance.swift in Sources */,
 				BF_B7309D1385366342F77CB4447259C4D2 /* ViewController.swift in Sources */,
 				BF_5280A41C029F1918BB24D16BE32CC6ED /* View.swift in Sources */,
 				BF_83150CA758CB9EC66B2B7C0342FEAE8D /* WindowController.swift in Sources */,
