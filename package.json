@@ -1,6 +1,6 @@
 {
    "dependencies": {
-      "wl-scripting": "^1.0.8",
+      "wl-scripting": "^1.0.9",
       "@types/node": "^12.0.2",
       "@types/ffi": "^0.2.2",
       "ffi": "^2.3.0",
