@@ -715,7 +715,7 @@
 		P_0B586BCFB082C77065CFF370793845C9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = WaveLabs;
 			};
 			buildConfigurationList = CL_39DFA7DC0CDE437CA165AB00A61360CD /* Build configuration list for PBXProject "CARingBuffer" */;
@@ -858,7 +858,7 @@
 			baseConfigurationReference = FR_EA8A9054C1F4D05F4FEBD27F27D74A67 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = ../../../../Developer/Projects/WL/Testability/Info.plist;
+				INFOPLIST_FILE = "Tests/C++/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = CppTests;
 				SWIFT_INCLUDE_PATHS = Tests;
@@ -904,7 +904,7 @@
 			baseConfigurationReference = FR_EA8A9054C1F4D05F4FEBD27F27D74A67 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = ../../../../Developer/Projects/WL/Testability/Info.plist;
+				INFOPLIST_FILE = "Tests/C++/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = CppTests;
 				SWIFT_INCLUDE_PATHS = Tests;
@@ -918,7 +918,7 @@
 			baseConfigurationReference = FR_EA8A9054C1F4D05F4FEBD27F27D74A67 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = ../../../../Developer/Projects/WL/Testability/Info.plist;
+				INFOPLIST_FILE = Tests/Swift/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = SwiftTests;
 				SWIFT_INCLUDE_PATHS = Tests;
@@ -965,7 +965,7 @@
 			baseConfigurationReference = FR_EA8A9054C1F4D05F4FEBD27F27D74A67 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = ../../../../Developer/Projects/WL/Testability/Info.plist;
+				INFOPLIST_FILE = Tests/Swift/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = SwiftTests;
 				SWIFT_INCLUDE_PATHS = Tests;
