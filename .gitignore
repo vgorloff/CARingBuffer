@@ -11,6 +11,7 @@ Developer.xcconfig
 .tmp
 /node_modules
 /Project.js
+/package-lock.json
 
 ## Package managers
 /Vendor/Carthage
