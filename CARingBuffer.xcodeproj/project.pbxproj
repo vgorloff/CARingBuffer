@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -101,71 +101,71 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FR_0172685C808E803286BC10ADD7E56C34 /* FailureReporting.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = FailureReporting.swift; path = FailureReporting.swift; sourceTree = "<group>"; };
-		FR_0A8260E7E65CCFD30F9CBD41F4299784 /* NSWindow.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSWindow.swift; path = NSWindow.swift; sourceTree = "<group>"; };
-		FR_0BB33EDDA421EBE4B7805191791ABF04 /* RuntimeInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = RuntimeInfo.swift; path = RuntimeInfo.swift; sourceTree = "<group>"; };
-		FR_0DE5C36D9C7780351896D5081B6D0B4A /* NSMenuItem.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSMenuItem.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
-		FR_0E2DD8DA0F1C3C52FDA7909F97CA3337 /* MainMenu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MainMenu.swift; path = MainMenu.swift; sourceTree = "<group>"; };
-		FR_0EAC4BB651504DE2D538946CE5E4041D /* Atomic.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; name = Atomic.h; path = Atomic.h; sourceTree = "<group>"; };
-		FR_111069087029B5C24CDF8A43FB85176D /* Window.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Window.swift; path = Window.swift; sourceTree = "<group>"; };
-		FR_14ABB69C519DD16C9B9DE8AF1D07DF0F /* WindowController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = WindowController.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		FR_179166418A3E1AD39895F5E7D5EDF2C8 /* NSView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSView.swift; path = NSView.swift; sourceTree = "<group>"; };
-		FR_18B61A165D9E1D8AF566C9FDADD1D433 /* Application.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Application.swift; path = Application.swift; sourceTree = "<group>"; };
+		FR_0172685C808E803286BC10ADD7E56C34 /* FailureReporting.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = FailureReporting.swift; sourceTree = "<group>"; };
+		FR_0A8260E7E65CCFD30F9CBD41F4299784 /* NSWindow.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
+		FR_0BB33EDDA421EBE4B7805191791ABF04 /* RuntimeInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = RuntimeInfo.swift; sourceTree = "<group>"; };
+		FR_0DE5C36D9C7780351896D5081B6D0B4A /* NSMenuItem.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
+		FR_0E2DD8DA0F1C3C52FDA7909F97CA3337 /* MainMenu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		FR_0EAC4BB651504DE2D538946CE5E4041D /* Atomic.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = Atomic.h; sourceTree = "<group>"; };
+		FR_111069087029B5C24CDF8A43FB85176D /* Window.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		FR_14ABB69C519DD16C9B9DE8AF1D07DF0F /* WindowController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		FR_179166418A3E1AD39895F5E7D5EDF2C8 /* NSView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
+		FR_18B61A165D9E1D8AF566C9FDADD1D433 /* Application.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		FR_1EF121FF4E283A4CD8B231B65490E5D5 /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_1FD6633971B8B7BF4E7D2BF24C445621 /* View.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = View.swift; path = View.swift; sourceTree = "<group>"; };
-		FR_20D83AF4C911A627274C93BDAB5E8236 /* MediaBuffer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MediaBuffer.swift; path = MediaBuffer.swift; sourceTree = "<group>"; };
-		FR_2482AD5BD5FB5B6F553EA44DC434F06C /* Button.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Button.swift; path = Button.swift; sourceTree = "<group>"; };
-		FR_26227D0EA4498C527BFDDD7F37EFFA9B /* Version.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; name = Version.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
-		FR_298B26EB6091235E7A0EEE981985644F /* RingBufferTestsUtility.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = RingBufferTestsUtility.swift; path = RingBufferTestsUtility.swift; sourceTree = "<group>"; };
+		FR_1FD6633971B8B7BF4E7D2BF24C445621 /* View.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		FR_20D83AF4C911A627274C93BDAB5E8236 /* MediaBuffer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MediaBuffer.swift; sourceTree = "<group>"; };
+		FR_2482AD5BD5FB5B6F553EA44DC434F06C /* Button.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		FR_26227D0EA4498C527BFDDD7F37EFFA9B /* Version.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		FR_298B26EB6091235E7A0EEE981985644F /* RingBufferTestsUtility.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = RingBufferTestsUtility.swift; sourceTree = "<group>"; };
 		FR_2E597D9650B285DAD74CA6EA20FC6987 /* CppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_2F23ECB3D3156C4AC9A95406DEFE628D /* NumericTypesConversions.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NumericTypesConversions.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
-		FR_2F73D3BC8BC3A2CFD67CE1E58821705B /* BuildInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = BuildInfo.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
-		FR_30FB9582542DEBC28C075181E64A79C9 /* String.Index.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = String.Index.swift; path = String.Index.swift; sourceTree = "<group>"; };
-		FR_3F661F14AD0DE00DD5FE423216448E2C /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ViewController.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FR_412ED8AEC9972AAD7914753BB01C1173 /* NSViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSViewController.swift; path = NSViewController.swift; sourceTree = "<group>"; };
-		FR_43337681F7C9FF232C441EB2E0DD9192 /* MainWindowController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MainWindowController.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		FR_4779CA0C1EF9DBA0542993E768ACAD27 /* CARBMeasure */ = {isa = PBXFileReference; includeInIndex = 0; path = CARBMeasure; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_4D32C22C2CA06B3004A65F7E0539E1C8 /* RingBufferTimeBounds.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = RingBufferTimeBounds.swift; path = RingBufferTimeBounds.swift; sourceTree = "<group>"; };
-		FR_53426F8B070BC19BFBE9C4600625B136 /* NSControl.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSControl.swift; path = NSControl.swift; sourceTree = "<group>"; };
-		FR_5522FB8373EE28A42BAFBDCF9695A2B3 /* DispatchUntil.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = DispatchUntil.swift; path = DispatchUntil.swift; sourceTree = "<group>"; };
-		FR_56F63D17A51808707C2C6C7DAC50ECF8 /* AudioBuffer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AudioBuffer.swift; path = AudioBuffer.swift; sourceTree = "<group>"; };
-		FR_5A076DD2D0A1AF1E08B7BD33456639DB /* MediaBufferList.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MediaBufferList.swift; path = MediaBufferList.swift; sourceTree = "<group>"; };
-		FR_5B57D6DD59BDEB302E04DF9FC1A6DBAE /* RingBuffer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = RingBuffer.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
-		FR_6685D676C5BC0EEF6C5B78323DD37D3F /* UnfairLock.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = UnfairLock.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
-		FR_6889A5872D3B9570AF24DC8BA823E6C4 /* NonRecursiveLocking.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NonRecursiveLocking.swift; path = NonRecursiveLocking.swift; sourceTree = "<group>"; };
-		FR_6B7B608685B47BFB95783B7BAAD633DB /* DefaultInitializerType.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = DefaultInitializerType.swift; path = DefaultInitializerType.swift; sourceTree = "<group>"; };
-		FR_6C5368C61AC638AC0682209DCF303E55 /* CARBTests.mm */ = {isa = PBXFileReference; name = CARBTests.mm; path = CARBTests.mm; sourceTree = "<group>"; };
-		FR_73D55A72E4947BA984C5666B386641B9 /* FileManager.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = FileManager.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		FR_7AE931E62A42C0FC2CFD131A265A8130 /* Logger.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Logger.swift; path = Logger.swift; sourceTree = "<group>"; };
+		FR_2F23ECB3D3156C4AC9A95406DEFE628D /* NumericTypesConversions.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NumericTypesConversions.swift; sourceTree = "<group>"; };
+		FR_2F73D3BC8BC3A2CFD67CE1E58821705B /* BuildInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
+		FR_30FB9582542DEBC28C075181E64A79C9 /* String.Index.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = String.Index.swift; sourceTree = "<group>"; };
+		FR_3F661F14AD0DE00DD5FE423216448E2C /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FR_412ED8AEC9972AAD7914753BB01C1173 /* NSViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NSViewController.swift; sourceTree = "<group>"; };
+		FR_43337681F7C9FF232C441EB2E0DD9192 /* MainWindowController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		FR_4779CA0C1EF9DBA0542993E768ACAD27 /* CARBMeasure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CARBMeasure; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_4D32C22C2CA06B3004A65F7E0539E1C8 /* RingBufferTimeBounds.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = RingBufferTimeBounds.swift; sourceTree = "<group>"; };
+		FR_53426F8B070BC19BFBE9C4600625B136 /* NSControl.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NSControl.swift; sourceTree = "<group>"; };
+		FR_5522FB8373EE28A42BAFBDCF9695A2B3 /* DispatchUntil.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = DispatchUntil.swift; sourceTree = "<group>"; };
+		FR_56F63D17A51808707C2C6C7DAC50ECF8 /* AudioBuffer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioBuffer.swift; sourceTree = "<group>"; };
+		FR_5A076DD2D0A1AF1E08B7BD33456639DB /* MediaBufferList.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MediaBufferList.swift; sourceTree = "<group>"; };
+		FR_5B57D6DD59BDEB302E04DF9FC1A6DBAE /* RingBuffer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		FR_6685D676C5BC0EEF6C5B78323DD37D3F /* UnfairLock.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
+		FR_6889A5872D3B9570AF24DC8BA823E6C4 /* NonRecursiveLocking.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NonRecursiveLocking.swift; sourceTree = "<group>"; };
+		FR_6B7B608685B47BFB95783B7BAAD633DB /* DefaultInitializerType.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = DefaultInitializerType.swift; sourceTree = "<group>"; };
+		FR_6C5368C61AC638AC0682209DCF303E55 /* CARBTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBTests.mm; sourceTree = "<group>"; };
+		FR_73D55A72E4947BA984C5666B386641B9 /* FileManager.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		FR_7AE931E62A42C0FC2CFD131A265A8130 /* Logger.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FR_7BC23D47F664D5D9EA377F68EEF22E97 /* SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_7D8075CF8F475B2F80EBD8209D39FFAA /* RingBufferOffsets.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = RingBufferOffsets.swift; path = RingBufferOffsets.swift; sourceTree = "<group>"; };
-		FR_7DBCAD35020C43562D64E573F3CEFCD2 /* main.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = main.swift; path = main.swift; sourceTree = "<group>"; };
-		FR_8515B99539B03A60542ED6EF98AF150E /* NSMenu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSMenu.swift; path = NSMenu.swift; sourceTree = "<group>"; };
-		FR_884E623289EEC8B733F399A27AF0DB0B /* main.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = main.swift; path = main.swift; sourceTree = "<group>"; };
-		FR_8B9F8786C8776E392262B080F9494B28 /* ObjCAssociation.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ObjCAssociation.swift; path = ObjCAssociation.swift; sourceTree = "<group>"; };
-		FR_938765184682D9D28C02B8ACFFEFEB20 /* Log.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Log.swift; path = Log.swift; sourceTree = "<group>"; };
-		FR_9887F480BCF35C8D10CBAB2194F4BB56 /* Tool-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; lastKnownFileType = text.xcconfig; name = "Tool-macOS.xcconfig"; path = "Tool-macOS.xcconfig"; sourceTree = "<group>"; };
-		FR_A2961A54812E2E85D4F6A72C8DDBE8D1 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; name = CARBPerformanceTests.mm; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
-		FR_AC3D692A4657E6E4E978BA2D282E39AD /* SystemAppearance.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = SystemAppearance.swift; path = SystemAppearance.swift; sourceTree = "<group>"; };
-		FR_BA49CECF9FC3E27B0CB1D1695D7BCEDF /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = CARBPerformanceTests.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
-		FR_BB9BF13D60BEA69F956B907FE4E22FC1 /* AudioDevice.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AudioDevice.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
-		FR_BB9C9D4A05FD1ED1B529CAEFABDB4B7F /* String.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = String.swift; path = String.swift; sourceTree = "<group>"; };
-		FR_C655C608CD6B743245B0DB8F1DF4EB68 /* PlayThroughEngine.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = PlayThroughEngine.swift; path = PlayThroughEngine.swift; sourceTree = "<group>"; };
-		FR_C656671C87442838139E2638F7041C88 /* Project.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; name = Project.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		FR_D23F5C29B29F44E11EA500A5A64979D5 /* AudioUnitSettings.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AudioUnitSettings.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
-		FR_DD9E5D369021152AE4418D9F3292DA5D /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = UnsafeMutableAudioBufferListPointer.swift; path = UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
-		FR_E23666BF8DFD2D3B4A4E18C20C2C5D44 /* MainViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MainViewController.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		FR_E5BF277582842CF6B125163E047CC340 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AudioComponentDescription.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
-		FR_EA1F08D75F3714C6599ED9767A9482EC /* NSAppearance.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSAppearance.swift; path = NSAppearance.swift; sourceTree = "<group>"; };
-		FR_EA8A9054C1F4D05F4FEBD27F27D74A67 /* Tests-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; lastKnownFileType = text.xcconfig; name = "Tests-macOS.xcconfig"; path = "Tests-macOS.xcconfig"; sourceTree = "<group>"; };
-		FR_ECA2FFBB78AFCA8CEC0C2A938DD5C5CF /* CoreAudioSDK.cpp */ = {isa = PBXFileReference; name = CoreAudioSDK.cpp; path = CoreAudioSDK.cpp; sourceTree = "<group>"; };
-		FR_EDB8D49825EE98AADE1B9F2651E2118A /* MediaBufferCollection.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MediaBufferCollection.swift; path = MediaBufferCollection.swift; sourceTree = "<group>"; };
-		FR_F0F59773387252D6BB3ED1C23BD32664 /* App-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; lastKnownFileType = text.xcconfig; name = "App-macOS.xcconfig"; path = "App-macOS.xcconfig"; sourceTree = "<group>"; };
-		FR_F3900EF11EFDA580A7A6D1DE2EC36DCA /* Menu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Menu.swift; path = Menu.swift; sourceTree = "<group>"; };
-		FR_FC0B9E1E263A3C1E5C5AC99BDB54F5D4 /* Atomic.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; name = Atomic.m; path = Atomic.m; sourceTree = "<group>"; };
-		FR_FCC99D790CADF837F2200EA60765FC29 /* AudioObjectUtility.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AudioObjectUtility.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
-		FR_FDECADC33688401FB366510626A8ED24 /* NotificationObserver.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NotificationObserver.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
-		FR_FE737915159DA42300D65B52C2472E22 /* NSButton.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NSButton.swift; path = NSButton.swift; sourceTree = "<group>"; };
+		FR_7D8075CF8F475B2F80EBD8209D39FFAA /* RingBufferOffsets.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = RingBufferOffsets.swift; sourceTree = "<group>"; };
+		FR_7DBCAD35020C43562D64E573F3CEFCD2 /* main.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FR_8515B99539B03A60542ED6EF98AF150E /* NSMenu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NSMenu.swift; sourceTree = "<group>"; };
+		FR_884E623289EEC8B733F399A27AF0DB0B /* main.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FR_8B9F8786C8776E392262B080F9494B28 /* ObjCAssociation.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ObjCAssociation.swift; sourceTree = "<group>"; };
+		FR_938765184682D9D28C02B8ACFFEFEB20 /* Log.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		FR_9887F480BCF35C8D10CBAB2194F4BB56 /* Tool-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = "Tool-macOS.xcconfig"; sourceTree = "<group>"; };
+		FR_A2961A54812E2E85D4F6A72C8DDBE8D1 /* CARBPerformanceTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CARBPerformanceTests.mm; sourceTree = "<group>"; };
+		FR_AC3D692A4657E6E4E978BA2D282E39AD /* SystemAppearance.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = SystemAppearance.swift; sourceTree = "<group>"; };
+		FR_BA49CECF9FC3E27B0CB1D1695D7BCEDF /* CARBPerformanceTests.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = CARBPerformanceTests.swift; sourceTree = "<group>"; };
+		FR_BB9BF13D60BEA69F956B907FE4E22FC1 /* AudioDevice.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
+		FR_BB9C9D4A05FD1ED1B529CAEFABDB4B7F /* String.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FR_C655C608CD6B743245B0DB8F1DF4EB68 /* PlayThroughEngine.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = PlayThroughEngine.swift; sourceTree = "<group>"; };
+		FR_C656671C87442838139E2638F7041C88 /* Project.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		FR_D23F5C29B29F44E11EA500A5A64979D5 /* AudioUnitSettings.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
+		FR_DD9E5D369021152AE4418D9F3292DA5D /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
+		FR_E23666BF8DFD2D3B4A4E18C20C2C5D44 /* MainViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FR_E5BF277582842CF6B125163E047CC340 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
+		FR_EA1F08D75F3714C6599ED9767A9482EC /* NSAppearance.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NSAppearance.swift; sourceTree = "<group>"; };
+		FR_EA8A9054C1F4D05F4FEBD27F27D74A67 /* Tests-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = "Tests-macOS.xcconfig"; sourceTree = "<group>"; };
+		FR_ECA2FFBB78AFCA8CEC0C2A938DD5C5CF /* CoreAudioSDK.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CoreAudioSDK.cpp; sourceTree = "<group>"; };
+		FR_EDB8D49825EE98AADE1B9F2651E2118A /* MediaBufferCollection.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MediaBufferCollection.swift; sourceTree = "<group>"; };
+		FR_F0F59773387252D6BB3ED1C23BD32664 /* App-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = "App-macOS.xcconfig"; sourceTree = "<group>"; };
+		FR_F3900EF11EFDA580A7A6D1DE2EC36DCA /* Menu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		FR_FC0B9E1E263A3C1E5C5AC99BDB54F5D4 /* Atomic.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = Atomic.m; sourceTree = "<group>"; };
+		FR_FCC99D790CADF837F2200EA60765FC29 /* AudioObjectUtility.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioObjectUtility.swift; sourceTree = "<group>"; };
+		FR_FDECADC33688401FB366510626A8ED24 /* NotificationObserver.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
+		FR_FE737915159DA42300D65B52C2472E22 /* NSButton.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -175,7 +175,6 @@
 				FR_C656671C87442838139E2638F7041C88 /* Project.xcconfig */,
 				FR_26227D0EA4498C527BFDDD7F37EFFA9B /* Version.xcconfig */,
 			);
-			name = Configuration;
 			path = Configuration;
 			sourceTree = "<group>";
 		};
@@ -195,7 +194,6 @@
 			children = (
 				G_F15FC53A20397CE432773F962644BBD9 /* Configuration */,
 			);
-			name = Shared;
 			path = Shared;
 			sourceTree = "<group>";
 		};
@@ -204,7 +202,6 @@
 			children = (
 				FR_2F23ECB3D3156C4AC9A95406DEFE628D /* NumericTypesConversions.swift */,
 			);
-			name = Converters;
 			path = Converters;
 			sourceTree = "<group>";
 		};
@@ -215,7 +212,6 @@
 				FR_A2961A54812E2E85D4F6A72C8DDBE8D1 /* CARBPerformanceTests.mm */,
 				FR_6C5368C61AC638AC0682209DCF303E55 /* CARBTests.mm */,
 			);
-			name = "C++";
 			path = "C++";
 			sourceTree = "<group>";
 		};
@@ -224,7 +220,6 @@
 			children = (
 				G_1551A2ED37E8B79D6E0ACE45408D8766 /* Types */,
 			);
-			name = MediaTests;
 			path = MediaTests;
 			sourceTree = "<group>";
 		};
@@ -234,7 +229,6 @@
 				G_7B87BC4318BC2D49A7728668379E23A4 /* Extensions */,
 				G_4471215290B2BB17A229C2B8F8FC7734 /* Sources */,
 			);
-			name = Media;
 			path = Media;
 			sourceTree = "<group>";
 		};
@@ -243,7 +237,6 @@
 			children = (
 				FR_298B26EB6091235E7A0EEE981985644F /* RingBufferTestsUtility.swift */,
 			);
-			name = Types;
 			path = Types;
 			sourceTree = "<group>";
 		};
@@ -252,7 +245,6 @@
 			children = (
 				FR_0172685C808E803286BC10ADD7E56C34 /* FailureReporting.swift */,
 			);
-			name = Reporting;
 			path = Reporting;
 			sourceTree = "<group>";
 		};
@@ -262,7 +254,6 @@
 				FR_2F73D3BC8BC3A2CFD67CE1E58821705B /* BuildInfo.swift */,
 				FR_0BB33EDDA421EBE4B7805191791ABF04 /* RuntimeInfo.swift */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -271,7 +262,6 @@
 			children = (
 				FR_EA1F08D75F3714C6599ED9767A9482EC /* NSAppearance.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -280,7 +270,6 @@
 			children = (
 				G_0AE8A1E40F587625A1AD0CE43FFBC0F8 /* Converters */,
 			);
-			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};
@@ -293,7 +282,6 @@
 				FR_111069087029B5C24CDF8A43FB85176D /* Window.swift */,
 				FR_14ABB69C519DD16C9B9DE8AF1D07DF0F /* WindowController.swift */,
 			);
-			name = Reusable;
 			path = Reusable;
 			sourceTree = "<group>";
 		};
@@ -303,7 +291,6 @@
 				G_4BF3EC04FE5525749617F42993FFF63E /* CAPlayThrough */,
 				G_CB4BEE752A613D0BDCCEBD02A05E8A3D /* CARBMeasure */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -319,7 +306,6 @@
 				FR_7D8075CF8F475B2F80EBD8209D39FFAA /* RingBufferOffsets.swift */,
 				FR_4D32C22C2CA06B3004A65F7E0539E1C8 /* RingBufferTimeBounds.swift */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -330,7 +316,6 @@
 				G_1763383A3144D8C19B621802FF6C7D76 /* Reporting */,
 				G_E4203515BEA3A9C9D3DAC0B5EB57B6AA /* Sources */,
 			);
-			name = UI;
 			path = UI;
 			sourceTree = "<group>";
 		};
@@ -345,7 +330,6 @@
 				FR_C655C608CD6B743245B0DB8F1DF4EB68 /* PlayThroughEngine.swift */,
 				FR_884E623289EEC8B733F399A27AF0DB0B /* main.swift */,
 			);
-			name = CAPlayThrough;
 			path = CAPlayThrough;
 			sourceTree = "<group>";
 		};
@@ -355,7 +339,6 @@
 				G_0E5762957F30E28B85CE201CF72B26BC /* C++ */,
 				G_62572FF5A8DBE51E0DF2DE2435F40992 /* Swift */,
 			);
-			name = Tests;
 			path = Tests;
 			sourceTree = "<group>";
 		};
@@ -370,7 +353,6 @@
 				FR_412ED8AEC9972AAD7914753BB01C1173 /* NSViewController.swift */,
 				FR_0A8260E7E65CCFD30F9CBD41F4299784 /* NSWindow.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -379,7 +361,6 @@
 			children = (
 				FR_FDECADC33688401FB366510626A8ED24 /* NotificationObserver.swift */,
 			);
-			name = Notification;
 			path = Notification;
 			sourceTree = "<group>";
 		};
@@ -388,16 +369,7 @@
 			children = (
 				FR_BA49CECF9FC3E27B0CB1D1695D7BCEDF /* CARBPerformanceTests.swift */,
 			);
-			name = Swift;
 			path = Swift;
-			sourceTree = "<group>";
-		};
-		G_678D19761341B6F8E485E848619CDFD8 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Libs;
-			path = ../libs;
 			sourceTree = "<group>";
 		};
 		G_7B87BC4318BC2D49A7728668379E23A4 /* Extensions */ = {
@@ -407,14 +379,12 @@
 				FR_E5BF277582842CF6B125163E047CC340 /* AudioComponentDescription.swift */,
 				FR_DD9E5D369021152AE4418D9F3292DA5D /* UnsafeMutableAudioBufferListPointer.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
 		G_7D32E80459004C508798108DFC9BC70E /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				G_678D19761341B6F8E485E848619CDFD8 /* Libs */,
 				G_B38D15B9DF57A589CE2F64213C93E572 /* WL */,
 			);
 			path = Vendor;
@@ -425,7 +395,6 @@
 			children = (
 				FR_938765184682D9D28C02B8ACFFEFEB20 /* Log.swift */,
 			);
-			name = log;
 			path = log;
 			sourceTree = "<group>";
 		};
@@ -438,7 +407,6 @@
 				G_32F1F1FCDEC2282C0EE8D97264FDC412 /* Sources */,
 				G_E1012CB8AE3E4F306CD06509EEBF02CD /* os */,
 			);
-			name = Foundation;
 			path = Foundation;
 			sourceTree = "<group>";
 		};
@@ -447,7 +415,6 @@
 			children = (
 				FR_8B9F8786C8776E392262B080F9494B28 /* ObjCAssociation.swift */,
 			);
-			name = ObjectiveC;
 			path = ObjectiveC;
 			sourceTree = "<group>";
 		};
@@ -465,7 +432,6 @@
 				G_D179DF710324B2D1FDB332CE56398067 /* Types */,
 				G_45810C60EE5C2A142EAE61FC83FAD328 /* UI */,
 			);
-			name = WL;
 			path = WL;
 			sourceTree = "<group>";
 		};
@@ -486,7 +452,6 @@
 				G_CBDCD22529B30511430840CBDD95A9B6 /* include */,
 				FR_FC0B9E1E263A3C1E5C5AC99BDB54F5D4 /* Atomic.m */,
 			);
-			name = ConcurrencyOC;
 			path = ConcurrencyOC;
 			sourceTree = "<group>";
 		};
@@ -495,7 +460,6 @@
 			children = (
 				FR_F3900EF11EFDA580A7A6D1DE2EC36DCA /* Menu.swift */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -504,7 +468,6 @@
 			children = (
 				FR_7DBCAD35020C43562D64E573F3CEFCD2 /* main.swift */,
 			);
-			name = CARBMeasure;
 			path = CARBMeasure;
 			sourceTree = "<group>";
 		};
@@ -513,7 +476,6 @@
 			children = (
 				FR_0EAC4BB651504DE2D538946CE5E4041D /* Atomic.h */,
 			);
-			name = include;
 			path = include;
 			sourceTree = "<group>";
 		};
@@ -522,7 +484,6 @@
 			children = (
 				G_9DD0154F069339394F6C31712E737EE6 /* ObjectiveC */,
 			);
-			name = Types;
 			path = Types;
 			sourceTree = "<group>";
 		};
@@ -532,7 +493,6 @@
 				FR_BB9BF13D60BEA69F956B907FE4E22FC1 /* AudioDevice.swift */,
 				FR_FCC99D790CADF837F2200EA60765FC29 /* AudioObjectUtility.swift */,
 			);
-			name = Media;
 			path = Media;
 			sourceTree = "<group>";
 		};
@@ -543,7 +503,6 @@
 				FR_30FB9582542DEBC28C075181E64A79C9 /* String.Index.swift */,
 				FR_BB9C9D4A05FD1ED1B529CAEFABDB4B7F /* String.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -552,7 +511,6 @@
 			children = (
 				G_7E736D45598F0BB67C5D1D2FEBE72820 /* log */,
 			);
-			name = os;
 			path = os;
 			sourceTree = "<group>";
 		};
@@ -562,7 +520,6 @@
 				FR_6889A5872D3B9570AF24DC8BA823E6C4 /* NonRecursiveLocking.swift */,
 				FR_6685D676C5BC0EEF6C5B78323DD37D3F /* UnfairLock.swift */,
 			);
-			name = Concurrency;
 			path = Concurrency;
 			sourceTree = "<group>";
 		};
@@ -571,7 +528,6 @@
 			children = (
 				FR_AC3D692A4657E6E4E978BA2D282E39AD /* SystemAppearance.swift */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -583,7 +539,6 @@
 				G_3F253515A285FA95BA7CD6DCC59F2B43 /* Reusable */,
 				G_BC699525C484FC12CF977E418DE4FC30 /* Sources */,
 			);
-			name = AppKit;
 			path = AppKit;
 			sourceTree = "<group>";
 		};
@@ -592,7 +547,6 @@
 			children = (
 				FR_5522FB8373EE28A42BAFBDCF9695A2B3 /* DispatchUntil.swift */,
 			);
-			name = Dispatch;
 			path = Dispatch;
 			sourceTree = "<group>";
 		};
@@ -603,7 +557,6 @@
 				FR_EA8A9054C1F4D05F4FEBD27F27D74A67 /* Tests-macOS.xcconfig */,
 				FR_9887F480BCF35C8D10CBAB2194F4BB56 /* Tool-macOS.xcconfig */,
 			);
-			name = Configuration;
 			path = Configuration;
 			sourceTree = "<group>";
 		};
@@ -715,12 +668,17 @@
 		P_0B586BCFB082C77065CFF370793845C9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = WaveLabs;
 			};
 			buildConfigurationList = CL_39DFA7DC0CDE437CA165AB00A61360CD /* Build configuration list for PBXProject "CARingBuffer" */;
 			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
 			mainGroup = G_0676D2B6FF1CF5EA8CF754D972EAAFDA;
 			productRefGroup = G_B8F776404C40B1FE86C7FDF490D9CF5C /* Products */;
 			projectDirPath = "";
@@ -983,6 +941,7 @@
 				BC_B61778E1E1DEFD755CA67B7EDE4521A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CL_182D3BF3C0F06682FD025E4D9BE7794F /* Build configuration list for PBXNativeTarget "CARBMeasure-macOS" */ = {
 			isa = XCConfigurationList;
@@ -991,6 +950,7 @@
 				BC_2D3E6E9E2912A1AED35560609FA57C7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CL_39DFA7DC0CDE437CA165AB00A61360CD /* Build configuration list for PBXProject "CARingBuffer" */ = {
 			isa = XCConfigurationList;
@@ -999,6 +959,7 @@
 				BC_A5F89365F4BD6A5B4448FBDB9B65E2E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CL_B39B7C9DED00DF48F63DA61720722EBF /* Build configuration list for PBXNativeTarget "CppTests-macOS" */ = {
 			isa = XCConfigurationList;
@@ -1007,6 +968,7 @@
 				BC_5A5F136EEE04304B6A1E08B72D3E4D3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CL_F07F5EA96B1CDDF7AC238E908155DBB3 /* Build configuration list for PBXNativeTarget "SwiftTests-macOS" */ = {
 			isa = XCConfigurationList;
@@ -1015,6 +977,7 @@
 				BC_7B3C33ECED133191E2E25380D1630EE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,15 +1,5 @@
 {
-   "dependencies": {
-      "wl-scripting": "^1.0.9",
-      "@types/node": "^12.0.2",
-      "@types/ffi": "^0.2.2",
-      "ffi": "^2.3.0",
-      "typescript": "^3.4.5",
-      "ref-array": "^1.2.0"
-   },
-   "scripts": {
-      "build": "tsc",
-      "clean": "rm -rf ./node_modules/",
-      "setup": "npm link @types/node wl-scripting"
-   }
+  "dependencies": {
+    "wl-scripting": "^1.0.18"
+  }
 }
