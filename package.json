@@ -1,4 +1,6 @@
 {
   "dependencies": {
+    "mc-media": "1.0.6",
+    "mc-shared-config": "1.0.3"
   }
 }
