@@ -13,6 +13,8 @@
 		80E502BE2401DA360075AD72 /* mcMedia in Frameworks */ = {isa = PBXBuildFile; productRef = 80E502BD2401DA360075AD72 /* mcMedia */; };
 		80E502BF2401DA540075AD72 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */; };
 		80E502C22401DADA0075AD72 /* mcMedia in Frameworks */ = {isa = PBXBuildFile; productRef = 80E502C12401DADA0075AD72 /* mcMedia */; };
+		80E502C62401DCB00075AD72 /* mcAppKit in Frameworks */ = {isa = PBXBuildFile; productRef = 80E502C52401DCB00075AD72 /* mcAppKit */; };
+		80E502C92401DD640075AD72 /* mcMediaAU in Frameworks */ = {isa = PBXBuildFile; productRef = 80E502C82401DD640075AD72 /* mcMediaAU */; };
 		BF_149E94D98D910E4365B218FE22AF4CED /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_A2961A54812E2E85D4F6A72C8DDBE8D1 /* CARBPerformanceTests.mm */; };
 		BF_20F77D72EC46F3DB71B7E4983BA42EFB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_884E623289EEC8B733F399A27AF0DB0B /* main.swift */; };
 		BF_4D6025B89175F68459E641B7786938D2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_7AE931E62A42C0FC2CFD131A265A8130 /* Logger.swift */; };
@@ -46,6 +48,11 @@
 		80E502B12401D6DE0075AD72 /* Framework-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-tvOS.xcconfig"; sourceTree = "<group>"; };
 		80E502B32401D8750075AD72 /* mc-media */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mc-media"; path = "node_modules/mc-media"; sourceTree = SOURCE_ROOT; };
 		80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RingBufferTestsUtility.swift; path = "node_modules/mc-media/Tests/Types/RingBufferTestsUtility.swift"; sourceTree = SOURCE_ROOT; };
+		80E502C32401DB7F0075AD72 /* mc-app-kit */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mc-app-kit"; path = "node_modules/mc-app-kit"; sourceTree = SOURCE_ROOT; };
+		80E502C72401DD4F0075AD72 /* mc-media-au */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mc-media-au"; path = "../../VST3NetSend/node_modules/mc-media-au"; sourceTree = "<group>"; };
+		80E502CA2401DEBA0075AD72 /* mc-foundation-logging */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mc-foundation-logging"; path = "node_modules/mc-foundation-logging"; sourceTree = SOURCE_ROOT; };
+		80E502CB2401DEE00075AD72 /* mc-foundation-extensions */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mc-foundation-extensions"; path = "node_modules/mc-foundation-extensions"; sourceTree = SOURCE_ROOT; };
+		80E502CC2401DEF00075AD72 /* mc-foundation-observables */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mc-foundation-observables"; path = "node_modules/mc-foundation-observables"; sourceTree = SOURCE_ROOT; };
 		FR_0E2DD8DA0F1C3C52FDA7909F97CA3337 /* MainMenu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		FR_18B61A165D9E1D8AF566C9FDADD1D433 /* Application.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		FR_1EF121FF4E283A4CD8B231B65490E5D5 /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +95,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				80E502C22401DADA0075AD72 /* mcMedia in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E502C42401DB9B0075AD72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80E502C62401DCB00075AD72 /* mcAppKit in Frameworks */,
+				80E502C92401DD640075AD72 /* mcMediaAU in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +224,11 @@
 			isa = PBXGroup;
 			children = (
 				80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */,
+				80E502CC2401DEF00075AD72 /* mc-foundation-observables */,
+				80E502CB2401DEE00075AD72 /* mc-foundation-extensions */,
+				80E502CA2401DEBA0075AD72 /* mc-foundation-logging */,
+				80E502C72401DD4F0075AD72 /* mc-media-au */,
+				80E502C32401DB7F0075AD72 /* mc-app-kit */,
 				80E502B32401D8750075AD72 /* mc-media */,
 				80E502A02401D6DE0075AD72 /* mc-shared-config */,
 			);
@@ -237,13 +258,6 @@
 
 /* Begin PBXHeadersBuildPhase section */
 		HBP_135B43848684FBF0877BA4E834F721EB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		HBP_4850BD368A01A63D28F4F39A36846542 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,13 +346,17 @@
 			buildConfigurationList = CL_0F0DA300D42F82EDF9F220F91851D189 /* Build configuration list for PBXNativeTarget "CAPlayThrough-macOS" */;
 			buildPhases = (
 				SBP_106761CA7C21FAF07AE54CDF56912FB7 /* Sources */,
-				HBP_4850BD368A01A63D28F4F39A36846542 /* Headers */,
+				80E502C42401DB9B0075AD72 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "CAPlayThrough-macOS";
+			packageProductDependencies = (
+				80E502C52401DCB00075AD72 /* mcAppKit */,
+				80E502C82401DD640075AD72 /* mcMediaAU */,
+			);
 			productName = CAPlayThrough;
 			productReference = FR_1EF121FF4E283A4CD8B231B65490E5D5 /* CAPlayThrough.app */;
 			productType = "com.apple.product-type.application";
@@ -486,20 +504,20 @@
 		};
 		BC_B61778E1E1DEFD755CA67B7EDE4521A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80E502A22401D6DE0075AD72 /* App-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = CAPlayThrough;
 			};
 			name = Release;
 		};
 		BC_C1AE2B1E4433800C845B5F4774026CBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80E502A22401D6DE0075AD72 /* App-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = CAPlayThrough;
 			};
 			name = Debug;
@@ -576,6 +594,14 @@
 		80E502C12401DADA0075AD72 /* mcMedia */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = mcMedia;
+		};
+		80E502C52401DCB00075AD72 /* mcAppKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = mcAppKit;
+		};
+		80E502C82401DD640075AD72 /* mcMediaAU */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = mcMediaAU;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

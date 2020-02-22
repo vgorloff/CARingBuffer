@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import mcAppKit
 
 class MainMenu: NSMenu {
 
