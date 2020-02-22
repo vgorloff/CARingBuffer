@@ -668,7 +668,7 @@
 		P_0B586BCFB082C77065CFF370793845C9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = WaveLabs;
 			};
 			buildConfigurationList = CL_39DFA7DC0CDE437CA165AB00A61360CD /* Build configuration list for PBXProject "CARingBuffer" */;
