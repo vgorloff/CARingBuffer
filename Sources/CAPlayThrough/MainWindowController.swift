@@ -7,7 +7,7 @@
 //
 
 import AppKit
-import mcAppKit
+import mcUIReusable
 
 class MainWindowController: WindowController {
 
