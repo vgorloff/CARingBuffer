@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "mc-app-kit": "1.0.11",
     "mc-media": "1.0.6",
     "mc-media-au": "1.0.14",
-    "mc-shared-config": "1.0.3"
+    "mc-shared-config": "1.0.3",
+    "mc-ui-reusable": "^1.0.19"
   }
 }
