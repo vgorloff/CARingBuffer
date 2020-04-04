@@ -7,7 +7,7 @@
 //
 
 import AppKit
-import mcUIReusable
+import mcAppScaffold
 
 class MainMenu: NSMenu {
 
