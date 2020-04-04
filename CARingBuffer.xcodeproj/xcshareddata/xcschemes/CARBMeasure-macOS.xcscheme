@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1140"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "NT_014B13630EF79B56C6143DBF15CB34D3"
                BuildableName = "CARBMeasure"
-               BlueprintName = "CARBMeasure-macOS"
+               BlueprintName = "CARBMeasure"
                ReferencedContainer = "container:CARingBuffer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "NT_014B13630EF79B56C6143DBF15CB34D3"
             BuildableName = "CARBMeasure"
-            BlueprintName = "CARBMeasure-macOS"
+            BlueprintName = "CARBMeasure"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "NT_014B13630EF79B56C6143DBF15CB34D3"
             BuildableName = "CARBMeasure"
-            BlueprintName = "CARBMeasure-macOS"
+            BlueprintName = "CARBMeasure"
             ReferencedContainer = "container:CARingBuffer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

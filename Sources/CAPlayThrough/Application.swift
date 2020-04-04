@@ -8,6 +8,7 @@
 
 import AppKit
 import mcUIReusable
+import mcAppKitAudio
 
 class Application: NSApplication {
 

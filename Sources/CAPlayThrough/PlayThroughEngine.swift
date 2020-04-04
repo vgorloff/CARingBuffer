@@ -10,6 +10,7 @@ import AVFoundation
 import mcMedia
 import mcMediaAU
 import mcUIReusable
+import mcAppKitAudio
 
 private typealias SampleTime = RingBufferTimeBounds.SampleTime
 
