@@ -4,7 +4,7 @@
 
 ---
 
-### Swift version of CARingBuffer class from [Core Audio Utility Classes](https://www.google.de/search?q=Core+Audio+Utility+Classes)
+### Swift version of CARingBuffer class from [Core Audio Utility Classes](https://developer.apple.com/library/archive/samplecode/CoreAudioUtilityClasses/Introduction/Intro.html)
 
 Actually it is not just a Swift version of CARingBuffer, but generic 3 dimensional RingBuffer (time, channel, frame).
 It can be used not only for Audio, but, for instance, for Graphics data manipulation.
@@ -34,7 +34,9 @@ If MemoryLayout.size and MemoryLayout.stride of your data type are equal, then e
 
 #### Xcode project setup
 
-In order to compare performance between Swift and C++ versions manual download of [Core Audio Utility Classes](https://www.google.de/search?q=Core+Audio+Utility+Classes) required.
+Run `npm install` in order to install dependencies.
 
-**Q**: Where are the `Vendor/CoreAudio/PublicUtility` files?
-**A**: Please open `Xcode`, open `Documentation and API Reference` and search for `Core Audio Utility Classes`. Download them and unpack.
+In order to compare performance between Swift and C++ versions manual download of [Core Audio Utility Classes](https://developer.apple.com/library/archive/samplecode/CoreAudioUtilityClasses/Introduction/Intro.html) required.
+
+- **Q**: Where are the `Vendor/CoreAudio/PublicUtility` files?
+- **A**: Download them from [Documentation Archive](https://developer.apple.com/library/archive/samplecode/CoreAudioUtilityClasses/Introduction/Intro.html) and unpack.
