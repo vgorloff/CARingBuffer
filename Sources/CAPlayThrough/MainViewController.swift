@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import mcUIReusable
 
 class MainViewController: ViewController {
 

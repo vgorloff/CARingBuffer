@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import mcMedia
 
 print("Note: This app intended to use with Instruments.app to measure execution time.")
 print("Starting iterations...")
