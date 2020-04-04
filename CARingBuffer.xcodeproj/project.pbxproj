@@ -243,18 +243,19 @@
 			children = (
 				80C5DEA924390B7200A8712E /* mc-app-kit-audio */,
 				80C5DE982439081C00A8712E /* mc-app-scaffold */,
-				80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */,
-				80B75D012402767400D3C3AD /* mc-ui-reusable */,
 				806898A4240275F000EAAA3C /* mc-concurrency-oc */,
-				80E502CC2401DEF00075AD72 /* mc-foundation-observables */,
 				80E502CB2401DEE00075AD72 /* mc-foundation-extensions */,
 				80E502CA2401DEBA0075AD72 /* mc-foundation-logging */,
-				80E502C72401DD4F0075AD72 /* mc-media-au */,
+				80E502CC2401DEF00075AD72 /* mc-foundation-observables */,
 				80E502B32401D8750075AD72 /* mc-media */,
+				80E502C72401DD4F0075AD72 /* mc-media-au */,
+				80B75D012402767400D3C3AD /* mc-ui-reusable */,
+				80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */,
 				80E502A02401D6DE0075AD72 /* mc-shared-config */,
 			);
 			name = Vendor;
-			sourceTree = AWL_LIB_SRC;
+			path = node_modules;
+			sourceTree = "<group>";
 		};
 		G_B8F776404C40B1FE86C7FDF490D9CF5C /* Products */ = {
 			isa = PBXGroup;
