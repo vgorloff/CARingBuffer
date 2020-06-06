@@ -14,7 +14,7 @@ class MainWindowController: WindowController {
    init(viewController: NSViewController) {
       let window = Window(contentRect: CGRect(origin: CGPoint(), size: CGSize(width: 300, height: 172)), style: .default)
       window.styleMask.remove(.resizable)
-      super.init(window: window, viewController: viewController)
+      super.init(viewController: viewController, window: window)
    }
 
    public required init?(coder: NSCoder) {

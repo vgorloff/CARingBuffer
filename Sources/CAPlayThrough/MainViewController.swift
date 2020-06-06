@@ -15,13 +15,13 @@ class MainViewController: ViewController {
 
    override func loadView() {
       super.loadView()
-      contentView.addSubview(toggleEngineButton)
+      content.view.addSubview(toggleEngineButton)
    }
 
    override func setupLayout() {
       let constraints = [
-         toggleEngineButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-         toggleEngineButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+         toggleEngineButton.centerXAnchor.constraint(equalTo: content.view.centerXAnchor),
+         toggleEngineButton.centerYAnchor.constraint(equalTo: content.view.centerYAnchor)
       ]
       NSLayoutConstraint.activate(constraints)
    }

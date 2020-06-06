@@ -1,0 +1,13 @@
+#include "Common.xcconfig"
+
+SDKROOT = macosx
+
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks @loader_path/../Frameworks
+
+CODE_SIGN_IDENTITY = Mac Developer
+CODE_SIGN_STYLE = Automatic
+PROVISIONING_PROFILE_SPECIFIER =
+
+TEST_HOST = $(BUILT_PRODUCTS_DIR)/Testability.app/Contents/MacOS/Testability
