@@ -34,8 +34,6 @@ If MemoryLayout.size and MemoryLayout.stride of your data type are equal, then e
 
 #### Xcode project setup
 
-Run `npm install` in order to install dependencies.
-
 In order to compare performance between Swift and C++ versions manual download of [Core Audio Utility Classes](https://developer.apple.com/library/archive/samplecode/CoreAudioUtilityClasses/Introduction/Intro.html) required.
 
 - **Q**: Where are the `Vendor/CoreAudio/PublicUtility` files?

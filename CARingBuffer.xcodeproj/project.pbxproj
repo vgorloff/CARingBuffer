@@ -3,24 +3,64 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		806898A6240275F800EAAA3C /* mcUIReusable in Frameworks */ = {isa = PBXBuildFile; productRef = 806898A5240275F800EAAA3C /* mcUIReusable */; };
-		80B75D032402767C00D3C3AD /* mcConcurrencyOC in Frameworks */ = {isa = PBXBuildFile; productRef = 80B75D022402767C00D3C3AD /* mcConcurrencyOC */; };
-		80B75D052402768800D3C3AD /* mcMedia in Frameworks */ = {isa = PBXBuildFile; productRef = 80B75D042402768800D3C3AD /* mcMedia */; };
-		80C5DE9C2439088000A8712E /* mcAppScaffold in Frameworks */ = {isa = PBXBuildFile; productRef = 80C5DE9B2439088000A8712E /* mcAppScaffold */; };
-		80C5DEAB24390B8700A8712E /* mcAppKitAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 80C5DEAA24390B8700A8712E /* mcAppKitAudio */; };
-		80C5DEAD24390C5E00A8712E /* mcAppKitAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 80C5DEAC24390C5E00A8712E /* mcAppKitAudio */; };
-		80C5DEAF24390C8300A8712E /* mcAppKitAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 80C5DEAE24390C8300A8712E /* mcAppKitAudio */; };
-		80E502B72401D8950075AD72 /* mcMedia in Frameworks */ = {isa = PBXBuildFile; productRef = 80E502B62401D8950075AD72 /* mcMedia */; };
-		80E502B92401D9E80075AD72 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */; };
-		80E502BB2401DA020075AD72 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */; };
-		80E502BE2401DA360075AD72 /* mcMedia in Frameworks */ = {isa = PBXBuildFile; productRef = 80E502BD2401DA360075AD72 /* mcMedia */; };
-		80E502BF2401DA540075AD72 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */; };
-		80E502C22401DADA0075AD72 /* mcMedia in Frameworks */ = {isa = PBXBuildFile; productRef = 80E502C12401DADA0075AD72 /* mcMedia */; };
-		80E502C92401DD640075AD72 /* mcMediaAU in Frameworks */ = {isa = PBXBuildFile; productRef = 80E502C82401DD640075AD72 /* mcMediaAU */; };
+		8051C19D248BEABE003F0C43 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */; };
+		8051C19E248BEABF003F0C43 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */; };
+		8051C1A3248BEB6D003F0C43 /* mcMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C187248BE758003F0C43 /* mcMediaExtensions.a */; };
+		8051C1A4248BEB87003F0C43 /* mcFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17B248BE758003F0C43 /* mcFoundationTestability.a */; };
+		8051C1A5248BEB98003F0C43 /* mcFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16F248BE758003F0C43 /* mcFoundationExtensions.a */; };
+		8051C1A6248BEBAF003F0C43 /* mcTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C193248BE758003F0C43 /* mcTypes.a */; };
+		8051C1A7248BEBBE003F0C43 /* mcRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18F248BE758003F0C43 /* mcRuntime.a */; };
+		8051C1A8248BEBE1003F0C43 /* mcMedia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18B248BE758003F0C43 /* mcMedia.a */; };
+		8051C1A9248BEC0D003F0C43 /* mcFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17F248BE758003F0C43 /* mcFoundation.a */; };
+		8051C1AA248BEC19003F0C43 /* mcTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C193248BE758003F0C43 /* mcTypes.a */; };
+		8051C1AB248BEC2B003F0C43 /* mcFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C173248BE758003F0C43 /* mcFoundationLogging.a */; };
+		8051C1AC248BEC34003F0C43 /* mcRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18F248BE758003F0C43 /* mcRuntime.a */; };
+		8051C1AD248BEC3E003F0C43 /* mcMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C187248BE758003F0C43 /* mcMediaExtensions.a */; };
+		8051C1AE248BEC4D003F0C43 /* mcConcurrencyOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16B248BE758003F0C43 /* mcConcurrencyOC.a */; };
+		8051C1AF248BEC57003F0C43 /* mcConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C167248BE758003F0C43 /* mcConcurrencyLocking.a */; };
+		8051C1B0248BEC61003F0C43 /* mcFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C177248BE758003F0C43 /* mcFoundationObservables.a */; };
+		8051C1B1248BEC6A003F0C43 /* mcFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17B248BE758003F0C43 /* mcFoundationTestability.a */; };
+		8051C1B2248BEC72003F0C43 /* mcMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C183248BE758003F0C43 /* mcMath.a */; };
+		8051C1B3248BEC7E003F0C43 /* mcFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16F248BE758003F0C43 /* mcFoundationExtensions.a */; };
+		8051C1B4248BECAB003F0C43 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */; };
+		8051C1B5248BECD0003F0C43 /* mcConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C167248BE758003F0C43 /* mcConcurrencyLocking.a */; };
+		8051C1B6248BECD0003F0C43 /* mcConcurrencyOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16B248BE758003F0C43 /* mcConcurrencyOC.a */; };
+		8051C1B7248BECD0003F0C43 /* mcFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17F248BE758003F0C43 /* mcFoundation.a */; };
+		8051C1B8248BECD0003F0C43 /* mcFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16F248BE758003F0C43 /* mcFoundationExtensions.a */; };
+		8051C1B9248BECD0003F0C43 /* mcFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C173248BE758003F0C43 /* mcFoundationLogging.a */; };
+		8051C1BA248BECD0003F0C43 /* mcFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C177248BE758003F0C43 /* mcFoundationObservables.a */; };
+		8051C1BB248BECD0003F0C43 /* mcFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17B248BE758003F0C43 /* mcFoundationTestability.a */; };
+		8051C1BC248BECD0003F0C43 /* mcMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C183248BE758003F0C43 /* mcMath.a */; };
+		8051C1BD248BECD0003F0C43 /* mcMedia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18B248BE758003F0C43 /* mcMedia.a */; };
+		8051C1BE248BECD0003F0C43 /* mcMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C187248BE758003F0C43 /* mcMediaExtensions.a */; };
+		8051C1BF248BECD0003F0C43 /* mcRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18F248BE758003F0C43 /* mcRuntime.a */; };
+		8051C1C0248BECD0003F0C43 /* mcTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C193248BE758003F0C43 /* mcTypes.a */; };
+		8051C1F2248BF030003F0C43 /* mcAppKitAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1D5248BF030003F0C43 /* mcAppKitAudio.a */; };
+		8051C1F3248BF030003F0C43 /* mcAppScaffold.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1D9248BF030003F0C43 /* mcAppScaffold.a */; };
+		8051C1F4248BF030003F0C43 /* mcConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C167248BE758003F0C43 /* mcConcurrencyLocking.a */; };
+		8051C1F5248BF030003F0C43 /* mcConcurrencyOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16B248BE758003F0C43 /* mcConcurrencyOC.a */; };
+		8051C1F6248BF030003F0C43 /* mcFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17F248BE758003F0C43 /* mcFoundation.a */; };
+		8051C1F7248BF030003F0C43 /* mcFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16F248BE758003F0C43 /* mcFoundationExtensions.a */; };
+		8051C1F8248BF030003F0C43 /* mcFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C173248BE758003F0C43 /* mcFoundationLogging.a */; };
+		8051C1F9248BF030003F0C43 /* mcFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C177248BE758003F0C43 /* mcFoundationObservables.a */; };
+		8051C1FA248BF030003F0C43 /* mcFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17B248BE758003F0C43 /* mcFoundationTestability.a */; };
+		8051C1FB248BF030003F0C43 /* mcGraphicsExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1DD248BF030003F0C43 /* mcGraphicsExtensions.a */; };
+		8051C1FC248BF030003F0C43 /* mcMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C183248BE758003F0C43 /* mcMath.a */; };
+		8051C1FD248BF030003F0C43 /* mcMedia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18B248BE758003F0C43 /* mcMedia.a */; };
+		8051C1FE248BF030003F0C43 /* mcMediaAU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1E1248BF030003F0C43 /* mcMediaAU.a */; };
+		8051C1FF248BF030003F0C43 /* mcMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C187248BE758003F0C43 /* mcMediaExtensions.a */; };
+		8051C200248BF030003F0C43 /* mcRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18F248BE758003F0C43 /* mcRuntime.a */; };
+		8051C201248BF030003F0C43 /* mcTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C193248BE758003F0C43 /* mcTypes.a */; };
+		8051C202248BF030003F0C43 /* mcTypography.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1E5248BF030003F0C43 /* mcTypography.a */; };
+		8051C203248BF030003F0C43 /* mcUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1F1248BF030003F0C43 /* mcUI.a */; };
+		8051C204248BF030003F0C43 /* mcUIExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1E9248BF030003F0C43 /* mcUIExtensions.a */; };
+		8051C205248BF030003F0C43 /* mcUIReusable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1ED248BF030003F0C43 /* mcUIReusable.a */; };
+		8051C259248BF37C003F0C43 /* RingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C230248BF37B003F0C43 /* RingBufferTests.swift */; };
+		8051C260248BF3D7003F0C43 /* mcTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C25F248BF3D7003F0C43 /* mcTestability.a */; };
 		BF_149E94D98D910E4365B218FE22AF4CED /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_A2961A54812E2E85D4F6A72C8DDBE8D1 /* CARBPerformanceTests.mm */; };
 		BF_20F77D72EC46F3DB71B7E4983BA42EFB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_884E623289EEC8B733F399A27AF0DB0B /* main.swift */; };
 		BF_4D6025B89175F68459E641B7786938D2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_7AE931E62A42C0FC2CFD131A265A8130 /* Logger.swift */; };
@@ -35,35 +75,341 @@
 		BF_FED60342DBD08CDA25077012B0A57159 /* CARBPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_BA49CECF9FC3E27B0CB1D1695D7BCEDF /* CARBPerformanceTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8051C164248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DE45CBA3602B89ED35C67536;
+			remoteInfo = mcConcurrencyLocking_iOS;
+		};
+		8051C166248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A3D15361A77D9ACEDB68B279;
+			remoteInfo = mcConcurrencyLocking_macOS;
+		};
+		8051C168248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8F6F6DA60F9D730DF879D66;
+			remoteInfo = mcConcurrencyOC_iOS;
+		};
+		8051C16A248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E7993C64D3696929858F4B38;
+			remoteInfo = mcConcurrencyOC_macOS;
+		};
+		8051C16C248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C43A767B5FFBCEA5FD81BCB;
+			remoteInfo = mcFoundationExtensions_iOS;
+		};
+		8051C16E248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1BECB85E82315FFD82A5569;
+			remoteInfo = mcFoundationExtensions_macOS;
+		};
+		8051C170248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 10C974B67C0B750EE6366A96;
+			remoteInfo = mcFoundationLogging_iOS;
+		};
+		8051C172248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5662130C1E007D386606EDB0;
+			remoteInfo = mcFoundationLogging_macOS;
+		};
+		8051C174248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B111C7875B65B10AB1BCCAAF;
+			remoteInfo = mcFoundationObservables_iOS;
+		};
+		8051C176248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 208D29132DD9B51A70046AA7;
+			remoteInfo = mcFoundationObservables_macOS;
+		};
+		8051C178248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D6B671042DEED4380C165C5;
+			remoteInfo = mcFoundationTestability_iOS;
+		};
+		8051C17A248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A204176EAED482CB45997CBB;
+			remoteInfo = mcFoundationTestability_macOS;
+		};
+		8051C17C248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 162B273DC3D4DDA1F581FAA5;
+			remoteInfo = mcFoundation_iOS;
+		};
+		8051C17E248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 94A09449D4D61ED03365C4DF;
+			remoteInfo = mcFoundation_macOS;
+		};
+		8051C180248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 42BC349D601BC034EEBE7C01;
+			remoteInfo = mcMath_iOS;
+		};
+		8051C182248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B918ABC83EE699C821952ECF;
+			remoteInfo = mcMath_macOS;
+		};
+		8051C184248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A9BCF68B319F1DB0C8093CA;
+			remoteInfo = mcMediaExtensions_iOS;
+		};
+		8051C186248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 85A3907B0110B49C0F4C3F32;
+			remoteInfo = mcMediaExtensions_macOS;
+		};
+		8051C188248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AF75CC2312DAA90CFA73A8A7;
+			remoteInfo = mcMedia_iOS;
+		};
+		8051C18A248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 477C7BC780D53F90E6D5D849;
+			remoteInfo = mcMedia_macOS;
+		};
+		8051C18C248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DBA5BCE0DDE9C0AC1117A0A;
+			remoteInfo = mcRuntime_iOS;
+		};
+		8051C18E248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CBE79C50AA18DFBDD665FC84;
+			remoteInfo = mcRuntime_macOS;
+		};
+		8051C190248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 38E108B22154C8760CAD419B;
+			remoteInfo = mcTypes_iOS;
+		};
+		8051C192248BE758003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D09244D8DABA6A36E7BFCA01;
+			remoteInfo = mcTypes_macOS;
+		};
+		8051C194248BE78D003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 85CA98C059B40D950DCD0CC7;
+			remoteInfo = Shared;
+		};
+		8051C196248BE791003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 85CA98C059B40D950DCD0CC7;
+			remoteInfo = Shared;
+		};
+		8051C198248BE795003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 85CA98C059B40D950DCD0CC7;
+			remoteInfo = Shared;
+		};
+		8051C19A248BE799003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 85CA98C059B40D950DCD0CC7;
+			remoteInfo = Shared;
+		};
+		8051C1D2248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D9993C70CE17635C46BA9AA;
+			remoteInfo = mcAppKitAudio_iOS;
+		};
+		8051C1D4248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07AD20B687951FEF64270B57;
+			remoteInfo = mcAppKitAudio_macOS;
+		};
+		8051C1D6248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 99706185FA5F4D2E28B8738E;
+			remoteInfo = mcAppScaffold_iOS;
+		};
+		8051C1D8248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 92585D10731373017F9F5CB7;
+			remoteInfo = mcAppScaffold_macOS;
+		};
+		8051C1DA248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A455D6DCCF27861B1B38E30;
+			remoteInfo = mcGraphicsExtensions_iOS;
+		};
+		8051C1DC248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE62E2CD798BC381FDBFAA09;
+			remoteInfo = mcGraphicsExtensions_macOS;
+		};
+		8051C1DE248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D44CEFB6F14B419812AEAC0;
+			remoteInfo = mcMediaAU_iOS;
+		};
+		8051C1E0248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24A11929474372309E11B4FB;
+			remoteInfo = mcMediaAU_macOS;
+		};
+		8051C1E2248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1912F48DEF02D8C8C8EC410;
+			remoteInfo = mcTypography_iOS;
+		};
+		8051C1E4248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2B69D982E5329D658B03F54;
+			remoteInfo = mcTypography_macOS;
+		};
+		8051C1E6248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B6EA6C9F1ED183ECCDD8DC50;
+			remoteInfo = mcUIExtensions_iOS;
+		};
+		8051C1E8248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A94714A126250FEB34EFC7D;
+			remoteInfo = mcUIExtensions_macOS;
+		};
+		8051C1EA248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22C415A4D94F7D2A797853AC;
+			remoteInfo = mcUIReusable_iOS;
+		};
+		8051C1EC248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0DD01EDA6E1EF7991C4343B8;
+			remoteInfo = mcUIReusable_macOS;
+		};
+		8051C1EE248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7068891E4BA3BB06A13E1AAF;
+			remoteInfo = mcUI_iOS;
+		};
+		8051C1F0248BF030003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34463D5649D92182348A13DE;
+			remoteInfo = mcUI_macOS;
+		};
+		8051C25C248BF3D7003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DE2A79BD3F607E8B5A04B6AA;
+			remoteInfo = mcTestability_iOS;
+		};
+		8051C25E248BF3D7003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F033346A634F1971BFC6A89A;
+			remoteInfo = mcTestability_macOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		806898A4240275F000EAAA3C /* mc-concurrency-oc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-concurrency-oc"; sourceTree = "<group>"; };
-		80B75D012402767400D3C3AD /* mc-ui-reusable */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-ui-reusable"; sourceTree = "<group>"; };
-		80C5DE8A2438FE0300A8712E /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		8051C148248BE758003F0C43 /* Shared.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Shared.xcodeproj; sourceTree = "<group>"; };
+		8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RingBufferTestsUtility.swift; path = Vendor/mc/mcMedia/Tests/Types/RingBufferTestsUtility.swift; sourceTree = SOURCE_ROOT; };
+		8051C19F248BEAF9003F0C43 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		8051C1A0248BEAF9003F0C43 /* Tests-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS.xcconfig"; sourceTree = "<group>"; };
+		8051C1A1248BEAFA003F0C43 /* Tool-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tool-macOS.xcconfig"; sourceTree = "<group>"; };
+		8051C1A2248BEAFA003F0C43 /* App-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-macOS.xcconfig"; sourceTree = "<group>"; };
+		8051C1C1248BECED003F0C43 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
+		8051C230248BF37B003F0C43 /* RingBufferTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RingBufferTests.swift; path = Vendor/mc/mcMedia/Tests/Types/RingBufferTests.swift; sourceTree = SOURCE_ROOT; };
 		80C5DE8B243900C100A8712E /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
-		80C5DE982439081C00A8712E /* mc-app-scaffold */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-app-scaffold"; sourceTree = "<group>"; };
-		80C5DEA924390B7200A8712E /* mc-app-kit-audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-app-kit-audio"; sourceTree = "<group>"; };
-		80E502A22401D6DE0075AD72 /* App-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-macOS.xcconfig"; sourceTree = "<group>"; };
-		80E502A32401D6DE0075AD72 /* Tests-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS.xcconfig"; sourceTree = "<group>"; };
-		80E502A42401D6DE0075AD72 /* Framework-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-macOS.xcconfig"; sourceTree = "<group>"; };
-		80E502A52401D6DE0075AD72 /* App-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-iOS.xcconfig"; sourceTree = "<group>"; };
-		80E502A62401D6DE0075AD72 /* Tests-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS.xcconfig"; sourceTree = "<group>"; };
-		80E502A72401D6DE0075AD72 /* Framework-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-iOS.xcconfig"; sourceTree = "<group>"; };
-		80E502A82401D6DE0075AD72 /* Tool-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tool-macOS.xcconfig"; sourceTree = "<group>"; };
-		80E502A92401D6DE0075AD72 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
-		80E502AA2401D6DE0075AD72 /* Tests-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-iOS.xcconfig"; sourceTree = "<group>"; };
-		80E502AB2401D6DE0075AD72 /* Tests-watchOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-watchOS.xcconfig"; sourceTree = "<group>"; };
-		80E502AC2401D6DE0075AD72 /* Extension-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Extension-macOS.xcconfig"; sourceTree = "<group>"; };
-		80E502AD2401D6DE0075AD72 /* App-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-tvOS.xcconfig"; sourceTree = "<group>"; };
-		80E502AE2401D6DE0075AD72 /* App-watchOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-watchOS.xcconfig"; sourceTree = "<group>"; };
-		80E502AF2401D6DE0075AD72 /* Framework-watchOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-watchOS.xcconfig"; sourceTree = "<group>"; };
-		80E502B02401D6DE0075AD72 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		80E502B12401D6DE0075AD72 /* Framework-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-tvOS.xcconfig"; sourceTree = "<group>"; };
-		80E502B32401D8750075AD72 /* mc-media */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-media"; sourceTree = "<group>"; };
-		80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RingBufferTestsUtility.swift; path = "mc-media/Tests/Types/RingBufferTestsUtility.swift"; sourceTree = "<group>"; };
-		80E502C72401DD4F0075AD72 /* mc-media-au */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-media-au"; sourceTree = "<group>"; };
-		80E502CA2401DEBA0075AD72 /* mc-foundation-logging */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-foundation-logging"; sourceTree = "<group>"; };
-		80E502CB2401DEE00075AD72 /* mc-foundation-extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-foundation-extensions"; sourceTree = "<group>"; };
-		80E502CC2401DEF00075AD72 /* mc-foundation-observables */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-foundation-observables"; sourceTree = "<group>"; };
 		FR_0E2DD8DA0F1C3C52FDA7909F97CA3337 /* MainMenu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		FR_18B61A165D9E1D8AF566C9FDADD1D433 /* Application.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		FR_1EF121FF4E283A4CD8B231B65490E5D5 /* CAPlayThrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAPlayThrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +435,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80E502B72401D8950075AD72 /* mcMedia in Frameworks */,
+				8051C1B5248BECD0003F0C43 /* mcConcurrencyLocking.a in Frameworks */,
+				8051C1B6248BECD0003F0C43 /* mcConcurrencyOC.a in Frameworks */,
+				8051C1B7248BECD0003F0C43 /* mcFoundation.a in Frameworks */,
+				8051C1B8248BECD0003F0C43 /* mcFoundationExtensions.a in Frameworks */,
+				8051C1B9248BECD0003F0C43 /* mcFoundationLogging.a in Frameworks */,
+				8051C1BA248BECD0003F0C43 /* mcFoundationObservables.a in Frameworks */,
+				8051C1BB248BECD0003F0C43 /* mcFoundationTestability.a in Frameworks */,
+				8051C1BC248BECD0003F0C43 /* mcMath.a in Frameworks */,
+				8051C1BD248BECD0003F0C43 /* mcMedia.a in Frameworks */,
+				8051C1BE248BECD0003F0C43 /* mcMediaExtensions.a in Frameworks */,
+				8051C1BF248BECD0003F0C43 /* mcRuntime.a in Frameworks */,
+				8051C1C0248BECD0003F0C43 /* mcTypes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +454,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C5DEAF24390C8300A8712E /* mcAppKitAudio in Frameworks */,
-				80E502BE2401DA360075AD72 /* mcMedia in Frameworks */,
+				8051C260248BF3D7003F0C43 /* mcTestability.a in Frameworks */,
+				8051C1B3248BEC7E003F0C43 /* mcFoundationExtensions.a in Frameworks */,
+				8051C1B2248BEC72003F0C43 /* mcMath.a in Frameworks */,
+				8051C1B1248BEC6A003F0C43 /* mcFoundationTestability.a in Frameworks */,
+				8051C1B0248BEC61003F0C43 /* mcFoundationObservables.a in Frameworks */,
+				8051C1AF248BEC57003F0C43 /* mcConcurrencyLocking.a in Frameworks */,
+				8051C1AE248BEC4D003F0C43 /* mcConcurrencyOC.a in Frameworks */,
+				8051C1AD248BEC3E003F0C43 /* mcMediaExtensions.a in Frameworks */,
+				8051C1AC248BEC34003F0C43 /* mcRuntime.a in Frameworks */,
+				8051C1AB248BEC2B003F0C43 /* mcFoundationLogging.a in Frameworks */,
+				8051C1AA248BEC19003F0C43 /* mcTypes.a in Frameworks */,
+				8051C1A9248BEC0D003F0C43 /* mcFoundation.a in Frameworks */,
+				8051C1A8248BEBE1003F0C43 /* mcMedia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +474,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C5DEAD24390C5E00A8712E /* mcAppKitAudio in Frameworks */,
-				80E502C22401DADA0075AD72 /* mcMedia in Frameworks */,
+				8051C1A7248BEBBE003F0C43 /* mcRuntime.a in Frameworks */,
+				8051C1A6248BEBAF003F0C43 /* mcTypes.a in Frameworks */,
+				8051C1A5248BEB98003F0C43 /* mcFoundationExtensions.a in Frameworks */,
+				8051C1A4248BEB87003F0C43 /* mcFoundationTestability.a in Frameworks */,
+				8051C1A3248BEB6D003F0C43 /* mcMediaExtensions.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,47 +486,79 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80E502C92401DD640075AD72 /* mcMediaAU in Frameworks */,
-				80C5DE9C2439088000A8712E /* mcAppScaffold in Frameworks */,
-				80C5DEAB24390B8700A8712E /* mcAppKitAudio in Frameworks */,
-				80B75D032402767C00D3C3AD /* mcConcurrencyOC in Frameworks */,
-				806898A6240275F800EAAA3C /* mcUIReusable in Frameworks */,
-				80B75D052402768800D3C3AD /* mcMedia in Frameworks */,
+				8051C1F2248BF030003F0C43 /* mcAppKitAudio.a in Frameworks */,
+				8051C1F3248BF030003F0C43 /* mcAppScaffold.a in Frameworks */,
+				8051C1F4248BF030003F0C43 /* mcConcurrencyLocking.a in Frameworks */,
+				8051C1F5248BF030003F0C43 /* mcConcurrencyOC.a in Frameworks */,
+				8051C1F6248BF030003F0C43 /* mcFoundation.a in Frameworks */,
+				8051C1F7248BF030003F0C43 /* mcFoundationExtensions.a in Frameworks */,
+				8051C1F8248BF030003F0C43 /* mcFoundationLogging.a in Frameworks */,
+				8051C1F9248BF030003F0C43 /* mcFoundationObservables.a in Frameworks */,
+				8051C1FA248BF030003F0C43 /* mcFoundationTestability.a in Frameworks */,
+				8051C1FB248BF030003F0C43 /* mcGraphicsExtensions.a in Frameworks */,
+				8051C1FC248BF030003F0C43 /* mcMath.a in Frameworks */,
+				8051C1FD248BF030003F0C43 /* mcMedia.a in Frameworks */,
+				8051C1FE248BF030003F0C43 /* mcMediaAU.a in Frameworks */,
+				8051C1FF248BF030003F0C43 /* mcMediaExtensions.a in Frameworks */,
+				8051C200248BF030003F0C43 /* mcRuntime.a in Frameworks */,
+				8051C201248BF030003F0C43 /* mcTypes.a in Frameworks */,
+				8051C202248BF030003F0C43 /* mcTypography.a in Frameworks */,
+				8051C203248BF030003F0C43 /* mcUI.a in Frameworks */,
+				8051C204248BF030003F0C43 /* mcUIExtensions.a in Frameworks */,
+				8051C205248BF030003F0C43 /* mcUIReusable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		80E502A02401D6DE0075AD72 /* mc-shared-config */ = {
+		8051C149248BE758003F0C43 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80E502A12401D6DE0075AD72 /* Configuration */,
+				8051C1D3248BF030003F0C43 /* mcAppKitAudio.a */,
+				8051C1D5248BF030003F0C43 /* mcAppKitAudio.a */,
+				8051C1D7248BF030003F0C43 /* mcAppScaffold.a */,
+				8051C1D9248BF030003F0C43 /* mcAppScaffold.a */,
+				8051C165248BE758003F0C43 /* mcConcurrencyLocking.a */,
+				8051C167248BE758003F0C43 /* mcConcurrencyLocking.a */,
+				8051C169248BE758003F0C43 /* mcConcurrencyOC.a */,
+				8051C16B248BE758003F0C43 /* mcConcurrencyOC.a */,
+				8051C16D248BE758003F0C43 /* mcFoundationExtensions.a */,
+				8051C16F248BE758003F0C43 /* mcFoundationExtensions.a */,
+				8051C171248BE758003F0C43 /* mcFoundationLogging.a */,
+				8051C173248BE758003F0C43 /* mcFoundationLogging.a */,
+				8051C175248BE758003F0C43 /* mcFoundationObservables.a */,
+				8051C177248BE758003F0C43 /* mcFoundationObservables.a */,
+				8051C179248BE758003F0C43 /* mcFoundationTestability.a */,
+				8051C17B248BE758003F0C43 /* mcFoundationTestability.a */,
+				8051C17D248BE758003F0C43 /* mcFoundation.a */,
+				8051C17F248BE758003F0C43 /* mcFoundation.a */,
+				8051C1DB248BF030003F0C43 /* mcGraphicsExtensions.a */,
+				8051C1DD248BF030003F0C43 /* mcGraphicsExtensions.a */,
+				8051C181248BE758003F0C43 /* mcMath.a */,
+				8051C183248BE758003F0C43 /* mcMath.a */,
+				8051C1DF248BF030003F0C43 /* mcMediaAU.a */,
+				8051C1E1248BF030003F0C43 /* mcMediaAU.a */,
+				8051C185248BE758003F0C43 /* mcMediaExtensions.a */,
+				8051C187248BE758003F0C43 /* mcMediaExtensions.a */,
+				8051C189248BE758003F0C43 /* mcMedia.a */,
+				8051C18B248BE758003F0C43 /* mcMedia.a */,
+				8051C18D248BE758003F0C43 /* mcRuntime.a */,
+				8051C18F248BE758003F0C43 /* mcRuntime.a */,
+				8051C25D248BF3D7003F0C43 /* mcTestability.a */,
+				8051C25F248BF3D7003F0C43 /* mcTestability.a */,
+				8051C191248BE758003F0C43 /* mcTypes.a */,
+				8051C193248BE758003F0C43 /* mcTypes.a */,
+				8051C1E3248BF030003F0C43 /* mcTypography.a */,
+				8051C1E5248BF030003F0C43 /* mcTypography.a */,
+				8051C1E7248BF030003F0C43 /* mcUIExtensions.a */,
+				8051C1E9248BF030003F0C43 /* mcUIExtensions.a */,
+				8051C1EB248BF030003F0C43 /* mcUIReusable.a */,
+				8051C1ED248BF030003F0C43 /* mcUIReusable.a */,
+				8051C1EF248BF030003F0C43 /* mcUI.a */,
+				8051C1F1248BF030003F0C43 /* mcUI.a */,
 			);
-			path = "mc-shared-config";
-			sourceTree = "<group>";
-		};
-		80E502A12401D6DE0075AD72 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				80E502A22401D6DE0075AD72 /* App-macOS.xcconfig */,
-				80E502A32401D6DE0075AD72 /* Tests-tvOS.xcconfig */,
-				80E502A42401D6DE0075AD72 /* Framework-macOS.xcconfig */,
-				80E502A52401D6DE0075AD72 /* App-iOS.xcconfig */,
-				80E502A62401D6DE0075AD72 /* Tests-macOS.xcconfig */,
-				80E502A72401D6DE0075AD72 /* Framework-iOS.xcconfig */,
-				80E502A82401D6DE0075AD72 /* Tool-macOS.xcconfig */,
-				80E502A92401D6DE0075AD72 /* Common.xcconfig */,
-				80E502AA2401D6DE0075AD72 /* Tests-iOS.xcconfig */,
-				80E502AB2401D6DE0075AD72 /* Tests-watchOS.xcconfig */,
-				80E502AC2401D6DE0075AD72 /* Extension-macOS.xcconfig */,
-				80E502AD2401D6DE0075AD72 /* App-tvOS.xcconfig */,
-				80E502AE2401D6DE0075AD72 /* App-watchOS.xcconfig */,
-				80E502AF2401D6DE0075AD72 /* Framework-watchOS.xcconfig */,
-				80E502B02401D6DE0075AD72 /* Project.xcconfig */,
-				80E502B12401D6DE0075AD72 /* Framework-tvOS.xcconfig */,
-			);
-			path = Configuration;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		80E502B52401D8950075AD72 /* Frameworks */ = {
@@ -168,7 +571,11 @@
 		G_01882D9DEB93BEDFE53FAF560B2A956E /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				8051C1A2248BEAFA003F0C43 /* App-macOS.xcconfig */,
+				8051C19F248BEAF9003F0C43 /* Common.xcconfig */,
 				FR_C656671C87442838139E2638F7041C88 /* Project.xcconfig */,
+				8051C1A0248BEAF9003F0C43 /* Tests-macOS.xcconfig */,
+				8051C1A1248BEAFA003F0C43 /* Tool-macOS.xcconfig */,
 				FR_26227D0EA4498C527BFDDD7F37EFFA9B /* Version.xcconfig */,
 			);
 			path = Configuration;
@@ -177,12 +584,12 @@
 		G_0676D2B6FF1CF5EA8CF754D972EAAFDA = {
 			isa = PBXGroup;
 			children = (
+				8051C1C1248BECED003F0C43 /* project.yml */,
+				8051C148248BE758003F0C43 /* Shared.xcodeproj */,
 				80C5DE8B243900C100A8712E /* Readme.md */,
-				80C5DE8A2438FE0300A8712E /* package.json */,
 				G_01882D9DEB93BEDFE53FAF560B2A956E /* Configuration */,
 				G_4140E1FA0263289FA13965B81A4639FB /* Sources */,
 				G_50FFCC604A106A46B0A4FFCA6480A589 /* Tests */,
-				G_7D32E80459004C508798108DFC9BC70E /* Vendor */,
 				G_B8F776404C40B1FE86C7FDF490D9CF5C /* Products */,
 				80E502B52401D8950075AD72 /* Frameworks */,
 			);
@@ -224,6 +631,8 @@
 		G_50FFCC604A106A46B0A4FFCA6480A589 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				8051C230248BF37B003F0C43 /* RingBufferTests.swift */,
+				8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */,
 				G_0E5762957F30E28B85CE201CF72B26BC /* C++ */,
 				G_62572FF5A8DBE51E0DF2DE2435F40992 /* Swift */,
 			);
@@ -236,25 +645,6 @@
 				FR_BA49CECF9FC3E27B0CB1D1695D7BCEDF /* CARBPerformanceTests.swift */,
 			);
 			path = Swift;
-			sourceTree = "<group>";
-		};
-		G_7D32E80459004C508798108DFC9BC70E /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				80C5DEA924390B7200A8712E /* mc-app-kit-audio */,
-				80C5DE982439081C00A8712E /* mc-app-scaffold */,
-				806898A4240275F000EAAA3C /* mc-concurrency-oc */,
-				80E502CB2401DEE00075AD72 /* mc-foundation-extensions */,
-				80E502CA2401DEBA0075AD72 /* mc-foundation-logging */,
-				80E502CC2401DEF00075AD72 /* mc-foundation-observables */,
-				80E502B32401D8750075AD72 /* mc-media */,
-				80E502C72401DD4F0075AD72 /* mc-media-au */,
-				80B75D012402767400D3C3AD /* mc-ui-reusable */,
-				80E502B82401D9DB0075AD72 /* RingBufferTestsUtility.swift */,
-				80E502A02401D6DE0075AD72 /* mc-shared-config */,
-			);
-			name = Vendor;
-			path = node_modules;
 			sourceTree = "<group>";
 		};
 		G_B8F776404C40B1FE86C7FDF490D9CF5C /* Products */ = {
@@ -278,46 +668,21 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		HBP_135B43848684FBF0877BA4E834F721EB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		HBP_7FCBE46027D17E94907E8C61FCAFA6AC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		HBP_E249FB8E482A159410398942677BCB02 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		NT_014B13630EF79B56C6143DBF15CB34D3 /* CARBMeasure */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_182D3BF3C0F06682FD025E4D9BE7794F /* Build configuration list for PBXNativeTarget "CARBMeasure" */;
 			buildPhases = (
 				SBP_190B5AC334554251C3AF8F473E495DF0 /* Sources */,
-				HBP_7FCBE46027D17E94907E8C61FCAFA6AC /* Headers */,
 				80E502B42401D8910075AD72 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8051C199248BE795003F0C43 /* PBXTargetDependency */,
 			);
 			name = CARBMeasure;
 			packageProductDependencies = (
-				80E502B62401D8950075AD72 /* mcMedia */,
 			);
 			productName = CARBMeasure;
 			productReference = FR_4779CA0C1EF9DBA0542993E768ACAD27 /* CARBMeasure */;
@@ -328,17 +693,15 @@
 			buildConfigurationList = CL_F07F5EA96B1CDDF7AC238E908155DBB3 /* Build configuration list for PBXNativeTarget "SwiftTests-macOS" */;
 			buildPhases = (
 				SBP_6276681A11B78505C89B4E424A4A5699 /* Sources */,
-				HBP_135B43848684FBF0877BA4E834F721EB /* Headers */,
 				80E502BC2401DA320075AD72 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8051C197248BE791003F0C43 /* PBXTargetDependency */,
 			);
 			name = "SwiftTests-macOS";
 			packageProductDependencies = (
-				80E502BD2401DA360075AD72 /* mcMedia */,
-				80C5DEAE24390C8300A8712E /* mcAppKitAudio */,
 			);
 			productName = SwiftTests;
 			productReference = FR_7BC23D47F664D5D9EA377F68EEF22E97 /* SwiftTests.xctest */;
@@ -349,17 +712,15 @@
 			buildConfigurationList = CL_B39B7C9DED00DF48F63DA61720722EBF /* Build configuration list for PBXNativeTarget "CppTests-macOS" */;
 			buildPhases = (
 				SBP_9504FD09DA6D2488BC8D41EFD0FAAF99 /* Sources */,
-				HBP_E249FB8E482A159410398942677BCB02 /* Headers */,
 				80E502C02401DAD60075AD72 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8051C195248BE78D003F0C43 /* PBXTargetDependency */,
 			);
 			name = "CppTests-macOS";
 			packageProductDependencies = (
-				80E502C12401DADA0075AD72 /* mcMedia */,
-				80C5DEAC24390C5E00A8712E /* mcAppKitAudio */,
 			);
 			productName = CppTests;
 			productReference = FR_2E597D9650B285DAD74CA6EA20FC6987 /* CppTests.xctest */;
@@ -375,15 +736,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				8051C19B248BE799003F0C43 /* PBXTargetDependency */,
 			);
 			name = CAPlayThrough;
 			packageProductDependencies = (
-				80E502C82401DD640075AD72 /* mcMediaAU */,
-				806898A5240275F800EAAA3C /* mcUIReusable */,
-				80B75D022402767C00D3C3AD /* mcConcurrencyOC */,
-				80B75D042402768800D3C3AD /* mcMedia */,
-				80C5DE9B2439088000A8712E /* mcAppScaffold */,
-				80C5DEAA24390B8700A8712E /* mcAppKitAudio */,
 			);
 			productName = CAPlayThrough;
 			productReference = FR_1EF121FF4E283A4CD8B231B65490E5D5 /* CAPlayThrough.app */;
@@ -409,6 +765,12 @@
 			mainGroup = G_0676D2B6FF1CF5EA8CF754D972EAAFDA;
 			productRefGroup = G_B8F776404C40B1FE86C7FDF490D9CF5C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8051C149248BE758003F0C43 /* Products */;
+					ProjectRef = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				NT_8993857EBA7EFBC9A25FB966E9D0E3F0 /* CAPlayThrough */,
@@ -418,6 +780,345 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8051C165248BE758003F0C43 /* mcConcurrencyLocking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcConcurrencyLocking.a;
+			path = libmcConcurrencyLocking.a;
+			remoteRef = 8051C164248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C167248BE758003F0C43 /* mcConcurrencyLocking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcConcurrencyLocking.a;
+			path = libmcConcurrencyLocking.a;
+			remoteRef = 8051C166248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C169248BE758003F0C43 /* mcConcurrencyOC.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcConcurrencyOC.a;
+			path = libmcConcurrencyOC.a;
+			remoteRef = 8051C168248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C16B248BE758003F0C43 /* mcConcurrencyOC.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcConcurrencyOC.a;
+			path = libmcConcurrencyOC.a;
+			remoteRef = 8051C16A248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C16D248BE758003F0C43 /* mcFoundationExtensions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundationExtensions.a;
+			path = libmcFoundationExtensions.a;
+			remoteRef = 8051C16C248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C16F248BE758003F0C43 /* mcFoundationExtensions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundationExtensions.a;
+			path = libmcFoundationExtensions.a;
+			remoteRef = 8051C16E248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C171248BE758003F0C43 /* mcFoundationLogging.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundationLogging.a;
+			path = libmcFoundationLogging.a;
+			remoteRef = 8051C170248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C173248BE758003F0C43 /* mcFoundationLogging.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundationLogging.a;
+			path = libmcFoundationLogging.a;
+			remoteRef = 8051C172248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C175248BE758003F0C43 /* mcFoundationObservables.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundationObservables.a;
+			path = libmcFoundationObservables.a;
+			remoteRef = 8051C174248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C177248BE758003F0C43 /* mcFoundationObservables.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundationObservables.a;
+			path = libmcFoundationObservables.a;
+			remoteRef = 8051C176248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C179248BE758003F0C43 /* mcFoundationTestability.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundationTestability.a;
+			path = libmcFoundationTestability.a;
+			remoteRef = 8051C178248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C17B248BE758003F0C43 /* mcFoundationTestability.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundationTestability.a;
+			path = libmcFoundationTestability.a;
+			remoteRef = 8051C17A248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C17D248BE758003F0C43 /* mcFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundation.a;
+			path = libmcFoundation.a;
+			remoteRef = 8051C17C248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C17F248BE758003F0C43 /* mcFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcFoundation.a;
+			path = libmcFoundation.a;
+			remoteRef = 8051C17E248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C181248BE758003F0C43 /* mcMath.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcMath.a;
+			path = libmcMath.a;
+			remoteRef = 8051C180248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C183248BE758003F0C43 /* mcMath.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcMath.a;
+			path = libmcMath.a;
+			remoteRef = 8051C182248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C185248BE758003F0C43 /* mcMediaExtensions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcMediaExtensions.a;
+			path = libmcMediaExtensions.a;
+			remoteRef = 8051C184248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C187248BE758003F0C43 /* mcMediaExtensions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcMediaExtensions.a;
+			path = libmcMediaExtensions.a;
+			remoteRef = 8051C186248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C189248BE758003F0C43 /* mcMedia.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcMedia.a;
+			path = libmcMedia.a;
+			remoteRef = 8051C188248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C18B248BE758003F0C43 /* mcMedia.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcMedia.a;
+			path = libmcMedia.a;
+			remoteRef = 8051C18A248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C18D248BE758003F0C43 /* mcRuntime.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcRuntime.a;
+			path = libmcRuntime.a;
+			remoteRef = 8051C18C248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C18F248BE758003F0C43 /* mcRuntime.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcRuntime.a;
+			path = libmcRuntime.a;
+			remoteRef = 8051C18E248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C191248BE758003F0C43 /* mcTypes.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcTypes.a;
+			path = libmcTypes.a;
+			remoteRef = 8051C190248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C193248BE758003F0C43 /* mcTypes.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcTypes.a;
+			path = libmcTypes.a;
+			remoteRef = 8051C192248BE758003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1D3248BF030003F0C43 /* mcAppKitAudio.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcAppKitAudio.a;
+			path = libmcAppKitAudio.a;
+			remoteRef = 8051C1D2248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1D5248BF030003F0C43 /* mcAppKitAudio.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcAppKitAudio.a;
+			path = libmcAppKitAudio.a;
+			remoteRef = 8051C1D4248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1D7248BF030003F0C43 /* mcAppScaffold.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcAppScaffold.a;
+			path = libmcAppScaffold.a;
+			remoteRef = 8051C1D6248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1D9248BF030003F0C43 /* mcAppScaffold.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcAppScaffold.a;
+			path = libmcAppScaffold.a;
+			remoteRef = 8051C1D8248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1DB248BF030003F0C43 /* mcGraphicsExtensions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcGraphicsExtensions.a;
+			path = libmcGraphicsExtensions.a;
+			remoteRef = 8051C1DA248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1DD248BF030003F0C43 /* mcGraphicsExtensions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcGraphicsExtensions.a;
+			path = libmcGraphicsExtensions.a;
+			remoteRef = 8051C1DC248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1DF248BF030003F0C43 /* mcMediaAU.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcMediaAU.a;
+			path = libmcMediaAU.a;
+			remoteRef = 8051C1DE248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1E1248BF030003F0C43 /* mcMediaAU.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcMediaAU.a;
+			path = libmcMediaAU.a;
+			remoteRef = 8051C1E0248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1E3248BF030003F0C43 /* mcTypography.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcTypography.a;
+			path = libmcTypography.a;
+			remoteRef = 8051C1E2248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1E5248BF030003F0C43 /* mcTypography.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcTypography.a;
+			path = libmcTypography.a;
+			remoteRef = 8051C1E4248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1E7248BF030003F0C43 /* mcUIExtensions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcUIExtensions.a;
+			path = libmcUIExtensions.a;
+			remoteRef = 8051C1E6248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1E9248BF030003F0C43 /* mcUIExtensions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcUIExtensions.a;
+			path = libmcUIExtensions.a;
+			remoteRef = 8051C1E8248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1EB248BF030003F0C43 /* mcUIReusable.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcUIReusable.a;
+			path = libmcUIReusable.a;
+			remoteRef = 8051C1EA248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1ED248BF030003F0C43 /* mcUIReusable.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcUIReusable.a;
+			path = libmcUIReusable.a;
+			remoteRef = 8051C1EC248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1EF248BF030003F0C43 /* mcUI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcUI.a;
+			path = libmcUI.a;
+			remoteRef = 8051C1EE248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C1F1248BF030003F0C43 /* mcUI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcUI.a;
+			path = libmcUI.a;
+			remoteRef = 8051C1F0248BF030003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C25D248BF3D7003F0C43 /* mcTestability.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcTestability.a;
+			path = libmcTestability.a;
+			remoteRef = 8051C25C248BF3D7003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C25F248BF3D7003F0C43 /* mcTestability.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcTestability.a;
+			path = libmcTestability.a;
+			remoteRef = 8051C25E248BF3D7003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		SBP_106761CA7C21FAF07AE54CDF56912FB7 /* Sources */ = {
@@ -438,7 +1139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80E502B92401D9E80075AD72 /* RingBufferTestsUtility.swift in Sources */,
+				8051C1B4248BECAB003F0C43 /* RingBufferTestsUtility.swift in Sources */,
 				BF_5E369EAB9143106F2CC9393230E393C2 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,8 +1148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80E502BB2401DA020075AD72 /* RingBufferTestsUtility.swift in Sources */,
+				8051C19E248BEABF003F0C43 /* RingBufferTestsUtility.swift in Sources */,
 				BF_FED60342DBD08CDA25077012B0A57159 /* CARBPerformanceTests.swift in Sources */,
+				8051C259248BF37C003F0C43 /* RingBufferTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +1158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80E502BF2401DA540075AD72 /* RingBufferTestsUtility.swift in Sources */,
+				8051C19D248BEABE003F0C43 /* RingBufferTestsUtility.swift in Sources */,
 				BF_149E94D98D910E4365B218FE22AF4CED /* CARBPerformanceTests.mm in Sources */,
 				BF_E5B816B4C23CB2017BF5FC71598D3349 /* CoreAudioSDK.cpp in Sources */,
 				BF_B7E7E34FD63B606F64FD86832FEF8217 /* CARBTests.mm in Sources */,
@@ -465,10 +1167,33 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8051C195248BE78D003F0C43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Shared;
+			targetProxy = 8051C194248BE78D003F0C43 /* PBXContainerItemProxy */;
+		};
+		8051C197248BE791003F0C43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Shared;
+			targetProxy = 8051C196248BE791003F0C43 /* PBXContainerItemProxy */;
+		};
+		8051C199248BE795003F0C43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Shared;
+			targetProxy = 8051C198248BE795003F0C43 /* PBXContainerItemProxy */;
+		};
+		8051C19B248BE799003F0C43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Shared;
+			targetProxy = 8051C19A248BE799003F0C43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		BC_205AF360E42EE3DB640B8AB1A97C9CB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E502A62401D6DE0075AD72 /* Tests-macOS.xcconfig */;
+			baseConfigurationReference = 8051C1A0248BEAF9003F0C43 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Tests/C++/Info.plist";
@@ -479,7 +1204,7 @@
 		};
 		BC_2D3E6E9E2912A1AED35560609FA57C7D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E502A82401D6DE0075AD72 /* Tool-macOS.xcconfig */;
+			baseConfigurationReference = 8051C1A1248BEAFA003F0C43 /* Tool-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				PRODUCT_NAME = CARBMeasure;
@@ -496,7 +1221,7 @@
 		};
 		BC_54F255918CA058EC4578F7F38A4F05D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E502A82401D6DE0075AD72 /* Tool-macOS.xcconfig */;
+			baseConfigurationReference = 8051C1A1248BEAFA003F0C43 /* Tool-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				PRODUCT_NAME = CARBMeasure;
@@ -505,7 +1230,7 @@
 		};
 		BC_5A5F136EEE04304B6A1E08B72D3E4D3E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E502A62401D6DE0075AD72 /* Tests-macOS.xcconfig */;
+			baseConfigurationReference = 8051C1A0248BEAF9003F0C43 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Tests/C++/Info.plist";
@@ -516,7 +1241,7 @@
 		};
 		BC_7B3C33ECED133191E2E25380D1630EE2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E502A62401D6DE0075AD72 /* Tests-macOS.xcconfig */;
+			baseConfigurationReference = 8051C1A0248BEAF9003F0C43 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Tests/Swift/Info.plist;
@@ -535,7 +1260,7 @@
 		};
 		BC_B61778E1E1DEFD755CA67B7EDE4521A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E502A22401D6DE0075AD72 /* App-macOS.xcconfig */;
+			baseConfigurationReference = 8051C1A2248BEAFA003F0C43 /* App-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
@@ -545,7 +1270,7 @@
 		};
 		BC_C1AE2B1E4433800C845B5F4774026CBD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E502A22401D6DE0075AD72 /* App-macOS.xcconfig */;
+			baseConfigurationReference = 8051C1A2248BEAFA003F0C43 /* App-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Sources/CAPlayThrough/Info.plist;
@@ -555,7 +1280,7 @@
 		};
 		BC_C74484939AE76FF739D0E41626D7A3EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E502A62401D6DE0075AD72 /* Tests-macOS.xcconfig */;
+			baseConfigurationReference = 8051C1A0248BEAF9003F0C43 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Tests/Swift/Info.plist;
@@ -613,53 +1338,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		806898A5240275F800EAAA3C /* mcUIReusable */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcUIReusable;
-		};
-		80B75D022402767C00D3C3AD /* mcConcurrencyOC */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcConcurrencyOC;
-		};
-		80B75D042402768800D3C3AD /* mcMedia */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcMedia;
-		};
-		80C5DE9B2439088000A8712E /* mcAppScaffold */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcAppScaffold;
-		};
-		80C5DEAA24390B8700A8712E /* mcAppKitAudio */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcAppKitAudio;
-		};
-		80C5DEAC24390C5E00A8712E /* mcAppKitAudio */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcAppKitAudio;
-		};
-		80C5DEAE24390C8300A8712E /* mcAppKitAudio */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcAppKitAudio;
-		};
-		80E502B62401D8950075AD72 /* mcMedia */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcMedia;
-		};
-		80E502BD2401DA360075AD72 /* mcMedia */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcMedia;
-		};
-		80E502C12401DADA0075AD72 /* mcMedia */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcMedia;
-		};
-		80E502C82401DD640075AD72 /* mcMediaAU */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = mcMediaAU;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = P_0B586BCFB082C77065CFF370793845C9 /* Project object */;
 }
