@@ -1,9 +1,9 @@
 //
 //  Atomic.m
-//  mcXCGen
+//  WaveLabs
 //
 //  Created by Vlad Gorlov on 18.11.18.
-//  Copyright © 2018 WaveLabs. All rights reserved.
+//  Copyright © 2018 Vlad Gorlov. All rights reserved.
 //
 
 #import "Atomic.h"

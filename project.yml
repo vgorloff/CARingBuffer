@@ -1,8 +1,16 @@
 include:
   - ../../../Projects/mc/templates.yml
   - ../../../Projects/mc/mcMedia/project.yml
+  - ../../../Projects/mc/mcMediaAU/project.yml
+  - ../../../Projects/mc/mcAppScaffold/project.yml
+  - ../../../Projects/mc/mcUIReusable/project.yml
+  - ../../../Projects/mc/mcAppKitAudio/project.yml
 name: Shared
 aggregateTargets:
   Shared:
     targets:
       - mcMedia_macOS
+      - mcAppScaffold_macOS
+      - mcUIReusable_macOS
+      - mcMediaAU_macOS
+      - mcAppKitAudio_macOS
