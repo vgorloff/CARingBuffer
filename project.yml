@@ -1,0 +1,8 @@
+include:
+  - ../../../Projects/mc/templates.yml
+  - ../../../Projects/mc/mcMedia/project.yml
+name: Shared
+aggregateTargets:
+  Shared:
+    targets:
+      - mcMedia_macOS
