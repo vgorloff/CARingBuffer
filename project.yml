@@ -5,6 +5,7 @@ include:
   - ../../../Projects/mc/mcAppScaffold/project.yml
   - ../../../Projects/mc/mcUIReusable/project.yml
   - ../../../Projects/mc/mcAppKitAudio/project.yml
+  - ../../../Projects/mc/mcTestability/project.yml
 name: Shared
 aggregateTargets:
   Shared:
@@ -14,3 +15,4 @@ aggregateTargets:
       - mcUIReusable_macOS
       - mcMediaAU_macOS
       - mcAppKitAudio_macOS
+      - mcTestability_macOS

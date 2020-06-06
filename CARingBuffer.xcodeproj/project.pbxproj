@@ -59,6 +59,8 @@
 		8051C203248BF030003F0C43 /* mcUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1F1248BF030003F0C43 /* mcUI.a */; };
 		8051C204248BF030003F0C43 /* mcUIExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1E9248BF030003F0C43 /* mcUIExtensions.a */; };
 		8051C205248BF030003F0C43 /* mcUIReusable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C1ED248BF030003F0C43 /* mcUIReusable.a */; };
+		8051C259248BF37C003F0C43 /* RingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C230248BF37B003F0C43 /* RingBufferTests.swift */; };
+		8051C260248BF3D7003F0C43 /* mcTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C25F248BF3D7003F0C43 /* mcTestability.a */; };
 		BF_149E94D98D910E4365B218FE22AF4CED /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_A2961A54812E2E85D4F6A72C8DDBE8D1 /* CARBPerformanceTests.mm */; };
 		BF_20F77D72EC46F3DB71B7E4983BA42EFB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_884E623289EEC8B733F399A27AF0DB0B /* main.swift */; };
 		BF_4D6025B89175F68459E641B7786938D2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_7AE931E62A42C0FC2CFD131A265A8130 /* Logger.swift */; };
@@ -382,6 +384,20 @@
 			remoteGlobalIDString = 34463D5649D92182348A13DE;
 			remoteInfo = mcUI_macOS;
 		};
+		8051C25C248BF3D7003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DE2A79BD3F607E8B5A04B6AA;
+			remoteInfo = mcTestability_iOS;
+		};
+		8051C25E248BF3D7003F0C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F033346A634F1971BFC6A89A;
+			remoteInfo = mcTestability_macOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -392,6 +408,7 @@
 		8051C1A1248BEAFA003F0C43 /* Tool-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tool-macOS.xcconfig"; sourceTree = "<group>"; };
 		8051C1A2248BEAFA003F0C43 /* App-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-macOS.xcconfig"; sourceTree = "<group>"; };
 		8051C1C1248BECED003F0C43 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
+		8051C230248BF37B003F0C43 /* RingBufferTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RingBufferTests.swift; path = Vendor/mc/mcMedia/Tests/Types/RingBufferTests.swift; sourceTree = SOURCE_ROOT; };
 		80C5DE8B243900C100A8712E /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		FR_0E2DD8DA0F1C3C52FDA7909F97CA3337 /* MainMenu.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		FR_18B61A165D9E1D8AF566C9FDADD1D433 /* Application.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -437,6 +454,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8051C260248BF3D7003F0C43 /* mcTestability.a in Frameworks */,
 				8051C1B3248BEC7E003F0C43 /* mcFoundationExtensions.a in Frameworks */,
 				8051C1B2248BEC72003F0C43 /* mcMath.a in Frameworks */,
 				8051C1B1248BEC6A003F0C43 /* mcFoundationTestability.a in Frameworks */,
@@ -527,6 +545,8 @@
 				8051C18B248BE758003F0C43 /* mcMedia.a */,
 				8051C18D248BE758003F0C43 /* mcRuntime.a */,
 				8051C18F248BE758003F0C43 /* mcRuntime.a */,
+				8051C25D248BF3D7003F0C43 /* mcTestability.a */,
+				8051C25F248BF3D7003F0C43 /* mcTestability.a */,
 				8051C191248BE758003F0C43 /* mcTypes.a */,
 				8051C193248BE758003F0C43 /* mcTypes.a */,
 				8051C1E3248BF030003F0C43 /* mcTypography.a */,
@@ -611,6 +631,7 @@
 		G_50FFCC604A106A46B0A4FFCA6480A589 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				8051C230248BF37B003F0C43 /* RingBufferTests.swift */,
 				8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */,
 				G_0E5762957F30E28B85CE201CF72B26BC /* C++ */,
 				G_62572FF5A8DBE51E0DF2DE2435F40992 /* Swift */,
@@ -1081,6 +1102,22 @@
 			remoteRef = 8051C1F0248BF030003F0C43 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		8051C25D248BF3D7003F0C43 /* mcTestability.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcTestability.a;
+			path = libmcTestability.a;
+			remoteRef = 8051C25C248BF3D7003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8051C25F248BF3D7003F0C43 /* mcTestability.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = mcTestability.a;
+			path = libmcTestability.a;
+			remoteRef = 8051C25E248BF3D7003F0C43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1113,6 +1150,7 @@
 			files = (
 				8051C19E248BEABF003F0C43 /* RingBufferTestsUtility.swift in Sources */,
 				BF_FED60342DBD08CDA25077012B0A57159 /* CARBPerformanceTests.swift in Sources */,
+				8051C259248BF37C003F0C43 /* RingBufferTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
