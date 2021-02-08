@@ -24,11 +24,11 @@ RingBufferTestsUtility.generateSampleChannelData(writeBuffer, numberOfFrames: IO
 var status: RingBufferError
 for iteration in 0 ..< UInt32(10_000_000) {
    status = ringBuffer.store(writeBuffer.audioBufferList, framesToWrite: SampleTime(IOCapacity),
-                             startWrite: SampleTime(IOCapacity * iteration))
+                             startWrite: SampleTime(IOCapacity) * SampleTime(iteration))
    assert(status == .noError)
 
    status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: SampleTime(IOCapacity),
-                             startRead: SampleTime(IOCapacity * iteration))
+                             startRead: SampleTime(IOCapacity) * SampleTime(iteration))
    assert(status == .noError)
 }
 
