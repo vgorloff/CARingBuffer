@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import mcRuntime
+
+Logger.level = .verbose
 
 autoreleasepool {
    // Even if we loading application manually we need to setup `Info.plist` key:

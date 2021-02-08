@@ -9,6 +9,9 @@
 import AppKit
 import mcUIReusable
 import mcAppKitAudio
+import mcRuntime
+
+private let log = Logger.getLogger(Application.self)
 
 class Application: NSApplication {
 
@@ -22,11 +25,23 @@ class Application: NSApplication {
       mainMenu = mainAppMenu
       delegate = self
       do {
+         let inputDevices = try AudioDevice.audioDevicesForScope(scope: .input)
+         for inputDevice in inputDevices {
+            let name = try AudioDevice.deviceName(deviceID: inputDevice, scope: .input)
+            log.verbose("Input device: id=\(inputDevice); name=\(name)")
+         }
+         let outputDevices = try AudioDevice.audioDevicesForScope(scope: .output)
+         for outputDevice in outputDevices {
+            let name = try AudioDevice.deviceName(deviceID: outputDevice, scope: .output)
+            log.verbose("Output device: id=\(outputDevice); name=\(name)")
+         }
          let inputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .input)
+         log.verbose("Will use input device: id=\(inputDeviceID); name=\(try AudioDevice.deviceName(deviceID: inputDeviceID, scope: .input))")
          let outputDeviceID = try AudioDevice.defaultDeviceForScope(scope: .output)
+         log.verbose("Will use output device: id=\(outputDeviceID); name=\(try AudioDevice.deviceName(deviceID: outputDeviceID, scope: .output))")
          renderUtility = try PlayThroughEngine(inputDevice: inputDeviceID, outputDevice: outputDeviceID)
       } catch {
-         print(error)
+         log.error(error)
       }
    }
 
@@ -66,7 +81,7 @@ extension Application {
          }
          try updateUI()
       } catch {
-         print(error)
+         log.error(error)
       }
    }
 

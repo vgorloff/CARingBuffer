@@ -11,6 +11,9 @@ import mcMedia
 import mcMediaAU
 import mcUIReusable
 import mcAppKitAudio
+import mcRuntime
+
+private let log = Logger.getLogger(PlayThroughEngine.self)
 
 private typealias SampleTime = RingBufferTimeBounds.SampleTime
 
@@ -99,7 +102,7 @@ private let playThroughRenderUtilityOutputRenderCallback: AURenderCallback = { i
       audioBuffers?.forEach { audioBuffer in audioBuffer.fillWithZeros() }
       switch ringBuffer.getTimeBounds() {
       case .failure:
-         break // // FIXME: Handle error.
+         break // FIXME: Handle error.
       case .success(let bufferStartTime, let bufferEndTime):
          renderUtility.inToOutSampleOffset = sampleTime - bufferStartTime.doubleValue
       }
@@ -342,7 +345,8 @@ extension PlayThroughEngine {
       let outputOffset = try AudioDevice.safetyOffset(deviceID: outputDevice, scope: .output)
       let inputBuffer = try AudioDevice.bufferFrameSize(deviceID: anInputDevice, scope: .input)
       let outputBuffer = try AudioDevice.bufferFrameSize(deviceID: outputDevice, scope: .output)
-      return inputOffset + outputOffset + inputBuffer + outputBuffer
+      let result = inputOffset + outputOffset + inputBuffer + outputBuffer
+      return result
    }
 }
 
