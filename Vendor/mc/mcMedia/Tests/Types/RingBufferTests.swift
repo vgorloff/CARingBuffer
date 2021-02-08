@@ -7,7 +7,7 @@
 //
 
 import AVFoundation
-@testable import mcMedia
+import mcMedia
 import mcTestability
 import XCTest
 

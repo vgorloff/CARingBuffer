@@ -32,7 +32,7 @@ class CARBSwiftPerformanceTests: XCTestCase {
             }
 
             status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: Int64(IOCapacity),
-                                      startRead: Int64(IOCapacity * iteration))
+                                      startRead: Int64(IOCapacity) * Int64(iteration))
             if status != .noError {
                fatalError()
             }
