@@ -27,7 +27,7 @@ public final class RingBuffer<T: DefaultInitializerType> {
    public private(set) var numberOfElements: Int
 
    private var maxNumberOfElements: Int = 0
-   let offsets: RingBufferOffsets
+   public let offsets: RingBufferOffsets
 
    private let bytesPerFrame: SampleTime = SampleTime(MemoryLayout<T>.stride)
    private var buffer: UnsafeMutablePointer<T>

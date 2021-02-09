@@ -107,6 +107,14 @@ open class UILogicTestCase: XCTestCase {
                                                         configureBlock: ((T) throws -> Void)? = nil) {
       test.embedViewController(vc, mode: mode, delay: delay, configureBlock: configureBlock)
    }
+
+
+   @discardableResult
+   public func presentViewController<T: UIViewController>(_ vc: T, mode: TestableControllerPresentationMode = .fullScreen,
+                                                          delay: TimeInterval = 0,
+                                                          configureBlock: ((T) throws -> Void)? = nil) -> UIViewController {
+      test.presentViewController(vc, mode: mode, delay: delay, configureBlock: configureBlock)
+   }
    #endif
 
    public func addTestAction(title: String, handler: @escaping () -> Void) {

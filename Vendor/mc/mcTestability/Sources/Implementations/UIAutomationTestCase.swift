@@ -41,8 +41,9 @@ extension UIAutomationTestCase {
 extension UIAutomationTestCase {
 
    func waitForExists(_ element: XCUIElement, timeout: TimeInterval = 30, file: String = #file, line: Int = #line) {
+      #if false
       let existsPredicate = NSPredicate(format: "exists == true")
-      expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
+      let exp = expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
       waitForExpectations(timeout: timeout) { [weak self] error in
          guard error != nil else {
             return
@@ -50,6 +51,13 @@ extension UIAutomationTestCase {
          let message = "Failed to find \(element) after \(timeout) seconds."
          self?.recordFailure(withDescription: message, inFile: file, atLine: line, expected: true)
       }
+      #else
+      let status = element.waitForExistence(timeout: timeout)
+      if !status {
+         let message = "Failed to find \(element) after \(timeout) seconds."
+         record(.init(type: .assertionFailure, compactDescription: message))
+      }
+      #endif
    }
 
    func waitForNotExists(_ element: XCUIElement, timeout: TimeInterval = 30, file: String = #file, line: Int = #line) {
@@ -60,7 +68,7 @@ extension UIAutomationTestCase {
             return
          }
          let message = "Element \(element) still exists after \(timeout) seconds."
-         self?.recordFailure(withDescription: message, inFile: file, atLine: line, expected: true)
+         self?.record(.init(type: .assertionFailure, compactDescription: message))
       }
    }
 }
