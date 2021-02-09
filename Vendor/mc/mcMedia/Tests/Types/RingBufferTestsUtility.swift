@@ -12,8 +12,8 @@ import mcMediaExtensions
 
 @objc public enum RingBufferTestParameters: UInt32 {
    case numberOfIterationsShort = 2_000_000
-   case numberOfIterationsMedium = 10_000_000
-   case numberOfIterationsLong = 50_000_000
+   case numberOfIterationsMedium = 20_000_000
+   case numberOfIterationsLong = 100_000_000
    case sampleRate = 44100
    case numberOfChannels = 2
    case bufferCapacityFrames = 4096

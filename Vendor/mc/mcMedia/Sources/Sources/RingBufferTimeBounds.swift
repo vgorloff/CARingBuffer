@@ -49,7 +49,7 @@ extension RingBufferTimeBounds {
       return false // Fail after a few tries.
    }
 
-   func get() -> Result {
+   public func get() -> Result {
       var start: SampleTime = 0
       var end: SampleTime = 0
       guard get(start: &start, end: &end) else {
