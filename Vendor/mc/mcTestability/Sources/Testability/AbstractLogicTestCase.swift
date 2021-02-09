@@ -8,67 +8,6 @@
 
 import Foundation
 
-public class TestCaseSettings {
-
-   public var bundle: Bundle
-   public var bundleID: String
-
-   public var dataBundlePath: String
-   public var dataBundleName = "Data.bundle"
-
-   public var className: String
-   // public var dataDirPath: String
-   public var tmpDirPath: String
-
-   init(testCase: AnyObject) {
-      bundle = Bundle(for: type(of: testCase))
-      bundleID = bundle.bundleIdentifier ?? "mc.test.default"
-      dataBundlePath = bundle.resourcePath! + "/" + dataBundleName
-      className = NSStringFromClass(type(of: testCase)).components(separatedBy: ".").last!
-      tmpDirPath = NSTemporaryDirectory() + "/" + bundleID + "/" + className
-      // dataDirPath = dataBundlePath + "/" + className
-   }
-}
-
-public class TestResource {
-
-   let rootDirPath: String
-
-   init(rootDirPath: String) {
-      self.rootDirPath = rootDirPath
-   }
-
-   private var assert: AssertType {
-      return TestSettings.shared.assert
-   }
-
-   public func data(pathComponent: String) throws -> Data {
-      let url = URL(fileURLWithPath: rootDirPath + "/" + pathComponent)
-      return try Data(contentsOf: url)
-   }
-
-   public func string(pathComponent: String, encoding: String.Encoding = .utf8) throws -> String {
-      let contents = try data(pathComponent: pathComponent)
-      if let string = String(data: contents, encoding: encoding) {
-         return string
-      } else {
-         fatalError() // FIXME: Throw
-      }
-   }
-
-   public func object<T>(pathComponent: String, decoder: JSONDecoder = JSONDecoder(),
-                         file: StaticString = #file, line: UInt = #line) throws -> T where T: Decodable {
-      do {
-         let contents = try data(pathComponent: pathComponent)
-         let result = try decoder.decode(T.self, from: contents)
-         return result
-      } catch {
-         assert.shouldNeverHappen(error, file: file, line: line)
-         throw error
-      }
-   }
-}
-
 open class AbstractLogicTestCase<Expectation, TestCase: TestCaseType> where TestCase.Expectation == Expectation {
 
    public var stub = StubObject()
@@ -77,7 +16,7 @@ open class AbstractLogicTestCase<Expectation, TestCase: TestCaseType> where Test
       return TestSettings.shared.stubbedEnvironment
    }
 
-   public lazy var settings = TestCaseSettings(testCase: self)
+   public lazy var settings: TestCaseSettings = BundledTestCaseSettings(testCase: self)
 
    let testCase: TestCase
 
@@ -119,7 +58,7 @@ open class AbstractLogicTestCase<Expectation, TestCase: TestCaseType> where Test
    }
 
    var resource: TestResource {
-      return TestResource(rootDirPath: settings.dataBundlePath)
+      return TestResource(rootDirPath: settings.rootDirPath)
    }
 }
 
@@ -378,7 +317,7 @@ extension AbstractLogicTestCase {
 
    func addStub(statusCode: Int = 200, pathComponent: String, file: StaticString = #file, line: UInt = #line) {
       do {
-         try addStub(statusCode: statusCode, fileAtPath: settings.dataBundlePath + "/" + pathComponent)
+         try addStub(statusCode: statusCode, fileAtPath: settings.rootDirPath + "/" + pathComponent)
       } catch {
          assert.fail(String(describing: error), file: file, line: line)
       }
@@ -387,7 +326,7 @@ extension AbstractLogicTestCase {
    func addStub(isURL: @escaping (URL) -> Bool, statusCode: Int = 200, pathComponent: String, file: StaticString = #file,
                 line: UInt = #line) {
       do {
-         try addStub(isURL: isURL, statusCode: statusCode, fileAtPath: settings.dataBundlePath + "/" + pathComponent)
+         try addStub(isURL: isURL, statusCode: statusCode, fileAtPath: settings.rootDirPath + "/" + pathComponent)
       } catch {
          assert.fail(String(describing: error), file: file, line: line)
       }

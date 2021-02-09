@@ -8,11 +8,11 @@
 
 import Foundation
 
-class RingBufferOffsets {
+public class RingBufferOffsets {
 
    typealias SampleTime = RingBufferTimeBounds.SampleTime
 
-   let timeBounds: RingBufferTimeBounds
+   public let timeBounds: RingBufferTimeBounds
 
    private(set) var numberOfElements: SampleTime
 

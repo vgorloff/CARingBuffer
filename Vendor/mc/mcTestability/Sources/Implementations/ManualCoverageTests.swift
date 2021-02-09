@@ -12,7 +12,7 @@ import XCTest
  class ManualCoverageTests: GenericUITestCase {
 
  /// This is a fake test used just to `grab` coverage while doing manual testing.
- /// It will wait until special `Developer screen` will not be opened.
+ /// It will wait until special `Developer screen` to be opened.
  func testManualCoverageDump() {
     let alert = app.alerts[AE.Developer.manualCodeCoverageDump]
     waitForExists(alert, timeout: 10 * 60)
