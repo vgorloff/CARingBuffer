@@ -26,13 +26,13 @@ class CARBSwiftPerformanceTests: XCTestCase {
          var status: RingBufferError
          for iteration in 0 ..< numberOfIterations {
             status = ringBuffer.store(writeBuffer.audioBufferList, framesToWrite: Int64(IOCapacity),
-                                      startWrite: Int64(IOCapacity * iteration))
+                                      startWrite: Int64(IOCapacity) * Int64(iteration))
             if status != .noError {
                fatalError()
             }
 
             status = ringBuffer.fetch(readBuffer.mutableAudioBufferList, framesToRead: Int64(IOCapacity),
-                                      startRead: Int64(IOCapacity * iteration))
+                                      startRead: Int64(IOCapacity) * Int64(iteration))
             if status != .noError {
                fatalError()
             }
