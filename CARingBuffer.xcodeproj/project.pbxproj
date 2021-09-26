@@ -9,25 +9,35 @@
 /* Begin PBXBuildFile section */
 		8051C19D248BEABE003F0C43 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */; };
 		8051C19E248BEABF003F0C43 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */; };
-		8051C1A3248BEB6D003F0C43 /* libmcMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C187248BE758003F0C43 /* libmcMediaExtensions.a */; };
-		8051C1A4248BEB87003F0C43 /* libmcFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17B248BE758003F0C43 /* libmcFoundationTestability.a */; };
-		8051C1A5248BEB98003F0C43 /* libmcFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16F248BE758003F0C43 /* libmcFoundationExtensions.a */; };
-		8051C1A6248BEBAF003F0C43 /* libmcTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C193248BE758003F0C43 /* libmcTypes.a */; };
-		8051C1A7248BEBBE003F0C43 /* libmcRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18F248BE758003F0C43 /* libmcRuntime.a */; };
-		8051C1A8248BEBE1003F0C43 /* libmcMedia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18B248BE758003F0C43 /* libmcMedia.a */; };
-		8051C1A9248BEC0D003F0C43 /* libmcFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17F248BE758003F0C43 /* libmcFoundation.a */; };
-		8051C1AA248BEC19003F0C43 /* libmcTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C193248BE758003F0C43 /* libmcTypes.a */; };
-		8051C1AB248BEC2B003F0C43 /* libmcFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C173248BE758003F0C43 /* libmcFoundationLogging.a */; };
-		8051C1AC248BEC34003F0C43 /* libmcRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C18F248BE758003F0C43 /* libmcRuntime.a */; };
-		8051C1AD248BEC3E003F0C43 /* libmcMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C187248BE758003F0C43 /* libmcMediaExtensions.a */; };
-		8051C1AE248BEC4D003F0C43 /* libmcConcurrencyOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16B248BE758003F0C43 /* libmcConcurrencyOC.a */; };
-		8051C1AF248BEC57003F0C43 /* libmcConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C167248BE758003F0C43 /* libmcConcurrencyLocking.a */; };
-		8051C1B0248BEC61003F0C43 /* libmcFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C177248BE758003F0C43 /* libmcFoundationObservables.a */; };
-		8051C1B1248BEC6A003F0C43 /* libmcFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C17B248BE758003F0C43 /* libmcFoundationTestability.a */; };
-		8051C1B2248BEC72003F0C43 /* libmcMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C183248BE758003F0C43 /* libmcMath.a */; };
-		8051C1B3248BEC7E003F0C43 /* libmcFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C16F248BE758003F0C43 /* libmcFoundationExtensions.a */; };
 		8051C259248BF37C003F0C43 /* RingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C230248BF37B003F0C43 /* RingBufferTests.swift */; };
-		8051C260248BF3D7003F0C43 /* libmcTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8051C25F248BF3D7003F0C43 /* libmcTestability.a */; };
+		80B4CD6927010B4200E969EE /* libmcxConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD4E27010B3D00E969EE /* libmcxConcurrencyLocking.a */; };
+		80B4CD6A27010B4200E969EE /* libmcxConcurrencyOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5027010B3D00E969EE /* libmcxConcurrencyOC.a */; };
+		80B4CD6B27010B4200E969EE /* libmcxFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5227010B3D00E969EE /* libmcxFoundation.a */; };
+		80B4CD6C27010B4200E969EE /* libmcxFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5427010B3D00E969EE /* libmcxFoundationExtensions.a */; };
+		80B4CD6D27010B4200E969EE /* libmcxFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5627010B3D00E969EE /* libmcxFoundationLogging.a */; };
+		80B4CD6E27010B4200E969EE /* libmcxFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5827010B3D00E969EE /* libmcxFoundationObservables.a */; };
+		80B4CD6F27010B4200E969EE /* libmcxFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5A27010B3D00E969EE /* libmcxFoundationTestability.a */; };
+		80B4CD7027010B4200E969EE /* libmcxMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5C27010B3D00E969EE /* libmcxMath.a */; };
+		80B4CD7127010B4200E969EE /* libmcxMedia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5E27010B3D00E969EE /* libmcxMedia.a */; };
+		80B4CD7227010B4200E969EE /* libmcxMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6027010B3D00E969EE /* libmcxMediaExtensions.a */; };
+		80B4CD7327010B4200E969EE /* libmcxRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6227010B3D00E969EE /* libmcxRuntime.a */; };
+		80B4CD7427010B4200E969EE /* libmcxTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6427010B3D00E969EE /* libmcxTestability.a */; };
+		80B4CD7527010B4200E969EE /* libmcxTestabilityFixtures.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6627010B3D00E969EE /* libmcxTestabilityFixtures.a */; };
+		80B4CD7627010B4200E969EE /* libmcxTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6827010B3D00E969EE /* libmcxTypes.a */; };
+		80B4CD7727010BF300E969EE /* libmcxConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD4E27010B3D00E969EE /* libmcxConcurrencyLocking.a */; };
+		80B4CD7827010BF300E969EE /* libmcxConcurrencyOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5027010B3D00E969EE /* libmcxConcurrencyOC.a */; };
+		80B4CD7927010BF300E969EE /* libmcxFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5227010B3D00E969EE /* libmcxFoundation.a */; };
+		80B4CD7A27010BF300E969EE /* libmcxFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5427010B3D00E969EE /* libmcxFoundationExtensions.a */; };
+		80B4CD7B27010BF300E969EE /* libmcxFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5627010B3D00E969EE /* libmcxFoundationLogging.a */; };
+		80B4CD7C27010BF300E969EE /* libmcxFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5827010B3D00E969EE /* libmcxFoundationObservables.a */; };
+		80B4CD7D27010BF300E969EE /* libmcxFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5A27010B3D00E969EE /* libmcxFoundationTestability.a */; };
+		80B4CD7E27010BF300E969EE /* libmcxMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5C27010B3D00E969EE /* libmcxMath.a */; };
+		80B4CD7F27010BF300E969EE /* libmcxMedia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD5E27010B3D00E969EE /* libmcxMedia.a */; };
+		80B4CD8027010BF300E969EE /* libmcxMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6027010B3D00E969EE /* libmcxMediaExtensions.a */; };
+		80B4CD8127010BF300E969EE /* libmcxRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6227010B3D00E969EE /* libmcxRuntime.a */; };
+		80B4CD8227010BF300E969EE /* libmcxTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6427010B3D00E969EE /* libmcxTestability.a */; };
+		80B4CD8327010BF300E969EE /* libmcxTestabilityFixtures.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6627010B3D00E969EE /* libmcxTestabilityFixtures.a */; };
+		80B4CD8427010BF300E969EE /* libmcxTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD6827010B3D00E969EE /* libmcxTypes.a */; };
 		BF_149E94D98D910E4365B218FE22AF4CED /* CARBPerformanceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_A2961A54812E2E85D4F6A72C8DDBE8D1 /* CARBPerformanceTests.mm */; };
 		BF_B7E7E34FD63B606F64FD86832FEF8217 /* CARBTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_6C5368C61AC638AC0682209DCF303E55 /* CARBTests.mm */; };
 		BF_E5B816B4C23CB2017BF5FC71598D3349 /* CoreAudioSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_ECA2FFBB78AFCA8CEC0C2A938DD5C5CF /* CoreAudioSDK.cpp */; };
@@ -35,174 +45,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8051C164248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DE45CBA3602B89ED35C67536;
-			remoteInfo = mcConcurrencyLocking_iOS;
-		};
-		8051C166248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A3D15361A77D9ACEDB68B279;
-			remoteInfo = mcConcurrencyLocking_macOS;
-		};
-		8051C168248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8F6F6DA60F9D730DF879D66;
-			remoteInfo = mcConcurrencyOC_iOS;
-		};
-		8051C16A248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E7993C64D3696929858F4B38;
-			remoteInfo = mcConcurrencyOC_macOS;
-		};
-		8051C16C248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8C43A767B5FFBCEA5FD81BCB;
-			remoteInfo = mcFoundationExtensions_iOS;
-		};
-		8051C16E248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B1BECB85E82315FFD82A5569;
-			remoteInfo = mcFoundationExtensions_macOS;
-		};
-		8051C170248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 10C974B67C0B750EE6366A96;
-			remoteInfo = mcFoundationLogging_iOS;
-		};
-		8051C172248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5662130C1E007D386606EDB0;
-			remoteInfo = mcFoundationLogging_macOS;
-		};
-		8051C174248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B111C7875B65B10AB1BCCAAF;
-			remoteInfo = mcFoundationObservables_iOS;
-		};
-		8051C176248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 208D29132DD9B51A70046AA7;
-			remoteInfo = mcFoundationObservables_macOS;
-		};
-		8051C178248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3D6B671042DEED4380C165C5;
-			remoteInfo = mcFoundationTestability_iOS;
-		};
-		8051C17A248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A204176EAED482CB45997CBB;
-			remoteInfo = mcFoundationTestability_macOS;
-		};
-		8051C17C248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 162B273DC3D4DDA1F581FAA5;
-			remoteInfo = mcFoundation_iOS;
-		};
-		8051C17E248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 94A09449D4D61ED03365C4DF;
-			remoteInfo = mcFoundation_macOS;
-		};
-		8051C180248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 42BC349D601BC034EEBE7C01;
-			remoteInfo = mcMath_iOS;
-		};
-		8051C182248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B918ABC83EE699C821952ECF;
-			remoteInfo = mcMath_macOS;
-		};
-		8051C184248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5A9BCF68B319F1DB0C8093CA;
-			remoteInfo = mcMediaExtensions_iOS;
-		};
-		8051C186248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 85A3907B0110B49C0F4C3F32;
-			remoteInfo = mcMediaExtensions_macOS;
-		};
-		8051C188248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AF75CC2312DAA90CFA73A8A7;
-			remoteInfo = mcMedia_iOS;
-		};
-		8051C18A248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 477C7BC780D53F90E6D5D849;
-			remoteInfo = mcMedia_macOS;
-		};
-		8051C18C248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4DBA5BCE0DDE9C0AC1117A0A;
-			remoteInfo = mcRuntime_iOS;
-		};
-		8051C18E248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CBE79C50AA18DFBDD665FC84;
-			remoteInfo = mcRuntime_macOS;
-		};
-		8051C190248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 38E108B22154C8760CAD419B;
-			remoteInfo = mcTypes_iOS;
-		};
-		8051C192248BE758003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D09244D8DABA6A36E7BFCA01;
-			remoteInfo = mcTypes_macOS;
-		};
 		8051C194248BE78D003F0C43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
@@ -217,141 +59,113 @@
 			remoteGlobalIDString = 85CA98C059B40D950DCD0CC7;
 			remoteInfo = Shared;
 		};
-		8051C1D2248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD4D27010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 2D9993C70CE17635C46BA9AA;
-			remoteInfo = mcAppKitAudio_iOS;
+			remoteGlobalIDString = 5F2784A2BB2DF88E9275D3B5;
+			remoteInfo = mcxConcurrencyLocking;
 		};
-		8051C1D4248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD4F27010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 07AD20B687951FEF64270B57;
-			remoteInfo = mcAppKitAudio_macOS;
+			remoteGlobalIDString = 702C7FF33F3E33646C3D3028;
+			remoteInfo = mcxConcurrencyOC;
 		};
-		8051C1D6248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD5127010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 99706185FA5F4D2E28B8738E;
-			remoteInfo = mcAppScaffold_iOS;
+			remoteGlobalIDString = BDE71BBC4B0CCE6739E5B190;
+			remoteInfo = mcxFoundation;
 		};
-		8051C1D8248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD5327010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 92585D10731373017F9F5CB7;
-			remoteInfo = mcAppScaffold_macOS;
+			remoteGlobalIDString = 9D41B563546C69B180C44676;
+			remoteInfo = mcxFoundationExtensions;
 		};
-		8051C1DA248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD5527010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1A455D6DCCF27861B1B38E30;
-			remoteInfo = mcGraphicsExtensions_iOS;
+			remoteGlobalIDString = 8CE6BCEA3B2433CB43A1D21D;
+			remoteInfo = mcxFoundationLogging;
 		};
-		8051C1DC248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD5727010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CE62E2CD798BC381FDBFAA09;
-			remoteInfo = mcGraphicsExtensions_macOS;
+			remoteGlobalIDString = 6FA6026DCB3D934147A567D9;
+			remoteInfo = mcxFoundationObservables;
 		};
-		8051C1DE248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD5927010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1D44CEFB6F14B419812AEAC0;
-			remoteInfo = mcMediaAU_iOS;
+			remoteGlobalIDString = C97AECEE577B0B89F615204B;
+			remoteInfo = mcxFoundationTestability;
 		};
-		8051C1E0248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD5B27010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 24A11929474372309E11B4FB;
-			remoteInfo = mcMediaAU_macOS;
+			remoteGlobalIDString = 98F87CD4F64B08846978BC79;
+			remoteInfo = mcxMath;
 		};
-		8051C1E2248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD5D27010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = B1912F48DEF02D8C8C8EC410;
-			remoteInfo = mcTypography_iOS;
+			remoteGlobalIDString = 5C28F2DE96411708B28D88FB;
+			remoteInfo = mcxMedia;
 		};
-		8051C1E4248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD5F27010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2B69D982E5329D658B03F54;
-			remoteInfo = mcTypography_macOS;
+			remoteGlobalIDString = 1130F5DA5A4314A315B2A6E6;
+			remoteInfo = mcxMediaExtensions;
 		};
-		8051C1E6248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD6127010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = B6EA6C9F1ED183ECCDD8DC50;
-			remoteInfo = mcUIExtensions_iOS;
+			remoteGlobalIDString = 3FC06CBCAA24E63BC06B65C3;
+			remoteInfo = mcxRuntime;
 		};
-		8051C1E8248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD6327010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1A94714A126250FEB34EFC7D;
-			remoteInfo = mcUIExtensions_macOS;
+			remoteGlobalIDString = 44B4899A3298E06A3720CC1A;
+			remoteInfo = mcxTestability;
 		};
-		8051C1EA248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD6527010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 22C415A4D94F7D2A797853AC;
-			remoteInfo = mcUIReusable_iOS;
+			remoteGlobalIDString = 448C43153786207DD15FFBAA;
+			remoteInfo = mcxTestabilityFixtures;
 		};
-		8051C1EC248BF030003F0C43 /* PBXContainerItemProxy */ = {
+		80B4CD6727010B3D00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0DD01EDA6E1EF7991C4343B8;
-			remoteInfo = mcUIReusable_macOS;
-		};
-		8051C1EE248BF030003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7068891E4BA3BB06A13E1AAF;
-			remoteInfo = mcUI_iOS;
-		};
-		8051C1F0248BF030003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 34463D5649D92182348A13DE;
-			remoteInfo = mcUI_macOS;
-		};
-		8051C25C248BF3D7003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DE2A79BD3F607E8B5A04B6AA;
-			remoteInfo = mcTestability_iOS;
-		};
-		8051C25E248BF3D7003F0C43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F033346A634F1971BFC6A89A;
-			remoteInfo = mcTestability_macOS;
+			remoteGlobalIDString = 5DEDD2EBBF379EB69C1BD86C;
+			remoteInfo = mcxTypes;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8051C148248BE758003F0C43 /* Shared.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Shared.xcodeproj; sourceTree = "<group>"; };
-		8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RingBufferTestsUtility.swift; path = Vendor/mc/mcMedia/Tests/Types/RingBufferTestsUtility.swift; sourceTree = SOURCE_ROOT; };
+		8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RingBufferTestsUtility.swift; path = Vendor/mc/mcxMedia/Tests/Types/RingBufferTestsUtility.swift; sourceTree = SOURCE_ROOT; };
 		8051C19F248BEAF9003F0C43 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		8051C1A0248BEAF9003F0C43 /* Tests-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS.xcconfig"; sourceTree = "<group>"; };
 		8051C1C1248BECED003F0C43 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
-		8051C230248BF37B003F0C43 /* RingBufferTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RingBufferTests.swift; path = Vendor/mc/mcMedia/Tests/Types/RingBufferTests.swift; sourceTree = SOURCE_ROOT; };
+		8051C230248BF37B003F0C43 /* RingBufferTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RingBufferTests.swift; path = Vendor/mc/mcxMedia/Tests/Types/RingBufferTests.swift; sourceTree = SOURCE_ROOT; };
 		80C5DE8B243900C100A8712E /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		FR_26227D0EA4498C527BFDDD7F37EFFA9B /* Version.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		FR_2E597D9650B285DAD74CA6EA20FC6987 /* CppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -368,19 +182,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8051C260248BF3D7003F0C43 /* libmcTestability.a in Frameworks */,
-				8051C1B3248BEC7E003F0C43 /* libmcFoundationExtensions.a in Frameworks */,
-				8051C1B2248BEC72003F0C43 /* libmcMath.a in Frameworks */,
-				8051C1B1248BEC6A003F0C43 /* libmcFoundationTestability.a in Frameworks */,
-				8051C1B0248BEC61003F0C43 /* libmcFoundationObservables.a in Frameworks */,
-				8051C1AF248BEC57003F0C43 /* libmcConcurrencyLocking.a in Frameworks */,
-				8051C1AE248BEC4D003F0C43 /* libmcConcurrencyOC.a in Frameworks */,
-				8051C1AD248BEC3E003F0C43 /* libmcMediaExtensions.a in Frameworks */,
-				8051C1AC248BEC34003F0C43 /* libmcRuntime.a in Frameworks */,
-				8051C1AB248BEC2B003F0C43 /* libmcFoundationLogging.a in Frameworks */,
-				8051C1AA248BEC19003F0C43 /* libmcTypes.a in Frameworks */,
-				8051C1A9248BEC0D003F0C43 /* libmcFoundation.a in Frameworks */,
-				8051C1A8248BEBE1003F0C43 /* libmcMedia.a in Frameworks */,
+				80B4CD6927010B4200E969EE /* libmcxConcurrencyLocking.a in Frameworks */,
+				80B4CD6A27010B4200E969EE /* libmcxConcurrencyOC.a in Frameworks */,
+				80B4CD6B27010B4200E969EE /* libmcxFoundation.a in Frameworks */,
+				80B4CD6C27010B4200E969EE /* libmcxFoundationExtensions.a in Frameworks */,
+				80B4CD6D27010B4200E969EE /* libmcxFoundationLogging.a in Frameworks */,
+				80B4CD6E27010B4200E969EE /* libmcxFoundationObservables.a in Frameworks */,
+				80B4CD6F27010B4200E969EE /* libmcxFoundationTestability.a in Frameworks */,
+				80B4CD7027010B4200E969EE /* libmcxMath.a in Frameworks */,
+				80B4CD7127010B4200E969EE /* libmcxMedia.a in Frameworks */,
+				80B4CD7227010B4200E969EE /* libmcxMediaExtensions.a in Frameworks */,
+				80B4CD7327010B4200E969EE /* libmcxRuntime.a in Frameworks */,
+				80B4CD7427010B4200E969EE /* libmcxTestability.a in Frameworks */,
+				80B4CD7527010B4200E969EE /* libmcxTestabilityFixtures.a in Frameworks */,
+				80B4CD7627010B4200E969EE /* libmcxTypes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,11 +203,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8051C1A7248BEBBE003F0C43 /* libmcRuntime.a in Frameworks */,
-				8051C1A6248BEBAF003F0C43 /* libmcTypes.a in Frameworks */,
-				8051C1A5248BEB98003F0C43 /* libmcFoundationExtensions.a in Frameworks */,
-				8051C1A4248BEB87003F0C43 /* libmcFoundationTestability.a in Frameworks */,
-				8051C1A3248BEB6D003F0C43 /* libmcMediaExtensions.a in Frameworks */,
+				80B4CD7727010BF300E969EE /* libmcxConcurrencyLocking.a in Frameworks */,
+				80B4CD7827010BF300E969EE /* libmcxConcurrencyOC.a in Frameworks */,
+				80B4CD7927010BF300E969EE /* libmcxFoundation.a in Frameworks */,
+				80B4CD7A27010BF300E969EE /* libmcxFoundationExtensions.a in Frameworks */,
+				80B4CD7B27010BF300E969EE /* libmcxFoundationLogging.a in Frameworks */,
+				80B4CD7C27010BF300E969EE /* libmcxFoundationObservables.a in Frameworks */,
+				80B4CD7D27010BF300E969EE /* libmcxFoundationTestability.a in Frameworks */,
+				80B4CD7E27010BF300E969EE /* libmcxMath.a in Frameworks */,
+				80B4CD7F27010BF300E969EE /* libmcxMedia.a in Frameworks */,
+				80B4CD8027010BF300E969EE /* libmcxMediaExtensions.a in Frameworks */,
+				80B4CD8127010BF300E969EE /* libmcxRuntime.a in Frameworks */,
+				80B4CD8227010BF300E969EE /* libmcxTestability.a in Frameworks */,
+				80B4CD8327010BF300E969EE /* libmcxTestabilityFixtures.a in Frameworks */,
+				80B4CD8427010BF300E969EE /* libmcxTypes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,48 +226,20 @@
 		8051C149248BE758003F0C43 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8051C1D3248BF030003F0C43 /* libmcAppKitAudio.a */,
-				8051C1D5248BF030003F0C43 /* libmcAppKitAudio.a */,
-				8051C1D7248BF030003F0C43 /* libmcAppScaffold.a */,
-				8051C1D9248BF030003F0C43 /* libmcAppScaffold.a */,
-				8051C165248BE758003F0C43 /* libmcConcurrencyLocking.a */,
-				8051C167248BE758003F0C43 /* libmcConcurrencyLocking.a */,
-				8051C169248BE758003F0C43 /* libmcConcurrencyOC.a */,
-				8051C16B248BE758003F0C43 /* libmcConcurrencyOC.a */,
-				8051C16D248BE758003F0C43 /* libmcFoundationExtensions.a */,
-				8051C16F248BE758003F0C43 /* libmcFoundationExtensions.a */,
-				8051C171248BE758003F0C43 /* libmcFoundationLogging.a */,
-				8051C173248BE758003F0C43 /* libmcFoundationLogging.a */,
-				8051C175248BE758003F0C43 /* libmcFoundationObservables.a */,
-				8051C177248BE758003F0C43 /* libmcFoundationObservables.a */,
-				8051C179248BE758003F0C43 /* libmcFoundationTestability.a */,
-				8051C17B248BE758003F0C43 /* libmcFoundationTestability.a */,
-				8051C17D248BE758003F0C43 /* libmcFoundation.a */,
-				8051C17F248BE758003F0C43 /* libmcFoundation.a */,
-				8051C1DB248BF030003F0C43 /* libmcGraphicsExtensions.a */,
-				8051C1DD248BF030003F0C43 /* libmcGraphicsExtensions.a */,
-				8051C181248BE758003F0C43 /* libmcMath.a */,
-				8051C183248BE758003F0C43 /* libmcMath.a */,
-				8051C1DF248BF030003F0C43 /* libmcMediaAU.a */,
-				8051C1E1248BF030003F0C43 /* libmcMediaAU.a */,
-				8051C185248BE758003F0C43 /* libmcMediaExtensions.a */,
-				8051C187248BE758003F0C43 /* libmcMediaExtensions.a */,
-				8051C189248BE758003F0C43 /* libmcMedia.a */,
-				8051C18B248BE758003F0C43 /* libmcMedia.a */,
-				8051C18D248BE758003F0C43 /* libmcRuntime.a */,
-				8051C18F248BE758003F0C43 /* libmcRuntime.a */,
-				8051C25D248BF3D7003F0C43 /* libmcTestability.a */,
-				8051C25F248BF3D7003F0C43 /* libmcTestability.a */,
-				8051C191248BE758003F0C43 /* libmcTypes.a */,
-				8051C193248BE758003F0C43 /* libmcTypes.a */,
-				8051C1E3248BF030003F0C43 /* libmcTypography.a */,
-				8051C1E5248BF030003F0C43 /* libmcTypography.a */,
-				8051C1E7248BF030003F0C43 /* libmcUIExtensions.a */,
-				8051C1E9248BF030003F0C43 /* libmcUIExtensions.a */,
-				8051C1EB248BF030003F0C43 /* libmcUIReusable.a */,
-				8051C1ED248BF030003F0C43 /* libmcUIReusable.a */,
-				8051C1EF248BF030003F0C43 /* libmcUI.a */,
-				8051C1F1248BF030003F0C43 /* libmcUI.a */,
+				80B4CD4E27010B3D00E969EE /* libmcxConcurrencyLocking.a */,
+				80B4CD5027010B3D00E969EE /* libmcxConcurrencyOC.a */,
+				80B4CD5227010B3D00E969EE /* libmcxFoundation.a */,
+				80B4CD5427010B3D00E969EE /* libmcxFoundationExtensions.a */,
+				80B4CD5627010B3D00E969EE /* libmcxFoundationLogging.a */,
+				80B4CD5827010B3D00E969EE /* libmcxFoundationObservables.a */,
+				80B4CD5A27010B3D00E969EE /* libmcxFoundationTestability.a */,
+				80B4CD5C27010B3D00E969EE /* libmcxMath.a */,
+				80B4CD5E27010B3D00E969EE /* libmcxMedia.a */,
+				80B4CD6027010B3D00E969EE /* libmcxMediaExtensions.a */,
+				80B4CD6227010B3D00E969EE /* libmcxRuntime.a */,
+				80B4CD6427010B3D00E969EE /* libmcxTestability.a */,
+				80B4CD6627010B3D00E969EE /* libmcxTestabilityFixtures.a */,
+				80B4CD6827010B3D00E969EE /* libmcxTypes.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -593,298 +389,102 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8051C165248BE758003F0C43 /* libmcConcurrencyLocking.a */ = {
+		80B4CD4E27010B3D00E969EE /* libmcxConcurrencyLocking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcConcurrencyLocking.a;
-			remoteRef = 8051C164248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxConcurrencyLocking.a;
+			remoteRef = 80B4CD4D27010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C167248BE758003F0C43 /* libmcConcurrencyLocking.a */ = {
+		80B4CD5027010B3D00E969EE /* libmcxConcurrencyOC.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcConcurrencyLocking.a;
-			remoteRef = 8051C166248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxConcurrencyOC.a;
+			remoteRef = 80B4CD4F27010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C169248BE758003F0C43 /* libmcConcurrencyOC.a */ = {
+		80B4CD5227010B3D00E969EE /* libmcxFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcConcurrencyOC.a;
-			remoteRef = 8051C168248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxFoundation.a;
+			remoteRef = 80B4CD5127010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C16B248BE758003F0C43 /* libmcConcurrencyOC.a */ = {
+		80B4CD5427010B3D00E969EE /* libmcxFoundationExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcConcurrencyOC.a;
-			remoteRef = 8051C16A248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxFoundationExtensions.a;
+			remoteRef = 80B4CD5327010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C16D248BE758003F0C43 /* libmcFoundationExtensions.a */ = {
+		80B4CD5627010B3D00E969EE /* libmcxFoundationLogging.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationExtensions.a;
-			remoteRef = 8051C16C248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxFoundationLogging.a;
+			remoteRef = 80B4CD5527010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C16F248BE758003F0C43 /* libmcFoundationExtensions.a */ = {
+		80B4CD5827010B3D00E969EE /* libmcxFoundationObservables.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationExtensions.a;
-			remoteRef = 8051C16E248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxFoundationObservables.a;
+			remoteRef = 80B4CD5727010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C171248BE758003F0C43 /* libmcFoundationLogging.a */ = {
+		80B4CD5A27010B3D00E969EE /* libmcxFoundationTestability.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationLogging.a;
-			remoteRef = 8051C170248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxFoundationTestability.a;
+			remoteRef = 80B4CD5927010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C173248BE758003F0C43 /* libmcFoundationLogging.a */ = {
+		80B4CD5C27010B3D00E969EE /* libmcxMath.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationLogging.a;
-			remoteRef = 8051C172248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxMath.a;
+			remoteRef = 80B4CD5B27010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C175248BE758003F0C43 /* libmcFoundationObservables.a */ = {
+		80B4CD5E27010B3D00E969EE /* libmcxMedia.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationObservables.a;
-			remoteRef = 8051C174248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxMedia.a;
+			remoteRef = 80B4CD5D27010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C177248BE758003F0C43 /* libmcFoundationObservables.a */ = {
+		80B4CD6027010B3D00E969EE /* libmcxMediaExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationObservables.a;
-			remoteRef = 8051C176248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxMediaExtensions.a;
+			remoteRef = 80B4CD5F27010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C179248BE758003F0C43 /* libmcFoundationTestability.a */ = {
+		80B4CD6227010B3D00E969EE /* libmcxRuntime.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationTestability.a;
-			remoteRef = 8051C178248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxRuntime.a;
+			remoteRef = 80B4CD6127010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C17B248BE758003F0C43 /* libmcFoundationTestability.a */ = {
+		80B4CD6427010B3D00E969EE /* libmcxTestability.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationTestability.a;
-			remoteRef = 8051C17A248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxTestability.a;
+			remoteRef = 80B4CD6327010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C17D248BE758003F0C43 /* libmcFoundation.a */ = {
+		80B4CD6627010B3D00E969EE /* libmcxTestabilityFixtures.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundation.a;
-			remoteRef = 8051C17C248BE758003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxTestabilityFixtures.a;
+			remoteRef = 80B4CD6527010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8051C17F248BE758003F0C43 /* libmcFoundation.a */ = {
+		80B4CD6827010B3D00E969EE /* libmcxTypes.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundation.a;
-			remoteRef = 8051C17E248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C181248BE758003F0C43 /* libmcMath.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMath.a;
-			remoteRef = 8051C180248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C183248BE758003F0C43 /* libmcMath.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMath.a;
-			remoteRef = 8051C182248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C185248BE758003F0C43 /* libmcMediaExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMediaExtensions.a;
-			remoteRef = 8051C184248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C187248BE758003F0C43 /* libmcMediaExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMediaExtensions.a;
-			remoteRef = 8051C186248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C189248BE758003F0C43 /* libmcMedia.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMedia.a;
-			remoteRef = 8051C188248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C18B248BE758003F0C43 /* libmcMedia.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMedia.a;
-			remoteRef = 8051C18A248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C18D248BE758003F0C43 /* libmcRuntime.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcRuntime.a;
-			remoteRef = 8051C18C248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C18F248BE758003F0C43 /* libmcRuntime.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcRuntime.a;
-			remoteRef = 8051C18E248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C191248BE758003F0C43 /* libmcTypes.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTypes.a;
-			remoteRef = 8051C190248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C193248BE758003F0C43 /* libmcTypes.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTypes.a;
-			remoteRef = 8051C192248BE758003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1D3248BF030003F0C43 /* libmcAppKitAudio.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcAppKitAudio.a;
-			remoteRef = 8051C1D2248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1D5248BF030003F0C43 /* libmcAppKitAudio.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcAppKitAudio.a;
-			remoteRef = 8051C1D4248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1D7248BF030003F0C43 /* libmcAppScaffold.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcAppScaffold.a;
-			remoteRef = 8051C1D6248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1D9248BF030003F0C43 /* libmcAppScaffold.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcAppScaffold.a;
-			remoteRef = 8051C1D8248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1DB248BF030003F0C43 /* libmcGraphicsExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcGraphicsExtensions.a;
-			remoteRef = 8051C1DA248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1DD248BF030003F0C43 /* libmcGraphicsExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcGraphicsExtensions.a;
-			remoteRef = 8051C1DC248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1DF248BF030003F0C43 /* libmcMediaAU.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMediaAU.a;
-			remoteRef = 8051C1DE248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1E1248BF030003F0C43 /* libmcMediaAU.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMediaAU.a;
-			remoteRef = 8051C1E0248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1E3248BF030003F0C43 /* libmcTypography.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTypography.a;
-			remoteRef = 8051C1E2248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1E5248BF030003F0C43 /* libmcTypography.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTypography.a;
-			remoteRef = 8051C1E4248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1E7248BF030003F0C43 /* libmcUIExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUIExtensions.a;
-			remoteRef = 8051C1E6248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1E9248BF030003F0C43 /* libmcUIExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUIExtensions.a;
-			remoteRef = 8051C1E8248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1EB248BF030003F0C43 /* libmcUIReusable.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUIReusable.a;
-			remoteRef = 8051C1EA248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1ED248BF030003F0C43 /* libmcUIReusable.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUIReusable.a;
-			remoteRef = 8051C1EC248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1EF248BF030003F0C43 /* libmcUI.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUI.a;
-			remoteRef = 8051C1EE248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C1F1248BF030003F0C43 /* libmcUI.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUI.a;
-			remoteRef = 8051C1F0248BF030003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C25D248BF3D7003F0C43 /* libmcTestability.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTestability.a;
-			remoteRef = 8051C25C248BF3D7003F0C43 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8051C25F248BF3D7003F0C43 /* libmcTestability.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTestability.a;
-			remoteRef = 8051C25E248BF3D7003F0C43 /* PBXContainerItemProxy */;
+			path = libmcxTypes.a;
+			remoteRef = 80B4CD6727010B3D00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

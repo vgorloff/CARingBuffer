@@ -8,7 +8,7 @@
 
 import AVFoundation
 import XCTest
-import mcMedia
+import mcxMedia
 
 class CARBSwiftPerformanceTests: XCTestCase {
 

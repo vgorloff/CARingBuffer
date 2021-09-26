@@ -1,10 +1,13 @@
 include:
   - ../../../Projects/mc/templates.yml
-  - ../../../Projects/mc/mcMedia/project.yml
-  - ../../../Projects/mc/mcTestability/project.yml
+  - ../../../Projects/mc/mcxMedia/project.yml
+  - ../../../Projects/mc/mcxTestability/project.yml
 name: Shared
+settings:
+  AWL_LIB_SRC: Vendor/mc
+  MACOSX_DEPLOYMENT_TARGET: 10.12
 aggregateTargets:
   Shared:
     targets:
-      - mcMedia_macOS
-      - mcTestability_macOS
+      - mcxMedia
+      - mcxTestability
