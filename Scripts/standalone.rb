@@ -27,7 +27,7 @@ matches.each { |m|
 contents = contents.gsub(/\.\.\/\.\.\/\.\.\/\.\.\/Projects\/mc\//, './mc/')
 File.write(projectPath, contents)
 
-to = "#{vendorPath}/mcMedia/Tests/Types"
+to = "#{vendorPath}/mcxMedia/Tests/Types"
 FileUtils.mkdir_p to
-FileUtils.cp_r "#{ENV["AWL_LIB_SRC"]}/../mca-tests/mcMedia/Tests/Types/RingBufferTestsUtility.swift", to
-FileUtils.cp_r "#{ENV["AWL_LIB_SRC"]}/../mca-tests/mcMedia/Tests/Types/RingBufferTests.swift", to
+FileUtils.cp_r "#{ENV["AWL_PROJECTS"]}/mca-tests/mcMedia/Tests/Types/RingBufferTestsUtility.swift", to
+FileUtils.cp_r "#{ENV["AWL_PROJECTS"]}/mca-tests/mcMedia/Tests/Types/RingBufferTests.swift", to
