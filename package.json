@@ -1,0 +1,7 @@
+{
+   "name": "ca-ring-buffer",
+   "type": "module",
+   "dependencies": {
+      "gulp": "^4.0.2"
+   }
+}
