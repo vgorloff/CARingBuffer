@@ -9,7 +9,7 @@ cache:
 osx_image: xcode12.5
 before_install: npm install --global yarn gulp-cli
 install: node -v && yarn install
-script: ./Scripts/ci.sh
+script: gulp ci
 
 branches:
   only:
