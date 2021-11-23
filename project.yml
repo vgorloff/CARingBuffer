@@ -1,7 +1,7 @@
 include:
-  - ../../../Projects/mc/templates.yml
-  - ../../../Projects/mc/mcxMedia/project.yml
-  - ../../../Projects/mc/mcxTestability/project.yml
+  - Vendor/mc/templates.yml
+  - Vendor/mc/mcxMedia/project.yml
+  - Vendor/mc/mcxTestabilityXC/project.yml
 name: Shared
 settings:
   AWL_LIB_SRC: Vendor/mc
@@ -10,4 +10,4 @@ aggregateTargets:
   Shared:
     targets:
       - mcxMedia
-      - mcxTestability
+      - mcxTestabilityXC
