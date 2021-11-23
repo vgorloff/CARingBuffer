@@ -1,0 +1,13 @@
+include:
+  - Vendor/mc-shared/templates.yml
+  - Vendor/mc-shared/mcxMedia/project.yml
+  - Vendor/mc-shared/mcxTestabilityXC/project.yml
+name: Shared
+settings:
+  AWL_LIB_SRC: Vendor/mc-shared
+  MACOSX_DEPLOYMENT_TARGET: 10.12
+aggregateTargets:
+  Shared:
+    targets:
+      - mcxMedia
+      - mcxTestabilityXC

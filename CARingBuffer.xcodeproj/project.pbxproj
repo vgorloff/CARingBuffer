@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800628A9274D87A800B10C7E /* libmcxTestabilityXC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 800628A8274D87A800B10C7E /* libmcxTestabilityXC.a */; };
+		800628AA274D87B200B10C7E /* libmcxTestabilityXC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 800628A8274D87A800B10C7E /* libmcxTestabilityXC.a */; };
 		8051C19D248BEABE003F0C43 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */; };
 		8051C19E248BEABF003F0C43 /* RingBufferTestsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C19C248BEAB7003F0C43 /* RingBufferTestsUtility.swift */; };
 		8051C259248BF37C003F0C43 /* RingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051C230248BF37B003F0C43 /* RingBufferTests.swift */; };
@@ -45,6 +47,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		800628A7274D87A800B10C7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A695C299969EA2F21A79E23D;
+			remoteInfo = mcxTestabilityXC;
+		};
 		8051C194248BE78D003F0C43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8051C148248BE758003F0C43 /* Shared.xcodeproj */;
@@ -182,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800628A9274D87A800B10C7E /* libmcxTestabilityXC.a in Frameworks */,
 				80B4CD6927010B4200E969EE /* libmcxConcurrencyLocking.a in Frameworks */,
 				80B4CD6A27010B4200E969EE /* libmcxConcurrencyOC.a in Frameworks */,
 				80B4CD6B27010B4200E969EE /* libmcxFoundation.a in Frameworks */,
@@ -203,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800628AA274D87B200B10C7E /* libmcxTestabilityXC.a in Frameworks */,
 				80B4CD7727010BF300E969EE /* libmcxConcurrencyLocking.a in Frameworks */,
 				80B4CD7827010BF300E969EE /* libmcxConcurrencyOC.a in Frameworks */,
 				80B4CD7927010BF300E969EE /* libmcxFoundation.a in Frameworks */,
@@ -239,6 +250,7 @@
 				80B4CD6227010B3D00E969EE /* libmcxRuntime.a */,
 				80B4CD6427010B3D00E969EE /* libmcxTestability.a */,
 				80B4CD6627010B3D00E969EE /* libmcxTestabilityFixtures.a */,
+				800628A8274D87A800B10C7E /* libmcxTestabilityXC.a */,
 				80B4CD6827010B3D00E969EE /* libmcxTypes.a */,
 			);
 			name = Products;
@@ -389,6 +401,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		800628A8274D87A800B10C7E /* libmcxTestabilityXC.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libmcxTestabilityXC.a;
+			remoteRef = 800628A7274D87A800B10C7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		80B4CD4E27010B3D00E969EE /* libmcxConcurrencyLocking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
