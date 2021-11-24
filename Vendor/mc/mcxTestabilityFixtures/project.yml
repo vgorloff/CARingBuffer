@@ -1,0 +1,7 @@
+include:
+  - ../templates.yml
+name: mcxTestabilityFixtures
+targets:
+  mcxTestabilityFixtures:
+    templates:
+      - mcLib
